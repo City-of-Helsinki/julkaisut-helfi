@@ -1,1 +1,30 @@
+# Ignore configuration files that may contain sensitive information.
+settings.local.php
+local.settings.php
+local.drush.yml
+local.site.yml
+local.services.yml
+box/local.config.yml
+*.local
+
+# Ignore drupal core.
+web/core
+
+# Ignore paths that contain user-generated content.
+web/sites/*/files
+/files-private
+web/sites/*/private
+
+# Ignore contrib modules. These should be created during build process.
+web/modules/contrib
+web/themes/contrib
+web/profiles/contrib
+web/libraries
+drush/Commands
+
+# Ignore custom theme build artifacts
+web/themes/custom/*/node_modules
+web/themes/custom/*/dist
+
 /vendor
+/.vagrant

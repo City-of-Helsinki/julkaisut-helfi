@@ -16,6 +16,20 @@
  * at the bottom of 'sites/example.com/settings.php'.
  */
 
+$databases['default']['default'] = [
+  'database' => 'drupal',
+  'username' => 'drupal',
+  'password' => 'drupal',
+  'prefix' => '',
+  'host' => '127.0.0.1',
+  'port' => '',
+  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+  'driver' => 'mysql',
+];
+
+$settings['hash_salt'] = 'vBxGzgBDyzMGbR5ejF1XUstAq65VwYZYse14MN3EO9VzUqN7s-D0JFjiy8ANzD14DdhNXbb5xQ';
+
+
 /**
  * Assertions.
  *
@@ -66,7 +80,7 @@ $config['system.performance']['js']['preprocess'] = FALSE;
  *
  * Only use this setting once the site has been installed.
  */
-# $settings['cache']['bins']['render'] = 'cache.backend.null';
+$settings['cache']['bins']['render'] = 'cache.backend.null';
 
 /**
  * Disable caching for migrations.
@@ -88,7 +102,7 @@ $config['system.performance']['js']['preprocess'] = FALSE;
  *
  * Only use this setting once the site has been installed.
  */
-# $settings['cache']['bins']['page'] = 'cache.backend.null';
+$settings['cache']['bins']['page'] = 'cache.backend.null';
 
 /**
  * Disable Dynamic Page Cache.
@@ -97,7 +111,7 @@ $config['system.performance']['js']['preprocess'] = FALSE;
  * cacheability metadata is present (and hence the expected behavior). However,
  * in the early stages of development, you may want to disable it.
  */
-# $settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null';
+$settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null';
 
 /**
  * Allow test modules and themes to be installed.
@@ -152,4 +166,8 @@ $settings['skip_permissions_hardening'] = TRUE;
  * to use this feature with modules that affect Drupal in a major way such as
  * the language or field module.
  */
-# $settings['config_exclude_modules'] = ['devel', 'stage_file_proxy'];
+$settings['config_exclude_modules'] = ['devel', 'stage_file_proxy'];
+
+$settings['trusted_host_patterns'] = array(
+  '^.+$',
+);

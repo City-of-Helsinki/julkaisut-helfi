@@ -27,7 +27,13 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "platform": {
+          "php": "7.4"
+        },
+        "process-timeout": 0
     },
     "extra": {
         "drupal-scaffold": {
@@ -84,5 +90,6 @@
         }
     },
     "require-dev": {
+        "geerlingguy/drupal-vm": "^5.0"
     }
 }
