@@ -1,0 +1,22 @@
+editor-libraries-extend:
+  - julkaisut/editor-styles
+  - julkaisut/editor-scripts
+
+theme-support:
+  align-wide: 'true'
+  colors:
+    - slug: "dark-blue"
+      name: "Dark blue"
+      color: "#313C59"
+    - slug: "light-blue"
+      name: "Light blue"
+      color: "#89A8F1"
+    - slug: "dark-grey"
+      name: "Dark grey"
+      color: "#444"
+    - slug: "light-grey"
+      name: "Light grey"
+      color: "#eee"
+    - slug: "white"
+      name: "White"
+      color: "#fff"

@@ -1,0 +1,10 @@
+name: Julkaisut
+type: theme
+base theme: hds_drupal
+description: 'A HDS sub-theme for Julkaisut'
+package: HDS
+# version: VERSION
+core_version_requirement: ^8 || ^9
+libraries:
+  - julkaisut/global-styling
+  - julkaisut/global-scripts
