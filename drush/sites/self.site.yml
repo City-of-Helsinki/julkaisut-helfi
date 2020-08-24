@@ -1,0 +1,19 @@
+vagrant:
+  host: 'julkaisut.test'
+  root: '/var/www/drupalvm/web'
+  uri: 'julkaisut.test'
+  user: 'vagrant'
+  ssh:
+    options: '-o "SendEnv PHP_IDE_CONFIG PHP_OPTIONS XDEBUG_CONFIG" -o PasswordAuthentication=no -i "${env.home}/.vagrant.d/insecure_private_key"'
+
+# production:
+#   host: 'julkaisut.hel.fi'
+#   root: '/var/www/drupal/current/docroot'
+#   uri: 'julkaisut.hel.fi'
+#   user: 'deploy'
+#
+# staging:
+#   host: 'minasithil.genero.fi'
+#   root: '/var/www/staging/julkaisut/current/docroot'
+#   uri: julkaisut.docroot.staging.minasithil.genero.
+#   user: 'deploy'
