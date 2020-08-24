@@ -15,6 +15,7 @@
         }
     ],
     "require": {
+        "acquia/blt": "^12.0",
         "composer/installers": "^1.9",
         "drupal/core-composer-scaffold": "^9",
         "drupal/core-project-message": "^9",
@@ -81,5 +82,7 @@
                 "      composer remove drupal/core-project-message"
             ]
         }
+    },
+    "require-dev": {
     }
 }
