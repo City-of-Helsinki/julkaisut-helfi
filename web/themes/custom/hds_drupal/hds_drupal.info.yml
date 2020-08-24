@@ -1,0 +1,10 @@
+name: HDS
+type: theme
+description: 'Helsinki Design System Gutenberg base theme'
+package: HDS
+# version: VERSION
+base theme: classy
+core_version_requirement: ^8 || ^9
+libraries:
+  - hds_drupal/global-styling
+  - hds_drupal/global-scripts
