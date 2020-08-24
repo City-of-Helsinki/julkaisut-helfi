@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e83719961ca6ed67b4932189b9a5b64c",
+    "content-hash": "3a8dabd726a11b27c5c0eb3addc2a70f",
     "packages": [
         {
             "name": "acquia/blt",
@@ -2495,17 +2495,17 @@
         },
         {
             "name": "drupal/gutenberg",
-            "version": "1.11.0",
+            "version": "2.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/gutenberg.git",
-                "reference": "8.x-1.11"
+                "reference": "8.x-2.0-beta2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/gutenberg-8.x-1.11.zip",
-                "reference": "8.x-1.11",
-                "shasum": "156ff130a8a30b2165cf5cf2617021e725b15efe"
+                "url": "https://ftp.drupal.org/files/projects/gutenberg-8.x-2.0-beta2.zip",
+                "reference": "8.x-2.0-beta2",
+                "shasum": "501faeab32d1f4a8b67a58419e1734227624b3aa"
             },
             "require": {
                 "drupal/core": "^8 || ^9"
@@ -2513,11 +2513,11 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.11",
-                    "datestamp": "1587683303",
+                    "version": "8.x-2.0-beta2",
+                    "datestamp": "1591026727",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -2555,7 +2555,7 @@
                     "homepage": "https://www.drupal.org/user/223878"
                 }
             ],
-            "description": "Advanced, yet easy to use content editor. Activate it on the content type edit page.",
+            "description": "Drupal Gutenberg",
             "homepage": "https://www.drupal.org/project/gutenberg",
             "support": {
                 "source": "https://git.drupalcode.org/project/gutenberg"
@@ -6654,7 +6654,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "drupal/gutenberg": 10
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
