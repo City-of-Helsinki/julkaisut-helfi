@@ -1,0 +1,14 @@
+uuid: b5ab163a-d2ae-4d52-aa76-31ce13360c67
+name: julkaisut.hel.fi
+mail: dev@genero.fi
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node/1
+admin_compact_mode: false
+weight_select_max: 100
+langcode: fi
+default_langcode: fi
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI

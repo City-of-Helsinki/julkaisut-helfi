@@ -1,0 +1,20 @@
+uuid: f4af36ee-e3e3-4817-a8d2-57014bf7a8eb
+langcode: en
+status: true
+dependencies:
+  theme:
+    - julkaisut
+_core:
+  default_config_hash: PffmQ-ABSz5tFjWmVsR7NesunDnEivvopnJnBjl8KNE
+id: julkaisut_local_actions
+theme: julkaisut
+region: content
+weight: -10
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

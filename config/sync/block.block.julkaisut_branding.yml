@@ -1,0 +1,25 @@
+uuid: 69f936b1-6987-448e-8e4b-6983b42da0b1
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - julkaisut
+_core:
+  default_config_hash: fRKXNB91UxDvEMkzCR8ZBsawfC6Fqbme2gtobei3gu4
+id: julkaisut_branding
+theme: julkaisut
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

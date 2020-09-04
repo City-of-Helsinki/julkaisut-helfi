@@ -38,7 +38,7 @@ installed_extras:
   # - redis
   # - ruby
   # - selenium
-  # - solr
+  - solr
   # - tideways
   # - upload-progress
   # - varnish
