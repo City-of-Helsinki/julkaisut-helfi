@@ -1,4 +1,4 @@
-global-styling:
+global-styles:
   version: VERSION
   css:
     base:
@@ -7,8 +7,9 @@ global-styling:
 global-scripts:
   version: VERSION
   js:
-    base:
-      dist/scripts/app.js: {}
+    dist/scripts/manifest.js: {}
+    dist/scripts/vendor.js: {}
+    dist/scripts/app.js: {}
 
 editor-styles:
   version: VERSION
@@ -18,6 +19,7 @@ editor-styles:
 
 editor-scripts:
   version: VERSION
-  css:
-    base:
-      dist/scripts/editor.js: {}
+  js:
+    dist/scripts/manifest.js: {}
+    dist/scripts/vendor.js: {}
+    dist/scripts/editor.js: {}

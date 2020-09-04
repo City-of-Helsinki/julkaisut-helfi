@@ -1,0 +1,48 @@
+/* stylelint-disable declaration-empty-line-before */
+
+$fonts-dir: '../fonts';
+
+/* Webfont: HelsinkiGrotesk-Regular */
+@font-face {
+  font-family: 'HelsinkiGrotesk';
+  src: url('#{$fonts-dir}/HelsinkiGrotesk-Regular.woff') format('woff');
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+/* Webfont: HelsinkiGrotesk-RegularItalic */
+@font-face {
+  font-family: 'HelsinkiGrotesk';
+  src: url('#{$fonts-dir}/HelsinkiGrotesk-RegularItalic.woff') format('woff');
+  font-style: italic;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+/* Webfont: HelsinkiGrotesk-Bold */
+@font-face {
+  font-family: 'HelsinkiGrotesk';
+  src: url('#{$fonts-dir}/HelsinkiGrotesk-Bold.woff') format('woff');
+  font-style: normal;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+}
+
+/* Webfont: HelsinkiGrotesk-Medium */
+@font-face {
+  font-family: 'HelsinkiGrotesk';
+  src: url('#{$fonts-dir}/HelsinkiGrotesk-Medium.woff') format('woff');
+  font-style: normal;
+  font-weight: 500;
+  text-rendering: optimizeLegibility;
+}
+
+/* Webfont: HelsinkiGrotesk-BoldItalic */
+@font-face {
+  font-family: 'HelsinkiGrotesk';
+  src: url('#{$fonts-dir}/HelsinkiGrotesk-BoldItalic.woff') format('woff');
+  font-style: italic;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+}
