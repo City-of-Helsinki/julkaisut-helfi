@@ -3,6 +3,8 @@ global-styles:
   css:
     base:
       dist/styles/app.css: {}
+  dependencies:
+    - gutenberg/blocks-view
 
 global-scripts:
   version: VERSION
@@ -10,16 +12,24 @@ global-scripts:
     dist/scripts/manifest.js: {}
     dist/scripts/vendor.js: {}
     dist/scripts/app.js: {}
+  dependencies:
+    - julkaisut/polyfill
 
-editor-styles:
+
+polyfill:
+  header: true
+  js:
+    https://polyfill.io/v3/polyfill.min.js?features=default: { type: external }
+
+editor:
   version: VERSION
   css:
     base:
       dist/styles/editor.css: {}
-
-editor-scripts:
-  version: VERSION
   js:
     dist/scripts/manifest.js: {}
     dist/scripts/vendor.js: {}
     dist/scripts/editor.js: {}
+  dependencies:
+    - julkaisut/polyfill
+    - gutenberg/edit-node

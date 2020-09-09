@@ -1,5 +1,8 @@
 @use "common/fonts";
-
-body {
-  background-color: #f00;
-}
+@use "config/variables";
+@use "~hds-core/lib/base";
+@use "common/frontend";
+@use "common/utils";
+@use "components";
+@use "gutenberg";
+@use "partials";

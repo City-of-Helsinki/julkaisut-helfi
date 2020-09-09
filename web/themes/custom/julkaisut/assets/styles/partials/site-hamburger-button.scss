@@ -1,0 +1,22 @@
+@use "~sass-burger/burger" as *;
+@use "~hds-design-tokens/lib/all" as hds;
+
+
+.site-hamburger-button {
+  margin-bottom: 0;
+  padding: var(--spacing-s);
+  margin-right: calc((var(--spacing-m) - var(--spacing-s)) * -1);
+
+  > span {
+    @include burger(
+      $width: 22px,
+      $height: 3px,
+      $gutter: 5px,
+      $color: hds.$color-black-90
+    );
+  }
+
+  &[aria-expanded="true"] > span {
+    @include burger-to-cross();
+  }
+}

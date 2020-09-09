@@ -8,3 +8,6 @@ core_version_requirement: ^8 || ^9
 libraries:
   - julkaisut/global-styles
   - julkaisut/global-scripts
+
+stylesheets-remove:
+  - '@classy/css/components/item-list.css'

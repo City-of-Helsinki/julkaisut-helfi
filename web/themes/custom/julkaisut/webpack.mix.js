@@ -14,15 +14,22 @@ mix.js('assets/scripts/app.js', 'scripts')
   .extract();
 
 mix.copyWatched('assets/images', 'dist/images', {base: 'assets/images'})
-  .copyWatched('assets/fonts', 'dist/fonts', {base: 'assets/fonts'})
+  .copyWatched('assets/fonts', 'dist/fonts', {base: 'assets/fonts'});
 
 mix.autoload({
   jquery: ['$', 'window.jQuery'],
 });
 
+mix.webpackConfig({
+  output: {
+    jsonpFunction: 'julkaisut-webpack',
+  }
+});
+
 mix.options({
   processCssUrls: false,
   postCss: [
+    require('postcss-inline-svg')({paths: [mix.config.publicPath]}),
     require('postcss-custom-properties')({preserve: true}),
     // @see https://github.com/JeffreyWay/laravel-mix/issues/1606#issuecomment-551457071
     require('autoprefixer')({grid: 'autoplace'}),

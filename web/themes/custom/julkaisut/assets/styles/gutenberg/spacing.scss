@@ -1,0 +1,86 @@
+@use "common/breakpoints" as *;
+
+.is-container {
+  margin-top: var(--spacing-s);
+  margin-bottom: var(--spacing-s);
+}
+
+// The root container only
+.is-root-container {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin-top: var(--spacing-m);
+  margin-bottom: var(--spacing-m);
+}
+
+// Any container that can contain blocks or inner blocks.
+.wp-block-group__inner-container,
+.wp-block-cover__inner-container,
+.wp-block-media-text__content,
+.wp-block-column,
+.is-container,
+.is-root-container {
+  // Default vertical gutter
+  > * {
+    margin-top: var(--block-gutter);
+    margin-bottom: var(--block-gutter);
+  }
+
+  > p,
+  > ul,
+  > ol {
+    margin-top: var(--block-gutter-s);
+    margin-bottom: var(--block-gutter-s);
+  }
+
+  > h1,
+  > h2,
+  > h3,
+  > h4,
+  > h5,
+  > h6 {
+    margin-bottom: var(--block-gutter-s);
+
+    & + h1,
+    & + h2,
+    & + h3,
+    & + h4,
+    & + h5,
+    & + h6 {
+      margin-top: calc(var(--block-gutter-s) * -1 + var(--spacing-xxs));
+    }
+  }
+
+  // If it's the last child, remove the gutter with the footer
+  [data-align="full"].has-background:last-child,
+  .alignfull.has-background:last-child {
+    &.has-background:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  > :first-child,
+  > .contextual:first-child + * {
+    margin-top: 0;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Use a larger gutter around full aligned blocks with a background. This is
+// overridden on a per block basis.
+[data-align="wide"],
+[data-align="full"],
+.alignwide,
+.alignfull {
+  margin-top: var(--block-gutter-l);
+  margin-bottom: var(--block-gutter-l);
+}
+
+// Adjacent full aligned blocks should not have a gutter.
+[data-align="full"] + [data-align="full"],
+.alignfull.has-background + .alignfull.has-background {
+  margin-top: calc(var(--block-gutter-l) * -1);
+}

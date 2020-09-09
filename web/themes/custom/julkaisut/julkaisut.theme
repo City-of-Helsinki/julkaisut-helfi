@@ -1,0 +1,70 @@
+
+<?php
+
+/**
+ * @file
+ * Add your custom theme override functions here.
+ */
+
+use Drupal\block\Entity\Block;
+
+/**
+ * Implements template_preprocess_field__body().
+ *
+ * Add an `is-root-container` to gutenberg fields.
+ */
+function julkaisut_preprocess_field__body(&$variables) {
+  if (!$variables['multiple']) {
+    $variables['attributes']['class'][] = 'is-root-container';
+  }
+
+  foreach ($variables['items'] as &$item) {
+    if ($item['content']['#format'] === 'gutenberg') {
+      $item['attributes']->addClass('is-root-container');
+    }
+  }
+}
+
+/**
+ * Implements template_preprocess_page().
+ */
+function julkaisut_preprocess_page(&$variables) {
+  $variables['site_name'] = Drupal::config('system.site')->get('name');
+  $langcode = Drupal::service('language_manager')->getCurrentLanguage()->getId();
+  $logo_filename = ($langcode === 'sv') ? 'helsinki-sv.svg' : 'helsinki-fi.svg';
+
+  // Attach the logo
+  $variables['logo'] = [
+    '#theme' => 'image',
+    '#uri' => file_create_url($variables['directory'] . "/dist/images/logo/$logo_filename"),
+    '#attributes' => [
+      'alt' => strip_tags($variables['site_name']),
+      'title' => strip_tags($variables['site_name']),
+      'style' => 'max-width: 200px;',
+      'class' => ['logo'],
+    ],
+  ];
+
+  /** @var Drupal\node\Entity\Node|null $node */
+  $node = $variables['node'];
+
+  // Allow nodes to change the content width to 12/12
+  if ($node && $node->field_wide_contentwidth && $node->field_wide_contentwidth->getString() === '1') {
+    $variables['attributes']['style'] = '--content-width: var(--alignwide-width)';
+  }
+}
+
+/**
+ * Implements template_preprocess_block().
+ */
+function julkaisut_preprocess_block(&$variables) {
+  if (isset($variables['elements']['#id'])) {
+    $block = Block::load($variables['elements']['#id']);
+
+    switch ($block->getRegion()) {
+      case 'content':
+        $variables['attributes']['class'][] = 'is-container';
+        break;
+    }
+  }
+}

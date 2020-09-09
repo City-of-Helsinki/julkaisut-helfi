@@ -1,13 +1,14 @@
-editor-libraries-extend:
-  - julkaisut/editor-styles
-  - julkaisut/editor-scripts
+libraries-edit:
+  - julkaisut/editor
 
 theme-support:
   align-wide: 'true'
+  disable-custom-colors: 'true'
+  disable-custom-font-sizes: 'true'
   colors:
-    - slug: "dark-blue"
-      name: "Dark blue"
-      color: "#313C59"
+    - slug: "bus"
+      name: "Bus"
+      color: "#0000bf"
     - slug: "light-blue"
       name: "Light blue"
       color: "#89A8F1"
@@ -20,3 +21,34 @@ theme-support:
     - slug: "white"
       name: "White"
       color: "#fff"
+  fontSizes:
+    - name: "Small"
+      slug: "body-s"
+      size: 14
+    - name: "Medium"
+      slug: "body-m"
+      size: 16
+    - name: "Large"
+      slug: "body-l"
+      size: 18
+    - name: "X Large"
+      slug: "body-xl"
+      size: 20
+    - name: "Heading XXS"
+      slug: "heading-xxs"
+      size: 16
+    - name: "Heading XS"
+      slug: "heading-xs"
+      size: 18
+    - name: "Heading S"
+      slug: "heading-s"
+      size: 20
+    - name: "Heading M"
+      slug: "heading-m"
+      size: 24
+    - name: "Heading L"
+      slug: "heading-l"
+      size: 36
+    - name: "Heading XL"
+      slug: "heading-l"
+      size: 52

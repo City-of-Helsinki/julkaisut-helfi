@@ -1,0 +1,64 @@
+@use "~hds-design-tokens/lib/breakpoint/all" as hds;
+@use "common/breakpoints" as *;
+
+$mq-breakpoints: (
+  xsmall: hds.$breakpoint-xs,
+  small: hds.$breakpoint-s,
+  medium: hds.$breakpoint-m,
+  large: hds.$breakpoint-l,
+  xlarge: hds.$breakpoint-xl,
+);
+
+:root {
+  // Shorthands
+
+  --color-primary: var(--color-bus);
+
+  // Vertical gutters between blocks
+
+  --block-gutter-s: var(--spacing-m);
+  --block-gutter: var(--spacing-l);
+  --block-gutter-l: var(--spacing-xl);
+
+  @include mq($from: medium) {
+    --block-gutter-l: var(--spacing-3-xl);
+  }
+
+  // Container and grid widths
+
+  --container-width: var(--container-width-xs);
+  --viewport-gutter: 15px;
+  --content-width: 100%;
+  --grid-gutter: 12px;
+  --grid-columns: 4;
+  --alignwide-width: 100%;
+  --alignfull-width: unset;
+
+  @include mq($from: small, $until: medium) {
+    --container-width: var(--container-width-s);
+    --grid-gutter: 12px;
+    --grid-columns: 4;
+  }
+
+  @include mq($from: medium, $until: large) {
+    --container-width: var(--container-width-m);
+    --grid-gutter: 24px;
+    --grid-columns: 8;
+  }
+
+  @include mq($from: large, $until: xlarge) {
+    --container-width: var(--container-width-l);
+    --grid-gutter: 24px;
+    --grid-columns: 12;
+    --content-width: calc(var(--container-width) / var(--grid-columns) * 8px); // 8 columns
+    --alignwide-width: calc(var(--container-width) * 1px);
+  }
+
+  @include mq($from: xlarge) {
+    --container-width: var(--container-width-xl);
+    --grid-gutter: 24px;
+    --grid-columns: 12;
+    --content-width: calc(var(--container-width) / var(--grid-columns) * 8px); // 8 columns
+    --alignwide-width: calc(var(--container-width) * 1px);
+  }
+}

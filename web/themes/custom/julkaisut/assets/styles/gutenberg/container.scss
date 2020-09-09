@@ -1,0 +1,48 @@
+// The root container only
+.is-container,
+.is-root-container {
+  // Add a viewport gutter in the same manner as Gutenberg does
+  padding-left: var(--viewport-gutter);
+  padding-right: var(--viewport-gutter);
+}
+
+// Any container that can contain blocks or inner blocks.
+.wp-block-group__inner-container,
+.wp-block-cover__inner-container,
+.wp-block-media-text__content,
+.wp-block-column,
+.is-container,
+.is-root-container {
+  // Each blocks default styling
+  > * {
+    max-width: var(--content-width);
+    margin-left: auto;
+    margin-right: auto;
+
+    &.has-text-align-right {
+      margin-right: 0;
+    }
+
+    &.has-text-align-left {
+      margin-left: 0;
+    }
+  }
+
+  // Alignfull stretches to the viewport width up to a point when it gets centered.
+  [data-align="full"],
+  .alignfull {
+    max-width: var(--alignfull-width);
+    // Negate the container padding so it stretches to viewport width.
+    margin-left: calc(var(--viewport-gutter) * -1);
+    margin-right: calc(var(--viewport-gutter) * -1);
+    width: unset; // Override Gutenberg
+  }
+
+  // Align has a 12 column width with a viewport gutter
+  [data-align="wide"],
+  .alignwide {
+    max-width: var(--alignwide-width);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

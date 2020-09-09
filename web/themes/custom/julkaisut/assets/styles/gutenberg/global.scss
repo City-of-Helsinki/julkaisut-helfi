@@ -1,0 +1,27 @@
+$-fontsizes-body:
+  'body-s',
+  'body-m',
+  'body-l',
+  'body-xl';
+
+$-fontsizes-heading:
+  'heading-xxs',
+  'heading-xs',
+  'heading-s',
+  'heading-m',
+  'heading-l',
+  'heading-xl';
+
+@each $name in $-fontsizes-body {
+  .has-#{$name}-font-size {
+    font-weight: normal;
+    font-size: var(--fontsize-#{$name});
+  }
+}
+
+@each $name in $-fontsizes-heading {
+  .has-#{$name}-font-size {
+    font-weight: bold;
+    font-size: var(--fontsize-#{$name});
+  }
+}
