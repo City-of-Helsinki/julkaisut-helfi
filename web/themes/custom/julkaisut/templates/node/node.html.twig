@@ -66,6 +66,7 @@
  * @see template_preprocess_node()
  */
 #}
+
 {%
   set classes = [
     'node',
@@ -77,27 +78,56 @@
     'clearfix',
   ]
 %}
-{{ attach_library('classy/node') }}
-<article{{ attributes.addClass(classes) }}>
-  <header>
-    {{ title_prefix }}
-    {% if not page %}
-      <h2{{ title_attributes.addClass('node__title') }}>
-        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-      </h2>
-    {% endif %}
-    {{ title_suffix }}
-    {% if display_submitted %}
-      <div class="node__meta">
-        {{ author_picture }}
-        <span{{ author_attributes }}>
-          {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        </span>
-        {{ metadata }}
+{% block node %}
+  {{ attach_library('classy/node') }}
+  <article{{attributes.addClass(classes) }}>
+    <header>
+      {% block node__header %}
+        {{ title_prefix }}
+        {% if not page %}
+          <h3{{ title_attributes.addClass('node__title') }}>
+            <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+          </h3>
+          {% if display_submitted %}
+            <div class="node__published">
+              <span{{ author_attributes }}>
+                <p>{% trans %}Published on {{ date }}{% endtrans %}</p>
+              </span>
+              {{ metadata }}
+            </div>
+          {% endif %}
+        {% endif %}
+        {{ title_suffix }}
+      {% endblock %}
+    </header>
+
+    {% block node__content_wrapper %}
+      <div class="is-container">
+        <div class="node__meta">
+          {{ content.field_tags }}
+
+          {{ content.field_pdf }}
+
+          {% include '@julkaisut/partials/share-links.html.twig' with {
+            url: url_absolute.toString(),
+            title: node.title(),
+          } %}
+
+          {{ translation_links }}
+        </div>
       </div>
-    {% endif %}
-  </header>
-  <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
-    {{ content }}
-  </div>
-</article>
+
+      {{ content.body }}
+
+      {% if content.field_image is not empty %}
+        <div class="wp-block-image is-style-koros-basic-top">
+          {{ content.field_image }}
+        </div>
+      {% endif %}
+
+      <div class="is-container">
+        {{ content|without('body', 'field_tags', 'field_pdf', 'field_image') }}
+      </div>
+    {% endblock %}
+  </article>
+{% endblock %}

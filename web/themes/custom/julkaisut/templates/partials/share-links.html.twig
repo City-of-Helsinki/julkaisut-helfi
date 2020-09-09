@@ -1,0 +1,21 @@
+<div class="share-links">
+  <h6 class="share-links__heading">{{ 'Share'|t }}:</h6>
+  <a
+    class="share-links__link"
+    href="{{ 'https://www.addtoany.com/add_to/%s?linkurl=%s&amp;linkname=%s'|format(
+      'facebook', url|url_encode, title|url_encode
+    ) }}"
+    aria-label="{{ 'Facebook' | t }}"
+  >
+    <i class="hds-icon hds-icon--facebook hds-icon--size-m" role="presentation"></i>
+  </a>
+  <a
+    class="share-links__link"
+    href="{{ 'https://www.addtoany.com/add_to/%s?linkurl=%s&amp;linkname=%s'|format(
+      'twitter', url|url_encode, title|url_encode
+    ) }}"
+    aria-label="{{ 'Twitter' | t }}"
+  >
+    <i class="hds-icon hds-icon--twitter hds-icon--size-m" role="presentation"></i>
+  </a>
+</div>

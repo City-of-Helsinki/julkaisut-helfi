@@ -1,0 +1,40 @@
+.book-navigation {
+  font-size: var(--fontsize-body-s);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  list-style-type: none;
+  padding-left: 0;
+  background-color: var(--color-bus);
+
+  &__previous {
+    background-color: #3333CB;
+
+    .hds-icon {
+      margin-right: var(--spacing-xs);
+    }
+  }
+
+  &__next {
+    a {
+      justify-content: space-between;
+    }
+
+    .hds-icon {
+      margin-left: var(--spacing-xs);
+    }
+  }
+
+  li a {
+    display: flex;
+    align-items: center;
+    color: var(--color-white);
+    padding: var(--spacing-s);
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+
+  }
+}

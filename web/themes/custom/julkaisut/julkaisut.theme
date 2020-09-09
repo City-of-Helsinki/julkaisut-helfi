@@ -7,6 +7,82 @@
  */
 
 use Drupal\block\Entity\Block;
+use Drupal\Core\Render\Markup;
+
+/**
+ * Implements template_preprocess_field__body().
+ */
+function julkaisut_preprocess_node(&$variables) {
+  /** @var \Drupal\node\Entity\Node $node */
+  $node = $variables['node'];
+  $view_mode = $variables['elements']['#view_mode'];
+  $variables['url_absolute'] = $node->toUrl('canonical', [
+    'language' => $node->language(),
+    'absolute' => true,
+  ]);
+
+  $variables['date'] = \Drupal::service('date.formatter')->format($node->getCreatedTime(), 'published_date');
+
+  $variables['translation_links'] = [
+    '#theme' => 'item_list',
+    '#list_type' => 'ul',
+    '#wrapper_attributes' => [
+      'class' => ['translation-links'],
+    ],
+    '#items' => [],
+  ];
+  foreach ($node->getTranslationLanguages(FALSE) as $langcode => $language) {
+    /** @var Drupal\node\Entity\Node $translation */
+    $translation = $node->getTranslation($langcode);
+    $label = [
+      'fi' => 'Suomeksi',
+      'sv' => 'På svenska',
+      'en' => 'In English',
+    ];
+    $variables['translation_links']['#items'][] = [
+      '#type' => 'link',
+      '#title' => Markup::create($label[$langcode] ?? t('In @language', [
+        '@language' => $language->getName(),
+      ], ['langcode' => $langcode])),
+      '#url' => $translation->toUrl('canonical', [
+        'language' => $translation->language(),
+      ]),
+    ];
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function julkaisut_theme_suggestions_node_alter(array &$suggestions, array $variables) {
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    // Add a separate template per depth so we can target the book outline.
+    if ($node->bundle() === 'book') {
+      $suggestions[] = 'node__book__depth_' . $node->book['depth'];
+    }
+
+    // Set a higher priority for node--teaser suggestion
+    if (in_array('node__teaser', $suggestions)) {
+      $suggestions[] = 'node__teaser';
+    }
+  }
+}
+
+/**
+ * Implements template_preprocess_book_navigation().
+ */
+function julkaisut_preprocess_book_navigation(&$variables) {
+  // Do not show the parent URL
+  unset($variables['parent_url']);
+
+  // On the root page, do not show the navigation, only the tree.
+  $is_root = $variables['book_link']['depth'] === '1';
+  if ($is_root) {
+    $variables['has_links'] = false;
+  } else {
+    $variables['tree'] = null;
+  }
+}
 
 /**
  * Implements template_preprocess_field__body().
@@ -22,6 +98,19 @@ function julkaisut_preprocess_field__body(&$variables) {
     if ($item['content']['#format'] === 'gutenberg') {
       $item['attributes']->addClass('is-root-container');
     }
+  }
+}
+
+/**
+ * Implements template_preprocess_media__document__download().
+ */
+function julkaisut_preprocess_media__document__download(&$variables) {
+  /** @var \Drupal\media\Entity\Media $entity */
+  $media = $variables['elements']['#media'] ?? null;
+  if ($media) {
+    /** @var Drupal\file\Entity\File $entity */
+    $file = $media->field_media_file->entity;
+    $variables['file_url'] = file_create_url($file->uri->value);
   }
 }
 

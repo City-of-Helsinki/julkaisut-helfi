@@ -1,0 +1,15 @@
+.translation-links {
+  ul {
+    display: flex;
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  li {
+    margin-left: var(--spacing-m);
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}

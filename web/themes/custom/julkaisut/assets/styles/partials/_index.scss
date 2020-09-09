@@ -1,6 +1,11 @@
+@use "field-tags";
+@use "book-navigation";
 @use "page-title";
+@use "share-links";
+@use "translation-links";
 @use "site-header";
 @use "site-hamburger-button";
 @use "site-navigation";
 @use "site-navbar";
 @use "site-search";
+@use "node";
