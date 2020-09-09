@@ -1,0 +1,44 @@
+/**
+ * Button
+ */
+
+ .wp-block-button {
+  color: var(--color-white);;
+  background-color: var(--color-primary);
+
+  &:hover,
+  &:focus {
+    filter: brightness(85%); // @todo
+  }
+
+  &.is-style-small,
+  &.is-style-outline {
+    color: var(--color-primary);
+    background-color: transparent;
+
+    &.wp-block-button__link,
+    & .wp-block-button__link {
+      border: 2px solid;
+    }
+
+    &:hover,
+    &:focus {
+      filter: brightness(85%); // @todo
+      background-color: transparent;
+      text-decoration: underline;
+    }
+  }
+
+  &__link {
+    border-radius: 0;
+    padding: 21px 32px;
+    font-size: var(--fontsize-body-m);
+    line-height: var(--lineheight-s);
+  }
+
+  &.is-style-small {
+    padding: 10px 16px 9px;
+    font-weight: 500;
+    font-size: var(--fontsize-body-s);
+  }
+}
