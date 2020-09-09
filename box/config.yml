@@ -35,7 +35,7 @@ installed_extras:
   # - newrelic
   # - nodejs
   # - pimpmylog
-  # - redis
+  - redis
   # - ruby
   # - selenium
   - solr
@@ -46,6 +46,11 @@ installed_extras:
   # - xhprof
 
 php_packages_extra: []
+
+# Solr configuration.
+solr_version: "8.6.0"
+solr_xms: "64M"
+solr_xmx: "128M"
 
 # Add any extra apt or yum packages you would like installed.
 extra_packages:
@@ -62,3 +67,6 @@ vagrant_memory: 1024
 php_xdebug_idekey: VSCODE
 php_xdebug_default_enable: 0
 php_xdebug_remote_autostart: "true"
+
+post_provision_scripts:
+  - "{{ config_dir }}/scripts/configure-solr.sh"
