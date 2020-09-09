@@ -1,7 +1,10 @@
 import debounce from 'lodash-es/debounce';
+import ClipboardJS from 'clipboard';
 
 import { menu, button } from './components/dropdown';
 import { toggle, toggler } from './components/toggler';
+
+new ClipboardJS('[data-clipboard-text]');
 
 if (matchMedia('(min-width: 1024px)').matches) {
   menu(document.querySelector('.site-navigation'));

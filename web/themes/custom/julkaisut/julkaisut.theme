@@ -68,3 +68,19 @@ function julkaisut_preprocess_block(&$variables) {
     }
   }
 }
+
+/**
+ * Implements template_preprocess_page_title().
+ */
+function julkaisut_preprocess_page_title(&$variables) {
+  /** @var Drupal\node\Entity\Node|null $node */
+  $node = \Drupal::routeMatch()->getParameter('node') ?? null;
+
+  // Enable copy to clipboard on book pages.
+  if ($node && in_array($node->getType(), ['book'])) {
+    $variables['copy_to_clipboard'] = $node->toUrl('canonical', [
+      'language' => $node->language(),
+      'absolute' => true,
+    ]);
+  }
+}

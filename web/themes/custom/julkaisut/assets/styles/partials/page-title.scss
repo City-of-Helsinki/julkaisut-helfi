@@ -1,0 +1,9 @@
+.block-page-title-block h1 {
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    color: var(--color-primary);
+    margin-left: var(--spacing-s);
+  }
+}
