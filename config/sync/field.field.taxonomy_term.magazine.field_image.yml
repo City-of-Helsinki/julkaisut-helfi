@@ -1,0 +1,28 @@
+uuid: adfcf9d7-3b64-4551-b779-978f317f3b01
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_image
+    - media.type.image
+    - taxonomy.vocabulary.magazine
+id: taxonomy_term.magazine.field_image
+field_name: field_image
+entity_type: taxonomy_term
+bundle: magazine
+label: 'Featured Image'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

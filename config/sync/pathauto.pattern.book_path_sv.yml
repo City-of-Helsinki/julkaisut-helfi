@@ -1,0 +1,33 @@
+uuid: 3515bede-faf3-4f51-a330-e508612f108f
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: book_path_sv
+label: 'Book path SV'
+type: 'canonical_entities:node'
+pattern: 'utgivningar/[node:book:parents:join:/]/[node:title]'
+selection_criteria:
+  11521519-4853-4368-ac0c-09cc0e5d1c9f:
+    id: node_type
+    bundles:
+      book: book
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 11521519-4853-4368-ac0c-09cc0e5d1c9f
+  b88bc46d-5bcb-4c65-add1-72fee0b04233:
+    id: language
+    langcodes:
+      sv: sv
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: b88bc46d-5bcb-4c65-add1-72fee0b04233
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Language

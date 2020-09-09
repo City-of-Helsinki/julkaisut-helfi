@@ -1,0 +1,27 @@
+uuid: 842e2f95-c66b-4e89-a593-5435d2f28e9e
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.content_800_
+    - image.style.full
+    - image.style.large
+    - image.style.medium
+    - image.style.wide_1200
+id: content_width
+label: 'Content width'
+image_style_mappings:
+  -
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: '(min-width: 800px) 800px, 100vw'
+      sizes_image_styles:
+        - content_800_
+        - full
+        - large
+        - medium
+        - wide_1200
+breakpoint_group: responsive_image
+fallback_image_style: content_800_

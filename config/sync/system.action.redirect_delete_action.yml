@@ -1,0 +1,16 @@
+uuid: 2aa4310e-1a61-46e8-b242-33e3317544cb
+langcode: fi
+status: true
+dependencies:
+  enforced:
+    module:
+      - redirect
+  module:
+    - redirect
+_core:
+  default_config_hash: vcnRZRvBqTbK3nZ2M4_lKPlEGc8GjPzgaqapYUfyX8M
+id: redirect_delete_action
+label: 'Poista uudelleenohjaus'
+type: redirect
+plugin: redirect_delete_action
+configuration: {  }

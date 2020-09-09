@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_wide_contentwidth
     - node.type.page
   module:
+    - path
     - text
 id: node.page.default
 targetEntityType: node
@@ -28,12 +30,25 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_wide_contentwidth:
+    weight: 122
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
   langcode:
     type: language_select
     weight: 2
     region: content
     settings:
       include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
@@ -63,6 +78,11 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete

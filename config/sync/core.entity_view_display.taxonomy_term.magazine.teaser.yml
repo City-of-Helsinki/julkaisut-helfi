@@ -1,0 +1,38 @@
+uuid: 57ba83c9-3a9a-4352-8dc8-34391cc491cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.teaser
+    - field.field.taxonomy_term.magazine.field_image
+    - field.field.taxonomy_term.magazine.field_published
+    - taxonomy.vocabulary.magazine
+  module:
+    - datetime
+id: taxonomy_term.magazine.teaser
+targetEntityType: taxonomy_term
+bundle: magazine
+mode: teaser
+content:
+  field_image:
+    type: entity_reference_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_published:
+    type: datetime_default
+    weight: 0
+    region: content
+    label: visually_hidden
+    settings:
+      timezone_override: ''
+      format_type: published_date
+    third_party_settings: {  }
+hidden:
+  description: true
+  langcode: true
+  search_api_excerpt: true

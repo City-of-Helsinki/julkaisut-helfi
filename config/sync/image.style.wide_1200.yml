@@ -1,0 +1,15 @@
+uuid: 4479c7e8-f6d1-455d-99f6-c59ca8c7a7c4
+langcode: en
+status: true
+dependencies: {  }
+name: wide_1200
+label: 'Wide (1200)'
+effects:
+  1351b783-3c16-49aa-b7c4-ba0ad8d354c3:
+    uuid: 1351b783-3c16-49aa-b7c4-ba0ad8d354c3
+    id: image_scale
+    weight: 1
+    data:
+      width: 1200
+      height: null
+      upscale: false

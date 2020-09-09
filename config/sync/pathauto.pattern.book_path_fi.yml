@@ -1,0 +1,33 @@
+uuid: a27eba58-386a-4d90-8f90-1591fab5d064
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: book_path_fi
+label: 'Book path EN'
+type: 'canonical_entities:node'
+pattern: 'reports/[node:book:parents:join:/]/[node:title]'
+selection_criteria:
+  e9ba20ac-24c0-4e12-ab75-c870f017619d:
+    id: node_type
+    bundles:
+      book: book
+    negate: false
+    context_mapping:
+      node: node
+    uuid: e9ba20ac-24c0-4e12-ab75-c870f017619d
+  ed454d29-c395-43b8-859b-982de820a8f0:
+    id: language
+    langcodes:
+      en: en
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: ed454d29-c395-43b8-859b-982de820a8f0
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Language

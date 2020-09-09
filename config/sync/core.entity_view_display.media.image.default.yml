@@ -1,0 +1,31 @@
+uuid: d0da6bd9-a9d2-4258-b85d-8b11d1613d4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.image.field_media_image
+    - media.type.image
+    - responsive_image.styles.content_width
+  module:
+    - responsive_image
+id: media.image.default
+targetEntityType: media
+bundle: image
+mode: default
+content:
+  field_media_image:
+    label: visually_hidden
+    weight: 0
+    settings:
+      responsive_image_style: content_width
+      image_link: ''
+    third_party_settings: {  }
+    type: responsive_image
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

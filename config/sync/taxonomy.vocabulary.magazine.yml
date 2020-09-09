@@ -1,0 +1,8 @@
+uuid: 1943746a-62fd-4092-9cd9-b50ea6c51328
+langcode: en
+status: true
+dependencies: {  }
+name: Magazine
+vid: magazine
+description: ''
+weight: 0

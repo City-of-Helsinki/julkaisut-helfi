@@ -1,0 +1,25 @@
+uuid: a4f7e1df-af8e-40d6-a91e-41efb8b760de
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.content_800_
+    - image.style.full
+    - image.style.large
+    - image.style.wide_1200
+id: full_width
+label: 'Full width'
+image_style_mappings:
+  -
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - content_800_
+        - full
+        - large
+        - wide_1200
+breakpoint_group: responsive_image
+fallback_image_style: content_800_

@@ -1,0 +1,23 @@
+uuid: 5581b748-8ca8-4f33-a046-7a1a9139afc0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_wide_contentwidth
+    - node.type.book
+id: node.book.field_wide_contentwidth
+field_name: field_wide_contentwidth
+entity_type: node
+bundle: book
+label: 'Wide content width'
+description: 'Rather than the regular content width of 8/12 columns, use the full 12 out of 12 columns width.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,15 @@
+uuid: 2beb7f64-b933-4fc7-aac1-9ce59e64e536
+langcode: en
+status: true
+dependencies: {  }
+name: content_800_
+label: 'Content (800)'
+effects:
+  02ac1652-a176-4443-9762-bff466361a8d:
+    uuid: 02ac1652-a176-4443-9762-bff466361a8d
+    id: image_scale
+    weight: 1
+    data:
+      width: 800
+      height: null
+      upscale: false

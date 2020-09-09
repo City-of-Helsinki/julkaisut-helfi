@@ -1,7 +1,13 @@
 uuid: 110afc44-1287-4575-a151-77df7d5ad136
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
 name: Article
 type: article
 description: ''

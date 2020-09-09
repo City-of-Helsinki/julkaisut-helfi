@@ -4,6 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.book.body
+    - field.field.node.book.field_image
+    - field.field.node.book.field_pdf
+    - field.field.node.book.field_tags
+    - field.field.node.book.field_wide_contentwidth
     - node.type.book
   module:
     - text
@@ -18,12 +22,38 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 100
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
-  links:
-    weight: 101
+  field_image:
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: full
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_pdf:
+    type: entity_reference_entity_view
+    weight: 3
+    label: hidden
+    settings:
+      view_mode: download
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_tags:
+    weight: 2
+    label: visually_hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
 hidden:
+  field_wide_contentwidth: true
   langcode: true
+  links: true
+  search_api_excerpt: true

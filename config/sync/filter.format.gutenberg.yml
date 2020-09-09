@@ -11,7 +11,7 @@ _core:
   default_config_hash: Ic8UoqwIESwxY47pWaNK5WyrlH_o9VoxwxO5-YTnCTw
 name: 'Gutenberg Blocks text format'
 format: gutenberg
-weight: 0
+weight: -10
 filters:
   filter_oembed:
     id: filter_oembed

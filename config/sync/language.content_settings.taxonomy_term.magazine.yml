@@ -1,0 +1,16 @@
+uuid: 56772d8f-5fb8-4ee3-ae3b-af3dc91f7940
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.magazine
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.magazine
+target_entity_type_id: taxonomy_term
+target_bundle: magazine
+default_langcode: site_default
+language_alterable: true

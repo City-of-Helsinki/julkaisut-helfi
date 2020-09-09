@@ -1,0 +1,15 @@
+uuid: a9f355e2-e2ca-4052-b96c-834cb611c956
+langcode: en
+status: true
+dependencies: {  }
+name: full
+label: 'Full (1600)'
+effects:
+  623d2bcf-1d85-45ab-b9ab-8ce9c2b76ee7:
+    uuid: 623d2bcf-1d85-45ab-b9ab-8ce9c2b76ee7
+    id: image_scale
+    weight: 1
+    data:
+      width: 1600
+      height: null
+      upscale: false
