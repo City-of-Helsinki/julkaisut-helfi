@@ -42,6 +42,11 @@
         "process-timeout": 0
     },
     "extra": {
+        "patches": {
+            "drupal/gutenberg": {
+                "Insert Image or Media shows blank modal Media Library window": "https://www.drupal.org/files/issues/2020-06-09/gutenberg-d9_media_library_support-3150127-4.patch"
+            }
+        },
         "drupal-scaffold": {
             "locations": {
                 "web-root": "web/"
