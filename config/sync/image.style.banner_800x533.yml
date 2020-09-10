@@ -1,0 +1,17 @@
+uuid: 5ea7f7cb-3ef3-4f3e-8436-8aedadea52aa
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: banner_800x533
+label: 'Banner (800x533)'
+effects:
+  d82094cf-b372-4783-bb2d-28e9e65b34ab:
+    uuid: d82094cf-b372-4783-bb2d-28e9e65b34ab
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 800
+      height: 533
+      crop_type: focal_point

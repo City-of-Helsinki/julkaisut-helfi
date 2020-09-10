@@ -1,0 +1,34 @@
+uuid: a8ac3dc9-cf24-491d-974d-bcb3765bded8
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.banner_1024x300
+    - image.style.banner_1600x400
+    - image.style.banner_400x267
+    - image.style.banner_800x533
+  theme:
+    - julkaisut
+id: banner
+label: Banner
+image_style_mappings:
+  -
+    breakpoint_id: julkaisut.large
+    multiplier: 1x
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - banner_1024x300
+        - banner_1600x400
+  -
+    breakpoint_id: julkaisut.xsmall
+    multiplier: 1x
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - banner_400x267
+        - banner_800x533
+breakpoint_group: julkaisut
+fallback_image_style: banner_400x267

@@ -1,0 +1,17 @@
+uuid: 9130b1e8-78e4-4a25-8442-8102a86d8273
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: banner_1600x400
+label: 'Banner (1600x400)'
+effects:
+  56519299-de41-431f-8f2b-b368eb794ef8:
+    uuid: 56519299-de41-431f-8f2b-b368eb794ef8
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1600
+      height: 400
+      crop_type: focal_point
