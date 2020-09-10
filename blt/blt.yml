@@ -1,2 +1,33 @@
 project:
   machine_name: julkaisut
+
+docroot: ${repo.root}/web
+
+git:
+  default_branch: develop
+  remotes:
+    github: 'git@github.com:generoi/julkaisut.git'
+    platform: 'wgohfxclopgum@git.eu-2.platform.sh:wgohfxclopgum.gi'
+  hooks:
+    commit-msg: false
+
+deploy:
+  tag_source: true
+  docroot: ${deploy.dir}/web
+
+validate:
+  twig:
+    functions: [drupal_view, drupal_view_result, drupal_block, drupal_region, drupal_entity, drupal_field, drupal_form, drupal_image, drupal_token, drupal_config, drupal_title, drupal_url, drupal_link, drupal_messages, drupal_breadcrumb, drupal_menu]
+
+disable-targets:
+  tests:
+    frontend: true
+    server: true
+
+command-hooks:
+  frontend-reqs:
+    dir: '${docroot}/themes/custom/julkaisut'
+    command: 'npm install'
+  frontend-assets:
+    dir: '${docroot}/themes/custom/julkaisut'
+    command: 'npm run build:production'

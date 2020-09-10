@@ -782,3 +782,8 @@ if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
 
 $settings['file_private_path'] = $dir . '/files-private';
 $settings['http_client_config']['timeout'] = 60;
+
+// Automatic Platform.sh settings.
+if (file_exists($app_root . '/' . $site_path . '/settings.platformsh.php')) {
+  include $app_root . '/' . $site_path . '/settings.platformsh.php';
+}

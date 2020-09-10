@@ -28,3 +28,5 @@ web/themes/custom/*/dist
 
 /vendor
 /.vagrant
+*.sql
+deployment_identifier
