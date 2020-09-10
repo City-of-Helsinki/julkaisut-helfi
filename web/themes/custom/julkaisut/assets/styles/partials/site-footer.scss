@@ -1,0 +1,22 @@
+@use "common/breakpoints" as *;
+@use "common/utils" as *;
+
+.site-footer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: var(--spacing-layout-l) var(--spacing-s) var(--spacing-layout-xs);
+
+  @include mq($from: large) {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: calc(var(--container-width) * 1px);
+  }
+
+  @include ie11 {
+    max-width: var(--global-width);
+  }
+}
