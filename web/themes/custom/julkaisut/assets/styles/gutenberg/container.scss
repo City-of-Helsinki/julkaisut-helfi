@@ -19,6 +19,8 @@
     margin-left: auto;
     margin-right: auto;
 
+    transform: translateX(calc((var(--alignwide-width) - var(--content-width))/2 * -1));
+
     &.has-text-align-right {
       margin-right: 0;
     }
@@ -36,6 +38,7 @@
     margin-left: calc(var(--viewport-gutter) * -1);
     margin-right: calc(var(--viewport-gutter) * -1);
     width: unset; // Override Gutenberg
+    transform: none;
   }
 
   // Align has a 12 column width with a viewport gutter
@@ -44,5 +47,6 @@
     max-width: var(--alignwide-width);
     margin-left: auto;
     margin-right: auto;
+    transform: none;
   }
 }
