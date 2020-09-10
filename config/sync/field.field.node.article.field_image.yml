@@ -10,9 +10,9 @@ id: node.article.field_image
 field_name: field_image
 entity_type: node
 bundle: article
-label: Image
-description: ''
-required: false
+label: 'Featured Image'
+description: 'Displayed in teasers and above the content on the article page itself.'
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

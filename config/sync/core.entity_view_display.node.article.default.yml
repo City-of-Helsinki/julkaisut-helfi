@@ -4,7 +4,9 @@ status: true
 dependencies:
   config:
     - field.field.node.article.body
+    - field.field.node.article.field_copyright
     - field.field.node.article.field_image
+    - field.field.node.article.field_magazine
     - field.field.node.article.field_tags
     - node.type.article
   module:
@@ -18,32 +20,36 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 101
+    weight: 1
     settings: {  }
     third_party_settings: {  }
     region: content
+  field_copyright:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
   field_image:
     type: entity_reference_entity_view
-    weight: 102
-    label: above
+    weight: 2
+    label: hidden
     settings:
-      view_mode: default
+      view_mode: banner
       link: false
     third_party_settings: {  }
     region: content
   field_tags:
-    weight: 103
-    label: above
+    weight: 0
+    label: visually_hidden
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  links:
-    weight: 100
-    settings: {  }
-    third_party_settings: {  }
-    region: content
 hidden:
+  field_magazine: true
   langcode: true
+  links: true
   search_api_excerpt: true

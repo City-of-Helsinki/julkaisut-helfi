@@ -1,0 +1,29 @@
+uuid: 93db9cfb-a39f-4e20-9c43-b5c797ee70ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_magazine
+    - node.type.article
+    - taxonomy.vocabulary.magazine
+id: node.article.field_magazine
+field_name: field_magazine
+entity_type: node
+bundle: article
+label: Magazine
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      magazine: magazine
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -103,21 +103,24 @@
 
     {% block node__content_wrapper %}
       <div class="is-container">
+        <div class="published-date">
+          <p>{% trans %}Published on {{ date }}{% endtrans %}</p>
+        </div>
+
+        {{ content.field_copyright }}
+
         <div class="node__meta">
+
           {{ content.field_tags }}
 
-          {{ content.field_pdf }}
+          {% include '@julkaisut/partials/print-button.html.twig' %}
 
           {% include '@julkaisut/partials/share-links.html.twig' with {
             url: url_absolute.toString(),
             title: node.title(),
           } %}
-
-          {{ translation_links }}
         </div>
       </div>
-
-      {{ content.body }}
 
       {% if content.field_image is not empty %}
         <div class="wp-block-image is-style-koros-basic-top">
@@ -125,8 +128,10 @@
         </div>
       {% endif %}
 
+      {{ content.body }}
+
       <div class="is-container">
-        {{ content|without('body', 'field_tags', 'field_pdf', 'field_image') }}
+        {{ content|without('body', 'field_tags', 'field_image') }}
       </div>
     {% endblock %}
   </article>

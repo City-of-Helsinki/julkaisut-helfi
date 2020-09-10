@@ -5,32 +5,32 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.article.body
+    - field.field.node.article.field_copyright
     - field.field.node.article.field_image
+    - field.field.node.article.field_magazine
     - field.field.node.article.field_tags
     - node.type.article
   module:
-    - text
     - user
 id: node.article.teaser
 targetEntityType: node
 bundle: article
 mode: teaser
 content:
-  body:
+  field_image:
+    type: entity_reference_entity_view
+    weight: 0
+    region: content
     label: hidden
-    type: text_summary_or_trimmed
-    weight: 101
     settings:
-      trim_length: 600
+      view_mode: teaser
+      link: false
     third_party_settings: {  }
-    region: content
-  links:
-    weight: 100
-    settings: {  }
-    third_party_settings: {  }
-    region: content
 hidden:
-  field_image: true
+  body: true
+  field_copyright: true
+  field_magazine: true
   field_tags: true
   langcode: true
+  links: true
   search_api_excerpt: true
