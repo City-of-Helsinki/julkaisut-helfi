@@ -4,8 +4,11 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.teaser
+    - field.field.taxonomy_term.magazine.field_copyright
     - field.field.taxonomy_term.magazine.field_image
+    - field.field.taxonomy_term.magazine.field_pdf
     - field.field.taxonomy_term.magazine.field_published
+    - field.field.taxonomy_term.magazine.field_tags
     - taxonomy.vocabulary.magazine
   module:
     - datetime
@@ -34,5 +37,8 @@ content:
     third_party_settings: {  }
 hidden:
   description: true
+  field_copyright: true
+  field_pdf: true
+  field_tags: true
   langcode: true
   search_api_excerpt: true

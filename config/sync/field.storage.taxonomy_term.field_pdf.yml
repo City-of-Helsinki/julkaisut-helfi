@@ -1,17 +1,17 @@
-uuid: 5089cce3-6702-4e4d-ba35-6455b3af5abd
+uuid: da0f49d6-7c72-421e-87ab-7554abc938ef
 langcode: en
 status: true
 dependencies:
   module:
-    - datetime
+    - media
     - taxonomy
-id: taxonomy_term.field_published
-field_name: field_published
+id: taxonomy_term.field_pdf
+field_name: field_pdf
 entity_type: taxonomy_term
-type: datetime
+type: entity_reference
 settings:
-  datetime_type: date
-module: datetime
+  target_type: media
+module: core
 locked: false
 cardinality: 1
 translatable: true

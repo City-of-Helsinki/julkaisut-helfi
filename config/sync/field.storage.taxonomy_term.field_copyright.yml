@@ -1,17 +1,16 @@
-uuid: 5089cce3-6702-4e4d-ba35-6455b3af5abd
+uuid: 6111d2b4-9d01-470f-8c6c-6524857b75d2
 langcode: en
 status: true
 dependencies:
   module:
-    - datetime
     - taxonomy
-id: taxonomy_term.field_published
-field_name: field_published
+    - text
+id: taxonomy_term.field_copyright
+field_name: field_copyright
 entity_type: taxonomy_term
-type: datetime
-settings:
-  datetime_type: date
-module: datetime
+type: text_long
+settings: {  }
+module: text
 locked: false
 cardinality: 1
 translatable: true

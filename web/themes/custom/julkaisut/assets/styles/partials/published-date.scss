@@ -1,0 +1,22 @@
+.published-date {
+  margin-bottom: calc(var(--spacing-m) * -1 + var(--spacing-s));
+
+  p {
+    font-size: var(--fontsize-heading-xxs);
+    font-weight: bold;
+    line-height: var(--lineheight-m);
+    margin-top: 0;
+    margin-bottom: var(--spacing-m);
+  }
+
+
+  .node--view-mode-teaser & {
+    margin-bottom: var(--spacing-2-xs);
+
+    p {
+      font-size: var(--fontsize-body-s);
+      font-weight: normal;
+      margin-bottom: var(--spacing-2-xs);
+    }
+  }
+}

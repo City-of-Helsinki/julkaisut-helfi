@@ -1,0 +1,28 @@
+uuid: bb0bfa08-fb4a-4928-b06e-68e3e71f7ccd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_pdf
+    - media.type.document
+    - taxonomy.vocabulary.magazine
+id: taxonomy_term.magazine.field_pdf
+field_name: field_pdf
+entity_type: taxonomy_term
+bundle: magazine
+label: PDF
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,9 +1,10 @@
 {% extends '@julkaisut/node/node.html.twig' %}
 
 {% block node__content_wrapper %}
-  <div class="is-container node__published">
+  <div class="is-container published-date">
     <p>{% trans %}Published on {{ date }}{% endtrans %}</p>
   </div>
+
   <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
     {{ content.body }}
   </div>

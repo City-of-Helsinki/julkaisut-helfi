@@ -1,0 +1,21 @@
+uuid: ccb444ca-c18e-4990-b02f-4d73aecb48b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_copyright
+    - taxonomy.vocabulary.magazine
+  module:
+    - text
+id: taxonomy_term.magazine.field_copyright
+field_name: field_copyright
+entity_type: taxonomy_term
+bundle: magazine
+label: Copyright
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

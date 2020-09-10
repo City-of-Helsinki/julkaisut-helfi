@@ -1,0 +1,65 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a taxonomy term.
+ *
+ * Available variables:
+ * - url: URL of the current term.
+ * - name: Name of the current term.
+ * - content: Items for the content of the term (fields and description).
+ *   Use 'content' to print them all, or print a subset such as
+ *   'content.description'. Use the following code to exclude the
+ *   printing of a given child element:
+ *   @code
+ *   {{ content|without('description') }}
+ *   @endcode
+ * - attributes: HTML attributes for the wrapper.
+ * - page: Flag for the full page state.
+ * - term: The taxonomy term entity, including:
+ *   - id: The ID of the taxonomy term.
+ *   - bundle: Machine name of the current vocabulary.
+ * - view_mode: View mode, e.g. 'full', 'teaser', etc.
+ *
+ * @see template_preprocess_taxonomy_term()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes }}>
+  {{ title_prefix }}
+  {% if not page %}
+    <h2><a href="{{ url }}">{{ name }}</a></h2>
+  {% endif %}
+  {{ title_suffix }}
+
+  <div class="is-container">
+    <div class="published-date">
+      <p>{% trans %}Published on {{ date }}{% endtrans %}</p>
+    </div>
+  </div>
+
+  {{ content|without('field_published', 'field_copyright', 'field_tags', 'field_pdf', 'field_image') }}
+
+  <div class="is-container">
+    {{ content.field_copyright }}
+
+    <div class="node__meta">
+      {{ content.field_tags }}
+
+      {{ content.field_pdf }}
+
+      {% include '@julkaisut/partials/share-links.html.twig' with {
+        url: url_absolute.toString(),
+        title: node.title(),
+      } %}
+
+      {{ translation_links }}
+    </div>
+  </div>
+
+  {#{% if content.field_image is not empty %}
+    <div class="wp-block-image is-style-koros-basic-top">
+      {{ content.field_image }}
+    </div>
+  {% endif %}#}
+</div>

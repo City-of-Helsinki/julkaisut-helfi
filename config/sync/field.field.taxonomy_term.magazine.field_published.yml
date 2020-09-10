@@ -11,7 +11,7 @@ id: taxonomy_term.magazine.field_published
 field_name: field_published
 entity_type: taxonomy_term
 bundle: magazine
-label: 'Published date'
+label: 'Published on'
 description: ''
 required: true
 translatable: false

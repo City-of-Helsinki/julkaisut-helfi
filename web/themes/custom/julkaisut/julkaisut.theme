@@ -15,7 +15,6 @@ use Drupal\Core\Render\Markup;
 function julkaisut_preprocess_node(&$variables) {
   /** @var \Drupal\node\Entity\Node $node */
   $node = $variables['node'];
-  $view_mode = $variables['elements']['#view_mode'];
   $variables['url_absolute'] = $node->toUrl('canonical', [
     'language' => $node->language(),
     'absolute' => true,
@@ -85,19 +84,24 @@ function julkaisut_preprocess_book_navigation(&$variables) {
 }
 
 /**
- * Implements template_preprocess_field__body().
+ * Implements template_preprocess_field().
  *
  * Add an `is-root-container` to gutenberg fields.
  */
-function julkaisut_preprocess_field__body(&$variables) {
-  if (!$variables['multiple']) {
-    $variables['attributes']['class'][] = 'is-root-container';
-  }
+function julkaisut_preprocess_field(&$variables) {
+  switch ($variables['field_name']) {
+    case 'body':
+    case 'description':
+      if (!$variables['multiple']) {
+        $variables['attributes']['class'][] = 'is-root-container';
+      }
 
-  foreach ($variables['items'] as &$item) {
-    if ($item['content']['#format'] === 'gutenberg') {
-      $item['attributes']->addClass('is-root-container');
-    }
+      foreach ($variables['items'] as &$item) {
+        if ($item['content']['#format'] === 'gutenberg') {
+          $item['attributes']->addClass('is-root-container');
+        }
+      }
+      break;
   }
 }
 
@@ -135,11 +139,26 @@ function julkaisut_preprocess_page(&$variables) {
   ];
 
   /** @var Drupal\node\Entity\Node|null $node */
-  $node = $variables['node'];
+  $node = $variables['node'] ?? null;
 
   // Allow nodes to change the content width to 12/12
   if ($node && $node->field_wide_contentwidth && $node->field_wide_contentwidth->getString() === '1') {
     $variables['attributes']['style'] = '--content-width: var(--alignwide-width)';
+  }
+}
+
+/**
+ * Implements template_preprocess_taxonomy_term().
+ */
+function julkaisut_preprocess_taxonomy_term(&$variables) {
+  $term = $variables['term'];
+
+  // Expose a `date` variable much like on nodes
+  if ($term->field_published && !$term->field_published->isEmpty()) {
+    $variables['date'] = \Drupal::service('date.formatter')->format(
+      strtotime($term->field_published->value),
+      'published_date'
+    );
   }
 }
 

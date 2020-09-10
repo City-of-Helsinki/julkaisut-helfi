@@ -3,8 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.magazine.field_copyright
     - field.field.taxonomy_term.magazine.field_image
+    - field.field.taxonomy_term.magazine.field_pdf
     - field.field.taxonomy_term.magazine.field_published
+    - field.field.taxonomy_term.magazine.field_tags
     - taxonomy.vocabulary.magazine
   module:
     - datetime
@@ -21,12 +24,28 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_image:
-    type: entity_reference_entity_view
+  field_copyright:
     weight: 2
     label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    weight: 3
+    label: hidden
     settings:
-      view_mode: full
+      view_mode: banner
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_pdf:
+    type: entity_reference_entity_view
+    weight: 5
+    label: hidden
+    settings:
+      view_mode: download
       link: false
     third_party_settings: {  }
     region: content
@@ -34,10 +53,18 @@ content:
     weight: 0
     label: hidden
     settings:
-      format_type: medium
       timezone_override: ''
+      format_type: published_date
     third_party_settings: {  }
     type: datetime_default
+    region: content
+  field_tags:
+    weight: 4
+    label: visually_hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
 hidden:
   langcode: true

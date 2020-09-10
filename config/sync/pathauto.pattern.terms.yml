@@ -1,0 +1,23 @@
+uuid: a4858377-8504-43e3-80da-de8e2148e6d9
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: terms
+label: Magazine
+type: 'canonical_entities:taxonomy_term'
+pattern: '[term:parents:join:/]/[term:name]'
+selection_criteria:
+  a8011387-780c-4fc2-aaee-4bc6b144c369:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      magazine: magazine
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: a8011387-780c-4fc2-aaee-4bc6b144c369
+selection_logic: and
+weight: 0
+relationships: {  }
