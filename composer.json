@@ -51,7 +51,9 @@
     "extra": {
         "patches": {
             "drupal/gutenberg": {
-                "Insert Image or Media shows blank modal Media Library window": "https://www.drupal.org/files/issues/2020-06-09/gutenberg-d9_media_library_support-3150127-4.patch"
+                "Insert Image or Media shows blank modal Media Library window": "https://www.drupal.org/files/issues/2020-06-09/gutenberg-d9_media_library_support-3150127-4.patch",
+                "Video embed block not working in multi-language environment with shortcode for default language": "https://www.drupal.org/files/issues/2020-09-10/issue-3150008-6.patch",
+                "Incorrect watchdog_exception() usage": "https://www.drupal.org/files/issues/2020-09-10/issue-3170264-2.patch"
             }
         },
         "drupal-scaffold": {
