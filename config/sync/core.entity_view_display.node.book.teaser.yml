@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.book.body
+    - field.field.node.book.field_copyright
     - field.field.node.book.field_image
     - field.field.node.book.field_pdf
     - field.field.node.book.field_tags
@@ -30,6 +31,7 @@ content:
     third_party_settings: {  }
 hidden:
   body: true
+  field_copyright: true
   field_pdf: true
   field_tags: true
   field_wide_contentwidth: true

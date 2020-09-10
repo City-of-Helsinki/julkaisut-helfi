@@ -1,0 +1,21 @@
+uuid: 174e8941-0db3-42ac-a76b-8613085f4668
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_copyright
+    - node.type.book
+  module:
+    - text
+id: node.book.field_copyright
+field_name: field_copyright
+entity_type: node
+bundle: book
+label: Copyright
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

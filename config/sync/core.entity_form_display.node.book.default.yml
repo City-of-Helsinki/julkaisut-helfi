@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.book.body
+    - field.field.node.book.field_copyright
     - field.field.node.book.field_image
     - field.field.node.book.field_pdf
     - field.field.node.book.field_tags
@@ -36,8 +37,16 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_copyright:
+    weight: 10
+    settings:
+      rows: 2
+      placeholder: '© 2020 The Author(s). Published by IOP Publishing Ltd Jotain lisää infoa'
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
   field_image:
-    weight: 11
+    weight: 12
     settings:
       media_types: {  }
     third_party_settings: {  }
@@ -45,13 +54,13 @@ content:
     region: content
   field_pdf:
     type: media_library_widget
-    weight: 13
+    weight: 14
     settings:
       media_types: {  }
     third_party_settings: {  }
     region: content
   field_tags:
-    weight: 10
+    weight: 11
     settings:
       match_operator: CONTAINS
       match_limit: 10
@@ -110,7 +119,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 12
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -123,5 +132,10 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 15
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden: {  }
