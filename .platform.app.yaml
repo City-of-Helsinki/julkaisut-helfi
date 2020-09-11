@@ -9,15 +9,29 @@ name: app
 # to find the supported versions for the 'php' type.
 type: 'php:7.4'
 
+# The 'mounts' describe writable, persistent filesystem mounts in the application.
 mounts:
-  '/web/sites/default/files': 'shared:files/files'
-  '/tmp': 'shared:files/tmp'
-  '/private': 'shared:files/private'
-  # '/web/modules': 'shared:files/modules'
-  # '/web/themes': 'shared:files/themes'
+  '/web/sites/default/files':
+    source: local
+    source_path: 'files'
+  '/tmp':
+      source: local
+      source_path: 'tmp'
+  '/private':
+      source: local
+      source_path: 'private'
+  '/.drush':
+      source: local
+      source_path: 'drush'
+  '/drush-backups':
+      source: local
+      source_path: 'drush-backups'
+  '/.console':
+      source: local
+      source_path: 'console'
 
 # The size of the persistent disk of the application (in MB).
-disk: 256
+disk: 2048
 
 # The relationships of the application with services or other applications.
 #
@@ -27,7 +41,7 @@ disk: 256
 relationships:
     database: 'db:mysql'
     solrsearch: 'searchsolr:solr'
-    rediscache: 'cacheredis:redis'
+    redis: 'cacheredis:redis'
 
 # Configuration of the build of this application.
 build:
@@ -36,8 +50,14 @@ build:
 hooks:
     build: |
       set -e
+      bash install-redis.sh 4.3.0
     deploy: |
       set -e
+      php ./drush/platformsh_generate_drush_yml.php
+      cd web
+      drush -y cache-rebuild
+      drush -y updatedb
+      drush -y config-import
 
 # The configuration of app when it is exposed to the web.
 web:
@@ -96,3 +116,9 @@ web:
               # Provide a longer TTL (2 weeks) for aggregated CSS and JS files.
               '^/sites/default/files/(css|js)':
                   expires: 2w
+
+# The configuration of scheduled execution.
+crons:
+  drupal:
+      spec: '*/20 * * * *'
+      cmd: 'cd web ; drush core-cron'
