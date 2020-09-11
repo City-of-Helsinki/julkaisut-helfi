@@ -76,7 +76,7 @@ class GutenbergImageFilter extends FilterBase implements ContainerFactoryPluginI
   /**
    * @see https://developer.wordpress.org/reference/functions/wp_filter_content_tags/
    */
-  public function filter($content) {
+  public function filter(string $content): string {
     if (strpos($content, '<img') === false) {
       return $content;
     }
@@ -117,7 +117,7 @@ class GutenbergImageFilter extends FilterBase implements ContainerFactoryPluginI
   /**
    * @see https://developer.wordpress.org/reference/functions/wp_img_tag_add_srcset_and_sizes_attr/
    */
-  public function replaceImageTag($image, $fid) {
+  public function replaceImageTag(string $image, int $fid): string {
     $file = File::load($fid);
     if (!$file) {
       return $image;
@@ -135,6 +135,11 @@ class GutenbergImageFilter extends FilterBase implements ContainerFactoryPluginI
     $media_ids = \Drupal::entityQuery('media')
       ->condition('field_media_image.target_id', $fid)
       ->execute();
+
+    if (empty($media_ids)) {
+      return $image;
+    }
+
     $media = Media::load(reset($media_ids));
 
     // ImageItem like object
