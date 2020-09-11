@@ -766,6 +766,13 @@ $settings['update_free_access'] = FALSE;
 $settings['file_private_path'] = $dir . '/files-private';
 $settings['http_client_config']['timeout'] = 60;
 
+// Redis
+$settings['cache']['default'] = 'cache.backend.redis';
+$settings['redis.connection']['interface'] = 'PhpRedis';
+$settings['redis.connection']['host'] = '127.0.0.1';
+$settings['container_yamls'][] = 'modules/contrib/redis/example.services.yml';
+$settings['container_yamls'][] = 'modules/contrib/redis/redis.services.yml';
+
 /**
  * Load local development override configuration, if available.
  *
