@@ -6,8 +6,8 @@ docroot: ${repo.root}/web
 git:
   default_branch: develop
   remotes:
+    platform: 'wgohfxclopgum@git.eu-2.platform.sh:wgohfxclopgum.git'
     github: 'git@github.com:generoi/julkaisut.git'
-    platform: 'wgohfxclopgum@git.eu-2.platform.sh:wgohfxclopgum.gi'
   hooks:
     commit-msg: false
 
