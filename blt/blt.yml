@@ -4,7 +4,7 @@ project:
 docroot: ${repo.root}/web
 
 git:
-  default_branch: develop
+  default_branch: master
   remotes:
     platform: 'wgohfxclopgum@git.eu-2.platform.sh:wgohfxclopgum.git'
     github: 'git@github.com:generoi/julkaisut.git'
