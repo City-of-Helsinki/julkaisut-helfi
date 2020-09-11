@@ -149,4 +149,19 @@ foreach ($platformsh->variables() as $name => $value) {
       }
       break;
   }
+
+  $platformsh->registerFormatter('drupal-solr', function($solr) {
+    // Default the solr core name to `collection1` for pre-Solr-6.x instances.
+    return [
+      'core' => substr($solr['path'], 5) ? : 'collection1',
+      'path' => '',
+      'host' => $solr['host'],
+      'port' => $solr['port'],
+    ];
+  });
+
+  if ($platformsh->hasRelationship('solrsearch')) {
+    // Set the connector configuration to the appropriate value, as defined by the formatter above.
+    $config['search_api.server.julkaisut']['backend_config']['connector_config'] = $platformsh->formattedCredentials('solrsearch', 'drupal-solr');
+  }
 }

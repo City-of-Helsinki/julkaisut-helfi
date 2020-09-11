@@ -17,6 +17,13 @@ searchsolr:
   type: solr:8.6
   # The disk attribute is the size of the persistent disk (in MB) allocated to the service.
   disk: 1024
+  configuration:
+    cores:
+      mainindex:
+        conf_dir: !archive "solr/conf/"
+    endpoints:
+      main:
+        core: mainindex
 
 # The name given to the MariaDB service (lowercase alphanumeric only).
 db:

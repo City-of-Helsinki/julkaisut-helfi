@@ -5,7 +5,7 @@
 # `solr` in the `installed_extras`, and is currently set up for the D8 versions
 # of Apache Solr Search or Search API Solr.
 
-SOLR_CORE_NAME="julkaisut"
+SOLR_CORE_NAME="mainindex"
 SOLR_SETUP_COMPLETE_FILE="/etc/drupal_vm_solr_config_complete_$SOLR_CORE_NAME"
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"

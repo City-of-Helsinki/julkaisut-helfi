@@ -40,7 +40,7 @@ disk: 2048
 # side is in the form <service name>:<endpoint name>.
 relationships:
     database: 'db:mysql'
-    solrsearch: 'searchsolr:solr'
+    solrsearch: 'searchsolr:main'
     redis: 'cacheredis:redis'
 
 # Configuration of the build of this application.
