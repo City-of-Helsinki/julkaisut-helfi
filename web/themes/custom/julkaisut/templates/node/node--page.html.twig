@@ -1,0 +1,9 @@
+{% extends '@julkaisut/node/node.html.twig' %}
+
+{% block node__content_wrapper %}
+  {{ content.body }}
+
+  <div class="is-container">
+    {{ content|without('body') }}
+  </div>
+{% endblock %}
