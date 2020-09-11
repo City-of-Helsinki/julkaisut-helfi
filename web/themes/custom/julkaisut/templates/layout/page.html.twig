@@ -55,7 +55,12 @@
           {{ page.help }}
         </div>
       {% endif %}
-      {{ page.content }}
+
+      {% block content %}
+        <div class="is-container">
+          {{ page.content }}
+        </div>
+      {% endblock %}
     </main>
 
   </div>

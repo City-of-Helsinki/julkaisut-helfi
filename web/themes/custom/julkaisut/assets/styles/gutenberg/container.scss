@@ -50,3 +50,12 @@
     transform: none;
   }
 }
+
+.is-container .is-container {
+  padding-left: 0;
+  padding-right: 0;
+
+  > * {
+    transform: none;
+  }
+}
