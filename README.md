@@ -15,6 +15,23 @@
     # Install `blt` alias
     ./vendor/bin/blt blt:init:shell-alias
 
+## Theme
+
+    cd web/themes/custom/julkaisut
+
+    # Install dependencies
+    nvm use
+    npm install
+
+    # Build development assets
+    npm run build
+
+    # Build production assets
+    npm run build:production
+
+    # Watch while building development assets
+    npm run start
+
 ## Platform.sh
 
     # 1. Install CLI
