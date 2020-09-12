@@ -30,6 +30,10 @@ img {
   -ms-interpolation-mode: bicubic;
 }
 
+iframe {
+  border: 0;
+}
+
 a {
   color: var(--color-primary);
 }
@@ -77,6 +81,11 @@ p {
   & + p.has-body-s-font-size {
     margin-top: calc(var(--spacing-m) * -1 + var(--spacing-s));
   }
+}
+
+strong,
+b {
+  font-weight: 500;
 }
 
 ul,
