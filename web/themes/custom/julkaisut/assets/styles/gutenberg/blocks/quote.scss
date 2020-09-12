@@ -1,0 +1,28 @@
+.wp-block-quote {
+  font-size: 22px;
+  font-style: italic;
+  border-left: 0;
+  position: relative;
+  padding-left: 50px;
+
+  &::before {
+    content: '“';
+    font-size: 100px;
+    line-height: 1;
+    position: absolute;
+    color: var(--color-primary);
+    top: 0;
+    left: 0;
+    margin-top: -0.06em;
+    margin-left: -0.1em;
+  }
+
+  cite {
+    font-size: var(--fontsize-body-l);
+    color: inherit;
+
+    &::before {
+      content: '- ';
+    }
+  }
+}
