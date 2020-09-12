@@ -1,5 +1,6 @@
 import debounce from 'lodash-es/debounce';
 import ClipboardJS from 'clipboard';
+import { Stack, Table } from 'tablesaw/dist/stackonly/tablesaw.stackonly';
 
 import { menu, button } from './components/dropdown';
 import { toggle, toggler } from './components/toggler';
@@ -21,6 +22,13 @@ if (matchMedia('(min-width: 1024px)').matches) {
       e.preventDefault();
     })
   }
+}
+
+
+const tables = document.querySelectorAll('.wp-block-table table');
+for (let i = 0; i < tables.length; i++) {
+  const stack = new Stack(tables[i], new Table(tables[i]));
+  stack.init();
 }
 
 // Set a CSS variable with the real height of the viewport

@@ -1,0 +1,41 @@
+@use "~hds-design-tokens/lib/breakpoint/all" as hds;
+@use '~tablesaw/dist/stackonly/tablesaw.stackonly' as tablesaw;
+@use "common/breakpoints" as *;
+
+.wp-block-table {
+  @include tablesaw.tablesaw-stack(hds.$breakpoint-s);
+
+  td,
+  th,
+  thead,
+  tfoot {
+    border: 0;
+  }
+
+  thead {
+    background-color: var(--color-bus-light-20);
+  }
+
+  th {
+    font-weight: normal;
+    text-align: left;
+  }
+
+  @include mq($until: small) {
+    tr > td:first-child {
+      background-color: var(--color-bus-light-20);
+    }
+
+    b {
+      font-weight: normal;
+    }
+
+    .tablesaw-cell-label:empty {
+      display: none;
+
+      & + span {
+        max-width: 100%;
+      }
+    }
+  }
+}
