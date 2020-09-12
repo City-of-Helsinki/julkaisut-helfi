@@ -1,4 +1,22 @@
 @use "common/fonts";
+@use "config/variables";
 @use "~hds-core/lib/base";
+@use "common/utils";
+@use "common/icons";
 @use "components";
 @use "gutenberg";
+
+.wp-block.is-reusable {
+  max-width: unset;
+}
+
+.block-editor-block-list__layout {
+  font-size: var(--fontsize-body-l);
+
+  @media (min-width: 0px) {
+    &.is-root-container {
+      padding-left: var(--viewport-gutter);
+      padding-right: var(--viewport-gutter);
+    }
+  }
+}
