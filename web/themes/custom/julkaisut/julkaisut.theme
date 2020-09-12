@@ -29,7 +29,11 @@ function julkaisut_preprocess_node(&$variables) {
     ],
     '#items' => [],
   ];
-  foreach ($node->getTranslationLanguages(FALSE) as $langcode => $language) {
+  $current_language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  foreach ($node->getTranslationLanguages() as $langcode => $language) {
+    if ($langcode === $current_language) {
+      continue;
+    }
     /** @var Drupal\node\Entity\Node $translation */
     $translation = $node->getTranslation($langcode);
     $label = [
