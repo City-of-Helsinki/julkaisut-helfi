@@ -28,6 +28,7 @@
         "drupal/file_mdm": "^2.1",
         "drupal/focal_point": "^1.5",
         "drupal/gutenberg": "^2.0@beta",
+        "drupal/language_switcher_extended": "^1.0@beta",
         "drupal/masquerade": "^2.0@beta",
         "drupal/media_library_edit": "^1.0@alpha",
         "drupal/metatag": "^1.14",
