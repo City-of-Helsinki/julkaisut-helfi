@@ -5,32 +5,6 @@ import { Stack, Table } from 'tablesaw/dist/stackonly/tablesaw.stackonly';
 import { menu, button } from './components/dropdown';
 import { toggle, toggler } from './components/toggler';
 
-new ClipboardJS('[data-clipboard-text]');
-
-if (matchMedia('(min-width: 1024px)').matches) {
-  menu(document.querySelector('.site-navigation'));
-  button(document.querySelector('.site-languages__button'));
-} else {
-  toggler(document.querySelector('.site-hamburger-button'));
-
-  const submenuTriggers = document.querySelectorAll('.site-navigation__submenu-trigger');
-  for (let i = 0; i < submenuTriggers.length; i++) {
-    const trigger = submenuTriggers[i];
-    trigger.addEventListener('click', (e) => {
-      const item = e.target.closest('[aria-haspopup]');
-      toggle(item);
-      e.preventDefault();
-    })
-  }
-}
-
-
-const tables = document.querySelectorAll('.wp-block-table table');
-for (let i = 0; i < tables.length; i++) {
-  const stack = new Stack(tables[i], new Table(tables[i]));
-  stack.init();
-}
-
 // Set a CSS variable with the real height of the viewport
 const appHeight = () => {
   const doc = document.documentElement
@@ -38,3 +12,61 @@ const appHeight = () => {
 };
 window.addEventListener('resize', debounce(appHeight, 150));
 appHeight();
+
+
+Drupal.behaviors.julkaisutTheme = {
+  attach(context) {
+    if (matchMedia('(min-width: 1024px)').matches) {
+      this.desktopMenu(context);
+    } else {
+      this.mobileMenu(context);
+    }
+
+    this.responsiveTables(context.querySelectorAll('.wp-block-table table'));
+    this.clipboard(context.querySelectorAll('[data-clipboard-text]'));
+  },
+
+  desktopMenu(context) {
+    const navigation = context.querySelector('.site-navigation');
+    const trigger = context.querySelector('.site-languages__button');
+
+    if (navigation) {
+      menu(navigation);
+    }
+
+    if (trigger) {
+      button(trigger);
+    }
+  },
+
+  mobileMenu(context) {
+    const trigger = context.querySelector('.site-hamburger-button');
+    if (trigger) {
+      toggler(trigger);
+    }
+
+    const submenuTriggers = context.querySelectorAll('.site-navigation__submenu-trigger');
+    for (let i = 0; i < submenuTriggers.length; i++) {
+      const trigger = submenuTriggers[i];
+      trigger.addEventListener('click', (e) => {
+        const item = e.target.closest('[aria-haspopup]');
+        toggle(item);
+        e.preventDefault();
+      })
+    }
+  },
+
+  responsiveTables(tables) {
+    for (let i = 0; i < tables.length; i++) {
+      const stack = new Stack(tables[i], new Table(tables[i]));
+      stack.init();
+    }
+  },
+
+  clipboard(elements) {
+    if (!elements.length) {
+      return;
+    }
+    new ClipboardJS(elements);
+  }
+};
