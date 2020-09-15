@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.book.field_pdf
     - field.field.node.book.field_tags
     - field.field.node.book.field_wide_contentwidth
+    - field.field.node.book.field_year
     - node.type.book
   module:
     - media_library
@@ -138,4 +139,5 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_year: true

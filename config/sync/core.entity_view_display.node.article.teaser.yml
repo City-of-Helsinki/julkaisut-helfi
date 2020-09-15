@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.article.field_image
     - field.field.node.article.field_magazine
     - field.field.node.article.field_tags
+    - field.field.node.article.field_year
     - node.type.article
   module:
     - user
@@ -31,6 +32,7 @@ hidden:
   field_copyright: true
   field_magazine: true
   field_tags: true
+  field_year: true
   langcode: true
   links: true
   search_api_excerpt: true

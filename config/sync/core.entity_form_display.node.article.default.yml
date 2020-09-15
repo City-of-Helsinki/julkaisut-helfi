@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.article.field_image
     - field.field.node.article.field_magazine
     - field.field.node.article.field_tags
+    - field.field.node.article.field_year
     - node.type.article
   module:
     - media_library
@@ -126,4 +127,5 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_year: true

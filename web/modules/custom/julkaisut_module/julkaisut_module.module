@@ -1,0 +1,17 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\FieldableEntityInterface;
+
+/**
+ * Implements hook_entity_presave().
+ */
+function julkaisut_module_entity_presave(EntityInterface $entity){
+  // Keep `field_year` up to date since this is used by facets to get range
+  // dropdowns working.
+  if (isset($entity->created) && ($entity instanceof FieldableEntityInterface)) {
+    if ($entity->hasField('field_year')) {
+      $entity->set('field_year', date('Y', $entity->created->value));
+    }
+  }
+}

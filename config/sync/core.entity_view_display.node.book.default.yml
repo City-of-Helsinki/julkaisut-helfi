@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.book.field_pdf
     - field.field.node.book.field_tags
     - field.field.node.book.field_wide_contentwidth
+    - field.field.node.book.field_year
     - node.type.book
   module:
     - text
@@ -62,6 +63,7 @@ content:
     region: content
 hidden:
   field_wide_contentwidth: true
+  field_year: true
   langcode: true
   links: true
   search_api_excerpt: true
