@@ -3,6 +3,7 @@ description: 'Provides processors and a widget to handle ranges with dropdowns i
 package: Search
 
 core: 8.x
+core_version_requirement: ^8 || ^9
 type: module
 
 dependencies:
