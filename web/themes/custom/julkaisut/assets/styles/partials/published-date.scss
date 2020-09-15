@@ -19,4 +19,16 @@
       margin-bottom: var(--spacing-2-xs);
     }
   }
+
+  .node--view-mode-search-result & {
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-black-90);
+
+    p {
+      font-size: var(--fontsize-body-m);
+      font-weight: 500;
+      margin-bottom: var(--spacing-xs);
+    }
+
+  }
 }

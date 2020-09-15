@@ -1,0 +1,44 @@
+.form-no-label label {
+  position: absolute !important;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  width: 1px;
+  height: 1px;
+  word-wrap: normal;
+}
+
+.js input.form-autocomplete {
+  background-image: none;
+}
+
+.hds-text-input {
+  --input-height: 44px;
+
+  .hds-text-input__input {
+    font-size: var(--fontsize-body-m);
+    line-height: 1;
+    padding: var(--spacing-xs) var(--spacing-s);
+  }
+
+}
+
+.facets-widget-range_dropdowns,
+.form-type-select {
+  position: relative;
+
+  &::after {
+    content: '';
+    mask-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M0 0h24v24H0z'/%3E%3Cpath fill='currentColor' d='M12 13.5l5-5 1.5 1.5-6.5 6.5L5.5 10 7 8.5z'/%3E%3C/g%3E%3C/svg%3E");
+    display: inline-block;
+    background-color: currentColor;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: auto;
+    display: block;
+    position: absolute;
+    bottom: 9px;
+    right: var(--spacing-s);
+  }
+}

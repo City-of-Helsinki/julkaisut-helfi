@@ -6,7 +6,10 @@
  */
 
 use Drupal\block\Entity\Block;
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Render\Markup;
+use Drupal\node\Entity\Node;
+use Drupal\views\ViewExecutable;
 
 /**
  * Implements template_preprocess_field__body().
@@ -58,10 +61,19 @@ function julkaisut_theme_suggestions_node_alter(array &$suggestions, array $vari
     if ($node->bundle() === 'book') {
       $suggestions[] = 'node__book__depth_' . $node->book['depth'];
     }
+  }
 
-    // Set a higher priority for node--teaser suggestion
-    if (in_array('node__teaser', $suggestions)) {
-      $suggestions[] = 'node__teaser';
+  // Set a higher priority for node--teaser and node--search-result suggestions
+  foreach ([
+    'node__teaser',
+    'node__article__teaser',
+    'node__book__teaser',
+    'node__search_result',
+    'node__article__search_result',
+    'node__book__search_result',
+  ] as $suggestion) {
+    if (in_array($suggestion, $suggestions)) {
+      $suggestions[] = $suggestion;
     }
   }
 }
@@ -101,6 +113,66 @@ function julkaisut_preprocess_field(&$variables) {
         }
       }
       break;
+  }
+}
+
+/**
+ * Implements template_preprocess_views_view_unformatted().
+ */
+function julkaisut_preprocess_views_view_unformatted(&$variables) {
+  /** @var Drupal\views\ViewExecutable $view */;
+  $view = $variables['view'];
+  if ($view->id() === 'search') {
+    $builder = \Drupal::entityTypeManager()->getViewBuilder('node');
+
+    /** @var Drupal\node\Entity\Node[] $node */
+    $groups = [];
+    foreach ($variables['rows'] as $row) {
+      /** @var Drupal\node\Entity\Node $node */
+      $node = $row['content']['#node'];
+
+      switch ($node->getType()) {
+        case 'book':
+          $parent = NULL;
+          $parent_id = $node->book['pid'];
+
+          while($parent_id) {
+            $parent = Node::load($parent_id);
+            $parent_id = $parent->book['pid'];
+          }
+
+          if ($parent) {
+            $group_id = 'nid:' . $parent->id();
+
+            if (!isset($groups[$group_id])) {
+              $groups[$group_id] = [
+                'parent' => ['content' => $builder->view($parent, 'search_result')],
+                'attributes' => [],
+              ];
+            }
+
+            $groups[$group_id]['parent']['content']['#children'][] = $row;
+          }
+          else {
+            $group_id = 'nid:' . $node->id();
+            $groups[$group_id] = [
+              'parent' => $row,
+            ];
+          }
+
+          break;
+        case 'article':
+          // $parent = $node->field_magazine->entity;
+          $group_id = 'nid:' . $node->id();
+          $groups[$group_id] = [
+            'parent' => $row,
+          ];
+
+          break;
+      }
+    }
+
+    $variables['groups'] = $groups;
   }
 }
 
@@ -184,12 +256,12 @@ function julkaisut_preprocess_block(&$variables) {
   }
 
   if (isset($variables['elements']['#id'])) {
-    $block = Block::load($variables['elements']['#id']);
-
-    switch ($block->getRegion()) {
-      case 'content':
-        $variables['attributes']['class'][] = 'is-container';
-        break;
+    if ($block = Block::load($variables['elements']['#id'])) {
+      switch ($block->getRegion()) {
+        case 'content':
+          $variables['attributes']['class'][] = 'is-container';
+          break;
+      }
     }
   }
 }
@@ -200,6 +272,42 @@ function julkaisut_preprocess_block(&$variables) {
 function julkaisut_preprocess_form_element(&$variables) {
   if ($variables['type'] === 'search_api_autocomplete') {
     $variables['title_display'] = 'invisible';
+  }
+}
+
+/**
+ * Implements template_preprocess().
+ */
+function julkaisut_preprocess(&$variables) {
+  switch ($variables['theme_hook_original']) {
+    case 'form_element':
+      $variables['attributes']['class'][] = 'hds-text-input';
+      break;
+    case 'form_element_label':
+      $variables['attributes']['class'][] = 'hds-text-input__label';
+      break;
+    case 'input__textfield':
+    case 'select':
+      $variables['attributes']['class'][] = 'hds-text-input__input';
+      break;
+    case 'input__submit':
+      if (isset($variables['attributes']['data-bef-auto-submit-click'])) {
+        $variables['attributes']['class'][] = 'hds-icon';
+        $variables['attributes']['class'][] = 'hds-icon--search';
+      }
+      break;
+  }
+}
+
+function julkaisut_preprocess_views_view(&$variables) {
+  switch ($variables['id']) {
+    case 'search':
+      $variables['attributes']['class'][] = 'search-view';
+
+      if (empty($variables['rows'])) {
+        $variables['attributes']['class'][] = 'has-no-results';
+      }
+      break;
   }
 }
 
