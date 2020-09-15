@@ -1,0 +1,57 @@
+uuid: 9fcaa962-de98-44da-8f01-fb7232a324a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.article.body
+    - field.field.node.article.field_copyright
+    - field.field.node.article.field_image
+    - field.field.node.article.field_magazine
+    - field.field.node.article.field_tags
+    - field.field.node.article.field_year
+    - node.type.article
+  module:
+    - text
+    - user
+id: node.article.search_index
+targetEntityType: node
+bundle: article
+mode: search_index
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_copyright:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_magazine:
+    type: entity_reference_label
+    weight: 3
+    region: content
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_tags:
+    weight: 0
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  field_image: true
+  field_year: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

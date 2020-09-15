@@ -1,0 +1,63 @@
+uuid: 1eff7133-46f2-4da3-b2a0-42d96a5ce854
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_result
+    - field.field.node.article.body
+    - field.field.node.article.field_copyright
+    - field.field.node.article.field_image
+    - field.field.node.article.field_magazine
+    - field.field.node.article.field_tags
+    - field.field.node.article.field_year
+    - image.style.medium
+    - node.type.article
+  module:
+    - media
+    - smart_trim
+    - user
+id: node.article.search_result
+targetEntityType: node
+bundle: article
+mode: search_result
+content:
+  body:
+    type: smart_trim
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      trim_length: 150
+      trim_type: chars
+      trim_suffix: ''
+      wrap_class: trimmed
+      more_text: More
+      more_class: more-link
+      summary_handler: full
+      trim_options:
+        text: true
+        trim_zero: false
+      wrap_output: false
+      more_link: false
+    third_party_settings: {  }
+  field_image:
+    type: media_thumbnail
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      image_style: medium
+      image_link: ''
+    third_party_settings: {  }
+  search_api_excerpt:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_copyright: true
+  field_magazine: true
+  field_tags: true
+  field_year: true
+  langcode: true
+  links: true

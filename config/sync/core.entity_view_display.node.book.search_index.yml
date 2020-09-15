@@ -1,0 +1,62 @@
+uuid: d3e91fe1-94b7-4a08-8201-17ebe6d4cb3c
+langcode: fi
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.book.body
+    - field.field.node.book.field_copyright
+    - field.field.node.book.field_image
+    - field.field.node.book.field_pdf
+    - field.field.node.book.field_tags
+    - field.field.node.book.field_wide_contentwidth
+    - field.field.node.book.field_year
+    - node.type.book
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: UWTnZUj-u-jp8I_S1C1nUCTlM5iIV2QKdxm37ehFjoI
+id: node.book.search_index
+targetEntityType: node
+bundle: book
+mode: search_index
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_copyright:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_pdf:
+    type: entity_reference_entity_view
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: download
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_tags:
+    weight: 1
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  field_image: true
+  field_wide_contentwidth: true
+  field_year: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

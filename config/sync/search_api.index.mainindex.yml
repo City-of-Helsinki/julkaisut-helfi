@@ -1,0 +1,238 @@
+uuid: 8425bfba-2444-423b-9dc2-9589de617a6d
+langcode: sv
+status: true
+dependencies:
+  module:
+    - search_api_solr
+    - node
+    - search_api
+  config:
+    - field.storage.node.body
+    - field.storage.node.field_magazine
+    - field.storage.node.field_tags
+    - field.storage.node.field_year
+    - search_api.server.julkaisut
+    - core.entity_view_mode.node.search_index
+third_party_settings:
+  search_api_solr:
+    finalize: false
+    commit_before_finalize: false
+    commit_after_finalize: false
+    multilingual:
+      limit_to_content_language: true
+      include_language_independent: true
+    highlighter:
+      maxAnalyzedChars: 51200
+      fragmenter: gap
+      regex:
+        slop: 0.5
+        pattern: blank
+        maxAnalyzedChars: 10000
+      usePhraseHighlighter: true
+      highlightMultiTerm: true
+      preserveMulti: false
+      highlight:
+        mergeContiguous: false
+        requireFieldMatch: false
+        snippets: 3
+        fragsize: 0
+    mlt:
+      mintf: 1
+      mindf: 1
+      maxdf: 0
+      maxdfpct: 0
+      minwl: 0
+      maxwl: 0
+      maxqt: 100
+      maxntp: 2000
+      boost: false
+      interestingTerms: none
+    advanced:
+      index_prefix: ''
+      collection: ''
+      timezone: ''
+id: mainindex
+name: mainindex
+description: ''
+read_only: false
+field_settings:
+  body:
+    label: Body
+    datasource_id: 'entity:node'
+    property_path: body
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.body
+  created:
+    label: Författad
+    datasource_id: 'entity:node'
+    property_path: created
+    type: date
+    dependencies:
+      module:
+        - node
+  created_1:
+    label: 'Year Created'
+    datasource_id: 'entity:node'
+    property_path: created
+    type: date
+    dependencies:
+      module:
+        - node
+  field_magazine:
+    label: Magazine
+    datasource_id: 'entity:node'
+    property_path: field_magazine
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_magazine
+  field_tags:
+    label: Tags
+    datasource_id: 'entity:node'
+    property_path: field_tags
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_tags
+  field_year:
+    label: Year
+    datasource_id: 'entity:node'
+    property_path: field_year
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_year
+  langcode:
+    label: Språk
+    datasource_id: 'entity:node'
+    property_path: langcode
+    type: string
+    dependencies:
+      module:
+        - node
+  nid:
+    label: ID
+    datasource_id: 'entity:node'
+    property_path: nid
+    type: integer
+    dependencies:
+      module:
+        - node
+  node_grants:
+    label: 'Node access information'
+    property_path: search_api_node_grants
+    type: string
+    indexed_locked: true
+    type_locked: true
+    hidden: true
+  rendered_item:
+    label: 'Rendered HTML output'
+    property_path: rendered_item
+    type: text
+    configuration:
+      roles:
+        anonymous: anonymous
+      view_mode:
+        'entity:node':
+          page: search_index
+  status:
+    label: Publicerad
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    indexed_locked: true
+    type_locked: true
+    dependencies:
+      module:
+        - node
+  title:
+    label: Titel
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    boost: !!float 5
+    dependencies:
+      module:
+        - node
+  type:
+    label: Innehållstyp
+    datasource_id: 'entity:node'
+    property_path: type
+    type: string
+    dependencies:
+      module:
+        - node
+  uid:
+    label: uid
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+    indexed_locked: true
+    type_locked: true
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - article
+        - book
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  content_access:
+    weights:
+      preprocess_query: -30
+  entity_status: {  }
+  highlight:
+    highlight: always
+    highlight_partial: true
+    excerpt: true
+    excerpt_length: 256
+    exclude_fields:
+      - title
+    prefix: '<strong class="is-highlight">'
+    suffix: '</strong>'
+    weights:
+      postprocess_query: 0
+  html_filter:
+    all_fields: false
+    fields:
+      - rendered_item
+    title: true
+    alt: true
+    tags:
+      b: 2
+      h1: 5
+      h2: 3
+      h3: 2
+      strong: 2
+    weights:
+      preprocess_index: -15
+      preprocess_query: -15
+  language_with_fallback: {  }
+  rendered_item: {  }
+  reverse_entity_references: {  }
+  solr_date_range:
+    weights:
+      preprocess_index: 0
+  type_boost:
+    boosts:
+      'entity:node':
+        datasource_boost: !!float 1
+    weights:
+      preprocess_index: 0
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: julkaisut

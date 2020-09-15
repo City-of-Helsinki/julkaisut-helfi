@@ -1,0 +1,57 @@
+uuid: 3649f762-28b3-44fd-9dfd-6fcc6e3e87f1
+langcode: fi
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_result
+    - field.field.node.book.body
+    - field.field.node.book.field_copyright
+    - field.field.node.book.field_image
+    - field.field.node.book.field_pdf
+    - field.field.node.book.field_tags
+    - field.field.node.book.field_wide_contentwidth
+    - field.field.node.book.field_year
+    - node.type.book
+  module:
+    - smart_trim
+    - user
+_core:
+  default_config_hash: UWTnZUj-u-jp8I_S1C1nUCTlM5iIV2QKdxm37ehFjoI
+id: node.book.search_result
+targetEntityType: node
+bundle: book
+mode: search_result
+content:
+  body:
+    type: smart_trim
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      trim_length: 150
+      trim_type: chars
+      trim_suffix: ''
+      wrap_class: trimmed
+      more_text: More
+      more_class: more-link
+      summary_handler: full
+      trim_options:
+        text: true
+        trim_zero: false
+      wrap_output: false
+      more_link: false
+    third_party_settings: {  }
+  search_api_excerpt:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_copyright: true
+  field_image: true
+  field_pdf: true
+  field_tags: true
+  field_wide_contentwidth: true
+  field_year: true
+  langcode: true
+  links: true

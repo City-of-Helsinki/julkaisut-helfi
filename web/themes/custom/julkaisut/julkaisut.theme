@@ -195,6 +195,15 @@ function julkaisut_preprocess_block(&$variables) {
 }
 
 /**
+ * Implements template_preprocess_form_element().
+ */
+function julkaisut_preprocess_form_element(&$variables) {
+  if ($variables['type'] === 'search_api_autocomplete') {
+    $variables['title_display'] = 'invisible';
+  }
+}
+
+/**
  * Implements template_preprocess_page_title().
  */
 function julkaisut_preprocess_page_title(&$variables) {
