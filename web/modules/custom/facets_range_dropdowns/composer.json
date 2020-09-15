@@ -1,0 +1,20 @@
+{
+  "name": "drupal/facets_range_dropdowns",
+  "description": "Provides processors and a widget to handle ranges with dropdowns in facets.",
+  "type": "drupal-module",
+  "homepage": "https://www.drupal.org/project/facets_range_dropdowns",
+  "authors": [
+    {
+      "name": "See all contributors",
+      "homepage": "https://www.drupal.org/node/3052257/committers"
+    }
+  ],
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/facets_range_dropdowns",
+    "source": "https://git.drupalcode.org/project/facets_range_dropdowns.git"
+  },
+  "license": "GPL-2.0+",
+  "require-dev": {
+    "drupal/facets": "~1.4"
+  }
+}

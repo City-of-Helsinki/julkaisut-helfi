@@ -1,0 +1,9 @@
+name: 'Facets Range Dropdowns'
+description: 'Provides processors and a widget to handle ranges with dropdowns in facets.'
+package: Search
+
+core: 8.x
+type: module
+
+dependencies:
+  - facets:facets
