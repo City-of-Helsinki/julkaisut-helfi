@@ -54,6 +54,11 @@ class RangeProcessor extends ProcessorPluginBase implements PreQueryProcessorInt
     // Get an array with the sorted results.
     $realResults = $this->getSortedResults($facet->getResults());
 
+    // In case the view is set to now display results until filtered.
+    if (empty($realResults)) {
+      return;
+    }
+
     // Determine step size and min and max.
     $step = $config['step'];
     list($min, $max) = $this->getMinMax($facet, $realResults);
@@ -98,6 +103,11 @@ class RangeProcessor extends ProcessorPluginBase implements PreQueryProcessorInt
 
     if (isset($activeFilters[''])) {
       unset($activeFilters['']);
+    }
+
+    // In case the view is set to now display results until filtered.
+    if (empty($results)) {
+      return $results;
     }
 
     // Determine min and max.
