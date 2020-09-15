@@ -48,8 +48,8 @@ class RangeDropdownsWidget extends WidgetPluginBase {
     $genericBuild = parent::build($facet);
 
     // Split into a lower bound and an upper bound widget.
-    $lowerBoundBuild = $this->buildForBound($genericBuild, 'lower');
-    $upperBoundBuild = $this->buildForBound($genericBuild, 'upper');
+    $lowerBoundBuild = $this->buildForBound($genericBuild, 'lower', $facet);
+    $upperBoundBuild = $this->buildForBound($genericBuild, 'upper', $facet);
 
     // Return both bounds as dropdown widgets.
     return [
@@ -202,11 +202,25 @@ class RangeDropdownsWidget extends WidgetPluginBase {
    * @return array
    *   Renderable array for a facet widget for the given bound.
    */
-  protected function buildForBound(array $build, $bound) {
+  protected function buildForBound(array $build, $bound, FacetInterface $facet) {
+    $activeItems = $facet->getActiveItems();
+    if ($activeItems) {
+      $min = $activeItems[0][0];
+      $max = $activeItems[0][1];
+    }
+
     // Remove items for other bounds.
     foreach ($build['#items'] as $key => $item) {
       if (isset($item['#bound']) && $item['#bound'] !== $bound) {
         unset($build['#items'][$key]);
+      }
+      elseif ($activeItems) {
+        if ($bound == 'lower' && $item['#attributes']['data-drupal-facet-item-value'] == $min) {
+          $build['#items'][$key]['#attributes']['class'][] = 'is-active';
+        }
+        elseif ($bound == 'upper' && $item['#attributes']['data-drupal-facet-item-value'] == $max) {
+          $build['#items'][$key]['#attributes']['class'][] = 'is-active';
+        }
       }
     }
 
