@@ -21,6 +21,11 @@
 
     transform: translateX(calc((var(--alignwide-width) - var(--content-width))/2 * -1));
 
+    // Gutenberg fix @todo
+    &.wp-block {
+      transform: none;
+    }
+
     &.has-text-align-right {
       margin-right: 0;
     }
