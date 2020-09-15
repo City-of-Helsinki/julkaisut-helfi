@@ -102,6 +102,21 @@ if ($platformsh->inRuntime()) {
 
   // Set the deployment identifier, which is used by some Drupal cache systems.
   $settings['deployment_identifier'] = $settings['deployment_identifier'] ?? $platformsh->treeId;
+
+  $platformsh->registerFormatter('drupal-solr', function($solr) {
+    // Default the solr core name to `collection1` for pre-Solr-6.x instances.
+    return [
+      'core' => substr($solr['path'], 5) ? : 'collection1',
+      'path' => '',
+      'host' => $solr['host'],
+      'port' => $solr['port'],
+    ];
+  });
+
+  if ($platformsh->hasRelationship('solrsearch')) {
+    // Set the connector configuration to the appropriate value, as defined by the formatter above.
+    $config['search_api.server.julkaisut']['backend_config']['connector_config'] = $platformsh->formattedCredentials('solrsearch', 'drupal-solr');
+  }
 }
 
 // The 'trusted_hosts_pattern' setting allows an admin to restrict the Host header values
@@ -148,20 +163,5 @@ foreach ($platformsh->variables() as $name => $value) {
         $prev[$n] = $value;
       }
       break;
-  }
-
-  $platformsh->registerFormatter('drupal-solr', function($solr) {
-    // Default the solr core name to `collection1` for pre-Solr-6.x instances.
-    return [
-      'core' => substr($solr['path'], 5) ? : 'collection1',
-      'path' => '',
-      'host' => $solr['host'],
-      'port' => $solr['port'],
-    ];
-  });
-
-  if ($platformsh->hasRelationship('solrsearch')) {
-    // Set the connector configuration to the appropriate value, as defined by the formatter above.
-    $config['search_api.server.julkaisut']['backend_config']['connector_config'] = $platformsh->formattedCredentials('solrsearch', 'drupal-solr');
   }
 }
