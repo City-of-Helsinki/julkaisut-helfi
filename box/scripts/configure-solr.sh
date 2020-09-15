@@ -24,5 +24,8 @@ if [ ! -e "$SOLR_SETUP_COMPLETE_FILE" ]; then
   # Create a file to indicate this script has already run.
   sudo touch $SOLR_SETUP_COMPLETE_FILE
 else
-  exit 0
+  sudo su - solr -c "unzip -o $SOLR_CONFIG -d /var/solr/data/$SOLR_CORE_NAME/conf"
+
+  # Restart Apache Solr.
+  sudo service solr restart
 fi
