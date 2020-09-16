@@ -22,6 +22,3 @@ display:
           expose:
             label: Search
             placeholder: Search
-      header:
-        area_text_custom:
-          content: "<h2>Search results ([view:total-rows])</h2>\r\n<h4>For phrase \"{{ filters.search_api_fulltext }}\"</h4>"

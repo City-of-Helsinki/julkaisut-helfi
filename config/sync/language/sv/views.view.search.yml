@@ -18,6 +18,3 @@ display:
           expose:
             label: Sök
             placeholder: Sök
-      header:
-        area_text_custom:
-          content: "<h2>Sökresultat ([view:total-rows])</h2>\r\n<h4>För orden \"{{ filters.search_api_fulltext }}\"</h4>"

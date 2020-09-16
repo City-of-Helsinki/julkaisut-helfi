@@ -74,11 +74,16 @@ page_allowed_drupal_blocks:
   'facet_block:year': 0
   'language_block:language_interface': 0
   node_syndicate_block: 0
+  'views_block:julkaisuja-block_4': 'views_block:julkaisuja-block_4'
+  'views_block:julkaisuja-block_5': 'views_block:julkaisuja-block_5'
   'views_block:julkaisuja-block_2': 'views_block:julkaisuja-block_2'
   'views_block:julkaisuja-block_1': 'views_block:julkaisuja-block_1'
+  'views_block:search-block_2': 'views_block:search-block_2'
+  'views_block:julkaisuja-block_3': 'views_block:julkaisuja-block_3'
   'views_block:search-block_1': 'views_block:search-block_1'
   'views_block:book_outline-block_1': 0
   'views_block:who_s_online-who_s_online_block': 0
+  'views_block:taxonomy_terms_terms_-block_1': 0
   'views_block:content_recent-block_1': 0
   user_login_block: 0
   masquerade: 0

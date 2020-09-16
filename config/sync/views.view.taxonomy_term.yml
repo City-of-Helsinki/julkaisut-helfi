@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - views.view.taxonomy_terms_terms_
   module:
     - node
     - taxonomy
@@ -224,7 +225,7 @@ display:
         type: grid
         options:
           uses_fields: false
-          columns: 4
+          columns: 3
           automatic_width: true
           alignment: horizontal
           col_class_default: true
@@ -249,6 +250,17 @@ display:
           view_mode: full
           bypass_access: false
           plugin_id: entity
+        view:
+          id: view
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          view_to_insert: 'taxonomy_terms_terms_:block_1'
+          inherit_arguments: true
+          plugin_id: view
       footer: {  }
       empty: {  }
       relationships: {  }
@@ -257,6 +269,7 @@ display:
       link_url: ''
       link_display: page_1
       css_class: ''
+      show_admin_links: false
     cache_metadata:
       contexts:
         - 'languages:language_interface'
