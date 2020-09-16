@@ -1,0 +1,34 @@
+facet.widget.config.range_dropdowns:
+  type: facet.widget.default_config
+  label: 'List of range dropdown widget configuration'
+  mapping:
+    prefix:
+      type: label
+      label: 'Prefix'
+    suffix:
+      type: label
+      label: 'Suffix'
+    label_lower:
+      type: label
+      label: 'Label lower'
+    label_upper:
+      type: label
+      label: 'Label upper'
+    suffix:
+      type: label
+      label: 'Suffix'
+    min_type:
+      type: string
+      label: 'Minimum type'
+    min_value:
+      type: float
+      label: 'Minimum value'
+    max_type:
+      type: string
+      label: 'Maximum type'
+    max_value:
+      type: float
+      label: 'Maximum value'
+    step:
+      type: float
+      label: 'Step'
