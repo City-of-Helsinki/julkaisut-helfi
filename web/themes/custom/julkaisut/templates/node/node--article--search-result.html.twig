@@ -1,19 +1,15 @@
 {% extends '@julkaisut/node/node--search-result.html.twig' %}
 
 {% block node__content_wrapper %}
-  <div class="node__content">
-    <h3{{ title_attributes.addClass('node__title') }}>
-      <a href="{{ url }}" data-article-link>{{ label }}</a>
-    </h3>
+  <div class="search-result__content">
+    {% block node__title parent() %}
 
-    <div class="published-date">
-      <span{{ author_attributes }}>
-        <p>{% trans %}Published on {{ date }}{% endtrans %}</p>
-      </span>
+    <div class="search-result__date">
+      {% block node__date parent() %}
     </div>
   </div>
 
-  <div class="node__image">
+  <div class="search-result__image">
     {{ content.field_image }}
   </div>
 {% endblock %}

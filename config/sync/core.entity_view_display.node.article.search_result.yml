@@ -10,10 +10,8 @@ dependencies:
     - field.field.node.article.field_magazine
     - field.field.node.article.field_tags
     - field.field.node.article.field_year
-    - image.style.medium
     - node.type.article
   module:
-    - media
     - smart_trim
     - user
 id: node.article.search_result
@@ -41,13 +39,13 @@ content:
       more_link: false
     third_party_settings: {  }
   field_image:
-    type: media_thumbnail
+    type: entity_reference_entity_view
     weight: 2
     region: content
     label: hidden
     settings:
-      image_style: medium
-      image_link: ''
+      view_mode: search_result
+      link: false
     third_party_settings: {  }
   search_api_excerpt:
     weight: 0

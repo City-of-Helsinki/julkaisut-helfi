@@ -1,0 +1,27 @@
+uuid: 38454f17-2bdb-48c3-9f23-c2c7653435f1
+langcode: fi
+status: true
+dependencies:
+  config:
+    - image.style.teaser_167x130_
+    - image.style.teaser_334x260_
+    - image.style.teaser_384x299_
+    - image.style.teaser_768x598_
+  theme:
+    - julkaisut
+id: teaser
+label: Teaser
+image_style_mappings:
+  -
+    breakpoint_id: julkaisut.xsmall
+    multiplier: 1x
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: '(min-width: 320px) 50vw, (min-width: 768px) 33vw, (min-width: 1224px) 384px, 100vw'
+      sizes_image_styles:
+        - teaser_167x130_
+        - teaser_334x260_
+        - teaser_384x299_
+        - teaser_768x598_
+breakpoint_group: julkaisut
+fallback_image_style: teaser_167x130_

@@ -1,0 +1,17 @@
+uuid: 82fa2e16-888b-4414-b0d1-410de2f006b0
+langcode: fi
+status: true
+dependencies:
+  module:
+    - focal_point
+name: search_result_256x200_
+label: 'Search result (256x200)'
+effects:
+  c7c93615-9906-4362-99c9-e513c07bce64:
+    uuid: c7c93615-9906-4362-99c9-e513c07bce64
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 256
+      height: 200
+      crop_type: focal_point

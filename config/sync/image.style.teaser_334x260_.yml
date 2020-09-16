@@ -1,0 +1,17 @@
+uuid: 69163f72-c802-4d04-b684-3ab5d038bdec
+langcode: fi
+status: true
+dependencies:
+  module:
+    - focal_point
+name: teaser_334x260_
+label: 'Teaser (334x260)'
+effects:
+  7bf5926b-55c8-4f22-aa72-4c6bc8b74441:
+    uuid: 7bf5926b-55c8-4f22-aa72-4c6bc8b74441
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 334
+      height: 260
+      crop_type: focal_point

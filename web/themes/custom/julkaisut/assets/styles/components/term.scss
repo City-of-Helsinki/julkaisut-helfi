@@ -1,0 +1,13 @@
+@use "common/breakpoints" as *;
+
+.term__wrapper {
+  margin-bottom: var(--block-gutter-l);
+
+  header {
+    margin-bottom: var(--spacing-m);
+
+    @include mq($from: large) {
+      margin-bottom: var(--spacing-xl);
+    }
+  }
+}

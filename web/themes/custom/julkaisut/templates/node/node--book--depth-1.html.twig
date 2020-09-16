@@ -26,11 +26,7 @@
     </div>
   </div>
 
-  {% if content.field_image is not empty %}
-    <div class="wp-block-image is-style-koros-basic-top">
-      {{ content.field_image }}
-    </div>
-  {% endif %}
+  {% include '@julkaisut/partials/featured-image.html.twig' %}
 
   <div class="is-container">
     {{ content|without('body', 'field_tags', 'field_pdf', 'field_image') }}

@@ -1,0 +1,23 @@
+uuid: e11e78f0-57bb-473c-9bc9-3947b8318029
+langcode: fi
+status: true
+dependencies:
+  config:
+    - image.style.search_result_128x100_
+    - image.style.search_result_256x200_
+  theme:
+    - julkaisut
+id: search_result
+label: 'Search result'
+image_style_mappings:
+  -
+    breakpoint_id: julkaisut.xsmall
+    multiplier: 1x
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: '(min-width: 768px) 120px, 128px'
+      sizes_image_styles:
+        - search_result_128x100_
+        - search_result_256x200_
+breakpoint_group: julkaisut
+fallback_image_style: search_result_128x100_

@@ -1,3 +1,5 @@
+@use "common/breakpoints" as *;
+
 .published-date {
   margin-bottom: calc(var(--spacing-m) * -1 + var(--spacing-s));
 
@@ -7,28 +9,9 @@
     line-height: var(--lineheight-m);
     margin-top: 0;
     margin-bottom: var(--spacing-m);
-  }
 
-
-  .node--view-mode-teaser & {
-    margin-bottom: var(--spacing-2-xs);
-
-    p {
-      font-size: var(--fontsize-body-s);
-      font-weight: normal;
-      margin-bottom: var(--spacing-2-xs);
+    @include mq($from: large) {
+      font-size: var(--fontsize-heading-s);
     }
-  }
-
-  .node--view-mode-search-result & {
-    margin-bottom: var(--spacing-xs);
-    color: var(--color-black-90);
-
-    p {
-      font-size: var(--fontsize-body-m);
-      font-weight: 500;
-      margin-bottom: var(--spacing-xs);
-    }
-
   }
 }

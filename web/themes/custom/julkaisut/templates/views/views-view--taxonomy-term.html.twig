@@ -43,8 +43,12 @@
   {{ title_suffix }}
 
   {% if header %}
-    <header>
-      {{ header }}
+    <header class="term__wrapper">
+      {{ header.entity_taxonomy_term }}
+
+      <div class="is-container">
+        {{ header|without('entity_taxonomy_term') }}
+      </div>
     </header>
   {% endif %}
 
@@ -52,9 +56,11 @@
   {{ attachment_before }}
 
   <div class="is-container">
-    <h2>{{ 'Articles' | t}}</h2>
+    <h2>{{ 'Latest Articles' | t}}</h2>
 
-    {{ rows }}
+    <div class="alignwide">
+      {{ rows }}
+    </div>
 
     {{ empty }}
     {{ pager }}
@@ -68,6 +74,4 @@
       {{ footer }}
     </footer>
   {% endif %}
-
-  {{ feed_icons }}
 </div>

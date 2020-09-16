@@ -49,6 +49,15 @@
     & + h6 {
       margin-top: calc(var(--block-gutter-s) * -1 + var(--spacing-xxs));
     }
+
+    & + .alignfull,
+    & + .alignwide {
+      margin-top: var(--spacing-m);
+
+      @include mq($from: large) {
+        margin-top: var(--spacing-xl);
+      }
+    }
   }
 
   // If it's the last child, remove the gutter with the footer

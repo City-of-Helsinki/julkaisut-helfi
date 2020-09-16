@@ -1,24 +1,24 @@
-uuid: 1becdbbc-ca8b-412b-baa7-a2cac0865cd9
+uuid: e5eac236-f816-4894-a060-afba95efcf51
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.media.teaser
+    - core.entity_view_mode.media.search_result
     - field.field.media.image.field_media_image
     - media.type.image
-    - responsive_image.styles.teaser
+    - responsive_image.styles.search_result
   module:
     - responsive_image
-id: media.image.teaser
+id: media.image.search_result
 targetEntityType: media
 bundle: image
-mode: teaser
+mode: search_result
 content:
   field_media_image:
     label: visually_hidden
     weight: 0
     settings:
-      responsive_image_style: teaser
+      responsive_image_style: search_result
       image_link: ''
     third_party_settings: {  }
     type: responsive_image

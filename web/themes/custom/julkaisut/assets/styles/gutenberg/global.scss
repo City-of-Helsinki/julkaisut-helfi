@@ -1,3 +1,5 @@
+@use "common/breakpoints" as *;
+
 $-fontsizes-body:
   'body-s',
   'body-m',
@@ -27,6 +29,10 @@ $-fontsizes-heading:
 }
 
 .is-style-koros-basic-top {
-  margin-top: var(--spacing-m);
+  margin-top: var(--spacing-layout-xs);
   mask-image: svg-load('./images/koros/basic.svg');
+
+  @include mq($from: medium) {
+    margin-top: var(--spacing-layout-m);
+  }
 }

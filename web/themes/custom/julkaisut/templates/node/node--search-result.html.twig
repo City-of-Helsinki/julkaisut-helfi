@@ -1,18 +1,18 @@
-{% extends '@julkaisut/node/node.html.twig' %}
+{% extends '@julkaisut/node/node--teaser.html.twig' %}
 
 {% block node %}
-  <article{{attributes.addClass(classes) }}>
+  <article{{attributes.addClass(classes, 'search-result') }} data-article-link-wrapper>
     {% block node__content_wrapper %}
-      <div class="node__content">
-        <h3{{ title_attributes.addClass('node__title') }}>
-          <a href="{{ url }}" data-article-link>{{ label }}</a>
-        </h3>
+      <div class="search-result__content">
+        {% block node__title %}
+          <h3{{ title_attributes.addClass('search-result__title') }}>
+            <a href="{{ url }}" data-article-link>{{ label }}</a>
+          </h3>
+        {% endblock %}
 
         {% if node.book and node.book.depth == 1 %}
-          <div class="published-date">
-            <span{{ author_attributes }}>
-              <p>{% trans %}Published on {{ date }}{% endtrans %}</p>
-            </span>
+          <div class="search-result__date">
+            {% block node__date parent() %}
           </div>
 
           {{ content|without('search_api_excerpt', 'field_image') }}
@@ -26,9 +26,9 @@
 
 
         {% if elements['#children'] %}
-          <div class="node__children">
+          <div class="search-result__children">
           {% for item in elements['#children'] %}
-            <div class="node__child">
+            <div class="search-result__child">
             {{ item.content }}
             </div>
           {% endfor %}

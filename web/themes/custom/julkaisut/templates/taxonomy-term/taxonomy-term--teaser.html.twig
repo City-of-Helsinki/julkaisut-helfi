@@ -1,0 +1,21 @@
+{% extends '@julkaisut/taxonomy-term/taxonomy-term.html.twig' %}
+
+{% block term %}
+  <div{{ attributes.addClass('teaser') }} data-article-link-wrapper>
+    {{ content.field_image }}
+
+    <div class="teaser__date">
+      {% block term__date %}
+        {% include '@julkaisut/partials/published-date.html.twig' %}
+      {% endblock %}
+    </div>
+
+    {{ title_prefix }}
+    <h3 class="teaser__title">
+      <a href="{{ url }}" data-article-link>{{ name }}</a>
+    </h3>
+    {{ title_suffix }}
+
+    {{ content|without('field_image') }}
+  </div>
+{% endblock %}

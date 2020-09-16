@@ -1,14 +1,16 @@
 {% extends '@julkaisut/node/node.html.twig' %}
 
 {% block node %}
-  <article{{attributes.addClass(classes) }}>
+  <article{{attributes.addClass(classes, 'teaser') }} data-article-link-wrapper>
     {{ content.field_image }}
 
-    <div class="published-date">
-      <p>{% trans %}Published on {{ date }}{% endtrans %}</p>
+    <div class="teaser__date">
+      {% block node__date %}
+        {% include '@julkaisut/partials/published-date.html.twig' %}
+      {% endblock %}
     </div>
 
-    <h3{{ title_attributes.addClass('node__title') }}>
+    <h3{{ title_attributes.addClass('teaser__title') }}>
       <a href="{{ url }}" data-article-link>{{ label }}</a>
     </h3>
 

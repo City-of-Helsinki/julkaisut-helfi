@@ -1,6 +1,14 @@
-{% extends '@julkaisut/node/node.html.twig' %}
+{% extends '@julkaisut/taxonomy-term/taxonomy-term.html.twig' %}
 
-{% block node__content_wrapper %}
+{% block term__content_wrapper %}
+  <div class="is-container">
+    <div class="published-date">
+      <p>{% trans %}Published on {{ date }}{% endtrans %}</p>
+    </div>
+  </div>
+
+  {{ content|without('field_published', 'field_copyright', 'field_tags', 'field_pdf', 'field_image') }}
+
   <div class="is-container">
     {{ content.field_copyright }}
 
@@ -9,8 +17,6 @@
 
       {{ content.field_pdf }}
 
-      {% include '@julkaisut/partials/print-button.html.twig' %}
-
       {% include '@julkaisut/partials/share-links.html.twig' with {
         url: url_absolute.toString(),
         title: node.title(),
@@ -18,13 +24,5 @@
 
       {{ translation_links }}
     </div>
-  </div>
-
-  {{ content.body }}
-
-  {% include '@julkaisut/partials/featured-image.html.twig' %}
-
-  <div class="is-container">
-    {{ content|without('body', 'field_tags', 'field_pdf', 'field_image') }}
   </div>
 {% endblock %}

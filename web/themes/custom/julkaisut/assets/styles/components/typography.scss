@@ -1,3 +1,5 @@
+@use "common/breakpoints" as *;
+
 body {
   font-family: var(--font-default);
   line-height: var(--lineheight-l); // @todo 1.44 in design
@@ -60,15 +62,27 @@ h6 {
 }
 
 h1 {
-  font-size: var(--fontsize-heading-xl);
+  font-size: var(--fontsize-heading-l);
+
+  @include mq($from: large) {
+    font-size: var(--fontsize-heading-xl);
+  }
 }
 
 h2 {
-  font-size: var(--fontsize-heading-l);
+  font-size: var(--fontsize-heading-m);
+
+  @include mq($from: medium) {
+    font-size: var(--fontsize-heading-l);
+  }
 }
 
 h3 {
-  font-size: var(--fontsize-heading-m);
+  font-size: var(--fontsize-heading-xs);
+
+  @include mq($from: medium) {
+    font-size: var(--fontsize-heading-m);
+  }
 }
 
 h4 {
@@ -89,6 +103,10 @@ p {
 
   & + p.has-body-s-font-size {
     margin-top: calc(var(--spacing-m) * -1 + var(--spacing-s));
+  }
+
+  &:last-child {
+    margin-bottom: 0;
   }
 }
 

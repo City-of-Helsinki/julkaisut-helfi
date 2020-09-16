@@ -10,8 +10,6 @@ dependencies:
     - field.field.taxonomy_term.magazine.field_published
     - field.field.taxonomy_term.magazine.field_tags
     - taxonomy.vocabulary.magazine
-  module:
-    - datetime
 id: taxonomy_term.magazine.teaser
 targetEntityType: taxonomy_term
 bundle: magazine
@@ -19,26 +17,18 @@ mode: teaser
 content:
   field_image:
     type: entity_reference_entity_view
-    weight: 1
+    weight: 0
     label: hidden
     settings:
       view_mode: teaser
       link: false
     third_party_settings: {  }
     region: content
-  field_published:
-    type: datetime_default
-    weight: 0
-    region: content
-    label: visually_hidden
-    settings:
-      timezone_override: ''
-      format_type: published_date
-    third_party_settings: {  }
 hidden:
   description: true
   field_copyright: true
   field_pdf: true
+  field_published: true
   field_tags: true
   langcode: true
   search_api_excerpt: true
