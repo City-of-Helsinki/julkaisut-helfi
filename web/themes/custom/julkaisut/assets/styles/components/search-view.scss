@@ -4,7 +4,11 @@
   }
 
   .form-item-search {
-    margin-top: 0;
+    label {
+      font-size: var(--fontsize-heading-m);
+      margin-bottom: var(--spacing-m);
+      line-height: var(--lineheight-s);
+    }
   }
 
   .views-exposed-form {
@@ -17,7 +21,7 @@
 
   .form-actions {
     position: absolute;
-    top: 0;
+    top: calc(var(--fontsize-heading-m) + var(--spacing-m));
     right: 0;
     margin: 0;
 

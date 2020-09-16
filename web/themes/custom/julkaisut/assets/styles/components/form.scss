@@ -7,6 +7,12 @@
   word-wrap: normal;
 }
 
+.form-item,
+.form-actions {
+  margin-top: var(--spacing-s);
+  margin-bottom: var(--spacing-s);
+}
+
 .js input.form-autocomplete {
   background-image: none;
 }

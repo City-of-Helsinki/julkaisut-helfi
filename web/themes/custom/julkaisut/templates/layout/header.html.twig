@@ -7,10 +7,11 @@
     <h5>{{ site_name }}</h5>
   </div>
 
-  {{ page.header }}
-
   <div class="site-header__search">
+    {% include '@julkaisut/partials/search.html.twig' %}
   </div>
+
+  {{ page.header }}
 
   <div class="site-header__hamburger-button">
     <button
