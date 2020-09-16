@@ -1,0 +1,24 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Search
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          bef:
+            sort:
+              advanced:
+                combine_rewrite: "Relevance Desc | Relevance\r\nRelevance Asc |\r\nYear Desc | Newest first\r\nYear Asc | Oldest first"
+      pager:
+        options:
+          tags:
+            previous: '‹ Previous'
+            next: 'Next ›'
+          views_infinite_scroll:
+            button_text: 'Load more'
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Search
+            placeholder: Search

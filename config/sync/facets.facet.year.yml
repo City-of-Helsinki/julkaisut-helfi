@@ -8,7 +8,7 @@ dependencies:
   module:
     - search_api
 id: year
-name: Year
+name: Julkaisuvuosi
 url_alias: year
 weight: 0
 min_count: 1
@@ -21,13 +21,13 @@ widget:
     show_numbers: false
     prefix: ''
     suffix: ''
-    label_lower: 'From year'
-    label_upper: 'Until year'
+    label_lower: Vuodesta
+    label_upper: Vuoteen
     min_type: search_result
-    min_value: '0'
+    min_value: !!float 0
     max_type: search_result
-    max_value: '10'
-    step: '1'
+    max_value: !!float 10
+    step: !!float 1
 query_operator: or
 use_hierarchy: false
 expand_hierarchy: false

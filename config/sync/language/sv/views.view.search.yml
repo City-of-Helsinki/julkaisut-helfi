@@ -1,0 +1,20 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Sök
+          exposed_sorts_label: Sortering
+          bef:
+            sort:
+              advanced:
+                combine_rewrite: "Relevance Desc | Mest relevans först\r\nRelevance Asc |\r\nYear Desc | Senaste först\r\nYear Asc | Äldsta först"
+      pager:
+        options:
+          views_infinite_scroll:
+            button_text: 'Ladda fler'
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Sök
+            placeholder: Sök
