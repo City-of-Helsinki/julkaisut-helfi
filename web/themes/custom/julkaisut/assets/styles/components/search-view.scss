@@ -1,18 +1,74 @@
+@use "common/breakpoints" as *;
+
 .search-view {
-  &.has-no-results .form-item-sort-bef-combine {
-    display: none;
+  --field-gutter: var(--spacing-s);
+
+  @include mq($from: medium) {
+    --field-gutter: var(--spacing-l);
   }
 
-  .form-item-search {
-    label {
+  .facets-views-plugin > div:not(.hidden),
+  .form-item {
+    margin-top: 0;
+    margin-bottom: var(--field-gutter);
+
+    @at-root .search-view .views-exposed-form {
+      margin-bottom: calc(var(--field-gutter) * -1);
+
+      & + header,
+      & + div {
+        margin-top: var(--field-gutter);
+      }
+    }
+
+  }
+
+  .hds-text-input__label {
+    margin-bottom: var(--spacing-s);
+    line-height: var(--lineheight-s);
+
+    @include mq($from: medium) {
       font-size: var(--fontsize-heading-m);
-      margin-bottom: var(--spacing-m);
-      line-height: var(--lineheight-s);
+      margin-bottom: var(--spacing-xs);
     }
   }
 
   .views-exposed-form {
     position: relative;
+
+    @include mq($from: medium) {
+      display: grid;
+      grid-template-areas:
+        "search none none"
+        "facets facets sort";
+    }
+  }
+
+
+  &.has-no-results .form-item-sort-bef-combine {
+    display: none;
+  }
+
+  .form-item-search {
+    grid-area: search;
+
+    label {
+      font-size: var(--fontsize-heading-m);
+      margin-bottom: var(--spacing-m);
+      line-height: var(--lineheight-s);
+
+      @include mq($from: medium) {
+        font-size: var(--fontsize-heading-l);
+      }
+    }
+  }
+
+  .facets-views-plugin {
+    grid-area: facets;
+  }
+
+  .form-item-sort-bef-combine {
+    grid-area: sort;
   }
 
   .views-row:not(:last-child) {
@@ -20,10 +76,15 @@
   }
 
   .form-actions {
+    grid-area: search;
     position: absolute;
     top: calc(var(--fontsize-heading-m) + var(--spacing-m));
     right: 0;
     margin: 0;
+
+    @include mq($from: medium) {
+      top: calc(var(--fontsize-heading-l) + var(--spacing-m));
+    }
 
     [type="submit"] {
       padding: var(--spacing-s);
@@ -38,6 +99,12 @@
 
 .block-facet--range-dropdowns > div {
   display: grid;
+
+  // Shrink on desktop
+  @include mq($from: medium) {
+    display: inline-grid;
+  }
+
   grid-gap: var(--spacing-s);
   grid-template-areas: "from separator to";
   grid-template-columns: 1fr auto 1fr;
@@ -70,8 +137,9 @@
   font-size: var(--fontsize-body-m);
   height: var(--input-height);
   line-height: 1;
-  padding: 0 var(--spacing-s);
+  padding: 0 calc(var(--spacing-s) + var(--spacing-l)) 0 var(--spacing-s);
   width: 100%;
+  z-index: 1; // bugfix
 
   &:hover {
     border-color: var(--input-border-color-hover);

@@ -19,13 +19,18 @@
 
 .hds-text-input {
   --input-height: 44px;
+  --input-border-color-default: var(--color-black-20);
+  --input-border-color-hover: var(--color-black-50);
 
   .hds-text-input__input {
     font-size: var(--fontsize-body-m);
     line-height: 1;
-    padding: var(--spacing-xs) var(--spacing-s);
+    padding: var(--spacing-xs);
   }
 
+  .hds-text-input__label {
+    font-size: var(--fontsize-body-l);
+  }
 }
 
 .facets-widget-range_dropdowns,
