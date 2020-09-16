@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2180f033fdbc6f7e0caca888ea26cec2",
+    "content-hash": "dde35381b6248890ab7c154014b8a54c",
     "packages": [
         {
             "name": "acquia/blt",
@@ -2398,7 +2398,8 @@
                     }
                 },
                 "patches_applied": {
-                    "Make exposed filter values available as tokens for text areas": "https://www.drupal.org/files/issues/2020-03-02/exposed_filter_tokens-2761273-21.patch"
+                    "Make exposed filter values available as tokens for text areas": "https://www.drupal.org/files/issues/2020-03-02/exposed_filter_tokens-2761273-21.patch",
+                    "Notice: Undefined offset: 1 en Drupal\\Core\\StringTranslation\\PluralTranslatableMarkup->render()": "https://www.drupal.org/files/issues/2018-06-29/notice_undefined-2863629-11.patch"
                 }
             },
             "autoload": {
