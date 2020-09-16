@@ -14,9 +14,6 @@ facet.widget.config.range_dropdowns:
     label_upper:
       type: label
       label: 'Label upper'
-    suffix:
-      type: label
-      label: 'Suffix'
     min_type:
       type: string
       label: 'Minimum type'
