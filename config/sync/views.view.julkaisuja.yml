@@ -304,11 +304,47 @@ display:
   block_1:
     display_plugin: block
     id: block_1
-    display_title: Block
+    display_title: Nostoja
     position: 1
     display_options:
       display_extenders: {  }
       block_description: 'Julkaisuja - Nostoja'
+      display_description: ''
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  block_2:
+    display_plugin: block
+    id: block_2
+    display_title: Chronological
+    position: 2
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      block_description: 'Julkaisuja - aikajärjestyksessä'
+      sorts:
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          order: DESC
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+      defaults:
+        sorts: false
     cache_metadata:
       max-age: -1
       contexts:

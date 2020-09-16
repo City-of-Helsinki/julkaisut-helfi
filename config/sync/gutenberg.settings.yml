@@ -74,6 +74,7 @@ page_allowed_drupal_blocks:
   'facet_block:year': 0
   'language_block:language_interface': 0
   node_syndicate_block: 0
+  'views_block:julkaisuja-block_2': 'views_block:julkaisuja-block_2'
   'views_block:julkaisuja-block_1': 'views_block:julkaisuja-block_1'
   'views_block:search-block_1': 'views_block:search-block_1'
   'views_block:book_outline-block_1': 0
@@ -87,9 +88,9 @@ page_allowed_drupal_blocks:
   system_messages_block: 0
   'system_menu_block:footer': 0
   'system_menu_block:devel': 0
+  book_navigation: 0
   'system_menu_block:account': 0
   'system_menu_block:main': 0
-  book_navigation: 0
 article_enable_full: 1
 article_template: ''
 article_template_lock: none
