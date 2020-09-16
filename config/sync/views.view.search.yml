@@ -53,7 +53,7 @@ display:
               autosubmit_exclude_textfield: false
               autosubmit_textfield_delay: 5000
               autosubmit_hide: false
-              input_required: false
+              input_required: true
               allow_secondary: false
               secondary_label: 'Advanced options'
               secondary_open: false
