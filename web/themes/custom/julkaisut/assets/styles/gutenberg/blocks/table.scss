@@ -30,6 +30,15 @@
       font-weight: normal;
     }
 
+    td .tablesaw-cell-label,
+    th .tablesaw-cell-label {
+      width: 50%;
+    }
+
+    .tablesaw-cell-content {
+      max-width: 50%;
+    }
+
     .tablesaw-cell-label:empty {
       display: none;
 
