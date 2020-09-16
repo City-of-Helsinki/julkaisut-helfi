@@ -247,7 +247,7 @@ display:
           exposed: true
           expose:
             operator_id: search_api_fulltext_op
-            label: Haku
+            label: 'Mitä haet?'
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
@@ -346,7 +346,18 @@ display:
             label: Year
           plugin_id: search_api
       title: ''
-      header: {  }
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: true
+          content: "<h2>Hakutulokset ([view:total-rows])</h2>\r\n<h4>Sanalle \"{{ filters.search_api_fulltext }}\"</h4>"
+          plugin_id: text_custom
       footer: {  }
       empty: {  }
       relationships: {  }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "98693b7b74e7184625acea3a578c99ef",
+    "content-hash": "2180f033fdbc6f7e0caca888ea26cec2",
     "packages": [
         {
             "name": "acquia/blt",
@@ -2397,7 +2397,9 @@
                         "[web-root]/themes/README.txt": "assets/scaffold/files/themes.README.txt"
                     }
                 },
-                "patches_applied": []
+                "patches_applied": {
+                    "Make exposed filter values available as tokens for text areas": "https://www.drupal.org/files/issues/2020-03-02/exposed_filter_tokens-2761273-21.patch"
+                }
             },
             "autoload": {
                 "psr-4": {
