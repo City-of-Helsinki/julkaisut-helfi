@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ea01c88003b81af6f4690702f4903c2f",
+    "content-hash": "98693b7b74e7184625acea3a578c99ef",
     "packages": [
         {
             "name": "acquia/blt",
@@ -2999,7 +2999,7 @@
                     }
                 },
                 "patches_applied": {
-                    "Create views plugins to render facets and summaries in filters and areas": "https://www.drupal.org/files/issues/2020-01-27/facet-3073444-89-Allow-facets-filter-in-views.patch"
+                    "Create views plugins to render facets and summaries in filters and areas": "https://www.drupal.org/files/issues/2020-09-16/facet-3073444-103-Allow-facets-filter-in-views.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
