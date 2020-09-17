@@ -105,7 +105,7 @@ class RangeProcessor extends ProcessorPluginBase implements PreQueryProcessorInt
       unset($activeFilters['']);
     }
 
-    // In case the view is set to now display results until filtered.
+    // In case the view is set to not display results until filtered.
     if (empty($results)) {
       return $results;
     }
@@ -116,7 +116,7 @@ class RangeProcessor extends ProcessorPluginBase implements PreQueryProcessorInt
     /** @var \Drupal\facets\Result\ResultInterface[] $results */
     foreach ($results as &$result) {
       $newActiveFilters = $activeFilters;
-      unset($newActiveFilters[$facet->getUrlAlias()]);
+      unset($newActiveFilters[$facet->id()]);
 
       // Default min and max values.
       $minValue = $min;
