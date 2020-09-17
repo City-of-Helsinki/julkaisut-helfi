@@ -5,10 +5,11 @@
  .wp-block-button {
   color: var(--color-white);;
   background-color: var(--color-primary);
+  font-weight: 500;
 
   &:hover,
   &:focus {
-    filter: brightness(85%); // @todo
+    background-color: var(--color-bus-dark-50);
   }
 
   &.is-style-small,
@@ -23,7 +24,7 @@
 
     &:hover,
     &:focus {
-      filter: brightness(85%); // @todo
+      color: var(--color-bus-dark-50);
       background-color: transparent;
       text-decoration: underline;
     }
