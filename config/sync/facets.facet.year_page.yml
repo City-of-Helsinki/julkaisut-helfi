@@ -1,0 +1,60 @@
+uuid: ac3eca3a-e9a5-40e9-9b23-2e181f37c986
+langcode: fi
+status: true
+dependencies:
+  config:
+    - search_api.index.mainindex
+    - views.view.search
+  module:
+    - search_api
+id: year_page
+name: Julkaisuvuosi
+url_alias: year
+weight: 0
+min_count: 1
+show_only_one_result: true
+field_identifier: field_year
+facet_source_id: 'search_api:views_page__search__page_1'
+widget:
+  type: range_dropdowns
+  config:
+    show_numbers: false
+    prefix: ''
+    suffix: ''
+    label_lower: Vuodesta
+    label_upper: Vuoteen
+    min_type: search_result
+    min_value: !!float 0
+    max_type: search_result
+    max_value: !!float 10
+    step: !!float 1
+query_operator: or
+use_hierarchy: false
+expand_hierarchy: false
+enable_parent_when_child_gets_disabled: true
+hard_limit: 0
+exclude: false
+only_visible_when_facet_source_is_visible: false
+processor_configs:
+  display_value_widget_order:
+    processor_id: display_value_widget_order
+    weights:
+      sort: 40
+    settings:
+      sort: ASC
+  range:
+    processor_id: range
+    weights:
+      pre_query: 60
+      post_query: 60
+      build: 20
+    settings: {  }
+  url_processor_handler:
+    processor_id: url_processor_handler
+    weights:
+      pre_query: 50
+      build: 15
+    settings: {  }
+empty_behavior:
+  behavior: none
+show_title: false

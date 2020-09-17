@@ -100,7 +100,6 @@ function julkaisut_theme_suggestions_taxonomy_term_alter(array &$suggestions, ar
   $suggestions[] = 'taxonomy_term__' . $term->id() . '__' . $view_mode;
 }
 
-
 /**
  * Implements template_preprocess_book_navigation().
  */
@@ -303,12 +302,12 @@ function julkaisut_preprocess(&$variables) {
     case 'input__textfield':
     case 'select':
       $variables['attributes']['class'][] = 'hds-text-input__input';
+      if (isset($variables['element']['#type']) && $variables['element']['#type'] === 'search_api_autocomplete') {
+        $variables['children'] = Markup::create('<i class="hds-icon hds-icon--search hds-icon--size-s" role="presentation"></i>');
+      }
       break;
     case 'input__submit':
-      if (isset($variables['attributes']['data-bef-auto-submit-click'])) {
-        $variables['attributes']['class'][] = 'hds-icon';
-        $variables['attributes']['class'][] = 'hds-icon--search';
-      }
+      $variables['attributes']['class'][] = 'wp-block-button wp-block-button__link';
       break;
   }
 }

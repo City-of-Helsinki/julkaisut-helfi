@@ -13,7 +13,9 @@
     margin-bottom: var(--field-gutter);
 
     @at-root .search-view .views-exposed-form {
-      margin-bottom: calc(var(--field-gutter) * -1);
+      @include mq($from: medium) {
+        margin-bottom: calc(var(--field-gutter) * -1);
+      }
 
       & + header,
       & + div {
@@ -40,7 +42,8 @@
       display: grid;
       grid-template-areas:
         "search none none"
-        "facets facets sort";
+        "facets facets sort"
+        "submit submit submit";
     }
   }
 
@@ -76,23 +79,12 @@
   }
 
   .form-actions {
-    grid-area: search;
-    position: absolute;
-    top: calc(var(--fontsize-heading-m) + var(--spacing-m));
-    right: 0;
-    margin: 0;
+    grid-area: submit;
+    margin-top: calc(var(--field-gutter) + var(--spacing-2-xs));
+    margin-bottom: calc(var(--field-gutter) + var(--spacing-2-xs));
 
     @include mq($from: medium) {
-      top: calc(var(--fontsize-heading-l) + var(--spacing-m));
-    }
-
-    [type="submit"] {
-      padding: var(--spacing-s);
-      font-size: 1.125em;
-      height: var(--input-height, 44px);
-      line-height: 1;
-      -webkit-mask-size: 1.125em;
-      width: calc(1.125em + var(--spacing-s) * 2);
+      margin-top: 0;
     }
   }
 }
