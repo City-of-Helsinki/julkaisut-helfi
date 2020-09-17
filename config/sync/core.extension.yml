@@ -80,6 +80,7 @@ module:
   pathauto: 1
   content_translation: 10
   views: 10
+  tvi: 15
   minimal: 1000
 theme:
   stark: 0

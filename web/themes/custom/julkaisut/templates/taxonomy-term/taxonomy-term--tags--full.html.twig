@@ -1,0 +1,6 @@
+{% extends '@julkaisut/taxonomy-term/taxonomy-term.html.twig' %}
+
+{% block term__content_wrapper %}
+  <h1>{% trans %}Tag:{% endtrans %} {{ name.0|render }}</h1>
+  {{ parent() }}
+{% endblock %}

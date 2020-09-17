@@ -3,6 +3,7 @@ langcode: fi
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.taxonomy_term.full
     - core.entity_view_mode.taxonomy_term.teaser
     - taxonomy.vocabulary.magazine
     - taxonomy.vocabulary.tags

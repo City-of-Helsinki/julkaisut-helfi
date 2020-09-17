@@ -56,7 +56,8 @@
   }
 }
 
-.is-container .is-container {
+.is-container .is-container,
+.is-container .is-root-container {
   padding-left: 0;
   padding-right: 0;
 
