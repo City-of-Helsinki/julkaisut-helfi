@@ -1,9 +1,17 @@
-// The root container only
+@use "config";
+
 .is-container,
 .is-root-container {
   // Add a viewport gutter in the same manner as Gutenberg does
   padding-left: var(--viewport-gutter);
   padding-right: var(--viewport-gutter);
+
+  > *:not(.alignfull):not(.alignwide) {
+    // Move content to the beginning of the grid when it's 8/12 cells
+    @if not config.$is-editor {
+      transform: translateX(calc((var(--alignwide-width) - var(--content-width))/2 * -1));
+    }
+  }
 }
 
 // Any container that can contain blocks or inner blocks.
@@ -19,12 +27,6 @@
     margin-left: auto;
     margin-right: auto;
 
-    transform: translateX(calc((var(--alignwide-width) - var(--content-width))/2 * -1));
-
-    // Gutenberg fix @todo
-    &.wp-block {
-      transform: none;
-    }
 
     &.has-text-align-right {
       margin-right: 0;
@@ -43,7 +45,6 @@
     margin-left: calc(var(--viewport-gutter) * -1);
     margin-right: calc(var(--viewport-gutter) * -1);
     width: unset; // Override Gutenberg
-    transform: none;
   }
 
   // Align has a 12 column width with a viewport gutter
@@ -52,7 +53,6 @@
     max-width: var(--alignwide-width);
     margin-left: auto;
     margin-right: auto;
-    transform: none;
   }
 }
 

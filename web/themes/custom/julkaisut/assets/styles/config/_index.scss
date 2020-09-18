@@ -1,6 +1,8 @@
 @use "~hds-design-tokens/lib/breakpoint/all" as hds;
 @use "common/breakpoints" as *;
 
+$is-editor: false !default;
+
 $mq-breakpoints: (
   xsmall: hds.$breakpoint-xs,
   small: hds.$breakpoint-s,

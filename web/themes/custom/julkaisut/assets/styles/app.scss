@@ -1,5 +1,5 @@
 @use "common/fonts";
-@use "config/variables";
+@use "config" with ($is-editor: false);
 @use "~hds-core/lib/base";
 @use "~hds-core/lib/components/text-input/text-input";
 @use "common/frontend";

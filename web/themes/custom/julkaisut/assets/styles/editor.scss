@@ -1,5 +1,5 @@
 @use "common/fonts";
-@use "config/variables";
+@use "config" with ($is-editor: true);
 @use "~hds-core/lib/base";
 @use "common/utils";
 @use "common/icons";
