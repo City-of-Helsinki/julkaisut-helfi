@@ -1,21 +1,27 @@
+@use "gutenberg/global" as gutenberg;
+
 /**
  * Button
  */
 
  .wp-block-button {
-  color: var(--color-white);;
-  background-color: var(--color-primary);
+  --button-color: var(--color-white);
+  --button-background: var(--color-primary);
+  --button-background-hover: var(--color-bus-dark-50);
+
+  color: var(--button-color);;
+  background-color: var(--button-background);
   font-weight: 500;
 
   &:hover,
   &:focus {
-    background-color: var(--color-bus-dark-50);
+    background-color: var(--button-background-hover);
   }
 
   &.is-style-small,
   &.is-style-outline {
-    color: var(--color-primary);
-    background-color: transparent;
+    --button-color: var(--button-background);
+    background-color: transparent !important;
 
     &.wp-block-button__link,
     & .wp-block-button__link {
@@ -24,17 +30,42 @@
 
     &:hover,
     &:focus {
-      color: var(--color-bus-dark-50);
-      background-color: transparent;
-      text-decoration: underline;
+      --button-color: var(--button-background-hover);
+
+      &,
+      & .wp-block-button__link {
+        text-decoration: underline;
+      }
     }
   }
+
+  & &__link:not(.has-background) {
+    background-color: transparent;
+  }
+
+  // Add a generic hover state without having to find color matches
+  // This is inverted for light colors
+  &__link.has-background:hover {
+    filter: brightness(1.25);
+  }
+
 
   &__link {
     border-radius: 0;
     padding: 21px 32px;
     font-size: var(--fontsize-body-m);
     line-height: var(--lineheight-s);
+    color: inherit;
+
+    @each $name in gutenberg.$palette-colors-light {
+      &.has-#{$name}-background-color {
+        color: var(--color-black-90);
+
+        &:hover {
+          filter: brightness(0.85);
+        }
+      }
+    }
   }
 
   &.is-style-small {
