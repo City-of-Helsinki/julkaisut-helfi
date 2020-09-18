@@ -25,6 +25,7 @@ permissions:
   - 'create book content'
   - 'create content translations'
   - 'create document media'
+  - 'create image media'
   - 'create media'
   - 'create new books'
   - 'create page content'
