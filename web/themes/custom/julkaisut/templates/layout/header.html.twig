@@ -1,10 +1,7 @@
 <div class="site-header">
-  <a class="site-header__logo" href="{{ front_page }}" rel="home" aria-label="{{ 'Go to frontpage'|t }}">
-    {{ logo }}
-  </a>
 
-  <div class="site-header__name">
-    <h5>{{ site_name }}</h5>
+  <div class="site-header__logo">
+    {{ drupal_block('system_branding_block') }}
   </div>
 
   <div class="site-header__search">

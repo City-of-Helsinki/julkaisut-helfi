@@ -1,0 +1,30 @@
+@use "common/breakpoints" as *;
+
+.site-logo {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: var(--spacing-m);
+  align-items: center;
+
+  @include mq($from: large) {
+    grid-gap: var(--spacing-l);
+  }
+
+  &__icon {
+    // Offset so the text within the logo is vertically centered
+    margin-bottom: -5px;
+
+    @include mq($from: large) {
+      img {
+        width: 102px;
+        height: 47px;
+      }
+    }
+  }
+
+  &__name {
+    font-weight: bold;
+    text-decoration: none;
+    color: inherit;
+  }
+}

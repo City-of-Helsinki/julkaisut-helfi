@@ -31,11 +31,11 @@
     position: relative;
     display: flex;
     align-items: center;
-    padding: var(--spacing-s) var(--spacing-m);
+    padding: var(--spacing-s);
 
     // Make space for trigger
     .has-children > & {
-      padding-right: calc(var(--spacing-m) + var(--spacing-s));
+      padding-right: calc(var(--spacing-s) + var(--spacing-s));
     }
   }
 

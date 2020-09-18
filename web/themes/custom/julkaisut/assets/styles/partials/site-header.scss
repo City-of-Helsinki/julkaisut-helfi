@@ -21,25 +21,8 @@
   }
 
   &__logo {
-    margin-right: var(--spacing-m);
-    // Offset so the text within the logo is vertically centered
-    margin-bottom: -5px;
-
-    @include mq($from: large) {
-      svg {
-        width: 102px;
-        height: 47px;
-      }
-    }
-  }
-
-  &__name {
     // push remaining columns to the right
     flex: 1 0 auto;
-
-    > h5 {
-      margin-bottom: 0;
-    }
   }
 
   &__search {

@@ -291,6 +291,12 @@ function julkaisut_preprocess_block(&$variables) {
     case 'language_block':
       $variables['attributes']['class'][] = 'site-languages';
       break;
+    // Swap the logo based on language
+    case 'system_branding_block':
+      $langcode = Drupal::service('language_manager')->getCurrentLanguage()->getId();
+      $logo_filename = ($langcode === 'sv') ? 'helsinki-sv.svg' : 'helsinki-fi.svg';
+      $variables['site_logo'] = file_create_url($variables['directory'] . "/dist/images/logo/$logo_filename");
+      break;
   }
 
   if (isset($variables['elements']['#id'])) {
