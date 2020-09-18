@@ -5,7 +5,7 @@ dependencies:
   module:
     - focal_point
 name: banner_1024x300
-label: 'Banner (1024x300)'
+label: 'Banner (1024x620)'
 effects:
   fc8d984d-b64a-4c06-b967-37e8aca54413:
     uuid: fc8d984d-b64a-4c06-b967-37e8aca54413
@@ -13,5 +13,5 @@ effects:
     weight: 1
     data:
       width: 1024
-      height: 300
+      height: 620
       crop_type: focal_point
