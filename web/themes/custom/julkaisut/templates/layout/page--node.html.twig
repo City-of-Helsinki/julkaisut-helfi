@@ -1,3 +1,13 @@
 {% extends '@julkaisut/layout/page.html.twig' %}
 
-{% block content page.content %}
+{% block content %}
+  {{ page.content }}
+
+  {% if page.below_content %}
+    <div class="is-container">
+      <div class="alignwide">
+        {{ page.below_content }}
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}

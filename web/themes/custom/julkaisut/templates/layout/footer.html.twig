@@ -1,9 +1,5 @@
 <div class="site-footer">
-  <a class="site-footer__logo" href="{{ front_page }}" rel="home" aria-label="{{ 'Go to frontpage'|t }}">
-    {{ logo }}
-  </a>
-
-  <div class="site-footer__name">
-    <h5>{{ site_name }}</h5>
-  </div>
+  {{ page.footer_top }}
+  {{ page.footer }}
+  {{ page.footer_bottom }}
 </div>

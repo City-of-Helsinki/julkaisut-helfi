@@ -11,3 +11,13 @@ libraries:
 
 stylesheets-remove:
   - '@classy/css/components/item-list.css'
+
+regions:
+  header: Header
+  highlighted: Highlighted
+  help: Help
+  content: Content
+  below_content: Below Content
+  footer_top: Footer Top
+  footer: Footer
+  footer_bottom: Footer Bottom

@@ -46,19 +46,24 @@
 
   <div class="site__content">
     {{ page.pre_content }}
-    {{ page.breadcrumb }}
     <main class="page-content clearfix" role="main">
       <div class="visually-hidden"><a id="main-content" tabindex="-1"></a></div>
-      {{ page.highlighted }}
-      {% if page.help %}
-        <div class="help">
-          {{ page.help }}
+
+      {% if page.help or page.highlighted %}
+        <div class="is-container">
+          {{ page.highlighted }}
+          {% if page.help %}
+            <div class="help">
+              {{ page.help }}
+            </div>
+          {% endif %}
         </div>
       {% endif %}
 
       {% block content %}
         <div class="is-container">
           {{ page.content }}
+          {{ page.below_content }}
         </div>
       {% endblock %}
     </main>

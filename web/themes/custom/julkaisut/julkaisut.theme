@@ -303,7 +303,9 @@ function julkaisut_preprocess_block(&$variables) {
     if ($block = Block::load($variables['elements']['#id'])) {
       switch ($block->getRegion()) {
         case 'content':
-          $variables['attributes']['class'][] = 'is-container';
+          if ($block->id() !== 'mainpagecontent') {
+            $variables['attributes']['class'][] = 'is-container';
+          }
           break;
       }
     }
