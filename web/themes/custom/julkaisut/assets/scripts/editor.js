@@ -2,15 +2,22 @@ import domReady from '@wordpress/dom-ready';
 import {
   unregisterBlockStyle,
   registerBlockStyle,
+  unregisterBlockType,
 } from '@wordpress/blocks';
 import { createHigherOrderComponent} from '@wordpress/compose';
 import { addFilter } from '@wordpress/hooks';
+
+let drupalSettings = window.drupalSettings;
 
 domReady(() => {
   registerBlockStyle('core/image', {
     name: 'koros-basic-top',
     label: 'Basic Koros Top',
   });
+});
+
+drupalSettings.gutenberg._listeners.init.push(() => {
+  unregisterBlockStyle('core/quote', 'large');
 });
 
 addFilter(
