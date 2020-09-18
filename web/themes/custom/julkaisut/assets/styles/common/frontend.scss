@@ -4,6 +4,12 @@ html {
   display: flex;
   overflow-x: hidden;
   box-sizing: border-box;
+
+  scroll-behavior: smooth;
+
+  @media (prefers-reduced-motion: reduce) {
+    scroll-behavior: auto;
+  }
 }
 
 *,
