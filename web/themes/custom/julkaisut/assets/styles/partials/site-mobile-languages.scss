@@ -1,0 +1,31 @@
+.site-mobile-languages {
+  display: none;
+  border-top: solid 1px var(--color-black-10);
+
+  .is-active & {
+    display: block;
+  }
+
+  &__menu {
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  li {
+    list-style-type: none;
+    padding: 0;
+    font-weight: 500;
+  }
+
+  li span,
+  li a {
+    display: block;
+    padding: var(--spacing-m) var(--spacing-2-xs);
+  }
+
+  li.is-active {
+    color: var(--color-black-90);
+    text-decoration: none;
+  }
+}

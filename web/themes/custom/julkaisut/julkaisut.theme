@@ -7,7 +7,9 @@
 
 use Drupal\block\Entity\Block;
 use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Render\Markup;
+use Drupal\Core\Url;
 use Drupal\node\Entity\Node;
 use Drupal\views\ViewExecutable;
 
@@ -238,6 +240,20 @@ function julkaisut_preprocess_page(&$variables) {
   if ($node && $node->field_wide_contentwidth && $node->field_wide_contentwidth->getString() === '1') {
     $variables['attributes']['style'] = '--content-width: var(--alignwide-width)';
   }
+
+  $links = \Drupal::service('language_manager')->getLanguageSwitchLinks(LanguageInterface::TYPE_INTERFACE, Url::fromRoute(
+    \Drupal::service('path.matcher')->isFrontPage() ? '<front>' : '<current>',
+  ));
+
+  $variables['mobile_language_menu'] = [
+    '#theme' => 'links',
+    '#links' => $links->links,
+    '#set_active_class' => TRUE,
+    '#attributes' => [
+      'role' => 'menu',
+      'class' => ['site-mobile-languages__menu'],
+    ]
+  ];
 }
 
 /**

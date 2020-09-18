@@ -13,6 +13,10 @@
 
   {{ page.header }}
 
+  <div class="site-header__languages">
+    {{ drupal_block('language_block:language_interface') }}
+  </div>
+
   <div class="site-header__hamburger-button">
     <button
       class="site-hamburger-button"
@@ -30,6 +34,5 @@
 </nav>
 
 <nav class="site-mobile-languages">
-  <ul class="site-mobile-languages__menu" role="menu">
-  </ul>
+  {{ mobile_language_menu }}
 </nav>
