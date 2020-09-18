@@ -2,13 +2,15 @@
 @use "common/utils" as *;
 
 .site-footer {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+  display: grid;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding: var(--spacing-layout-l) var(--spacing-s) var(--spacing-layout-xs);
+  padding: var(--spacing-layout-l) var(--spacing-layout-m) var(--spacing-layout-xs);
+  text-align: center;
+  font-size: var(--fontsize-body-m);
+
+  --menu-item-padding: var(--spacing-2-xs) var(--spacing-xs);
 
   @include mq($from: large) {
     padding-left: 0;
@@ -16,7 +18,169 @@
     max-width: calc(var(--container-width) * 1px);
   }
 
-  @include ie11 {
-    max-width: var(--global-width);
+  // Remove the container padding in text blcoks
+  .is-root-container {
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+
+    &-item {
+      padding-top: 0;
+      list-style: none;
+      font-weight: 500;
+      color: var(--color-black-90);
+    }
+
+    &-item a {
+      color: inherit;
+      text-decoration: none;
+      line-height: var(--lineheight-l);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--menu-item-padding);
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  // Section with brand, and main footer menu
+  .region-footer-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    // Stack the logo + name on mobile
+    @include mq($until: small) {
+      .site-logo {
+        grid-template-columns: auto;
+        grid-gap: var(--spacing-xs);
+        margin-bottom: var(--spacing-s);
+      }
+    }
+  }
+
+  .region-footer {
+    border-top: solid 1px var(--color-black-20);
+    border-bottom: solid 1px var(--color-black-20);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: var(--spacing-m);
+    // Subtract the menu item padding
+    margin-top: calc(var(--spacing-m) - var(--spacing-xs));
+    padding-top: calc(var(--spacing-m) - var(--spacing-xs));
+    padding-bottom: calc(var(--spacing-m) - var(--spacing-xs));
+  }
+
+  .region-footer-bottom {
+    font-size: var(--fontsize-body-s);
+  }
+
+  // Footer main menu is a grid of two cells on mobile
+  .menu--footer .menu {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+
+  .menu--footer-actions a[href="#top"]::after {
+    content: '';
+    display: inline-block;
+    background-color: currentColor;
+    width: var(--spacing-m);
+    height: var(--spacing-m);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: auto;
+    mask-image: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M0 0h24v24H0z'/%3E%3Cpath fill='currentColor' d='M12 3.636L18.364 10l-1.414 1.414L13 7.464V20h-2V7.465l-3.95 3.95L5.636 10z'/%3E%3C/g%3E%3C/svg%3E");
+    margin-left: var(--spacing-3-xs);
+  }
+
+  // Footer bottom menu is a grid of three cells on mobile
+  .menu--footer-fineprint .menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, auto));
+    justify-content: center;
+
+    &-item a {
+      text-decoration: underline;
+      font-weight: 400;
+    }
+  }
+
+  // Social media menu is always horizontal
+  .menu--social-media .menu {
+    --menu-item-padding: var(--spacing-xs) var(--spacing-2-xs);
+    flex-direction: row;
+  }
+
+  @include mq($from: small) {
+    // Left align content on desktop
+    text-align: left;
+    font-size: var(--fontsize-body-l);
+
+    --menu-item-padding: var(--spacing-m) var(--spacing-s);
+
+    .menu {
+      display: flex;
+      flex-direction: row;
+    }
+
+    // The grid menus become horizontal menus on large screens
+    .menu--footer-fineprint .menu,
+    .menu--footer .menu {
+      display: flex;
+    }
+
+    .menu--footer-fineprint .menu {
+      --menu-item-padding: var(--spacing-m) var(--spacing-xs);
+    }
+
+    .menu--social-media .menu {
+      --menu-item-padding: var(--spacing-m) var(--spacing-2-xs);
+    }
+
+    // The top footer items are left aligned on desktop, they still stack
+    .region-footer-top {
+      display: block;
+      --menu-item-padding: var(--spacing-l) var(--spacing-s);
+    }
+
+    // The menu footer menu row is horizontal on large screens
+    .region-footer {
+      flex-direction: row;
+      justify-content: space-between;
+      // Remove the mobile specific gutters
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    // The last row is horizontal on large screens
+    .region-footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    // Align with borders on larger screens
+    .menu-item:last-child a {
+      padding-right: 0;
+    }
+
+    .menu-item:first-child a {
+      padding-left: 0;
+    }
   }
 }

@@ -201,6 +201,23 @@ function julkaisut_preprocess_views_view_unformatted(&$variables) {
 }
 
 /**
+ * Implements template_preprocess_menu__social_media().
+ */
+function julkaisut_preprocess_menu__social_media(&$variables) {
+  foreach ($variables['items'] as &$item) {
+    $item['title'] = Markup::create(sprintf(
+      '<i class="hds-icon hds-icon--size-s %s" role="presentation"></i>',
+      $item['title']
+    ));
+
+    $item['url']->setOption('attributes', array_merge(
+      $item['url']->getOption('attributes'),
+      ['target' => '_blank']
+    ));
+  }
+}
+
+/**
  * Implements template_preprocess_media__document__download().
  */
 function julkaisut_preprocess_media__document__download(&$variables) {
