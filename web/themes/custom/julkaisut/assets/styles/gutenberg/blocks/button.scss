@@ -41,6 +41,7 @@
 
   & &__link:not(.has-background) {
     background-color: transparent;
+    color: inherit;
   }
 
   // Add a generic hover state without having to find color matches
@@ -55,7 +56,6 @@
     padding: 21px 32px;
     font-size: var(--fontsize-body-m);
     line-height: var(--lineheight-s);
-    color: inherit;
 
     @each $name in gutenberg.$palette-colors-light {
       &.has-#{$name}-background-color {
