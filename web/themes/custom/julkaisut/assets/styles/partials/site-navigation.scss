@@ -107,8 +107,8 @@
         transition: all 100ms ease-out;
       }
 
-      .is-level-1 > &:focus::after,
-      .is-level-1[aria-expanded="true"] > &::after {
+      .is-level-0 > &:focus::after,
+      .is-level-0[aria-expanded="true"] > &::after {
         left: 0;
         right: 0;
       }

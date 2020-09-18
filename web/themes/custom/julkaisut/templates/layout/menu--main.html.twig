@@ -34,12 +34,13 @@
     {% if menu_level == 0 %}
       <ul{{ attributes.addClass('site-navigation') }}>
     {% else %}
-      <ul>
+      <ul class="site-navigation__submenu">
     {% endif %}
     {% for item in items %}
       <li{{
         item.attributes
           .addClass('site-navigation__item')
+          .addClass('is-level-' ~ menu_level)
           .addClass(item.below ? 'has-children' : '')
           .setAttribute('aria-haspopup', 'true')
           .setAttribute('aria-expanded', 'false')
