@@ -1,0 +1,25 @@
+uuid: b7ae26c3-672c-45d4-ac4f-713f7d881925
+langcode: fi
+status: true
+dependencies:
+  config:
+    - system.menu.footer-fineprint
+  module:
+    - system
+  theme:
+    - julkaisut
+id: footerfineprint
+theme: julkaisut
+region: footer_bottom
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer-fineprint'
+settings:
+  id: 'system_menu_block:footer-fineprint'
+  label: 'Footer fineprint'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

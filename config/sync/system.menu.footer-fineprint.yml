@@ -1,0 +1,8 @@
+uuid: ca9319e6-04f3-4149-b80c-ced790278ecd
+langcode: fi
+status: true
+dependencies: {  }
+id: footer-fineprint
+label: 'Footer fineprint'
+description: 'The bottom-most navigation in the footer'
+locked: false

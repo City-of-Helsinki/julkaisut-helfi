@@ -1,0 +1,25 @@
+uuid: 4150fadd-0419-40fd-8733-e5f520a7ae04
+langcode: fi
+status: true
+dependencies:
+  config:
+    - system.menu.footer-actions
+  module:
+    - system
+  theme:
+    - julkaisut
+id: footeractions
+theme: julkaisut
+region: footer
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer-actions'
+settings:
+  id: 'system_menu_block:footer-actions'
+  label: 'Footer actions'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

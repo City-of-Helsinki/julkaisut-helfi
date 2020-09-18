@@ -1,0 +1,25 @@
+uuid: cd9d86a5-611b-41b1-8e5c-4439d7502486
+langcode: fi
+status: true
+dependencies:
+  config:
+    - system.menu.social-media
+  module:
+    - system
+  theme:
+    - julkaisut
+id: socialmedia
+theme: julkaisut
+region: footer
+weight: -4
+provider: null
+plugin: 'system_menu_block:social-media'
+settings:
+  id: 'system_menu_block:social-media'
+  label: 'Social media'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

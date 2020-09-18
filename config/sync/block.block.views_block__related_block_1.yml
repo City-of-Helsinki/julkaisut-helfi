@@ -1,0 +1,32 @@
+uuid: c6a91606-03f8-433d-bd67-1f0415168b6c
+langcode: fi
+status: true
+dependencies:
+  config:
+    - views.view.related
+  module:
+    - ctools
+    - views
+  theme:
+    - julkaisut
+id: views_block__related_block_1
+theme: julkaisut
+region: below_content
+weight: -3
+provider: null
+plugin: 'views_block:related-block_1'
+settings:
+  id: 'views_block:related-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      article: article
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
