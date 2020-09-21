@@ -1,0 +1,15 @@
+@use "common/breakpoints" as *;
+
+figure.media {
+  margin: 0;
+
+  figcaption {
+    font-size: var(--fontsize-body-s);
+    text-align: left;
+    font-style: italic;
+
+    @include mq($from: large) {
+      font-size: var(--fontsize-body-m);
+    }
+  }
+}

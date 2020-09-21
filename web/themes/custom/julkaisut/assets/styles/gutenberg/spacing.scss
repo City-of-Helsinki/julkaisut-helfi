@@ -86,6 +86,10 @@
 .alignfull {
   margin-top: var(--block-gutter-l);
   margin-bottom: var(--block-gutter-l);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 // Adjacent full aligned blocks should not have a gutter.

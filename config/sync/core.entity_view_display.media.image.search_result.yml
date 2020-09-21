@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.search_result
+    - field.field.media.image.field_caption
     - field.field.media.image.field_media_image
     - media.type.image
     - responsive_image.styles.search_result
@@ -15,7 +16,7 @@ bundle: image
 mode: search_result
 content:
   field_media_image:
-    label: visually_hidden
+    label: hidden
     weight: 0
     settings:
       responsive_image_style: search_result
@@ -25,6 +26,7 @@ content:
     region: content
 hidden:
   created: true
+  field_caption: true
   langcode: true
   name: true
   search_api_excerpt: true

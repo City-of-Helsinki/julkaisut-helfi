@@ -1,0 +1,19 @@
+uuid: d9aefceb-96a4-48d7-aec2-72ec599980f9
+langcode: fi
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_featured_image_caption
+    - node.type.article
+id: node.article.field_featured_image_caption
+field_name: field_featured_image_caption
+entity_type: node
+bundle: article
+label: 'Featured image caption'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

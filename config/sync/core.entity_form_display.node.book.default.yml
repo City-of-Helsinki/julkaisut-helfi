@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.book.body
     - field.field.node.book.field_copyright
+    - field.field.node.book.field_featured_image_caption
     - field.field.node.book.field_image
     - field.field.node.book.field_pdf
     - field.field.node.book.field_tags
@@ -46,6 +47,14 @@ content:
     third_party_settings: {  }
     type: text_textarea
     region: content
+  field_featured_image_caption:
+    weight: 13
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_image:
     weight: 12
     settings:
@@ -55,7 +64,7 @@ content:
     region: content
   field_pdf:
     type: media_library_widget
-    weight: 14
+    weight: 15
     settings:
       media_types: {  }
     third_party_settings: {  }
@@ -120,7 +129,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 13
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -135,7 +144,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 15
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }

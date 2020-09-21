@@ -1,7 +1,12 @@
 uuid: 18d2e91d-9b33-4c6e-84c3-118293fc7b95
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - crop
+third_party_settings:
+  crop:
+    image_field: _none
 id: image
 label: Image
 description: ''

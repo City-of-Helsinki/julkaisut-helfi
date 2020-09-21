@@ -1,0 +1,19 @@
+uuid: cf9e2625-5fc2-46f6-ba0e-a909f2ce359a
+langcode: fi
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_caption
+    - media.type.image
+id: media.image.field_caption
+field_name: field_caption
+entity_type: media
+bundle: image
+label: Caption
+description: 'Caption displayed below the image.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

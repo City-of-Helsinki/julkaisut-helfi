@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.book.body
     - field.field.node.book.field_copyright
+    - field.field.node.book.field_featured_image_caption
     - field.field.node.book.field_image
     - field.field.node.book.field_pdf
     - field.field.node.book.field_tags
@@ -62,6 +63,7 @@ content:
     type: entity_reference_label
     region: content
 hidden:
+  field_featured_image_caption: true
   field_wide_contentwidth: true
   field_year: true
   langcode: true

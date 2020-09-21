@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * Theme override to display a media item.
+ *
+ * Available variables:
+ * - name: Name of the media.
+ * - content: Media content.
+ *
+ * @see template_preprocess_media()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'media',
+    'media--type-' ~ media.bundle()|clean_class,
+    not media.isPublished() ? 'media--unpublished',
+    view_mode ? 'media--view-mode-' ~ view_mode.id()|clean_class,
+  ]
+%}
+<figure{{ attributes.addClass(classes) }}>
+  {{ content.field_media_image }}
+
+  {% if content.field_caption %}
+    <figcaption class="is-container">{{ content.field_caption }}</figcaption>
+  {% endif %}
+
+  {{ content|without('field_media_image', 'field_caption') }}
+</figure>
