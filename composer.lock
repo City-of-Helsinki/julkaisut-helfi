@@ -9141,6 +9141,7 @@
         "drupal/language_switcher_extended": 10,
         "drupal/masquerade": 10,
         "drupal/media_library_edit": 15,
+        "drupal/stage_file_proxy": 20,
         "drupal/tvi": 5
     },
     "prefer-stable": true,
