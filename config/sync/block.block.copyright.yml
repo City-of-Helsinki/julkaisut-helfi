@@ -2,10 +2,6 @@ uuid: ade33de9-43b4-455c-aad1-a48a6a3f4c3e
 langcode: fi
 status: true
 dependencies:
-  content:
-    - 'block_content:reusable_block:26c84c19-b785-49bc-9efd-fc9fdd41095c'
-  module:
-    - block_content
   theme:
     - julkaisut
 id: copyright

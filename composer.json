@@ -27,6 +27,7 @@
         "drupal/core-composer-scaffold": "^9",
         "drupal/core-project-message": "^9",
         "drupal/core-recommended": "^9",
+        "drupal/custom_book_block": "^1.0@alpha",
         "drupal/devel": "^4.0",
         "drupal/easy_breadcrumb": "^1.13",
         "drupal/facets": "1.x-dev",
@@ -89,6 +90,9 @@
             },
             "drupal/tvi": {
                 "Route Enhancer to fix route match parameters.": "https://www.drupal.org/files/issues/2020-08-10/2993234-10.patch"
+            },
+            "drupal/custom_book_block": {
+                "Always expand not working for block modes other than `all_pages`": "https://www.drupal.org/files/issues/2020-09-21/issue-custom_book_block.patch"
             }
         },
         "drupal-scaffold": {

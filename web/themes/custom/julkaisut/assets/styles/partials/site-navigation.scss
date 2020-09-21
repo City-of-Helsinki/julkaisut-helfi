@@ -107,6 +107,7 @@
         transition: all 100ms ease-out;
       }
 
+      .is-level-0 > &:hover::after,
       .is-level-0 > &:focus::after,
       .is-level-0[aria-expanded="true"] > &::after {
         left: 0;

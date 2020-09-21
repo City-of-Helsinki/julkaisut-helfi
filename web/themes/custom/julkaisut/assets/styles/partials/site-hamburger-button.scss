@@ -5,7 +5,7 @@
 .site-hamburger-button {
   margin-bottom: 0;
   padding: var(--spacing-s);
-  margin-right: calc((var(--spacing-m) - var(--spacing-s)) * -1);
+  margin-right: calc(var(--spacing-s) * -1);
 
   > span {
     @include burger(

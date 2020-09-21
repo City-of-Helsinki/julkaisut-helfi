@@ -24,10 +24,16 @@ export function toggler(el) {
       open(el);
     }
 
+    if (el.dataset.toggleLabel) {
+      const currentLabel = el.getAttribute('aria-label');
+      el.setAttribute('aria-label', el.dataset.toggleLabel);
+      el.dataset.toggleLabel = currentLabel;
+    }
+
     const controls = el.getAttribute('aria-controls');
     if (controls) {
       controls.split(' ').forEach((selector) => {
-        const el  = document.getElementById(selector);
+        const el = document.getElementById(selector);
         if (isExpanded) {
           el.classList.remove('is-active');
         }

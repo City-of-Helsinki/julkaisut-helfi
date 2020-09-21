@@ -26,29 +26,65 @@
   We call a macro which calls itself to render the full tree.
   @see https://twig.symfony.com/doc/1.x/tags/macro.html
 #}
-{{ book_tree.book_links(items, attributes, 0) }}
+{{ book_tree.book_links(items, attributes, 0, is_expanded) }}
 
-{% macro book_links(items, attributes, menu_level) %}
+{% macro book_links(items, attributes, menu_level, is_expanded, parent) %}
   {% import _self as book_tree %}
   {% if items %}
     {% if menu_level == 0 %}
-      <ul{{ attributes.addClass('book-tree') }}>
+      <button
+        class="book-tree__trigger"
+        aria-controls="book-tree"
+        aria-label="{% trans %}Show Table of Contents{% endtrans %}"
+        aria-expanded="{{ is_expanded ? 'true' : 'false' }}"
+        data-toggle-label="{% trans %}Close Table of Contents{% endtrans %}"
+      >
+        <span>{{ 'Table of Contents' | t }}</span>
+        <i class="hds-icon hds-icon--menu-hamburger hds-icon--size-s" role="presentation"></i>
+      </button>
+      <ul{{ attributes
+        .addClass('book-tree')
+        .addClass(is_expanded ? 'is-active')
+        .setAttribute('role', 'menubar')
+        .setAttribute('id', 'book-tree')
+      }}>
     {% else %}
-      <ul>
+      <ul
+        class="book-tree__submenu {{ is_expanded ? 'is-active' }}"
+        {% if parent %}
+          id="submenu-{{ parent.title|clean_class }}"
+          aria-label="{{ parent.title }}"
+        {% endif %}
+        role="menu"
+      >
     {% endif %}
+
     {% for item in items %}
       <li{{
         item.attributes
-          .addClass('site-navigation__item')
+          .addClass('book-tree__item')
           .addClass(item.below ? 'has-children' : '')
-          .setAttribute('aria-haspopup', 'true')
-          .setAttribute('aria-expanded', 'false')
-          .setAttribute('aria-label', item.title)
-          .setAttribute('role', 'none')
+          .setAttribute('role', 'menuitem')
       }}>
-        {{ link(item.title, item.url) }}
+        {{ link(item.title, item.url, { 'class': [
+            'book-tree__link',
+            item.in_active_trail ? 'is-active-trail',
+            item.in_active_trail and not item.below ? 'is-active',
+        ] }) }}
         {% if item.below %}
-          {{ book_tree.book_links(item.below, attributes, menu_level + 1) }}
+          <button
+            class="book-tree__submenu-trigger"
+            aria-expanded="{{ item.in_active_trail ? 'true' : 'false' }}"
+            aria-controls="submenu-{{ item.title | clean_class }}"
+            aria-label="{% trans %}Open {{ item.title }} submenu{% endtrans %}"
+            data-submenu-trigger
+            data-toggle-label="{% trans %}Close {{ item.title }} submenu{% endtrans %}"
+            data-close-icon="hds-icon hds-icon--minus hds-icon--size-s"
+            id="submenu-trigger-{{ item.title| clean_class }}"
+          >
+            <i class="hds-icon hds-icon--plus hds-icon--size-s" role="presentation"></i>
+          </button>
+          {{ book_tree.book_links(item.below, attributes, menu_level + 1, item.in_active_trail, item) }}
         {% endif %}
       </li>
     {% endfor %}

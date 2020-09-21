@@ -1,3 +1,5 @@
+@use "common/breakpoints" as *;
+
 .book-navigation {
   font-size: var(--fontsize-body-s);
   display: grid;
@@ -5,6 +7,12 @@
   list-style-type: none;
   padding-left: 0;
   background-color: var(--color-bus);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  box-shadow: 0px -3px 6px #00000029;
 
   &__previous {
     background-color: #3333CB;
@@ -17,6 +25,10 @@
   &__next {
     a {
       justify-content: space-between;
+
+      @include mq($from: large) {
+        justify-content: flex-end;
+      }
     }
 
     .hds-icon {

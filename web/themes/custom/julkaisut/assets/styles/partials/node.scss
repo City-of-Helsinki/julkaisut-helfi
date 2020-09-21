@@ -1,3 +1,5 @@
+@use "common/breakpoints" as *;
+
 .node__meta {
   display: grid;
 
@@ -37,5 +39,45 @@
     max-height: 500px;
     object-fit: cover;
     object-position: 50% 50%;
+  }
+}
+
+.node--type-book.node--view-mode-full.node--book-depth-1 {
+  display: grid;
+
+  grid-template:
+    "published"
+    "metadata"
+    "image"
+    "book-outline"
+    "content";
+
+  @include mq($from: large) {
+    grid-template:
+      "published"
+      "metadata"
+      "book-outline"
+      "image"
+      "content";
+  }
+
+  .node__published {
+    grid-area: published;
+  }
+
+  .node__content {
+    grid-area: content;
+  }
+
+  .node__metadata {
+    grid-area: metadata;
+  }
+
+  .node__featured-image {
+    grid-area: image;
+  }
+
+  .node__book-outline {
+    grid-area: book-outline;
   }
 }

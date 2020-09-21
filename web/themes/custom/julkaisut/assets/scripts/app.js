@@ -22,8 +22,18 @@ Drupal.behaviors.julkaisutTheme = {
       this.mobileMenu(context);
     }
 
+    this.bookMenu(context);
+
     this.responsiveTables(context.querySelectorAll('.wp-block-table table'));
     this.clipboard(context.querySelectorAll('[data-clipboard-text]'));
+  },
+
+  bookMenu(context) {
+    const submenuTriggers = context.querySelectorAll('.book-tree__submenu-trigger, .book-tree__trigger');
+    for (let i = 0; i < submenuTriggers.length; i++) {
+      const trigger = submenuTriggers[i];
+      toggler(trigger);
+    }
   },
 
   desktopMenu(context) {

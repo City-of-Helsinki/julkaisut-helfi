@@ -236,6 +236,16 @@ function julkaisut_preprocess_menu__social_media(&$variables) {
 }
 
 /**
+ * Implements template_preprocess_book_tree().
+ */
+function julkaisut_preprocess_book_tree(&$variables) {
+  $variables['is_expanded'] = FALSE;
+  if ($node = \Drupal::request()->get('node')) {
+    $variables['is_expanded'] = $node->book['depth'] === '1';
+  }
+}
+
+/**
  * Implements template_preprocess_media__document__download().
  */
 function julkaisut_preprocess_media__document__download(&$variables) {

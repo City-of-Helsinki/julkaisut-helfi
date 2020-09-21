@@ -1,0 +1,37 @@
+uuid: 9bfcc0f6-247c-4ae4-a18a-41dd5b1c3b16
+langcode: fi
+status: true
+dependencies:
+  module:
+    - ctools
+    - custom_book_block
+    - system
+  theme:
+    - julkaisut
+id: custombooknavigation
+theme: julkaisut
+region: content
+weight: -6
+provider: null
+plugin: custom_book_navigation
+settings:
+  id: custom_book_navigation
+  label: 'Custom book navigation'
+  provider: custom_book_block
+  label_display: '0'
+  block_mode: 'book pages'
+  target_book: ''
+  max_levels: '0'
+  always_expand: 1
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      book: book
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  request_path:
+    id: request_path
+    pages: '/*/*/*'
+    negate: false

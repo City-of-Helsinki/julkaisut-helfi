@@ -1,6 +1,8 @@
 .breadcrumb.breadcrumb {
   padding-bottom: 0;
 
+  font-size: var(--fontsize-body-s);
+
   li::before {
     content: " / ";
   }

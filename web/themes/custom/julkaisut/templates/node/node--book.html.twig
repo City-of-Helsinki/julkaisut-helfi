@@ -1,7 +1,7 @@
 {% extends '@julkaisut/node/node.html.twig' %}
 
 {% block node__content_wrapper %}
-  <div class="is-container">
+  <div class="is-container node__metadata">
     {{ content.field_copyright }}
 
     <div class="node__meta">
@@ -20,11 +20,13 @@
     </div>
   </div>
 
-  {{ content.body }}
-
-  {% include '@julkaisut/partials/featured-image.html.twig' %}
-
-  <div class="is-container">
-    {{ content|without('body', 'field_tags', 'field_pdf', 'field_image') }}
+  <div class="node__content">
+    {{ content|without('field_tags', 'field_pdf', 'field_image', 'book_navigation') }}
   </div>
+
+  <div class="node__featured-image">
+    {% include '@julkaisut/partials/featured-image.html.twig' %}
+  </div>
+
+  {{ content.book_navigation }}
 {% endblock %}
