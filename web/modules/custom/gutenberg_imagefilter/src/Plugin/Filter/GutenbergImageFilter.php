@@ -163,7 +163,13 @@ class GutenbergImageFilter extends FilterBase implements ContainerFactoryPluginI
       // '#url' => $file->createFileUrl(),
     ];
 
-    return $this->renderer->render($element);
+    try {
+      return $this->renderer->renderRoot($element);
+    }
+    // In case something goes wrong (eg using stage file proxy, just fallback)
+    catch (\LogicException $e) {
+      return $image;
+    }
   }
 
   /**
