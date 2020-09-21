@@ -358,7 +358,14 @@ function julkaisut_preprocess(&$variables) {
     case 'form_element_label':
       $variables['attributes']['class'][] = 'hds-text-input__label';
       break;
+    case 'input__email':
+    case 'input__file':
+    case 'input__number':
+    case 'input__password':
+    case 'input__search':
+    case 'input__tel':
     case 'input__textfield':
+    case 'input__url':
     case 'select':
       $variables['attributes']['class'][] = 'hds-text-input__input';
       if (isset($variables['element']['#type']) && $variables['element']['#type'] === 'search_api_autocomplete') {
