@@ -325,6 +325,17 @@ function julkaisut_preprocess_links__language_block(&$variables) {
   if ($variables['links']['en']['link']['#title'] ?? null) {
     $variables['links']['en']['link']['#title'] = 'In English';
   }
+
+  foreach ($variables['links'] as &$link) {
+    if (!empty($link['link'])) {
+      $link['link']['#options']['attributes']['role'] = 'menuitem';
+    } else {
+      $link['attributes']
+        ->setAttribute('role', 'menuitem')
+        ->setAttribute('tabindex', '-1');
+    }
+  }
+
   $variables['current_language'] = \Drupal::languageManager()->getCurrentLanguage();
 }
 

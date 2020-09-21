@@ -42,7 +42,7 @@
           .addClass('site-navigation__item')
           .addClass('is-level-' ~ menu_level)
           .addClass(item.below ? 'has-children' : '')
-          .setAttribute('aria-haspopup', 'true')
+          .setAttribute('aria-haspopup', item.below ? 'true' : 'false')
           .setAttribute('aria-expanded', 'false')
           .setAttribute('aria-label', item.title)
           .setAttribute('role', 'none')

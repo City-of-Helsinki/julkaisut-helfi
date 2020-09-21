@@ -21,8 +21,12 @@ function keydownListener(e) {
 
   const isInSubmenu = !! currentLink.closest('[role="menu"]');
 
-  const nextItem = currentLink.parentElement.nextElementSibling;
-  const prevItem = currentLink.parentElement.previousElementSibling;
+  const nextItem = currentLink.matches('a') ?
+    currentLink.parentElement.nextElementSibling :
+    currentLink.nextElementSibling;
+  const prevItem = currentLink.matches('a') ?
+    currentLink.parentElement.previousElementSibling :
+    currentLink.previousElementSibling;
   const nextLink = nextItem ? nextItem.querySelector('a') : null;
   const prevLink = prevItem ? prevItem.querySelector('a') : null;
 
@@ -47,6 +51,9 @@ function keydownListener(e) {
       if (isInSubmenu) {
         if (nextLink) {
           nextLink.focus();
+          e.preventDefault();
+        } else if (nextItem) {
+          nextItem.focus();
           e.preventDefault();
         }
       } else if (submenu) {

@@ -53,7 +53,12 @@
     <span class="site-languages__trigger hds-icon hds-icon--angle-down hds-icon--size-m" aria-role="presentation"></span>
   </button>
 
-  <ul{{ attributes.addClass('site-languages__menu') }}>
+  <ul{{
+    attributes
+      .addClass('site-languages__menu')
+      .setAttribute('id', 'site-languages')
+      .setAttribute('role', 'menu')
+  }}>
     {%- for item in links -%}
       <li{{ item.attributes.addClass('site-languages__item') }}>
         {%- if item.link -%}
