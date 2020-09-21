@@ -1,0 +1,17 @@
+uuid: abf1f8e4-a083-4d30-ac41-50124c30554e
+langcode: fi
+status: true
+dependencies:
+  module:
+    - focal_point
+name: banner_2000x714_
+label: 'Banner (2000x714)'
+effects:
+  00207399-7692-49d7-a149-e81b9a402be3:
+    uuid: 00207399-7692-49d7-a149-e81b9a402be3
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 2000
+      height: 714
+      crop_type: focal_point

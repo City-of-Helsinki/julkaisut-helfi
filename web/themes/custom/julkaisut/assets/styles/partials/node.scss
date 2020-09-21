@@ -29,3 +29,13 @@
     margin-bottom: var(--spacing-m);
   }
 }
+
+.node.node--view-mode-full .field--name-field-image picture {
+  display: block;
+
+  img {
+    max-height: 500px;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+}

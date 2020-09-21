@@ -4,7 +4,9 @@ status: true
 dependencies:
   config:
     - image.style.banner_1024x300
+    - image.style.banner_1248x446_
     - image.style.banner_1600x400
+    - image.style.banner_2000x714_
     - image.style.banner_400x267
     - image.style.banner_800x533
   theme:
@@ -12,6 +14,15 @@ dependencies:
 id: banner
 label: Banner
 image_style_mappings:
+  -
+    breakpoint_id: julkaisut.xlarge
+    multiplier: 1x
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - banner_2000x714_
+        - banner_1248x446_
   -
     breakpoint_id: julkaisut.large
     multiplier: 1x
