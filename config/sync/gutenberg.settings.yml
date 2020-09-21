@@ -97,7 +97,7 @@ page_allowed_drupal_blocks:
   'system_menu_block:account': 0
   'system_menu_block:main': 0
 article_enable_full: 1
-article_template: ''
+article_template: "[\r\n  [\"core/paragraph\", {\"placeholder\": \"Write an introduction\", \"className\": \"is-style-excerpt\"}],\r\n  [\"core/paragraph\", {\"placeholder\": \"Add text or type / to add blocks\"}]\r\n]"
 article_template_lock: none
 article_allowed_blocks:
   core/paragraph: core/paragraph

@@ -14,6 +14,11 @@ domReady(() => {
     name: 'koros-basic-top',
     label: 'Basic Koros Top',
   });
+
+  registerBlockStyle('core/paragraph', {
+    name: 'excerpt',
+    label: 'Excerpt',
+  });
 });
 
 drupalSettings.gutenberg._listeners.init.push(() => {

@@ -98,3 +98,8 @@ $palette-colors-light:
     margin-top: var(--spacing-layout-m);
   }
 }
+
+.is-style-excerpt {
+  font-size: var(--fontsize-heading-xs);
+  font-weight: bold;
+}
