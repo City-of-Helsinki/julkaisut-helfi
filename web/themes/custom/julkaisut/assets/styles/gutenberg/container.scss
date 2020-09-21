@@ -10,6 +10,11 @@
     // Move content to the beginning of the grid when it's 8/12 cells
     @if not config.$is-editor {
       transform: translateX(calc((var(--alignwide-width) - var(--content-width))/2 * -1));
+
+      // Cancel out for nested containers.
+      .is-container & {
+        transform: none;
+      }
     }
   }
 }
