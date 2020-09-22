@@ -1,0 +1,18 @@
+uuid: 2c6270b9-1831-4b84-9573-55f4649400ec
+langcode: fi
+status: true
+dependencies:
+  config:
+    - block_content.type.reusable_block
+id: block_content.reusable_block.metatag
+field_name: metatag
+entity_type: block_content
+bundle: reusable_block
+label: Metatags
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

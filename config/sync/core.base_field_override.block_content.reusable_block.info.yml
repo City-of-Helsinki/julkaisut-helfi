@@ -1,0 +1,18 @@
+uuid: 7bd50854-2907-48ca-90ff-3fdb06f3de13
+langcode: fi
+status: true
+dependencies:
+  config:
+    - block_content.type.reusable_block
+id: block_content.reusable_block.info
+field_name: info
+entity_type: block_content
+bundle: reusable_block
+label: 'Block description'
+description: 'Lohkosi lyhyt kuvaus.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,9 +1,9 @@
-uuid: 8d63170b-33c0-4ddd-b655-18d228eaadaf
-langcode: en
+uuid: 0838cb34-5ad6-41b0-aa2b-6663f828683e
+langcode: fi
 status: true
 dependencies:
   config:
-    - media.type.document
+    - block_content.type.reusable_block
   module:
     - content_translation
 third_party_settings:
@@ -11,8 +11,8 @@ third_party_settings:
     enabled: false
     bundle_settings:
       untranslatable_fields_hide: '0'
-id: media.document
-target_entity_type_id: media
-target_bundle: document
+id: block_content.reusable_block
+target_entity_type_id: block_content
+target_bundle: reusable_block
 default_langcode: site_default
 language_alterable: false

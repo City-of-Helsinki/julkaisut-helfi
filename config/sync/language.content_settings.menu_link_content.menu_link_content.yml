@@ -1,18 +1,17 @@
-uuid: 8ad697a1-506b-4549-80e0-28608a14faa7
-langcode: en
+uuid: d0e145b2-59f2-40be-af29-669bc114d47e
+langcode: fi
 status: true
 dependencies:
-  config:
-    - node.type.book
   module:
     - content_translation
+    - menu_link_content
 third_party_settings:
   content_translation:
     enabled: true
     bundle_settings:
       untranslatable_fields_hide: '0'
-id: node.book
-target_entity_type_id: node
-target_bundle: book
+id: menu_link_content.menu_link_content
+target_entity_type_id: menu_link_content
+target_bundle: menu_link_content
 default_langcode: site_default
 language_alterable: true

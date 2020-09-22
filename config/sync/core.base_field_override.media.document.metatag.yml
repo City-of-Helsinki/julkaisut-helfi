@@ -1,0 +1,18 @@
+uuid: 3492ccff-fe60-4842-aec7-2d59b7c4b01b
+langcode: fi
+status: true
+dependencies:
+  config:
+    - media.type.document
+id: media.document.metatag
+field_name: metatag
+entity_type: media
+bundle: document
+label: Metatags
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

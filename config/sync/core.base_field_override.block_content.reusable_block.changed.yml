@@ -1,0 +1,18 @@
+uuid: 13a1583c-4cf4-4462-a646-12bb3f6eb170
+langcode: fi
+status: true
+dependencies:
+  config:
+    - block_content.type.reusable_block
+id: block_content.reusable_block.changed
+field_name: changed
+entity_type: block_content
+bundle: reusable_block
+label: Muuttunut
+description: 'Ajankohta jolloin kustomoitua lohkoa viimeksi muokattiin.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed
