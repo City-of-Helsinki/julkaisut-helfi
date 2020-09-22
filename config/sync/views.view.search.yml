@@ -393,7 +393,7 @@ display:
   block_2:
     display_plugin: block
     id: block_2
-    display_title: 'Julkaisut Search Block'
+    display_title: 'Raportit Search Block'
     position: 1
     display_options:
       display_extenders: {  }
@@ -404,7 +404,7 @@ display:
         filters: false
         filter_groups: false
         exposed_form: false
-      block_description: 'Julkaisuja - Search'
+      block_description: 'Raportit - Search'
       filters:
         search_api_language:
           id: search_api_language

@@ -345,11 +345,11 @@ display:
   block_1:
     display_plugin: block
     id: block_1
-    display_title: 'Nostoja - Julkaisut'
+    display_title: 'Nostoja - Raportit'
     position: 1
     display_options:
       display_extenders: {  }
-      block_description: 'Julkaisuja - Nostoja'
+      block_description: 'Raportit - Nostoja'
       display_description: ''
     cache_metadata:
       max-age: -1
@@ -362,12 +362,12 @@ display:
   block_2:
     display_plugin: block
     id: block_2
-    display_title: 'Chronological - Julkaisut'
+    display_title: 'Chronological - Raportit'
     position: 2
     display_options:
       display_extenders: {  }
       display_description: ''
-      block_description: 'Julkaisuja - aikajärjestyksessä'
+      block_description: 'Raportit - aikajärjestyksessä'
       defaults:
         sorts: true
         filters: false
