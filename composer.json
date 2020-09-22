@@ -72,7 +72,8 @@
         "patches": {
             "drupal/core": {
                 "Make exposed filter values available as tokens for text areas": "https://www.drupal.org/files/issues/2020-03-02/exposed_filter_tokens-2761273-21.patch",
-                "Notice: Undefined offset: 1 en Drupal\\Core\\StringTranslation\\PluralTranslatableMarkup->render()": "https://www.drupal.org/files/issues/2018-06-29/notice_undefined-2863629-11.patch"
+                "Notice: Undefined offset: 1 en Drupal\\Core\\StringTranslation\\PluralTranslatableMarkup->render()": "https://www.drupal.org/files/issues/2018-06-29/notice_undefined-2863629-11.patch",
+                "Make Book navigation translatable": "https://www.drupal.org/files/issues/2020-09-06/2470896_182.patch"
             },
             "drupal/gutenberg": {
                 "Insert Image or Media shows blank modal Media Library window": "https://www.drupal.org/files/issues/2020-06-09/gutenberg-d9_media_library_support-3150127-4.patch",
@@ -81,7 +82,8 @@
                 "Metadata bubbling error": "https://www.drupal.org/files/issues/2020-09-04/gutenberg-fix-metadata-bubbling-3078027-13.patch"
             },
             "drupal/token": {
-              "token_element_children produce notice on integer keys": "https://www.drupal.org/files/issues/2020-06-23/3154183-2.patch"
+              "token_element_children produce notice on integer keys": "https://www.drupal.org/files/issues/2020-06-23/3154183-2.patch",
+              "Book parents translation": "https://www.drupal.org/files/issues/2018-06-28/token_8_1_3_2982284_parents_translation_02.patch"
             },
             "drupal/facets": {
                 "Create views plugins to render facets and summaries in filters and areas": "https://www.drupal.org/files/issues/2020-09-22/facet-3073444-104-Allow-facets-filter-in-views.patch"
