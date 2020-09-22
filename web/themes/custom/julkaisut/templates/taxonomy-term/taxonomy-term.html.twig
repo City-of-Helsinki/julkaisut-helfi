@@ -28,9 +28,6 @@
 {% block term %}
   <div{{ attributes }}>
     {{ title_prefix }}
-    {% if not page %}
-      <h2><a href="{{ url }}">{{ name }}</a></h2>
-    {% endif %}
     {{ title_suffix }}
 
     {% block term__content_wrapper %}
