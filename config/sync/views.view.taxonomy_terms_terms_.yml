@@ -250,6 +250,7 @@ display:
         arguments: false
         header: false
         fields: false
+        css_class: false
       row:
         type: fields
         options:
@@ -415,7 +416,7 @@ display:
           click_sort_column: target_id
           type: entity_reference_label
           settings:
-            link: false
+            link: true
           group_column: target_id
           group_columns: {  }
           group_rows: true
@@ -430,6 +431,7 @@ display:
           entity_field: parent
           plugin_id: field
       block_description: 'Term Overview list'
+      css_class: ''
     cache_metadata:
       max-age: -1
       contexts:
