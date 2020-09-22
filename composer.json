@@ -84,7 +84,7 @@
               "token_element_children produce notice on integer keys": "https://www.drupal.org/files/issues/2020-06-23/3154183-2.patch"
             },
             "drupal/facets": {
-                "Create views plugins to render facets and summaries in filters and areas": "https://www.drupal.org/files/issues/2020-09-16/facet-3073444-103-Allow-facets-filter-in-views.patch"
+                "Create views plugins to render facets and summaries in filters and areas": "https://www.drupal.org/files/issues/2020-09-22/facet-3073444-104-Allow-facets-filter-in-views.patch"
             },
             "drupal/search_api_autocomplete": {
                 "Autocomplete broken on views with Better Exposed Filters": "https://www.drupal.org/files/issues/2020-07-14/0001-Added-missing-process-callbacks-for-BEF.patch"

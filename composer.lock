@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eb4faf598ff08e40769b0e860ff21568",
+    "content-hash": "cf330c4af2735c749fe490c9cc6a1dba",
     "packages": [
         {
             "name": "acquia/blt",
@@ -3026,7 +3026,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/facets.git",
-                "reference": "ca3970c49a44322aa0cdab66bbf4fc4d41d5a89a"
+                "reference": "acd02ec64872872fb111f9f98f51cfa80d14d8da"
             },
             "require": {
                 "drupal/core": "^8.8 || ^9"
@@ -3041,15 +3041,15 @@
                     "dev-8.x-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.5+12-dev",
-                    "datestamp": "1598259559",
+                    "version": "8.x-1.5+18-dev",
+                    "datestamp": "1600665621",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
                     }
                 },
                 "patches_applied": {
-                    "Create views plugins to render facets and summaries in filters and areas": "https://www.drupal.org/files/issues/2020-09-16/facet-3073444-103-Allow-facets-filter-in-views.patch"
+                    "Create views plugins to render facets and summaries in filters and areas": "https://www.drupal.org/files/issues/2020-09-22/facet-3073444-104-Allow-facets-filter-in-views.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -3077,7 +3077,7 @@
                 "issues": "https://www.drupal.org/project/issues/facets",
                 "irc": "irc://irc.freenode.org/drupal-search-api"
             },
-            "time": "2020-08-25T13:01:13+00:00"
+            "time": "2020-09-21T12:25:59+00:00"
         },
         {
             "name": "drupal/file_mdm",
