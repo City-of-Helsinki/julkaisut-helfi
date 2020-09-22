@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: social-media
 label: 'Social media'
-description: ''
+description: 'Social media icons in the footer of the page'
 locked: false

@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: footer-actions
 label: 'Footer actions'
-description: ''
+description: 'Actions links on the right side in the footer menu.'
 locked: false
