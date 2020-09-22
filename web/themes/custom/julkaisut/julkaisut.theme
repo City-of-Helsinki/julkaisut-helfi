@@ -344,6 +344,14 @@ function julkaisut_preprocess_links__language_block(&$variables) {
  */
 function julkaisut_preprocess_block(&$variables) {
   switch ($variables['base_plugin_id']) {
+    case 'views_block':
+      /** @var Drupal\views\ViewExecutable $view */
+      $view = $variables['content']['#view'];
+      // Propagate the views css class to the block wrapper.
+      if ($css_class = $view->display_handler->getOption('css_class')) {
+        $variables['attributes']['class'][] = $css_class;
+      }
+      break;
     case 'language_block':
       $variables['attributes']['class'][] = 'site-languages';
       break;
