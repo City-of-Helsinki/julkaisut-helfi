@@ -1,6 +1,6 @@
 import debounce from 'lodash-es/debounce';
 import ClipboardJS from 'clipboard';
-import { Stack, Table } from 'tablesaw/dist/stackonly/tablesaw.stackonly';
+import Tablesaw from 'tablesaw/dist/tablesaw';
 
 import { menu, button } from './components/dropdown';
 import { toggle, toggler } from './components/toggler';
@@ -24,7 +24,7 @@ Drupal.behaviors.julkaisutTheme = {
 
     this.bookMenu(context);
 
-    this.responsiveTables(context.querySelectorAll('.wp-block-table table'));
+    Tablesaw.init(context);
     this.clipboard(context.querySelectorAll('[data-clipboard-text]'));
   },
 
@@ -63,13 +63,6 @@ Drupal.behaviors.julkaisutTheme = {
         toggle(item);
         e.preventDefault();
       })
-    }
-  },
-
-  responsiveTables(tables) {
-    for (let i = 0; i < tables.length; i++) {
-      const stack = new Stack(tables[i], new Table(tables[i]));
-      stack.init();
     }
   },
 

@@ -1,9 +1,9 @@
 @use "~hds-design-tokens/lib/breakpoint/all" as hds;
-@use '~tablesaw/dist/stackonly/tablesaw.stackonly' as tablesaw;
+@use '~tablesaw/dist/tablesaw';
 @use "common/breakpoints" as *;
 
 .wp-block-table {
-  @include tablesaw.tablesaw-stack(hds.$breakpoint-s);
+  font-size: var(--fontsize-body-s);
 
   td,
   th,
@@ -13,38 +13,40 @@
   }
 
   thead {
-    background-color: var(--color-bus-light-20);
-  }
-
-  th {
-    font-weight: normal;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: bold;
     text-align: left;
   }
 
-  @include mq($until: small) {
-    tr > td:first-child {
-      background-color: var(--color-bus-light-20);
-    }
+  tfoot {
+    font-weight: bold;
+    background-color: var(--color-bus-light-20);
+  }
 
-    b {
-      font-weight: normal;
-    }
+  tbody tr:not(:first-child) {
+    border-top: solid 1px var(--color-black-10);
+  }
 
-    td .tablesaw-cell-label,
-    th .tablesaw-cell-label {
-      width: 50%;
-    }
+  &.is-style-stripes tbody tr:nth-child(odd) {
+    background-color: var(--color-bus-light-5);
+  }
 
-    .tablesaw-cell-content {
-      max-width: 50%;
-    }
+  th {
+    font-weight: inherit;
+    text-align: inherit;
+  }
 
-    .tablesaw-cell-label:empty {
-      display: none;
+  td,
+  th {
+    padding: var(--spacing-xs);
+  }
 
-      & + span {
-        max-width: 100%;
-      }
-    }
+  .tablesaw-advance .tablesaw-btn.btn-micro {
+    font-size: 12px;
+  }
+
+  .tablesaw-all-cols-visible {
+    display: none;
   }
 }

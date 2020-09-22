@@ -76,3 +76,9 @@ filters:
       default_view_mode: default
       allowed_media_types: {  }
       allowed_view_modes: {  }
+  filter_gutenberg_table_header_fixer_filter:
+    id: filter_gutenberg_table_header_fixer_filter
+    provider: gutenberg_imagefilter
+    status: true
+    weight: 0
+    settings: {  }
