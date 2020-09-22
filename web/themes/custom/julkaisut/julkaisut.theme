@@ -264,6 +264,31 @@ function julkaisut_preprocess_book_tree(&$variables) {
   if ($node = \Drupal::request()->get('node')) {
     $variables['is_expanded'] = $node->book['depth'] === '1';
   }
+
+  // Gather all book ids.
+  $nids = [];
+  $walker = function ($item, $nid) use (&$nids, &$walker) {
+    $nids[] = $nid;
+    array_walk($item['below'], $walker);
+  };
+  array_walk($variables['items'], $walker);
+
+  // Retrieve all nids that do not have body field conntent.
+  $current_language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $empty_nids = \Drupal::entityQuery('node')
+    ->condition('nid', $nids, 'IN')
+    ->condition('langcode', $current_language)
+    ->notExists('body', $current_language)
+    ->execute();
+
+  // Remove links to book pages without content
+  $mutation_walker = function (&$item, $nid) use ($empty_nids, &$mutation_walker) {
+    if (in_array($nid, $empty_nids)) {
+      unset($item['url']);
+    }
+    array_walk($item['below'], $mutation_walker);
+  };
+  array_walk($variables['items'], $mutation_walker);
 }
 
 /**

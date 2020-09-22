@@ -66,11 +66,18 @@
           .addClass(item.below ? 'has-children' : '')
           .setAttribute('role', 'menuitem')
       }}>
-        {{ link(item.title, item.url, { 'class': [
-            'book-tree__link',
-            item.in_active_trail ? 'is-active-trail',
-            item.in_active_trail and not item.below ? 'is-active',
-        ] }) }}
+        {% if item.url %}
+          {{ link(item.title, item.url, { 'class': [
+              'book-tree__link',
+              item.in_active_trail ? 'is-active-trail',
+              item.in_active_trail and not item.below ? 'is-active',
+          ] }) }}
+        {% else %}
+          <span class="book-tree__link {{ item.in_active_trail ? 'is-active-trail' }}" tabindex="-1">
+            {{ item.title }}
+          </span>
+        {% endif %}
+
         {% if item.below %}
           <button
             class="book-tree__submenu-trigger"
