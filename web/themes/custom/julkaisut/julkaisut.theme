@@ -53,6 +53,27 @@ function julkaisut_preprocess_node(&$variables) {
       ]),
     ];
   }
+
+  switch ($node->getType()) {
+    case 'article':
+      $variables['type_label'] = t('Article');
+      /** @var Drupal\taxonomy\Entity\Term $term */
+      $term = $node->field_magazine->entity;
+      /** @var Drupal\taxonomy\TermStorage $storage */
+      $storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+      // Use the upper most parent as the label if one exists.
+      foreach ($storage->loadParents($term->id()) as $parent) {
+        if ($parent->parent->value === NULL) {
+          $variables['type_label'] = $parent->getName();
+          break;
+        }
+      }
+
+      break;
+    case 'book':
+      $variables['type_label'] = t('Report');
+      break;
+  }
 }
 
 /**

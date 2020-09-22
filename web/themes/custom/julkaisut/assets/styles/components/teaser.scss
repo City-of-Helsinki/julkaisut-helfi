@@ -1,6 +1,8 @@
 @use "common/breakpoints" as *;
 
 .teaser {
+  position: relative;
+
   --teaser-spacing: var(--spacing-2-xs);
 
   @include mq($from: medium) {
@@ -19,6 +21,21 @@
       &:focus {
         text-decoration: underline;
       }
+    }
+  }
+
+  &__label {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px 10px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    @include mq($from: large) {
+      font-size: var(--fontsize-body-s);
     }
   }
 
