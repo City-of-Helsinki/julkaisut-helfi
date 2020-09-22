@@ -7,21 +7,15 @@ dependencies:
     - views.view.search
   module:
     - views
-    - search_api_autocomplete
     - search_api_solr
 id: search
 label: Search
 index_id: mainindex
 suggester_settings:
-  server:
+  search_api_solr_terms:
     fields: {  }
-  search_api_solr_suggester:
-    search_api_solr/site_hash: 1
-    search_api/index: mainindex
-    drupal/langcode: any
 suggester_weights:
-  server: -48
-  search_api_solr_suggester: -49
+  search_api_solr_terms: -47
 suggester_limits: {  }
 search_settings:
   'views:search':
