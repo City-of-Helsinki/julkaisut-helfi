@@ -1,0 +1,29 @@
+.search-api-autocomplete-search.ui-widget {
+  font-size: var(--fontsize-body-m);
+  border: solid 2px var(--color-black-90);
+  color: var(--color-black-90);
+  border-top: 0;
+  margin-top: -1px;
+
+  .ui-menu-item a {
+    display: block;
+  }
+
+  .ui-state-active {
+
+  }
+}
+
+.search-api-autocomplete-suggestion {
+  padding: var(--spacing-4-xs) var(--spacing-xs);
+
+  .ui-state-active.ui-state-active.ui-state-active > & {
+    background: var(--color-bus-light-20);
+    color: inherit;
+  }
+
+  .autocomplete-suggestion-results-count {
+    right: var(--spacing-xs);
+    color: var(--color-black-30);
+  }
+}
