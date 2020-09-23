@@ -27,7 +27,7 @@ display:
         type: none
         options: {  }
       cache:
-        type: none
+        type: search_api_tag
         options: {  }
       query:
         type: views_query
@@ -372,10 +372,8 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      cache:
-        type: none
       defaults:
-        cache: false
+        cache: true
       block_description: Search
       display_description: ''
     cache_metadata:
@@ -397,10 +395,8 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      cache:
-        type: none
       defaults:
-        cache: false
+        cache: true
         filters: false
         filter_groups: false
         exposed_form: false
