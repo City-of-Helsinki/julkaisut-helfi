@@ -1,0 +1,5 @@
+name: 'Publication year'
+widget:
+  config:
+    label_lower: 'From year'
+    label_upper: 'Until year'

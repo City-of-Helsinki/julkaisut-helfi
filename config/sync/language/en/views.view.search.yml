@@ -3,7 +3,7 @@ display:
     display_options:
       exposed_form:
         options:
-          submit_button: Search
+          submit_button: 'Search for publication'
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
           bef:
@@ -20,5 +20,48 @@ display:
       filters:
         search_api_fulltext:
           expose:
-            label: Search
+            label: 'What are you looking for?'
             placeholder: Search
+  page_1:
+    display_options:
+      header:
+        area_text_custom:
+          content: "<h1>Search results ([view:total-rows])</h1>\r\n{% if filters.search_api_fulltext %}\r\n<h3>For the phrase \"{{ filters.search_api_fulltext }}\"</h3>\r\n{% endif %}"
+      filters:
+        search_api_fulltext:
+          expose:
+            label: 'What are you looking for?'
+            placeholder: Search
+      exposed_form:
+        options:
+          submit_button: 'Search for publication'
+          exposed_sorts_label: 'Sort by'
+          bef:
+            sort:
+              advanced:
+                combine_rewrite: "Relevance Desc | Relevance\r\nRelevance Asc |\r\nYear Desc | Newest first\r\nYear Asc | Oldest first"
+  block_2:
+    display_options:
+      filters:
+        search_api_fulltext:
+          expose:
+            label: 'What are you looking for?'
+            placeholder: Search
+      exposed_form:
+        options:
+          submit_button: 'Search for publication'
+          exposed_sorts_label: 'Sort by'
+          bef:
+            sort:
+              advanced:
+                combine_rewrite: "Relevance Desc | Relevance\r\nRelevance Asc |\r\nYear Desc | Newest first\r\nYear Asc | Oldest first"
+  page_2:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: 'Search for publication'
+          exposed_sorts_label: 'Sort by'
+          bef:
+            sort:
+              advanced:
+                combine_rewrite: "Relevance Desc | Relevance\r\nRelevance Asc |\r\nYear Desc | Newest first\r\nYear Asc | Oldest first"

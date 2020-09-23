@@ -1,0 +1,5 @@
+name: Ugivningsår
+widget:
+  config:
+    label_lower: 'Från år'
+    label_upper: 'Fram till år'

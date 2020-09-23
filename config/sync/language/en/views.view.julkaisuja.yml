@@ -1,0 +1,14 @@
+display:
+  block_2:
+    display_options:
+      pager:
+        options:
+          tags: {  }
+          views_infinite_scroll:
+            button_text: 'Load more'
+  block_4:
+    display_options:
+      pager:
+        options:
+          views_infinite_scroll:
+            button_text: 'Load more'

@@ -3,18 +3,62 @@ display:
     display_options:
       exposed_form:
         options:
-          submit_button: Sök
-          exposed_sorts_label: Sortering
+          submit_button: 'Sök utgivning'
+          exposed_sorts_label: 'Sortera efter'
           bef:
             sort:
               advanced:
-                combine_rewrite: "Relevance Desc | Mest relevans först\r\nRelevance Asc |\r\nYear Desc | Senaste först\r\nYear Asc | Äldsta först"
+                combine_rewrite: "Relevance Desc | Mest relevanta först\r\nRelevance Asc |\r\nYear Desc | Nyaste först\r\nYear Asc | Äldst först"
       pager:
         options:
           views_infinite_scroll:
-            button_text: 'Ladda fler'
+            button_text: 'Ladda mer'
       filters:
         search_api_fulltext:
           expose:
-            label: Sök
+            label: 'Vad söker du?'
             placeholder: Sök
+  block_2:
+    display_options:
+      filters:
+        search_api_fulltext:
+          expose:
+            label: 'Vad söker du?'
+            placeholder: Sök
+      exposed_form:
+        options:
+          submit_button: 'Sök utgivning'
+          exposed_sorts_label: 'Sortera efter'
+          bef:
+            sort:
+              advanced:
+                combine_rewrite: "Relevance Desc | Mest relevanta först\r\nRelevance Asc |\r\nYear Desc | Nyaste först\r\nYear Asc | Äldst först"
+  page_1:
+    display_options:
+      header:
+        area_text_custom:
+          content: "<h1>Sökresultat ([view:total-rows])</h1>\r\n{% if filters.search_api_fulltext %}\r\n<h3>För orden \"{{ filters.search_api_fulltext }}\"</h3>\r\n{% endif %}"
+      filters:
+        search_api_fulltext:
+          expose:
+            label: 'Vad söker du?'
+            placeholder: Sök
+      exposed_form:
+        options:
+          submit_button: 'Sök utgivning'
+          exposed_sorts_label: 'Sortera efter'
+          bef:
+            sort:
+              advanced:
+                combine_rewrite: "Relevance Desc | Mest relevanta först\r\nRelevance Asc |\r\nYear Desc | Nyaste först\r\nYear Asc | Äldst först"
+  page_2:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: 'Sök utgivning'
+          exposed_sorts_label: 'Sortera efter'
+          bef:
+            sort:
+              advanced:
+                combine_rewrite: "Relevance Desc | Mest relevanta först\r\nRelevance Asc |\r\nYear Desc | Nyaste först\r\nYear Asc | Äldst först"
+label: Sök

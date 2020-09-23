@@ -1,0 +1,13 @@
+display:
+  block_2:
+    display_options:
+      pager:
+        options:
+          views_infinite_scroll:
+            button_text: 'Ladda mer'
+  block_4:
+    display_options:
+      pager:
+        options:
+          views_infinite_scroll:
+            button_text: 'Ladda mer'
