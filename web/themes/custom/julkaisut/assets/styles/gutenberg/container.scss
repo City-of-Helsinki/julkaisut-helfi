@@ -12,6 +12,8 @@
     @if not config.$is-editor {
       transform: translateX(calc((var(--alignwide-width) - var(--content-width))/2 * -1));
 
+      // Cancel for content fields in blocks
+      .block-block-content &,
       // Cancel out for nested containers.
       .is-container & {
         transform: none;
