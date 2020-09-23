@@ -7,6 +7,7 @@ mix
   .browserSync('julkaisut.test'); // @todo
 
 mix.sass('assets/styles/app.scss', 'styles')
+  .sass('assets/styles/print.scss', 'styles')
   .sass('assets/styles/editor.scss', 'styles');
 
 mix.js('assets/scripts/app.js', 'scripts')

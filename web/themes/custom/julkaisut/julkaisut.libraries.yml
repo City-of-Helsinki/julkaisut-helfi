@@ -3,6 +3,7 @@ global-styles:
   css:
     base:
       dist/styles/app.css: {}
+      dist/styles/print.css: { media: print }
   dependencies:
     - gutenberg/blocks-view
 

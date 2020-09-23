@@ -1,0 +1,50 @@
+// Site structure
+.site__header,
+.site__footer,
+// Meta
+.share-links,
+.print-button,
+.translation-links,
+.field--name-field-tags,
+.field--name-field-pdf,
+.node--view-mode-full.node--type-book:not(.node--book-depth-1) .node__meta,
+// Presentational image
+.node__featured-image,
+// Floating book navigation
+.book-navigation,
+// Table of Contents
+.block-custom-book-block {
+  display: none !important;
+}
+
+figure {
+  page-break-inside: avoid;
+}
+
+h2,
+h3 {
+  break-after: avoid-page;
+}
+
+body {
+  font-size: 10pt;
+}
+
+.breadcrumb {
+  a {
+    color: black;
+    text-decoration: none;
+    font-size: 0.8rem;
+  }
+
+  ol li:first-child a {
+    color: transparent;
+    font-size: 0;
+
+    &::before {
+      font-size: 0.8rem;
+      color: black;
+      content: 'julkaisut.hel.fi'
+    }
+  }
+}
