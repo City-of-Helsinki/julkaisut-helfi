@@ -15,7 +15,7 @@ use Drupal\node\Entity\Node;
 use Drupal\views\ViewExecutable;
 
 /**
- * Implements template_preprocess_field__body().
+ * Implements template_preprocess_node().
  */
 function julkaisut_preprocess_node(&$variables) {
   /** @var \Drupal\node\Entity\Node $node */
@@ -150,11 +150,13 @@ function julkaisut_preprocess_field(&$variables) {
     // If the node with the field has a `field_featured_image_caption` inject it as the
     // media elements caption for easier admin UX when translating.
     case 'field_image':
-      $object = $variables['element']['#object'];
-      if ($object instanceof Node) {
-        $current_language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+      $node = $variables['element']['#object'];
+      if ($node instanceof Node) {
         /** @var Drupal\node\Entity\Node $node */
-        $node = $object->getTranslation($current_language);
+        $current_language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+        if ($node->hasTranslation($current_language)) {
+          $node = $node->getTranslation($current_language);
+        }
         /** @var Drupal\media\Entity\Media $node */
         $media = $variables['element'][0]['#media'];
         if ($node->hasField('field_featured_image_caption')) {
