@@ -25,6 +25,8 @@
   .hds-text-input__input {
     font-size: var(--fontsize-body-m);
     padding: var(--spacing-xs);
+    // HDS causes placeholders to not be centered by setting a line-height
+    line-height: 1.15;
   }
 
   .hds-text-input__label {
