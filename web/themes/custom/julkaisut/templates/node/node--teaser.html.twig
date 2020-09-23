@@ -2,7 +2,11 @@
 
 {% block node %}
   <article{{attributes.addClass(classes, 'teaser') }} data-article-link-wrapper>
-    {{ content.field_image }}
+    {% if content.field_image[0] is not empty %}
+      {{ content.field_image }}
+    {% else %}
+      <img src="{{ directory }}/dist/images/placeholder.png" role="presentation">
+    {% endif %}
 
     <div class="teaser__date">
       {% block node__date %}
