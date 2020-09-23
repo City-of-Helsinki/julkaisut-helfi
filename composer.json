@@ -41,6 +41,7 @@
         "drupal/media_library_edit": "^1.0@alpha",
         "drupal/metatag": "^1.14",
         "drupal/pathauto": "^1.8",
+        "drupal/recreate_block_content": "^2.0",
         "drupal/redirect": "^1.6",
         "drupal/redis": "^1.4",
         "drupal/search_api": "^1.17",
