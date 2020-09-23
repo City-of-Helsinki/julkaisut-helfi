@@ -4,7 +4,7 @@
   --field-gutter: var(--spacing-s);
 
   @include mq($from: medium) {
-    --field-gutter: var(--spacing-l);
+    --field-gutter: var(--spacing-m);
   }
 
   .facets-views-plugin > div:not(.hidden),
@@ -74,6 +74,12 @@
     grid-area: sort;
   }
 
+  // Add a gutter between search filters/actions and results
+  .views-row:first-child {
+    margin-top: calc(var(--field-gutter) + var(--spacing-2-xs));
+  }
+
+  // Gutter between rows
   .views-row:not(:last-child) {
     margin-bottom: var(--spacing-m);
   }
@@ -81,7 +87,6 @@
   .form-actions {
     grid-area: submit;
     margin-top: calc(var(--field-gutter) + var(--spacing-2-xs));
-    margin-bottom: calc(var(--field-gutter) + var(--spacing-2-xs));
 
     @include mq($from: medium) {
       margin-top: 0;

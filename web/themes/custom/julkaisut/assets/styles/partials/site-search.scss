@@ -4,16 +4,23 @@
 .site-search {
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
 
   &__button {
     position: absolute;
     margin-top: 2px;
     right: var(--spacing-s);
+    bottom: calc(var(--spacing-s) / 2 - 2px);
+  }
 
-    @include ie11 {
-      // align-items center not working
-      transform: translateY(-50%);
+  &__label {
+    font-size: var(--fontsize-heading-m);
+    font-weight: bold;
+    margin-bottom: var(--spacing-s);
+
+    @include mq($from: large) {
+      display: none;
     }
   }
 

@@ -9,13 +9,11 @@
   background-color: var(--color-white);
   flex-direction: column;
   width: 100%;
+  font-size: var(--fontsize-body-m);
 
   @include mq($from: large) {
+    font-size: var(--fontsize-body-l);
     max-width: calc(var(--container-width) * 1px);
-  }
-
-  @include ie11 {
-    max-width: var(--global-width);
   }
 
   &__item {
@@ -31,7 +29,7 @@
     position: relative;
     display: flex;
     align-items: center;
-    padding: var(--spacing-s);
+    padding: var(--spacing-s) var(--spacing-l);
 
     // Make space for trigger
     .has-children > & {

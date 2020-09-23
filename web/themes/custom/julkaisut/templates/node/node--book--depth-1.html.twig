@@ -9,7 +9,10 @@
         <p>{% trans %}Published on {{ date }}{% endtrans %}</p>
       </div>
 
+
       <div class="is-container node__metadata">
+        {{ content.body }}
+
         {{ content.field_copyright }}
 
         <div class="node__meta">
@@ -40,7 +43,7 @@
       </div>
 
       <div class="node__content">
-        {{ content|without('field_copyright', 'field_tags', 'field_pdf', 'field_image') }}
+        {{ content|without('field_copyright', 'field_tags', 'field_pdf', 'field_image', 'body') }}
       </div>
     {% endblock %}
   </article>

@@ -23,7 +23,7 @@
 <figure{{ attributes.addClass(classes) }}>
   {{ content.field_media_image }}
 
-  {% if content.field_caption %}
+  {% if content.field_caption[0] is not empty %}
     <figcaption class="is-container">{{ content.field_caption }}</figcaption>
   {% endif %}
 

@@ -10,14 +10,14 @@
   margin-right: auto;
   padding: 10px var(--spacing-s);
 
+  @include mq($until: large) {
+    border-bottom: solid 1px var(--color-black-20);
+  }
+
   @include mq($from: large) {
     padding-left: 0;
     padding-right: 0;
     max-width: calc(var(--container-width) * 1px);
-  }
-
-  @include ie11 {
-    max-width: var(--global-width);
   }
 
   &__logo {
@@ -52,14 +52,19 @@
 
   // When navigation is activated on mobile
   .is-active & {
+    border-bottom: 0;
+
     .site-header__search {
       display: block;
       padding-top: var(--spacing-m);
-      padding-left: calc(var(--spacing-m) - var(--spacing-s));
-      padding-right: calc(var(--spacing-m) - var(--spacing-s));
-      padding-bottom: calc(var(--spacing-m) - 10px); // custom padding on .site-header
       margin-top: 10px; // site-header custom padding
       position: relative;
+
+      @include mq($from: large) {
+        padding-left: calc(var(--spacing-m) - var(--spacing-s));
+        padding-right: calc(var(--spacing-m) - var(--spacing-s));
+        padding-bottom: calc(var(--spacing-m) - 10px); // custom padding on .site-header
+      }
 
       &::before {
         content: '';
@@ -69,7 +74,7 @@
         left: 50%;
         transform: translateX(-50%);
         top: 0;
-        border-top: solid 1px var(--color-black-10);
+        border-top: solid 1px var(--color-black-20);
       }
 
       // Move last and take up whole row

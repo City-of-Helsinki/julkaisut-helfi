@@ -6,6 +6,12 @@
   margin-bottom: 0;
   padding: var(--spacing-s);
   margin-right: calc(var(--spacing-s) * -1);
+  display: flex;
+
+  .hds-icon {
+    --icon-size: 20px;
+    margin-right: var(--spacing-2-xs);
+  }
 
   > span {
     @include burger(
@@ -18,5 +24,9 @@
 
   &[aria-expanded="true"] > span {
     @include burger-to-cross();
+  }
+
+  &[aria-expanded="true"] > .hds-icon {
+    opacity: 0;
   }
 }

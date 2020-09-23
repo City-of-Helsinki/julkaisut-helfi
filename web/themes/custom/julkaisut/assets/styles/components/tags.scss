@@ -1,9 +1,16 @@
+@use "common/breakpoints" as *;
+
 .tag__group {
   margin-top: var(--spacing-l);
   margin-bottom: var(--spacing-l);
 
   h3 {
+    font-size: var(--fontsize-heading-m);
     margin-bottom: var(--spacing-s);
+
+    @include mq($from: large) {
+      font-size: var(--fontsize-heading-l);
+    }
 
     a {
       color: inherit;

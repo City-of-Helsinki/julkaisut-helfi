@@ -2,7 +2,11 @@
 
 .grid {
   --grid-gutter-x: var(--grid-gutter);
-  --grid-gutter-y: var(--grid-gutter);
+  --grid-gutter-y: var(--spacing-m);
+
+  @include mq($from: large) {
+    --grid-gutter-y: var(--spacing-l);
+  }
 
   display: flex;
   flex-wrap: wrap;

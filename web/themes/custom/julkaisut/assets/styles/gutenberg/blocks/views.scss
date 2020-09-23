@@ -1,4 +1,16 @@
 .block-views {
-  margin-top: var(--spacing-m);
-  margin-bottom: var(--block-gutter-l);
+  &:not(:first-child) {
+    margin-top: var(--spacing-m);
+  }
+
+  &:not(:last-child) {
+    margin-bottom: var(--block-gutter-l);
+  }
+
+  // In preprocess we're bumping out the alignwide class to the block wrapper
+  // but leaving it on the view itself, unset the double gutter.
+  &.alignwide .alignwide:first-child,
+  &.alignfull .alignfull:first-child {
+    margin-top: 0;
+  }
 }

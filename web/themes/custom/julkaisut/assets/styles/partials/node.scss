@@ -2,6 +2,11 @@
 
 .node__meta {
   display: grid;
+  margin-top: 0;
+
+  @include mq($from: large) {
+    margin-top: var(--spacing-m);
+  }
 
   grid-template:
     "tags        tags"
@@ -11,7 +16,11 @@
 
   .field--name-field-tags {
     grid-area: tags;
-    margin-bottom: var(--spacing-m);
+    margin-bottom: var(--spacing-s);
+
+    @include mq($from: medium) {
+      margin-bottom: var(--spacing-m);
+    }
   }
 
   .field--name-field-pdf {
@@ -42,6 +51,17 @@
   }
 }
 
+// .node--type-book.node--view-mode-full {
+//   // Place behind footer koro
+//   .node__featured-image {
+//     margin-bottom: calc(var(--spacing-layout-xs) * -1 - 15px);
+//
+//     @include mq($from: large) {
+//       margin-bottom: calc(var(--spacing-layout-m) * -1 - 15px);
+//     }
+//   }
+// }
+
 .node--type-book.node--view-mode-full.node--book-depth-1 {
   display: grid;
 
@@ -62,6 +82,7 @@
   }
 
   .node__published {
+    margin-top: 0;
     grid-area: published;
   }
 
@@ -71,6 +92,16 @@
 
   .node__metadata {
     grid-area: metadata;
+
+    .field--name-body {
+      margin-bottom: 0;
+    }
+
+    @include mq($until: large) {
+      .field--name-field-copyright {
+        margin-top: var(--spacing-xs);
+      }
+    }
   }
 
   .node__featured-image {

@@ -49,14 +49,12 @@
   [data-align="full"],
   .alignfull {
     max-width: var(--alignfull-width);
-    // Negate the container padding so it stretches to viewport width.
-    margin-left: calc(var(--viewport-gutter) * -1);
-    margin-right: calc(var(--viewport-gutter) * -1);
     width: unset; // Override Gutenberg
 
-    @media (min-width: 2000px) {
-      margin-left: auto;
-      margin-right: auto;
+    @include mq($until: alignfull) {
+      // Negate the container padding so it stretches to viewport width.
+      margin-left: calc(var(--viewport-gutter) * -1);
+      margin-right: calc(var(--viewport-gutter) * -1);
     }
   }
 
@@ -70,11 +68,9 @@
 }
 
 // Duplicate alignfull style for content outside the container
-@media (min-width: 2000px) {
+@include mq($until: alignfull) {
   .alignfull {
     max-width: var(--alignfull-width);
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 

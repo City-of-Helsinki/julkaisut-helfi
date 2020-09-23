@@ -1,6 +1,7 @@
 .site-mobile-languages {
   display: none;
   border-top: solid 1px var(--color-black-10);
+  font-size: var(--fontsize-body-m);
 
   .is-active & {
     display: block;

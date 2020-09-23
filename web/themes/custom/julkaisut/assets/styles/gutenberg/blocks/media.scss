@@ -1,0 +1,21 @@
+@use "common/breakpoints" as *;
+
+.is-root-container > figure.media {
+  margin-top: var(--block-gutter-l);
+  margin-bottom: var(--block-gutter-l);
+  max-width: var(--alignfull-width);
+  margin-left: auto;
+  margin-right: auto;
+  // Override the container rule since we dont have the alignfull class
+  transform: none !important;
+  mask-image: svg-load('./images/koros/basic.svg'), svg-load('./images/koros/rect.svg');
+
+  @include mq($from: medium) {
+    margin-top: var(--spacing-layout-m);
+  }
+
+  @include mq($until: alignfull) {
+    margin-left: calc(var(--viewport-gutter) * -1);
+    margin-right: calc(var(--viewport-gutter) * -1);
+  }
+}
