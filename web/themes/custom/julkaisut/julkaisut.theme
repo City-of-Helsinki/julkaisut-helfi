@@ -281,13 +281,30 @@ function julkaisut_preprocess_book_tree(&$variables) {
     ->notExists('body', $current_language)
     ->execute();
 
-  // Remove links to book pages without content
-  $mutation_walker = function (&$item, $nid) use ($empty_nids, &$mutation_walker) {
+  $translated_nids = \Drupal::entityQuery('node')
+    ->condition('nid', $nids, 'IN')
+    ->condition('langcode', $current_language)
+    ->execute();
+
+  $is_translated = function ($nid) use ($translated_nids) {
+    return in_array($nid, $translated_nids);
+  };
+
+  $mutation_walker = function (&$item, $nid) use ($empty_nids, $is_translated, &$mutation_walker) {
+    // Remove links to books without contennt
     if (in_array($nid, $empty_nids)) {
       unset($item['url']);
     }
+
+    // Filter out untranslated items
+    $item['below'] = array_filter($item['below'], $is_translated, ARRAY_FILTER_USE_KEY);
+    // Recurse
     array_walk($item['below'], $mutation_walker);
   };
+
+  // Filter out untranslated items
+  $variables['items'] = array_filter($variables['items'], $is_translated, ARRAY_FILTER_USE_KEY);
+  // Remove links to book pages without content
   array_walk($variables['items'], $mutation_walker);
 }
 
