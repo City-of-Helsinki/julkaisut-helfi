@@ -11,7 +11,7 @@ term_hierarchy: false
 absolute_paths: false
 hide_single_home_item: false
 title_from_page_when_available: true
-capitalizator_mode: ucwords
+capitalizator_mode: none
 capitalizator_ignored_words: ''
 capitalizator_forced_words_first_letter: 0
 capitalizator_forced_words_case_sensitivity: 1
@@ -29,7 +29,7 @@ langcode: fi
 include_invalid_paths: false
 add_structured_data_json_ld: 1
 excluded_paths: ''
-replaced_titles: ''
-custom_paths: ''
+replaced_titles: 'Helsinki lehti::Helsinki-lehti'
+custom_paths: "/fi/search :: Hakutulokset\r\n/sv/search :: Sökresultat\r\n/en/search :: Search results"
 title_segment_as_link: false
 capitalizator_forced_words: ''
