@@ -3,7 +3,6 @@ display:
     display_options:
       pager:
         options:
-          tags: {  }
           views_infinite_scroll:
             button_text: 'Load more'
   block_4:
