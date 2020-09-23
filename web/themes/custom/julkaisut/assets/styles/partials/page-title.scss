@@ -1,9 +1,19 @@
+@use "common/breakpoints" as *;
+
 .block-page-title-block h1 {
   display: flex;
   justify-content: space-between;
 
   button {
     color: var(--color-primary);
-    margin-left: var(--spacing-s);
+    margin-left: var(--spacing-4-xs);
+
+    @include mq($from: medium) {
+      margin-left: var(--spacing-s);
+
+      .hds-icon {
+        --icon-size: var(--spacing-l);
+      }
+    }
   }
 }

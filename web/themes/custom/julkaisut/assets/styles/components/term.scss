@@ -2,11 +2,14 @@
 
 .term__wrapper {
   margin-bottom: var(--block-gutter-l);
+  margin-bottom: var(--block-gutter-l);
 
   header {
+    margin-top: var(--spacing-m);
     margin-bottom: var(--spacing-m);
 
     @include mq($from: large) {
+      margin-top: var(--spacing-xl);
       margin-bottom: var(--spacing-xl);
     }
   }
