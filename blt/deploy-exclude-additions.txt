@@ -1,2 +1,5 @@
 /*.sql
 /.history
+/web/sites/*/files
+/web/sites/*/private
+settings.local.php
