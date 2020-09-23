@@ -93,14 +93,11 @@ web:
               # Allow access to common static files.
               '\.(jpe?g|png|gif|svgz?|css|js|map|ico|bmp|eot|woff2?|otf|ttf)$':
                   allow: true
+                  expires: 2w
               '^/robots\.txt$':
                   allow: true
               '^/sitemap\.xml$':
                   allow: true
-
-              # Cache general assets for longer
-              '\.(jpe?g|png|gif|svgz?|css|js|ico|woff2?|otf|ttf)$':
-                  expires: 2w
 
               # Deny direct access to configuration files.
               '^/sites/sites\.php$':
