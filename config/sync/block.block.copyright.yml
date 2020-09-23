@@ -1,7 +1,11 @@
-uuid: ade33de9-43b4-455c-aad1-a48a6a3f4c3e
+uuid: 9baa5b70-30c2-416b-9c44-035685258729
 langcode: fi
 status: true
 dependencies:
+  content:
+    - 'block_content:reusable_block:1a1483c2-767f-4933-ba3e-63b668f12c6b'
+  module:
+    - block_content
   theme:
     - julkaisut
 id: copyright
@@ -9,9 +13,9 @@ theme: julkaisut
 region: footer_bottom
 weight: 0
 provider: null
-plugin: 'block_content:26c84c19-b785-49bc-9efd-fc9fdd41095c'
+plugin: 'block_content:1a1483c2-767f-4933-ba3e-63b668f12c6b'
 settings:
-  id: 'block_content:26c84c19-b785-49bc-9efd-fc9fdd41095c'
+  id: 'block_content:1a1483c2-767f-4933-ba3e-63b668f12c6b'
   label: Copyright
   provider: block_content
   label_display: '0'
