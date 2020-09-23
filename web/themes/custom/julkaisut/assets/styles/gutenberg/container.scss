@@ -1,4 +1,5 @@
 @use "config";
+@use "common/breakpoints" as *;
 
 .is-container,
 .is-root-container {
@@ -50,12 +51,26 @@
     margin-left: calc(var(--viewport-gutter) * -1);
     margin-right: calc(var(--viewport-gutter) * -1);
     width: unset; // Override Gutenberg
+
+    @media (min-width: 2000px) {
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 
   // Align has a 12 column width with a viewport gutter
   [data-align="wide"],
   .alignwide {
     max-width: var(--alignwide-width);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+// Duplicate alignfull style for content outside the container
+@media (min-width: 2000px) {
+  .alignfull {
+    max-width: var(--alignfull-width);
     margin-left: auto;
     margin-right: auto;
   }

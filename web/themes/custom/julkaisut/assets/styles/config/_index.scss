@@ -62,5 +62,6 @@ $mq-breakpoints: (
     --grid-columns: 12;
     --content-width: calc(var(--container-width) / var(--grid-columns) * 8px); // 8 columns
     --alignwide-width: calc(var(--container-width) * 1px);
+    --alignfull-width: 2000px;
   }
 }
