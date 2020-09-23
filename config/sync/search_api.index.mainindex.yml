@@ -136,7 +136,8 @@ field_settings:
         anonymous: anonymous
       view_mode:
         'entity:node':
-          page: search_index
+          article: search_index
+          book: search_index
   status:
     label: Publicerad
     datasource_id: 'entity:node'
