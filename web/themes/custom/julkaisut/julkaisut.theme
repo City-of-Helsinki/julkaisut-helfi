@@ -12,6 +12,7 @@ use Drupal\Core\Render\Markup;
 use Drupal\Core\Url;
 use Drupal\media\Entity\Media;
 use Drupal\node\Entity\Node;
+use Drupal\responsive_image\Entity\ResponsiveImageStyle;
 use Drupal\views\ViewExecutable;
 
 /**
@@ -178,6 +179,37 @@ function julkaisut_preprocess_field(&$variables) {
         }
       }
       break;
+  }
+}
+
+/**
+ * Implements hook_preprocess_image().
+ */
+function julkaisut_preprocess_image(&$variables) {
+  $variables['attributes']['loading'] = 'lazy';
+}
+
+/**
+ * Implements hook_preprocess_responsive_image().
+ *
+ * Add width/height attributes
+ */
+function julkaisut_preprocess_responsive_image(&$variables) {
+  if ($variables['responsive_image_style_id'] ?? false) {
+    $storage = \Drupal::entityTypeManager()->getStorage('responsive_image_style');
+    /** @var Drupal\responsive_image\Entity\ResponsiveImageStyle $style */
+    $style = $storage->load($variables['responsive_image_style_id']);
+
+    $dimensions = responsive_image_get_image_dimensions(
+      $style->getFallbackImageStyle(),
+      ['width' => $variables['width'], 'height' => $variables['height']],
+      $variables['uri']
+    );
+
+    if ($dimensions['width'] ?? false) {
+      $variables['img_element']['#attributes']['width'] = $dimensions['width'];
+      $variables['img_element']['#attributes']['height'] = $dimensions['height'];
+    }
   }
 }
 
