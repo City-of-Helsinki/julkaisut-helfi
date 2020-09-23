@@ -1,8 +1,10 @@
 import domReady from '@wordpress/dom-ready';
+import { select, subscribe, dispatch } from '@wordpress/data';
 import {
   unregisterBlockStyle,
   registerBlockStyle,
   unregisterBlockType,
+  synchronizeBlocksWithTemplate,
 } from '@wordpress/blocks';
 import { createHigherOrderComponent} from '@wordpress/compose';
 import { addFilter } from '@wordpress/hooks';
@@ -23,6 +25,31 @@ domReady(() => {
 
 drupalSettings.gutenberg._listeners.init.push(() => {
   unregisterBlockStyle('core/quote', 'large');
+
+  const unsubscribe = subscribe(() => {
+    if (drupalSettings.path.currentPath !== 'node/add/article') {
+      unsubscribe();
+      return;
+    }
+
+    const { getBlocks } = select('core/block-editor');
+    const { resetBlocks } = dispatch('core/block-editor');
+    let blocks = getBlocks();
+
+    if (Array.isArray(blocks)) {
+      unsubscribe();
+
+      setTimeout(() => {
+        blocks = getBlocks();
+        if (blocks.length === 0) {
+          resetBlocks(synchronizeBlocksWithTemplate(blocks, [
+            ["core/paragraph", {"placeholder": "Write an introduction", "className": "is-style-excerpt"}],
+            ["core/paragraph", {"placeholder": "Add text or type / to add blocks"}]
+          ]));
+        }
+      }, 500);
+    }
+  });
 });
 
 addFilter(
