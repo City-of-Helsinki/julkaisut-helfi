@@ -1,0 +1,17 @@
+uuid: ecb1c091-f5bf-4c20-abb4-f736db923b0d
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: facebook_share_image
+label: 'Facebook Share Image'
+effects:
+  50dd1f06-7567-4457-9e3a-63cdf541ba04:
+    uuid: 50dd1f06-7567-4457-9e3a-63cdf541ba04
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1200
+      height: 628
+      crop_type: focal_point

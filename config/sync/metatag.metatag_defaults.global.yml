@@ -7,5 +7,24 @@ _core:
 id: global
 label: Global
 tags:
-  canonical_url: '[current-page:url]'
   title: '[current-page:title] | [site:name]'
+  canonical_url: '[current-page:url]'
+  og_url: '[current-page:url]'
+  og_site_name: '[site:name]'
+  og_title: '[current-page:title]'
+  twitter_cards_page_url: '[current-page:url]'
+  twitter_cards_title: '[current-page:title]'
+  schema_organization_id: 'https://julkaisut.hel.fi/#org'
+  schema_organization_name: Helsinki
+  schema_organization_type: Organization
+  schema_web_page_type: WebPage
+  schema_web_page_speakable: 'a:2:{s:5:"@type";s:22:"SpeakableSpecification";s:5:"xpath";s:54:"/html/head/title, /html/head/meta[@name=''description'']";}'
+  schema_web_page_breadcrumb: 'Yes'
+  schema_web_page_id: '[node:url]'
+  schema_web_page_author: 'a:3:{s:5:"@type";s:12:"Organization";s:3:"@id";s:29:"https://julkaisut.hel.fi/#org";s:4:"name";s:8:"Helsinki";}'
+  schema_web_site_url: 'https://julkaisut.hel.fi/'
+  schema_web_site_publisher: 'a:3:{s:5:"@type";s:12:"Organization";s:3:"@id";s:29:"https://julkaisut.hel.fi/#org";s:4:"name";s:8:"Helsinki";}'
+  schema_web_site_potential_action: 'a:3:{s:5:"@type";s:12:"SearchAction";s:5:"query";s:45:"[site:url]/search?search={search_term_string}";s:11:"query-input";s:32:"required name=search_term_string";}'
+  schema_web_site_type: WebSite
+  schema_web_site_id: 'https://julkaisut.hel.fi/#site'
+  schema_web_site_name: '[site:name]'

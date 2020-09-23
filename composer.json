@@ -44,6 +44,7 @@
         "drupal/recreate_block_content": "^2.0",
         "drupal/redirect": "^1.6",
         "drupal/redis": "^1.4",
+        "drupal/schema_metatag": "^2.1",
         "drupal/search_api": "^1.17",
         "drupal/search_api_autocomplete": "^1.4",
         "drupal/search_api_solr": "^4.1",
