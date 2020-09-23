@@ -21,6 +21,17 @@ domReady(() => {
     name: 'excerpt',
     label: 'Excerpt',
   });
+
+  registerBlockStyle('core/table', {
+    name: 'numeric-with-labels',
+    label: 'Numeric (with label on left)',
+  });
+
+  registerBlockStyle('core/table', {
+    name: 'numeric',
+    label: 'Numeric (all cells)',
+  });
+
 });
 
 drupalSettings.gutenberg._listeners.init.push(() => {

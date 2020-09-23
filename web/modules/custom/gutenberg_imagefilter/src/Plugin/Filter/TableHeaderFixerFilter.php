@@ -51,6 +51,11 @@ class TableHeaderFixerFilter extends FilterBase {
       }
     }
 
+    foreach ($xpath->query("//figure[contains(@class, 'wp-block-table is-style-numeric-with-labels')]/table/thead/tr/th[1]") as $node) {
+      /** @var \DOMElement $node */
+      $node->setAttribute('data-tablesaw-priority', 'persist');
+    }
+
     return Html::serialize($dom);
   }
 }

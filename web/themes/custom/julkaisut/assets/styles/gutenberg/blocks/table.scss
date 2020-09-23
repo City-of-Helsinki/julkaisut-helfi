@@ -28,10 +28,6 @@
     border-top: solid 1px var(--color-black-10);
   }
 
-  &.is-style-stripes tbody tr:nth-child(odd) {
-    background-color: var(--color-bus-light-5);
-  }
-
   th {
     font-weight: inherit;
     text-align: inherit;
@@ -48,5 +44,23 @@
 
   .tablesaw-all-cols-visible {
     display: none;
+  }
+
+  .tablesaw-swipe-cellpersist {
+    border-right: 0;
+  }
+
+  &.is-style-stripes tbody tr:nth-child(odd),
+  &.is-style-numeric tbody tr:nth-child(odd),
+  &.is-style-numeric-with-labels tbody tr:nth-child(odd) {
+    background-color: var(--color-bus-light-5);
+  }
+
+  &.is-style-numeric tbody td {
+    white-space: nowrap;
+  }
+
+  &.is-style-numeric-with-labels tbody td:not(:first-child) {
+    white-space: nowrap;
   }
 }
