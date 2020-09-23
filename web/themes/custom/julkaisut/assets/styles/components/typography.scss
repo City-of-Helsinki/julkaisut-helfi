@@ -67,6 +67,10 @@ h1 {
   @include mq($from: large) {
     font-size: var(--fontsize-heading-xl);
   }
+
+  @media (max-width: 400px) {
+    hyphens: auto;
+  }
 }
 
 h2 {
