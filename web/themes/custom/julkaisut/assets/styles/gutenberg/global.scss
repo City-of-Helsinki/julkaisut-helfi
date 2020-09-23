@@ -92,7 +92,7 @@ $palette-colors-light:
 
 .is-style-koros-basic-top {
   margin-top: var(--spacing-layout-xs);
-  mask-image: svg-load('./images/koros/basic.svg');
+  mask-image: svg-load('./images/koros/basic.svg'), svg-load('./images/koros/rect.svg');
 
   @include mq($from: medium) {
     margin-top: var(--spacing-layout-m);
