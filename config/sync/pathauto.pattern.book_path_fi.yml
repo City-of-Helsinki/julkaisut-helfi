@@ -8,24 +8,24 @@ dependencies:
 id: book_path_fi
 label: 'Book path EN'
 type: 'canonical_entities:node'
-pattern: 'reports/[node:book:parents:join:/]/[node:title]'
+pattern: 'reports/[node:book:parents:join-path]/[node:title]'
 selection_criteria:
-  e9ba20ac-24c0-4e12-ab75-c870f017619d:
+  8d76f878-42c2-4d82-bad4-b0c637bda007:
     id: node_type
     bundles:
       book: book
     negate: false
     context_mapping:
       node: node
-    uuid: e9ba20ac-24c0-4e12-ab75-c870f017619d
-  ed454d29-c395-43b8-859b-982de820a8f0:
+    uuid: 8d76f878-42c2-4d82-bad4-b0c637bda007
+  603dbaf8-501d-496e-8144-e46274e2e177:
     id: language
     langcodes:
       en: en
     negate: false
     context_mapping:
       language: 'node:langcode:language'
-    uuid: ed454d29-c395-43b8-859b-982de820a8f0
+    uuid: 603dbaf8-501d-496e-8144-e46274e2e177
 selection_logic: and
 weight: -10
 relationships:

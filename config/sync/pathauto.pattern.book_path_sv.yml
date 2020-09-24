@@ -8,24 +8,24 @@ dependencies:
 id: book_path_sv
 label: 'Book path SV'
 type: 'canonical_entities:node'
-pattern: 'utgivningar/[node:book:parents:join:/]/[node:title]'
+pattern: 'utgivningar/[node:book:parents:join-path]/[node:title]'
 selection_criteria:
-  11521519-4853-4368-ac0c-09cc0e5d1c9f:
+  57749fe8-525c-4545-b52b-eda615610e1f:
     id: node_type
     bundles:
       book: book
     negate: false
     context_mapping:
       node: node
-    uuid: 11521519-4853-4368-ac0c-09cc0e5d1c9f
-  b88bc46d-5bcb-4c65-add1-72fee0b04233:
+    uuid: 57749fe8-525c-4545-b52b-eda615610e1f
+  5be7fcea-8bb2-402d-ad37-425835e1abb3:
     id: language
     langcodes:
       sv: sv
     negate: false
     context_mapping:
       language: 'node:langcode:language'
-    uuid: b88bc46d-5bcb-4c65-add1-72fee0b04233
+    uuid: 5be7fcea-8bb2-402d-ad37-425835e1abb3
 selection_logic: and
 weight: -10
 relationships:

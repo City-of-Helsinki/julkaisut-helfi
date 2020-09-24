@@ -8,24 +8,24 @@ dependencies:
 id: book_path
 label: 'Book path FI'
 type: 'canonical_entities:node'
-pattern: 'julkaisut/[node:book:parents:join:/]/[node:title]'
+pattern: 'julkaisut/[node:book:parents:join-path]/[node:title]'
 selection_criteria:
-  264d9b7d-7deb-4a51-bea3-e72d10fad3c7:
+  7a67864e-f5e9-406a-9d13-1c005d0b10e0:
     id: node_type
     bundles:
       book: book
     negate: false
     context_mapping:
       node: node
-    uuid: 264d9b7d-7deb-4a51-bea3-e72d10fad3c7
-  7dc50bf1-5cfe-4342-bf26-c63981b27dec:
+    uuid: 7a67864e-f5e9-406a-9d13-1c005d0b10e0
+  b3f0e392-7e8d-4262-9ee0-28a08eae46e4:
     id: language
     langcodes:
       fi: fi
     negate: false
     context_mapping:
       language: 'node:langcode:language'
-    uuid: 7dc50bf1-5cfe-4342-bf26-c63981b27dec
+    uuid: b3f0e392-7e8d-4262-9ee0-28a08eae46e4
 selection_logic: and
 weight: -5
 relationships:
