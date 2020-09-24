@@ -1,3 +1,5 @@
+@use "common/breakpoints" as *;
+
 .wp-block-quote {
   font-size: 22px;
   font-style: italic;
@@ -15,6 +17,19 @@
     left: 0;
     margin-top: -0.06em;
     margin-left: -0.1em;
+  }
+
+  p:not(:last-child) {
+    margin-bottom: var(--spacing-xs);
+  }
+
+  @include mq($until: small) {
+    &.has-text-align-center::before {
+      position: static;
+      display: block;
+      margin-bottom: -40px;
+      margin-top: -10px;
+    }
   }
 
   cite {
