@@ -63,6 +63,7 @@ permissions:
   - 'edit terms in magazine'
   - 'edit terms in tags'
   - 'gutenberg administer'
+  - 'merge_permissions admin'
   - 'revert all revisions'
   - 'revert article revisions'
   - 'revert book revisions'
