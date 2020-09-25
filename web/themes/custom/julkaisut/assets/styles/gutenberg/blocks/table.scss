@@ -56,11 +56,20 @@
     background-color: var(--color-bus-light-5);
   }
 
+  &.is-style-numeric tfoot td,
   &.is-style-numeric tbody td {
     white-space: nowrap;
+    text-align: right;
   }
 
+  &.is-style-numeric-with-labels tfoot td:not(:first-child),
   &.is-style-numeric-with-labels tbody td:not(:first-child) {
     white-space: nowrap;
+    text-align: right;
+  }
+
+  &.is-style-numeric thead th,
+  &.is-style-numeric-with-labels thead th:not(:first-child) {
+    text-align: right;
   }
 }
