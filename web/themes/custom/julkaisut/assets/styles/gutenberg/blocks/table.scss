@@ -44,6 +44,10 @@
 
   .tablesaw-all-cols-visible {
     display: none;
+
+    & + table .tablesaw-swipe-cellpersist {
+      width: auto !important;
+    }
   }
 
   .tablesaw-swipe-cellpersist {
