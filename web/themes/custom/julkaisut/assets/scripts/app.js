@@ -24,7 +24,7 @@ Drupal.behaviors.julkaisutTheme = {
 
     this.bookMenu(context);
 
-    Tablesaw.init(context);
+    this.responsiveTables(context);
     this.clipboard(context.querySelectorAll('[data-clipboard-text]'));
   },
 
@@ -34,6 +34,19 @@ Drupal.behaviors.julkaisutTheme = {
       const trigger = submenuTriggers[i];
       toggler(trigger);
     }
+  },
+
+  responsiveTables(context) {
+    // Tablesaw.init() method has an issue when domcontentloaded fires while readystate is
+    // still interactive so we handle it ourselves.
+    if (document.readyState !== 'loading') {
+      Tablesaw._init(context);
+      return;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      Tablesaw._init(context);
+    });
   },
 
   desktopMenu(context) {
