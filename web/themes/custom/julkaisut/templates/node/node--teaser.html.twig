@@ -5,7 +5,7 @@
     {% if content.field_image[0] is not empty %}
       {{ content.field_image }}
     {% else %}
-      <img src="{{ directory }}/dist/images/placeholder.png" role="presentation">
+      <img src="/{{ directory }}/dist/images/placeholder.png" role="presentation">
     {% endif %}
 
     <div class="teaser__date">
