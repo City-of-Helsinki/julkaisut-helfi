@@ -1,0 +1,14 @@
+.wp-block-media-text {
+  @media (max-width: 600px) {
+    .wp-block-media-text__content {
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: var(--spacing-s);
+    }
+
+    &.has-media-on-the-right .wp-block-media-text__content {
+      padding-top: 0;
+      padding-bottom: var(--spacing-s);
+    }
+  }
+}
