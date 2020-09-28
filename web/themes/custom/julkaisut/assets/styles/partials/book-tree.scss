@@ -39,8 +39,12 @@
       font-size: var(--fontsize-body-l);
     }
 
+    .hds-icon {
+      transition: transform 0.2s ease-out;
+    }
+
     &[aria-expanded="true"] .hds-icon {
-      mask-image: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M0 0h24v24H0z'/%3E%3Cpath fill='currentColor' d='M17.657 7.757L13.414 12l4.243 4.243-1.414 1.414L12 13.414l-4.243 4.243-1.414-1.414L10.586 12 6.343 7.757l1.414-1.414L12 10.586l4.243-4.243z'/%3E%3C/g%3E%3C/svg%3E");
+      transform: rotate(180deg);
     }
   }
 
