@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b6404e9a165a220c4b732398e4326925",
+    "content-hash": "7aaaa521f065a8595d600536175eaf44",
     "packages": [
         {
             "name": "acquia/blt",
@@ -3536,17 +3536,17 @@
         },
         {
             "name": "drupal/language_switcher_extended",
-            "version": "1.0.0-beta3",
+            "version": "1.0.0-beta4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/language_switcher_extended.git",
-                "reference": "8.x-1.0-beta3"
+                "reference": "8.x-1.0-beta4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/language_switcher_extended-8.x-1.0-beta3.zip",
-                "reference": "8.x-1.0-beta3",
-                "shasum": "f239642752a0a7cdf6d51f1cbad96cc228a3fb38"
+                "url": "https://ftp.drupal.org/files/projects/language_switcher_extended-8.x-1.0-beta4.zip",
+                "reference": "8.x-1.0-beta4",
+                "shasum": "38ec353c9dbc16b79ebe770143750d8fd7905a3b"
             },
             "require": {
                 "drupal/core": "^8 || ^9"
@@ -3554,12 +3554,15 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.0-beta3",
-                    "datestamp": "1589972036",
+                    "version": "8.x-1.0-beta4",
+                    "datestamp": "1601051630",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "Does not link to translated content": "./patches/language_switcher_extended-issue-3128516.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",

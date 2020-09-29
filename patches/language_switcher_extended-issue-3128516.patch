@@ -1,0 +1,54 @@
+diff --git a/src/LanguageSwitcherLinkProcessor.php b/src/LanguageSwitcherLinkProcessor.php
+index 3e86a64..895c5f4 100644
+--- a/src/LanguageSwitcherLinkProcessor.php
++++ b/src/LanguageSwitcherLinkProcessor.php
+@@ -124,27 +124,34 @@ class LanguageSwitcherLinkProcessor {
+    */
+   protected function processUntranslatedLinks(array &$links) {
+     $config = $this->configFactory->get('language_switcher_extended.settings');
++    $has_content_language_access_module = \Drupal::moduleHandler()->moduleExists('content_language_access');
+ 
+     if ($entity = $this->getPageEntity()) {
+       $untranslatedHandler = $config->get('untranslated_handler');
+ 
+       foreach ($links as $langcode => $link) {
+-        if (!$entity->hasTranslation($langcode) || !$entity->getTranslation($langcode)
+-          ->access('view')) {
+-          switch ($untranslatedHandler) {
+-            case 'hide_link':
+-              unset($links[$langcode]);
+-              break;
+-
+-            case 'link_to_front':
+-              $links[$langcode]['url'] = new Url('<front>');
+-              break;
+-
+-            case 'no_link':
+-              unset($links[$langcode]['url']);
+-              $links[$langcode]['attributes']['class'][] = 'language-link--untranslated';
+-              break;
++        if ($entity->hasTranslation($langcode)) {
++          if ($has_content_language_access_module) {
++            continue;
+           }
++          elseif($entity->getTranslation($langcode)->access('view')) {
++            continue;
++          }
++        }
++
++        switch ($untranslatedHandler) {
++          case 'hide_link':
++            unset($links[$langcode]);
++            break;
++
++          case 'link_to_front':
++            $links[$langcode]['url'] = new Url('<front>');
++            break;
++
++          case 'no_link':
++            unset($links[$langcode]['url']);
++            $links[$langcode]['attributes']['class'][] = 'language-link--untranslated';
++            break;
+         }
+       }
+ 
