@@ -15,7 +15,7 @@ appHeight();
 
 
 Drupal.behaviors.julkaisutTheme = {
-  attach(context) {
+  attach(context, settings) {
     if (matchMedia('(min-width: 1024px)').matches) {
       this.desktopMenu(context);
     } else {
@@ -23,9 +23,39 @@ Drupal.behaviors.julkaisutTheme = {
     }
 
     this.bookMenu(context);
-
     this.responsiveTables(context);
     this.clipboard(context.querySelectorAll('[data-clipboard-text]'));
+
+    if (window.jQuery && settings.views && settings.views.ajaxViews) {
+      window.jQuery(context).on('views_infinite_scroll.new_content', this.focusNewContent);
+    }
+  },
+
+  focusNewContent(e, newRows) {
+    // Exit if there's no focused element
+    if (!document.activeElement || !document.hasFocus()) {
+      return;
+    }
+
+    const pagerWrapper = e.target.nextElementSibling;
+    if (!pagerWrapper) {
+      return;
+    }
+
+    // Exit unless the pager was selected
+    const pager = pagerWrapper.querySelector('a');
+    if (pager !== document.activeElement) {
+      return;
+    }
+
+    // Move focus to the first new element.
+    setTimeout(() => {
+      const firstLink = newRows.querySelector('a');
+
+      if (firstLink) {
+        firstLink.focus();
+      }
+    });
   },
 
   bookMenu(context) {
