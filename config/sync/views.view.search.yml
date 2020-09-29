@@ -101,7 +101,7 @@ display:
             offset: false
             offset_label: Kompensera
           views_infinite_scroll:
-            button_text: 'Load More'
+            button_text: 'Lataa lisää'
             automatically_load_content: false
       style:
         type: default
