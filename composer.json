@@ -77,7 +77,8 @@
             "drupal/core": {
                 "Make exposed filter values available as tokens for text areas": "https://www.drupal.org/files/issues/2020-03-02/exposed_filter_tokens-2761273-21.patch",
                 "Notice: Undefined offset: 1 en Drupal\\Core\\StringTranslation\\PluralTranslatableMarkup->render()": "https://www.drupal.org/files/issues/2018-06-29/notice_undefined-2863629-11.patch",
-                "Make Book navigation translatable": "https://www.drupal.org/files/issues/2020-09-06/2470896_182.patch"
+                "Make Book navigation translatable": "https://www.drupal.org/files/issues/2020-09-06/2470896_182.patch",
+                "Untranslated menu items are displayed in menus": "https://www.drupal.org/files/issues/2020-05-14/2466553-75-d91x.patch"
             },
             "drupal/gutenberg": {
                 "Insert Image or Media shows blank modal Media Library window": "https://www.drupal.org/files/issues/2020-06-09/gutenberg-d9_media_library_support-3150127-4.patch",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "48a0de789cc48ca5cf0aadcbd7e1e789",
+    "content-hash": "e97204a0d6c1742c98b8da8e403b9a9e",
     "packages": [
         {
             "name": "acquia/blt",
@@ -2442,7 +2442,8 @@
                 "patches_applied": {
                     "Make exposed filter values available as tokens for text areas": "https://www.drupal.org/files/issues/2020-03-02/exposed_filter_tokens-2761273-21.patch",
                     "Notice: Undefined offset: 1 en Drupal\\Core\\StringTranslation\\PluralTranslatableMarkup->render()": "https://www.drupal.org/files/issues/2018-06-29/notice_undefined-2863629-11.patch",
-                    "Make Book navigation translatable": "https://www.drupal.org/files/issues/2020-09-06/2470896_182.patch"
+                    "Make Book navigation translatable": "https://www.drupal.org/files/issues/2020-09-06/2470896_182.patch",
+                    "Untranslated menu items are displayed in menus": "https://www.drupal.org/files/issues/2020-05-14/2466553-75-d91x.patch"
                 }
             },
             "autoload": {
