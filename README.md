@@ -61,3 +61,15 @@
 
     # Uploads
     platform mount:upload --mount web/sites/default/files --source ./web/sites/default/files -e master-build
+
+## Drush
+
+    # Move local files to production environment
+    drush -Dssh.tty=0 rsync web/sites/default/files/ @site-aliases.wgohfxclopgum.master:%files
+
+    # Move staging environment files locally
+    drush -Dssh.tty=0 rsync @wgohfxclopgum.master-build:%files web/sites/default/files/
+
+    # Move staging database to production
+    drush -Dssh.tty=0 @wgohfxclopgum.master-build sql:dump > production.sql
+    cat production.sql | drush -Dssh.tty=0 @site-aliases.wgohfxclopgum.master sql:cli
