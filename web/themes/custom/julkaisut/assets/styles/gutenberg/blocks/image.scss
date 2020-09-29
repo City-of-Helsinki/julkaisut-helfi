@@ -1,3 +1,11 @@
+@use "common/breakpoints" as *;
+
 .wp-block-image {
-  //
+  @include mq($until: small) {
+    .alignleft,
+    .alignright {
+      float: none;
+      margin: 0;
+    }
+  }
 }
