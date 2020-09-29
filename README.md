@@ -51,7 +51,7 @@
     drush @self.vagrant config:export
 
     # Build & deploy
-    blt build:artifact
+    blt build:artifact --branch="master"
 
 ### Migration
 

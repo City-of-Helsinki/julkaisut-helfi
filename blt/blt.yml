@@ -7,7 +7,6 @@ git:
   default_branch: master
   remotes:
     platform: 'wgohfxclopgum@git.eu-2.platform.sh:wgohfxclopgum.git'
-    github: 'git@github.com:generoi/julkaisut.git'
   hooks:
     commit-msg: false
 
