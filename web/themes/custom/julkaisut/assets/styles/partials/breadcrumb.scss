@@ -6,4 +6,8 @@
   li::before {
     content: " / ";
   }
+
+  li:first-child::before {
+    content: none;
+  }
 }
