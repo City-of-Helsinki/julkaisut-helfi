@@ -8,7 +8,7 @@
     margin-top: var(--spacing-m);
   }
 
-  grid-template:
+  grid-template-areas:
     "tags        tags"
     "translation translation"
     "pdf         share"
@@ -65,7 +65,7 @@
 .node--type-book.node--view-mode-full.node--book-depth-1 {
   display: grid;
 
-  grid-template:
+  grid-template-areas:
     "published"
     "metadata"
     "image"
@@ -73,7 +73,7 @@
     "content";
 
   @include mq($from: large) {
-    grid-template:
+    grid-template-areas:
       "published"
       "metadata"
       "book-outline"
