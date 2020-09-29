@@ -2,7 +2,7 @@ global-styles:
   version: VERSION
   css:
     base:
-      dist/styles/app.css: {}
+      dist/styles/app.css: { weight: 200 }
       dist/styles/print.css: { media: print }
   dependencies:
     - gutenberg/blocks-view

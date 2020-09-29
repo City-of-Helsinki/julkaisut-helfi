@@ -7,10 +7,14 @@
   word-wrap: normal;
 }
 
-.form-item,
-.form-actions {
+.form-item {
   margin-top: var(--spacing-s);
   margin-bottom: var(--spacing-s);
+}
+
+.form-actions {
+  margin-top: var(--spacing-s);
+  margin-bottom: var(--spacing-m);
 }
 
 .js input.form-autocomplete {
