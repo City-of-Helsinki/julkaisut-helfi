@@ -28,9 +28,12 @@ img {
   display: inline-block;
   vertical-align: middle;
   max-width: 100%;
-  width: 100%;
   height: auto;
   -ms-interpolation-mode: bicubic;
+
+  *:not(.is-resized) > & {
+    width: 100%;
+  }
 }
 
 iframe {
