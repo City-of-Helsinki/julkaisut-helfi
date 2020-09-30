@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.article.body
     - field.field.node.article.field_copyright
     - field.field.node.article.field_featured_image_caption
+    - field.field.node.article.field_featured_image_width
     - field.field.node.article.field_image
     - field.field.node.article.field_magazine
     - field.field.node.article.field_tags
@@ -52,6 +53,7 @@ content:
     region: content
 hidden:
   field_featured_image_caption: true
+  field_featured_image_width: true
   field_image: true
   field_year: true
   langcode: true

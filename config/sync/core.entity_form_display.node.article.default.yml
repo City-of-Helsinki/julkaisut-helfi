@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.article.body
     - field.field.node.article.field_copyright
     - field.field.node.article.field_featured_image_caption
+    - field.field.node.article.field_featured_image_width
     - field.field.node.article.field_image
     - field.field.node.article.field_magazine
     - field.field.node.article.field_tags
@@ -53,6 +54,12 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
+  field_featured_image_width:
+    weight: 14
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_image:
     type: media_library_widget
     weight: 12
@@ -63,13 +70,13 @@ content:
         show_edit: '1'
     region: content
   field_magazine:
-    weight: 14
+    weight: 15
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_tags:
-    weight: 15
+    weight: 16
     settings: {  }
     third_party_settings: {  }
     type: options_buttons

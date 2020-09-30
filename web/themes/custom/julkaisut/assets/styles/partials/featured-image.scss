@@ -1,0 +1,16 @@
+@use "common/breakpoints" as *;
+
+// Override &:first-child, &:last-child selectors
+.featured-image.featured-image.featured-image {
+  margin-top: var(--block-gutter-l);
+  margin-bottom: var(--block-gutter-l);
+}
+
+.featured-image--content {
+  @include mq($until: large) {
+    margin-left: calc(var(--viewport-gutter) * -1);
+    margin-right: calc(var(--viewport-gutter) * -1);
+    max-width: none;
+    max-width: none;
+  }
+}

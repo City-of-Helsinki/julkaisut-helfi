@@ -1,0 +1,27 @@
+uuid: e0162d90-0fad-4e33-b364-40966e532cda
+langcode: fi
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_featured_image_width
+field_name: field_featured_image_width
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: content
+      label: 'Content width'
+    -
+      value: banner
+      label: 'Full width'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

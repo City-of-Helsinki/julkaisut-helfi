@@ -1,5 +1,21 @@
 {% if content.field_image is not empty %}
-  <div class="wp-block-image is-style-koros-basic-top alignfull">
-    {{ content.field_image }}
+  {% set entity = node ? node : term %}
+  {% set width = entity.field_featured_image_width.value ?: 'banner' %}
+
+  <div class="is-container">
+    <div class="
+      featured-image
+      featured-image--{{ width }}
+      wp-block-image
+      is-style-koros-basic-top
+      {{ width != 'content' ? 'alignfull' }}
+    ">
+      {% if width == 'content' %}
+        {{ drupal_entity('media', entity.field_image.value.0.target_id) }}
+      {% else %}
+        {{ content.field_image }}
+      {% endif %}
+    </div>
   </div>
+
 {% endif %}

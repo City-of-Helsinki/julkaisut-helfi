@@ -1,0 +1,23 @@
+uuid: db283287-05a3-4e1e-801a-adabb7fd8c9f
+langcode: fi
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_featured_image_width
+    - node.type.article
+  module:
+    - options
+id: node.article.field_featured_image_width
+field_name: field_featured_image_width
+entity_type: node
+bundle: article
+label: 'Featured image width'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: banner
+default_value_callback: ''
+settings: {  }
+field_type: list_string
