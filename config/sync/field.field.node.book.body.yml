@@ -13,7 +13,7 @@ id: node.book.body
 field_name: body
 entity_type: node
 bundle: book
-label: Sisältö
+label: Brödtext
 description: ''
 required: false
 translatable: true
