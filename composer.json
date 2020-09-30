@@ -108,6 +108,9 @@
             },
             "drupal/views_infinite_scroll": {
                 "Allow new_content JS event listeners access to the actual new content": "https://www.drupal.org/files/issues/2020-09-29/views_infinite_scroll-3173923-2.patch"
+            },
+            "drupal/content_language_access": {
+                "Book navigation links not available on translations [TODO]": "./patches/content_language_acccess.patch"
             }
         },
         "drupal-scaffold": {

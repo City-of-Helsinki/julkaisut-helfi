@@ -1,0 +1,30 @@
+From 1ce2c4b4230f412746dfe933b452dcaaf3aab134 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Oskar=20Sch=C3=B6ldstr=C3=B6m?= <m@oxy.fi>
+Date: Wed, 30 Sep 2020 08:44:30 -0300
+Subject: [PATCH] patch
+
+---
+ content_language_access.module | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/content_language_access.module b/content_language_access.module
+index ec4a637..b603ec7 100755
+--- a/content_language_access.module
++++ b/content_language_access.module
+@@ -51,6 +51,13 @@ function content_language_access_node_access(NodeInterface $node, $op, AccountIn
+             return AccessResult::neutral();
+           }
+ 
++          // Book navigation link access checks do not use the translated node
++          // for some reason and as the core feature for translated book
++          // navigation still isnt merged, we'll just patch it here until merged.
++          if ($node->getType() === 'book' && $node->hasTranslation($language->getId())) {
++            return AccessResult::neutral();
++          }
++
+           return AccessResult::forbidden();
+         }
+       }
+-- 
+2.24.3 (Apple Git-128)
+
