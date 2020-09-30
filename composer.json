@@ -34,6 +34,7 @@
         "drupal/facets": "1.x-dev",
         "drupal/file_mdm": "^2.1",
         "drupal/focal_point": "^1.5",
+        "drupal/gtm": "^1.5",
         "drupal/gutenberg": "^2.0@beta",
         "drupal/jquery_ui_touch_punch": "^1.0",
         "drupal/language_switcher_extended": "^1.0@beta",

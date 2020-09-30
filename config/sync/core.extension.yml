@@ -29,6 +29,7 @@ module:
   file_mdm: 0
   filter: 0
   focal_point: 0
+  gtm: 0
   gutenberg: 0
   gutenberg_imagefilter: 0
   image: 0
