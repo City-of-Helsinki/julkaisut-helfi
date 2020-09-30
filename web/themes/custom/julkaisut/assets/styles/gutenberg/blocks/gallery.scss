@@ -1,0 +1,13 @@
+.wp-block-gallery .blocks-gallery-item {
+  figure {
+    flex-direction: column;
+  }
+
+  figcaption {
+    font-size: var(--fontsize-body-s);
+    position: static;
+    background: none;
+    color: inherit;
+    padding: var(--spacing-3-xs);
+  }
+}
