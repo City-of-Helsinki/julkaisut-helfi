@@ -4,6 +4,13 @@
   display: flex;
   justify-content: space-between;
 
+  @media (max-width: 400px) {
+    // If it's a heading with a copy button ensure there's space for the button
+    > span:first-child {
+      max-width: calc(100% - var(--spacing-s));
+    }
+  }
+
   button {
     color: var(--color-primary);
     margin-left: var(--spacing-4-xs);
