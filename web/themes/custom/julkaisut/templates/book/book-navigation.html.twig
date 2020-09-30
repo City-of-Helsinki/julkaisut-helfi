@@ -40,14 +40,14 @@
         {% if prev_url %}
           <a href="{{ prev_url }}" rel="prev" title="{{ 'Go to previous page'|t }}">
             <i class="hds-icon hds-icon--angle-left hds-icon--size-xs" role="presentation"></i>
-            {{ prev_title }}
+            <span>{{ prev_title }}</span>
           </a>
         {% endif %}
       </li>
       <li class="book-navigation__next">
         {% if next_url %}
           <a href="{{ next_url }}" rel="next" title="{{ 'Go to next page'|t }}">
-            {{ next_title }}
+            <span>{{ next_title }}</span>
             <i class="hds-icon hds-icon--angle-right hds-icon--size-xs" role="presentation"></i>
           </a>
         {% endif %}
