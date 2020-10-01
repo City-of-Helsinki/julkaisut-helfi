@@ -8,6 +8,7 @@ dependencies:
     - search_api
   config:
     - field.storage.node.body
+    - field.storage.node.field_copyright
     - field.storage.node.field_magazine
     - field.storage.node.field_tags
     - field.storage.node.field_year
@@ -64,6 +65,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.body
+  body_suggester:
+    label: 'Body Strings'
+    datasource_id: 'entity:node'
+    property_path: body
+    type: solr_text_wstoken
+    dependencies:
+      config:
+        - field.storage.node.body
   created:
     label: Författad
     datasource_id: 'entity:node'
@@ -80,6 +89,14 @@ field_settings:
     dependencies:
       module:
         - node
+  field_copyright:
+    label: Copyright
+    datasource_id: 'entity:node'
+    property_path: field_copyright
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_copyright
   field_magazine:
     label: Magazine
     datasource_id: 'entity:node'
@@ -157,6 +174,14 @@ field_settings:
     dependencies:
       module:
         - node
+  title_suggester:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: solr_text_wstoken
+    dependencies:
+      module:
+        - node
   type:
     label: Innehållstyp
     datasource_id: 'entity:node'
@@ -207,9 +232,12 @@ processor_settings:
     all_fields: true
     fields:
       - body
+      - body_suggester
+      - field_copyright
       - langcode
       - rendered_item
       - title
+      - title_suggester
       - type
     title: true
     alt: true
@@ -226,9 +254,12 @@ processor_settings:
     all_fields: true
     fields:
       - body
+      - body_suggester
+      - field_copyright
       - langcode
       - rendered_item
       - title
+      - title_suggester
       - type
     ignorable: '[''¿¡!?,.:;]'
     ignorable_classes:

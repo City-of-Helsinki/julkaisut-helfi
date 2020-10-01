@@ -13,9 +13,11 @@ label: Search
 index_id: mainindex
 suggester_settings:
   search_api_solr_terms:
-    fields: {  }
+    fields:
+      - body_suggester
+      - title_suggester
 suggester_weights:
-  search_api_solr_terms: -47
+  search_api_solr_terms: 0
 suggester_limits: {  }
 search_settings:
   'views:search':
