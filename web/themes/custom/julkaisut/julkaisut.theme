@@ -150,8 +150,6 @@ function julkaisut_preprocess_book_navigation(&$variables) {
  */
 function julkaisut_preprocess_field(&$variables) {
   switch ($variables['field_name']) {
-    // If the node with the field has a `field_featured_image_caption` inject it as the
-    // media elements caption for easier admin UX when translating.
     case 'field_image':
       $node = $variables['element']['#object'];
       if ($node instanceof Node) {
@@ -162,9 +160,33 @@ function julkaisut_preprocess_field(&$variables) {
         }
         /** @var Drupal\media\Entity\Media $node */
         $media = $variables['element'][0]['#media'];
+
+        // If the node with the field has a `field_featured_image_caption` inject it as the
+        // media elements caption for easier admin UX when translating.
         if ($node->hasField('field_featured_image_caption')) {
           if ($caption = $node->field_featured_image_caption->value) {
             $media->field_caption = $caption;
+
+            foreach ($variables['items'] as &$item) {
+              $item['content']['#cache']['tags'][] = sprintf('node:%s', $node->id());
+            }
+          }
+        }
+
+        // If the node with this field has configured the featured image to be content width,
+        // swap the view_mode from `banner` to `default`.
+        if ($node->hasField('field_featured_image_width')) {
+          if ($node->field_featured_image_width->value === 'content') {
+            foreach ($variables['items'] as &$item) {
+              if ($item['content']['#view_mode'] === 'banner') {
+                $item['content']['#view_mode'] = 'default';
+
+                $cache_tag = sprintf('node:%s', $node->id());
+                if (in_array($cache_tag, $item['content']['#cache']['tags'])) {
+                  $item['content']['#cache']['tags'][] = $cache_tag;
+                }
+              }
+            }
           }
         }
       }

@@ -10,11 +10,7 @@
       is-style-koros-basic-top
       {{ width != 'content' ? 'alignfull' }}
     ">
-      {% if width == 'content' %}
-        {{ drupal_entity('media', entity.field_image.value.0.target_id) }}
-      {% else %}
-        {{ content.field_image }}
-      {% endif %}
+      {{ content.field_image }}
     </div>
   </div>
 
