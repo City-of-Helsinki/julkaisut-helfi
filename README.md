@@ -15,6 +15,10 @@
     # Install `blt` alias
     ./vendor/bin/blt blt:init:shell-alias
 
+    # Fetch the production database
+    drush -Dssh.tty=0 @site-aliases.wgohfxclopgum.master sql:dump > production.sql
+    cat production.sql | drush @self.vagrant sql:cli
+
 ## Theme
 
     cd web/themes/custom/julkaisut
