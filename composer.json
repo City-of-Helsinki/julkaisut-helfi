@@ -79,7 +79,9 @@
             "drupal/core": {
                 "Make exposed filter values available as tokens for text areas": "https://www.drupal.org/files/issues/2020-03-02/exposed_filter_tokens-2761273-21.patch",
                 "Notice: Undefined offset: 1 en Drupal\\Core\\StringTranslation\\PluralTranslatableMarkup->render()": "https://www.drupal.org/files/issues/2018-06-29/notice_undefined-2863629-11.patch",
-                "Make Book navigation translatable": "https://www.drupal.org/files/issues/2020-09-06/2470896_182.patch",
+                "Allow users with access to unpublished nodes to create unpublished books": "https://www.drupal.org/files/issues/2020-09-17/26552-181.patch",
+                "Make Book navigation translatable": "./patches/2470896_185.patch",
+                "Cannot save unpublished versions of published content for users without manage book privileges": "https://www.drupal.org/files/issues/2020-07-14/2918537-61.patch",
                 "Untranslated menu items are displayed in menus": "https://www.drupal.org/files/issues/2020-05-14/2466553-75-d91x.patch"
             },
             "drupal/gutenberg": {
