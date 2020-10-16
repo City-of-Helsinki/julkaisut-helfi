@@ -13,6 +13,10 @@
   background-color: var(--button-background);
   font-weight: 500;
 
+  &:visited {
+    color: var(--button-color);
+  }
+
   &:hover,
   &:focus {
     background-color: var(--button-background-hover);
