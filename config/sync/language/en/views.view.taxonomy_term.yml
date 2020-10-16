@@ -1,13 +1,7 @@
 display:
   default:
     display_options:
-      exposed_form:
-        options: {  }
       pager:
         options:
-          expose: {  }
-          tags: {  }
           views_infinite_scroll:
             button_text: 'Load More'
-  feed_1: {  }
-  page_1: {  }

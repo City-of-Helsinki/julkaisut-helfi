@@ -270,6 +270,7 @@ display:
       link_display: page_1
       css_class: ''
       show_admin_links: false
+      use_ajax: true
     cache_metadata:
       contexts:
         - 'languages:language_interface'
@@ -327,7 +328,14 @@ display:
         type: views_query
         options: {  }
       path: taxonomy/term/%
-      display_extenders: {  }
+      display_extenders:
+        simple_sitemap_display_extender:
+          index: false
+          variant: null
+          priority: '0.5'
+          changefreq: ''
+          arguments: {  }
+          max_links: 100
     cache_metadata:
       contexts:
         - 'languages:language_interface'
