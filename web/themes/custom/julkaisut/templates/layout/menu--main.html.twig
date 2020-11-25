@@ -42,15 +42,11 @@
           .addClass('site-navigation__item')
           .addClass('is-level-' ~ menu_level)
           .addClass(item.below ? 'has-children' : '')
-          .setAttribute('aria-haspopup', item.below ? 'true' : 'false')
-          .setAttribute('aria-expanded', 'false')
-          .setAttribute('aria-label', item.title)
           .setAttribute('role', 'none')
       }}>
-        {{ link(item.title, item.url, {'class': ['site-navigation__link']}) }}
-        {% if item.below %}
-          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
-        {% endif %}
+        {{ link(item.title, item.url, {
+          'class': ['site-navigation__link'],
+        }) }}
       </li>
     {% endfor %}
     </ul>
