@@ -89,6 +89,7 @@ Drupal.behaviors.julkaisutTheme = {
 
     if (trigger) {
       button(trigger);
+      toggler(trigger);
     }
   },
 
