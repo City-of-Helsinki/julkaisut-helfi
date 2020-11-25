@@ -2,6 +2,8 @@
 vagrant_hostname: julkaisut.test
 vagrant_machine_name: julkaisut
 vagrant_ip: 192.168.88.12
+vagrant_plugins:
+  - name: vagrant-hostmanager
 
 # Automatically swapped to vboxsf on Windows.
 vagrant_synced_folder_default_type: nfs
