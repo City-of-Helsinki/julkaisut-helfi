@@ -16,7 +16,8 @@
 #}
 {{ title_prefix }}
 {% if title %}
-  <h1{{ title_attributes }}>
+  <h1{{ title_attributes.setAttribute('id', 'main-content') }}>
+
     {{ title }}
 
     {% if (copy_to_clipboard) %}
