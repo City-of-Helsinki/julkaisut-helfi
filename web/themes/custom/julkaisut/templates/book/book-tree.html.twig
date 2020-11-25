@@ -35,9 +35,7 @@
       <button
         class="book-tree__trigger"
         aria-controls="book-tree"
-        aria-label="{% trans %}Show Table of Contents{% endtrans %}"
         aria-expanded="{{ is_expanded ? 'true' : 'false' }}"
-        data-toggle-label="{% trans %}Close Table of Contents{% endtrans %}"
       >
         <span>{{ 'Table of Contents' | t }}</span>
         <i class="hds-icon hds-icon--angle-down hds-icon--size-s" role="presentation"></i>
@@ -73,7 +71,7 @@
               item.in_active_trail and not item.below ? 'is-active',
           ] }) }}
         {% else %}
-          <span class="book-tree__link {{ item.in_active_trail ? 'is-active-trail' }}" tabindex="-1">
+          <span {{ item.below ? 'aria-hidden="true"' }} class="book-tree__link {{ item.in_active_trail ? 'is-active-trail' }}" tabindex="-1">
             {{ item.title }}
           </span>
         {% endif %}
@@ -83,9 +81,8 @@
             class="book-tree__submenu-trigger"
             aria-expanded="{{ item.in_active_trail ? 'true' : 'false' }}"
             aria-controls="submenu-{{ item.title | clean_class }}"
-            aria-label="{% trans %}Open {{ item.title }} submenu{% endtrans %}"
+            aria-label="{{ item.title }}"
             data-submenu-trigger
-            data-toggle-label="{% trans %}Close {{ item.title }} submenu{% endtrans %}"
             data-close-icon="hds-icon hds-icon--minus hds-icon--size-s"
             id="submenu-trigger-{{ item.title| clean_class }}"
           >
