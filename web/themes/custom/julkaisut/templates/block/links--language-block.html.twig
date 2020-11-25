@@ -47,7 +47,7 @@
     aria-haspopup="true"
     aria-controls="site-languages"
     aria-expanded="false"
-    title="{{ current_language.getName() }}"
+    aria-label="{{ 'Languages' | t }}"
   >
     {{ current_language.getId() }}
     <span class="site-languages__trigger hds-icon hds-icon--angle-down hds-icon--size-m" aria-role="presentation"></span>
@@ -58,6 +58,7 @@
       .addClass('site-languages__menu')
       .setAttribute('id', 'site-languages')
       .setAttribute('role', 'menu')
+      .setAttribute('aria-label', 'Languages' | t)
   }}>
     {%- for item in links -%}
       <li{{ item.attributes.addClass('site-languages__item') }}>
