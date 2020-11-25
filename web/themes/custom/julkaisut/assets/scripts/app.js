@@ -25,6 +25,9 @@ Drupal.behaviors.julkaisutTheme = {
     this.bookMenu(context);
     this.responsiveTables(context);
     this.clipboard(context.querySelectorAll('[data-clipboard-text]'));
+    // By having the anchor point to an unexisting element it will
+    // automatically scroll to the top
+    this.scrollToTop(context.querySelectorAll('[href="#top"]'));
 
     if (window.jQuery && settings.views && settings.views.ajaxViews) {
       window.jQuery(context).on('views_infinite_scroll.new_content', this.focusNewContent);
@@ -56,6 +59,13 @@ Drupal.behaviors.julkaisutTheme = {
         firstLink.focus();
       }
     });
+  },
+
+  scrollToTop(links) {
+    const focusLogo = () => document.querySelector('[rel="home"]').focus();
+    for (let i = 0; i < links.length; i++) {
+      links[i].addEventListener('click', focusLogo);
+    }
   },
 
   bookMenu(context) {
