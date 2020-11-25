@@ -42,9 +42,30 @@ Drupal.behaviors.julkaisutTheme = {
     // By having the anchor point to an unexisting element it will
     // automatically scroll to the top
     this.scrollToTop(context.querySelectorAll('[href="#top"]'));
+    this.markExternalLinks(context.querySelectorAll('a[target="_blank"]'));
 
     if (window.jQuery && settings.views && settings.views.ajaxViews) {
       window.jQuery(context).on('views_infinite_scroll.new_content', this.focusNewContent);
+    }
+  },
+
+  markExternalLinks(links) {
+    const icon = document.createElement('i');
+    icon.classList.add(
+      'hds-icon', 'hds-icon--link-external', 'external-link-icon'
+    );
+    icon.setAttribute('aria-hidden', 'true');
+    icon.setAttribute('title', Drupal.t('Open in new window'));
+
+    const srLabel = document.createElement('span');
+    srLabel.classList.add('visually-hidden');
+    srLabel.textContent = Drupal.t('Open in new window');
+
+    for (let i = 0; i < links.length; i++) {
+      const link = links[i];
+      link.appendChild(icon.cloneNode(true));
+      link.appendChild(srLabel.cloneNode(true));
+      link.classList.add('is-external-link');
     }
   },
 

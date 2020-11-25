@@ -48,6 +48,11 @@
       justify-content: center;
       padding: var(--menu-item-padding);
 
+      .external-link-icon {
+        transform: translateX(calc(100% + var(--spacing-3-xs)));
+        right: auto;
+      }
+
       &:hover {
         text-decoration: underline;
       }

@@ -1,0 +1,22 @@
+.is-external-link {
+  position: relative;
+
+}
+
+.external-link-icon {
+  --icon-size: 12px;
+
+  .hds-icon + & {
+    display: none;
+  }
+
+  .hds-icon + &:hover,
+  .hds-icon + &:focus,
+  .hds-icon:hover + &,
+  .hds-icon:focus + & {
+    position: absolute;
+    display: block;
+    transform: translateX(100%);
+    right: 0;
+  }
+}
