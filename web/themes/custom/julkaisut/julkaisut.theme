@@ -51,6 +51,9 @@ function julkaisut_preprocess_node(&$variables) {
     $variables['translation_links']['#items'][] = [
       '#type' => 'link',
       '#title' => Markup::create($label[$langcode] ?? $language->getName()),
+      '#attributes' => [
+        'lang' => $translation->language()->getId(),
+      ],
       '#url' => $translation->toUrl('canonical', [
         'language' => $translation->language(),
       ]),
@@ -475,12 +478,12 @@ function julkaisut_preprocess_links__language_block(&$variables) {
     $variables['links']['en']['link']['#title'] = 'In English';
   }
 
-  foreach ($variables['links'] as &$link) {
+  foreach ($variables['links'] as $langcode => &$link) {
     if (!empty($link['link'])) {
       $link['link']['#options']['attributes']['role'] = 'menuitem';
+      $link['link']['#options']['attributes']['lang'] = $langcode;
     } else {
       $link['attributes']
-        ->setAttribute('role', 'menuitem')
         ->setAttribute('tabindex', '-1');
     }
   }
