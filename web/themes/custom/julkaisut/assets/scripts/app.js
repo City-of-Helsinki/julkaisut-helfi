@@ -13,6 +13,20 @@ const appHeight = () => {
 window.addEventListener('resize', debounce(appHeight, 150));
 appHeight();
 
+window.TablesawConfig = {
+  i18n: {
+    modeStack: Drupal.t('Stack'),
+    modeSwipe: Drupal.t('Swipe'),
+    modeToggle: Drupal.t('Toggle'),
+    modeSwitchColumnsAbbreviated: Drupal.t('Cols'),
+    modeSwitchColumns: Drupal.t('Columns'),
+    columnToggleButton: Drupal.t('Columns'),
+    columnToggleError: Drupal.t('No eligible columns.'),
+    sort: Drupal.t('Sort'),
+    swipePreviousColumn: Drupal.t('Previous column'),
+    swipeNextColumn: Drupal.t('Next column')
+  }
+};
 
 Drupal.behaviors.julkaisutTheme = {
   attach(context, settings) {
