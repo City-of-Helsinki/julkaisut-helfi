@@ -35,7 +35,6 @@
 
   &__hamburger-button {
     display: block;
-    margin-left: var(--spacing-m);
 
     @include mq($from: large) {
       display: none;

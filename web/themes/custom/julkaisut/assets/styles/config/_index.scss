@@ -4,7 +4,8 @@
 $is-editor: false !default;
 
 $mq-breakpoints: (
-  xsmall: hds.$breakpoint-xs,
+  //xxsmall: hds.$breakpoint-xs,
+  xsmall: 321px, // one above iphone 6 so we target slightly larger screens
   small: hds.$breakpoint-s,
   medium: hds.$breakpoint-m,
   large: hds.$breakpoint-l,
