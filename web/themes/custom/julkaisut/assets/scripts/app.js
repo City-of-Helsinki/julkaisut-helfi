@@ -1,6 +1,7 @@
 import debounce from 'lodash-es/debounce';
 import ClipboardJS from 'clipboard';
 import Tablesaw from 'tablesaw/dist/tablesaw';
+import { createFocusTrap } from 'focus-trap';
 
 import { menu, button } from './components/dropdown';
 import { toggle, toggler } from './components/toggler';
@@ -140,8 +141,25 @@ Drupal.behaviors.julkaisutTheme = {
 
   mobileMenu(context) {
     const trigger = context.querySelector('.site-hamburger-button');
+
     if (trigger) {
       toggler(trigger);
+
+      // Trap focus within the mobile menu while it's open.
+      const mobileMenu = document.getElementById(trigger.getAttribute('aria-controls'));
+      if (mobileMenu) {
+        const mobileMenuFocusTrap = createFocusTrap(mobileMenu);
+
+        trigger.addEventListener('click', () => {
+          const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+
+          if (isExpanded) {
+            mobileMenuFocusTrap.deactivate();
+          } else {
+            mobileMenuFocusTrap.activate();
+          }
+        });
+      }
     }
 
     const submenuTriggers = context.querySelectorAll('.site-navigation__submenu-trigger');
