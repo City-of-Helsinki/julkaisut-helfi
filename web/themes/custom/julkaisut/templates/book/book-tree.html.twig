@@ -40,7 +40,7 @@
         aria-expanded="{{ is_expanded ? 'true' : 'false' }}"
       >
         <span>{{ 'Table of Contents' | t }}</span>
-        <i class="hds-icon hds-icon--angle-down hds-icon--size-s" role="presentation"></i>
+        <i class="hds-icon hds-icon--angle-down hds-icon--size-s" aria-hidden="true"></i>
       </button>
       <ul{{ attributes
         .addClass('book-tree')
@@ -103,7 +103,7 @@
             data-close-icon="hds-icon hds-icon--minus hds-icon--size-s"
             id="submenu-trigger-{{ item.title| clean_class }}"
           >
-            <i class="hds-icon hds-icon--plus hds-icon--size-s" role="hidden"></i>
+            <i class="hds-icon hds-icon--plus hds-icon--size-s" aria-hidden="true"></i>
           </button>
           {{ book_tree.book_links(item.below, attributes, menu_level + 1, item.in_active_trail, item) }}
         {% endif %}

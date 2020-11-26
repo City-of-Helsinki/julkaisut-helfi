@@ -334,7 +334,7 @@ function julkaisut_preprocess_menu(&$variables) {
 function julkaisut_preprocess_menu__social_media(&$variables) {
   foreach ($variables['items'] as &$item) {
     $item['title'] = Markup::create(sprintf(
-      '<i class="hds-icon hds-icon--size-s %s" role="presentation"></i>',
+      '<i class="hds-icon hds-icon--size-s %s" role="hidden"></i>',
       $item['title']
     ));
 
@@ -550,7 +550,7 @@ function julkaisut_preprocess(&$variables) {
     case 'select':
       $variables['attributes']['class'][] = 'hds-text-input__input';
       if (isset($variables['element']['#type']) && $variables['element']['#type'] === 'search_api_autocomplete') {
-        $variables['children'] = Markup::create('<i class="hds-icon hds-icon--search hds-icon--size-s" role="presentation"></i>');
+        $variables['children'] = Markup::create('<i class="hds-icon hds-icon--search hds-icon--size-s" aria-hidden="true"></i>');
       }
       break;
     case 'input__submit':
