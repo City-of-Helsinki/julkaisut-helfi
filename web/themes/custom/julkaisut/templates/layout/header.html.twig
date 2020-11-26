@@ -4,16 +4,6 @@
     {{ drupal_block('system_branding_block') }}
   </div>
 
-  <div class="site-header__search">
-    {% include '@julkaisut/partials/search.html.twig' %}
-  </div>
-
-  {{ page.header }}
-
-  <div class="site-header__languages">
-    {{ drupal_block('language_block:language_interface') }}
-  </div>
-
   <div class="site-header__hamburger-button">
     <button
       class="site-hamburger-button"
@@ -24,6 +14,16 @@
       <i class="hds-icon hds-icon--search hds-icon--size-s" aria-hidden="true"></i>
       <span aria-hidden="true"></span>
     </button>
+  </div>
+
+  <div class="site-header__search">
+    {% include '@julkaisut/partials/search.html.twig' %}
+  </div>
+
+  {{ page.header }}
+
+  <div class="site-header__languages">
+    {{ drupal_block('language_block:language_interface') }}
   </div>
 </div>
 
