@@ -16,7 +16,7 @@ provider: null
 plugin: 'system_menu_block:footer-fineprint'
 settings:
   id: 'system_menu_block:footer-fineprint'
-  label: 'Footer fineprint'
+  label: 'Muut linkit'
   provider: system
   label_display: '0'
   level: 1
