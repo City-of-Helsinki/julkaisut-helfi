@@ -56,6 +56,13 @@ class TableHeaderFixerFilter extends FilterBase {
       $node->setAttribute('data-tablesaw-priority', 'persist');
     }
 
-    return Html::serialize($dom);
+    $content = Html::serialize($dom);
+    // TODO: The serializer strips newlines between these comments which causes them
+    // to become invalid blocks. We should instead use the new BlockParser
+    // available in the latest dev version of the gutenberg module.
+    $content = preg_replace('#(<!-- wp:.*? -->)<#', "$1\n<", $content);
+    $content = preg_replace('#(<!-- /wp:[^ ]+ -->)(<!-- wp:)#', "$1\n\n\n$2", $content);
+
+    return $content;
   }
 }
