@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "25b7eea777f21e6ca482fedba08cfdca",
+    "content-hash": "5fa927fb141ea2f446bc14a5452bbb8f",
     "packages": [
         {
             "name": "acquia/blt",
@@ -2008,6 +2008,7 @@
                 "reflection",
                 "static"
             ],
+            "abandoned": "roave/better-reflection",
             "time": "2020-03-27T11:06:43+00:00"
         },
         {
@@ -2448,7 +2449,8 @@
                     "Allow users with access to unpublished nodes to create unpublished books": "https://www.drupal.org/files/issues/2020-09-17/26552-181.patch",
                     "Make Book navigation translatable": "./patches/2470896_185.patch",
                     "Cannot save unpublished versions of published content for users without manage book privileges": "https://www.drupal.org/files/issues/2020-07-14/2918537-61.patch",
-                    "Untranslated menu items are displayed in menus": "https://www.drupal.org/files/issues/2020-05-14/2466553-75-d91x.patch"
+                    "Untranslated menu items are displayed in menus": "https://www.drupal.org/files/issues/2020-05-14/2466553-75-d91x.patch",
+                    "Return translated term name on views Content: Has taxonomy term ID (with depth)": "https://www.drupal.org/files/issues/2019-06-28/taxonomy_translation_2765297_0.patch"
                 }
             },
             "autoload": {
@@ -9462,5 +9464,6 @@
     "platform-dev": [],
     "platform-overrides": {
         "php": "7.4"
-    }
+    },
+    "plugin-api-version": "1.1.0"
 }
