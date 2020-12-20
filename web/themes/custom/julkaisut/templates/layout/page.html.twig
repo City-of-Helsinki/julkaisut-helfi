@@ -46,8 +46,7 @@
 
   <div class="site__content">
     {{ page.pre_content }}
-    <main class="page-content clearfix" role="main">
-      <div class="visually-hidden"><a id="main-content" tabindex="-1"></a></div>
+    <main class="page-content clearfix">
 
       {% if page.help or page.highlighted %}
         <div class="is-container">
@@ -62,6 +61,7 @@
 
       {% block content %}
         <div class="is-container">
+
           {{ page.content }}
           {{ page.below_content }}
         </div>
@@ -70,7 +70,7 @@
 
   </div>
 
-  <div class="site__footer is-style-koros-basic-top">
+  <footer class="site__footer is-style-koros-basic-top">
     {% include '@julkaisut/layout/footer.html.twig' %}
-  </div>
+  </footer>
 </div>

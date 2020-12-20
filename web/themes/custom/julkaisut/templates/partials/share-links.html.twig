@@ -5,17 +5,19 @@
     href="{{ 'https://www.addtoany.com/add_to/%s?linkurl=%s&amp;linkname=%s'|format(
       'facebook', url|url_encode, title|url_encode
     ) }}"
-    aria-label="{{ 'Facebook' | t }}"
+    target="_blank"
   >
-    <i class="hds-icon hds-icon--facebook hds-icon--size-s" role="presentation"></i>
+    <span class="visually-hidden">{{ 'Share on Facebook' | t }}</span>
+    <i class="hds-icon hds-icon--facebook hds-icon--size-s" aria-hidden="true"></i>
   </a>
   <a
     class="share-links__link"
     href="{{ 'https://www.addtoany.com/add_to/%s?linkurl=%s&amp;linkname=%s'|format(
       'twitter', url|url_encode, title|url_encode
     ) }}"
-    aria-label="{{ 'Twitter' | t }}"
+    target="_blank"
   >
-    <i class="hds-icon hds-icon--twitter hds-icon--size-s" role="presentation"></i>
+    <span class="visually-hidden">{{ 'Share on Twitter' | t }}</span>
+    <i class="hds-icon hds-icon--twitter hds-icon--size-s" aria-hidden="true"></i>
   </a>
 </div>

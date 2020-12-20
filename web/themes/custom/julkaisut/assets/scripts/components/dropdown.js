@@ -1,8 +1,3 @@
-const KEY_UP = 38;
-const KEY_DOWN = 40;
-const KEY_LEFT = 37;
-const KEY_RIGHT = 39;
-
 function open(el) {
   el.setAttribute('aria-expanded', true);
 }
@@ -45,8 +40,9 @@ function keydownListener(e) {
     (parentLink.matches('[aria-haspopup') ? parentLink : parentLink.closest('[aria-haspopup')) :
     null;
 
-  switch (e.keyCode) {
-    case KEY_DOWN:
+  switch (e.key) {
+    case 'Down':
+    case 'ArrowDown':
       // If it's in a submenu, go to next. If not, open submenu
       if (isInSubmenu) {
         if (nextLink) {
@@ -62,7 +58,8 @@ function keydownListener(e) {
         e.preventDefault();
       }
       break;
-    case KEY_UP:
+    case 'Up':
+    case 'ArrowUp':
       // If it's in a submenu, go to previous until there's more then exit
       if (isInSubmenu) {
         if (prevLink) {
@@ -74,7 +71,8 @@ function keydownListener(e) {
         e.preventDefault();
       }
       break;
-    case KEY_LEFT:
+    case 'Left':
+    case 'ArrowLeft':
       // If it's in a submenu exit, otherwise previous link
       if (isInSubmenu) {
         parentLink.focus();
@@ -85,11 +83,18 @@ function keydownListener(e) {
         e.preventDefault();
       }
       break;
-    case KEY_RIGHT:
+    case 'Right':
+    case 'ArrowRight':
       // Next link
       if (nextLink) {
         nextLink.focus();
         e.preventDefault();
+      }
+      break;
+    case 'Esc':
+    case 'Escape':
+      if (parentItem) {
+        close(parentItem);
       }
       break;
   }

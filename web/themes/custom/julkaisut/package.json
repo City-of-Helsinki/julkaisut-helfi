@@ -45,6 +45,7 @@
   "dependencies": {
     "classnames": "^2.2.6",
     "clipboard": "^2.0.6",
+    "focus-trap": "^6.2.1",
     "hds-core": "^0.12.1",
     "hds-design-tokens": "^0.13.0",
     "lodash-es": "^4.17.15",

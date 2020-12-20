@@ -33,20 +33,21 @@
   {% if items %}
     {% if menu_level == 0 %}
       <button
+        id="book-tree-trigger"
         class="book-tree__trigger"
+        aria-haspopup="true"
         aria-controls="book-tree"
-        aria-label="{% trans %}Show Table of Contents{% endtrans %}"
         aria-expanded="{{ is_expanded ? 'true' : 'false' }}"
-        data-toggle-label="{% trans %}Close Table of Contents{% endtrans %}"
       >
         <span>{{ 'Table of Contents' | t }}</span>
-        <i class="hds-icon hds-icon--angle-down hds-icon--size-s" role="presentation"></i>
+        <i class="hds-icon hds-icon--angle-down hds-icon--size-s" aria-hidden="true"></i>
       </button>
       <ul{{ attributes
         .addClass('book-tree')
         .addClass(is_expanded ? 'is-active')
         .setAttribute('role', 'menubar')
         .setAttribute('id', 'book-tree')
+        .setAttribute('aria-labelled-by', 'book-tree-trigger')
       }}>
     {% else %}
       <ul
@@ -64,16 +65,28 @@
         item.attributes
           .addClass('book-tree__item')
           .addClass(item.below ? 'has-children' : '')
-          .setAttribute('role', 'menuitem')
+          .setAttribute('role', 'none')
       }}>
         {% if item.url %}
-          {{ link(item.title, item.url, { 'class': [
-              'book-tree__link',
-              item.in_active_trail ? 'is-active-trail',
-              item.in_active_trail and not item.below ? 'is-active',
-          ] }) }}
+          {{ link(item.title, item.url, {
+            'class': [
+                'book-tree__link',
+                item.in_active_trail ? 'is-active-trail',
+                item.in_active_trail and not item.below ? 'is-active',
+            ],
+            'role': 'menuitem'
+          }) }}
         {% else %}
-          <span class="book-tree__link {{ item.in_active_trail ? 'is-active-trail' }}" tabindex="-1">
+          <span
+            {% if item.below %}
+              aria-hidden="true"
+            {% else %}
+              role="menuitem"
+              aria-disabled="true"
+            {% endif %}
+            class="book-tree__link {{ item.in_active_trail ? 'is-active-trail' }}"
+            tabindex="-1"
+          >
             {{ item.title }}
           </span>
         {% endif %}
@@ -81,15 +94,16 @@
         {% if item.below %}
           <button
             class="book-tree__submenu-trigger"
+            role="menuitem"
+            aria-haspopup="true"
             aria-expanded="{{ item.in_active_trail ? 'true' : 'false' }}"
             aria-controls="submenu-{{ item.title | clean_class }}"
-            aria-label="{% trans %}Open {{ item.title }} submenu{% endtrans %}"
+            aria-label="{{ item.title }}"
             data-submenu-trigger
-            data-toggle-label="{% trans %}Close {{ item.title }} submenu{% endtrans %}"
             data-close-icon="hds-icon hds-icon--minus hds-icon--size-s"
             id="submenu-trigger-{{ item.title| clean_class }}"
           >
-            <i class="hds-icon hds-icon--plus hds-icon--size-s" role="presentation"></i>
+            <i class="hds-icon hds-icon--plus hds-icon--size-s" aria-hidden="true"></i>
           </button>
           {{ book_tree.book_links(item.below, attributes, menu_level + 1, item.in_active_trail, item) }}
         {% endif %}

@@ -31,5 +31,5 @@ add_structured_data_json_ld: 1
 excluded_paths: ''
 replaced_titles: 'Helsinki lehti::Helsinki-lehti'
 custom_paths: "/fi/search :: Hakutulokset\r\n/sv/search :: Sökresultat\r\n/en/search :: Search results"
-title_segment_as_link: false
+title_segment_as_link: true
 capitalizator_forced_words: ''

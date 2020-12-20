@@ -13,34 +13,42 @@ export function toggle(el) {
   } else {
     open(el);
   }
+
+  if (el.dataset.toggleLabel) {
+    const currentLabel = el.getAttribute('aria-label');
+    el.setAttribute('aria-label', el.dataset.toggleLabel);
+    el.dataset.toggleLabel = currentLabel;
+  }
+
+  const controls = el.getAttribute('aria-controls');
+  if (controls) {
+    controls.split(' ').forEach((selector) => {
+      const el = document.getElementById(selector);
+      if (isExpanded) {
+        el.classList.remove('is-active');
+      }
+      else {
+        el.classList.add('is-active');
+      }
+    });
+  }
 }
 
 export function toggler(el) {
-  el.addEventListener('click', () => requestAnimationFrame(() => {
+  el.addEventListener('keydown', (e) => {
     const isExpanded = el.getAttribute('aria-expanded') === 'true';
-    if (isExpanded) {
-      close(el);
-    } else {
-      open(el);
-    }
 
-    if (el.dataset.toggleLabel) {
-      const currentLabel = el.getAttribute('aria-label');
-      el.setAttribute('aria-label', el.dataset.toggleLabel);
-      el.dataset.toggleLabel = currentLabel;
-    }
-
-    const controls = el.getAttribute('aria-controls');
-    if (controls) {
-      controls.split(' ').forEach((selector) => {
-        const el = document.getElementById(selector);
+    switch (e.key) {
+      case 'Esc':
+      case 'Escape':
         if (isExpanded) {
-          el.classList.remove('is-active');
+          toggle(el);
         }
-        else {
-          el.classList.add('is-active');
-        }
-      });
+        break;
     }
+  });
+
+  el.addEventListener('click', () => requestAnimationFrame(() => {
+    toggle(el);
   }));
 }

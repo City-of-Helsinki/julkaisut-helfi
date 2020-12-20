@@ -62,6 +62,11 @@
       font-size: var(--fontsize-body-l);
     }
 
+    // Make space for the toggle button which is absolute positioned
+    .has-children > & {
+      padding-right: calc(var(--spacing-s) + var(--spacing-l));
+    }
+
     &.is-active {
       text-decoration: underline;
     }

@@ -23,7 +23,7 @@
       </a>
     {% endif %}
     {% if site_name %}
-      <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="site-logo__name">{{ site_name }}</a>
+      <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="site-logo__name" tabindex="-1">{{ site_name }}</a>
     {% endif %}
   </div>
 {% endblock %}

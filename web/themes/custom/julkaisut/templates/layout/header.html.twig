@@ -4,6 +4,18 @@
     {{ drupal_block('system_branding_block') }}
   </div>
 
+  <div class="site-header__hamburger-button">
+    <button
+      class="site-hamburger-button"
+      aria-label="{{ 'Open navigation or search'|t }}"
+      aria-expanded="false"
+      aria-controls="header"
+    >
+      <i class="hds-icon hds-icon--search hds-icon--size-s" aria-hidden="true"></i>
+      <span aria-hidden="true"></span>
+    </button>
+  </div>
+
   <div class="site-header__search">
     {% include '@julkaisut/partials/search.html.twig' %}
   </div>
@@ -13,24 +25,12 @@
   <div class="site-header__languages">
     {{ drupal_block('language_block:language_interface') }}
   </div>
-
-  <div class="site-header__hamburger-button">
-    <button
-      class="site-hamburger-button"
-      aria-label="{{ 'Open navigation or search'|t }}"
-      aria-expanded="false"
-      aria-controls="header"
-    >
-      <i class="hds-icon hds-icon--search hds-icon--size-s" role="presentation"></i>
-      <span aria-hidden="true"></span>
-    </button>
-  </div>
 </div>
 
-<nav class="site-navbar">
+<nav class="site-navbar" aria-label="{{ 'Main navigation' | t }}">
   {{ drupal_menu('main', 1, 0, TRUE) }}
 </nav>
 
-<nav class="site-mobile-languages">
+<nav class="site-mobile-languages" aria-label="{{ 'Languages' | t }}">
   {{ mobile_language_menu }}
 </nav>

@@ -10,4 +10,15 @@
   li:first-child::before {
     content: none;
   }
+
+  [aria-current="page"] {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover,
+    &:focus {
+      color: var(--color-primary);
+      text-decoration: underline;
+    }
+  }
 }
