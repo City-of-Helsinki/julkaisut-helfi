@@ -1,0 +1,9 @@
+{% extends '@julkaisut/node/node--page.html.twig' %}
+
+{% block node %}
+  <article id="main-content" {{attributes.addClass(classes)|without('role', 'id') }}>
+    {{ title_prefix }}
+
+    {% block node__content_wrapper parent() %}
+  </article>
+{% endblock %}
