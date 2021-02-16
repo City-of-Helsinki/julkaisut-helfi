@@ -79,7 +79,7 @@
   ]
 %}
 {% block node %}
-  <article{{attributes.addClass(classes) }}>
+  <article{{attributes.addClass(classes)|without('role') }}>
     {{ title_prefix }}
 
     {% block node__content_wrapper %}
