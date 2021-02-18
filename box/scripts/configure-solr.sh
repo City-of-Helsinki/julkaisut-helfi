@@ -8,7 +8,7 @@
 SOLR_CORE_NAME="mainindex"
 SOLR_SETUP_COMPLETE_FILE="/etc/drupal_vm_solr_config_complete_$SOLR_CORE_NAME"
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+DIR="/var/www/drupalvm/box/scripts"
 SOLR_CONFIG="$DIR/../solr_8.x_config.zip"
 SOLR_TMP_DIR="/tmp/solr-conf"
 
