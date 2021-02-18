@@ -22,11 +22,14 @@ display:
           expose:
             label: 'What are you looking for?'
             placeholder: Search
+      header:
+        area_text_custom:
+          content: "{% if filters.search_api_fulltext or filters.facets %}\r\n<div role=\"status\">\r\n<h1>Search results ([view:total-rows])</h1>\r\n{% if filters.search_api_fulltext %}\r\n<h3>For the phrase \"{{ filters.search_api_fulltext }}\"</h3>\r\n{% endif %}\r\n</div>\r\n{% endif %}"
   page_1:
     display_options:
       header:
         area_text_custom:
-          content: "<h1>Search results ([view:total-rows])</h1>\r\n{% if filters.search_api_fulltext %}\r\n<h3>For the phrase \"{{ filters.search_api_fulltext }}\"</h3>\r\n{% endif %}"
+          content: "{% if filters.search_api_fulltext or filters.facets %}\r\n<div role=\"status\">\r\n<h1>Search results ([view:total-rows])</h1>\r\n{% if filters.search_api_fulltext %}\r\n<h3>For the phrase \"{{ filters.search_api_fulltext }}\"</h3>\r\n{% endif %}\r\n</div>\r\n{% endif %}"
       filters:
         search_api_fulltext:
           expose:
@@ -65,3 +68,6 @@ display:
             sort:
               advanced:
                 combine_rewrite: "Relevance Desc | Relevance\r\nRelevance Asc |\r\nYear Desc | Newest first\r\nYear Asc | Oldest first"
+      header:
+        area_text_custom:
+          content: '<h3 role="status" class="result-count">[view:total-rows] results</h3>'

@@ -7,6 +7,32 @@
     --field-gutter: var(--spacing-m);
   }
 
+  // Except on taxonomy search pages, move the header below the filter form
+  body:not(.path-taxonomy) & {
+    display: flex;
+    flex-direction: column;
+
+    > form {
+      order: -1;
+    }
+
+    > header {
+      margin-top: calc(var(--spacing-l) - var(--spacing-m));
+
+      @include mq($from: medium) {
+        margin-top: var(--spacing-l);
+      }
+
+      :last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .result-count {
+    margin-top: calc(var(--spacing-m) * -1 + var(--spacing-xs));
+  }
+
   .facets-views-plugin > div:not(.hidden),
   .form-item {
     margin-top: 0;
@@ -15,11 +41,6 @@
     @at-root .search-view .views-exposed-form {
       @include mq($from: medium) {
         margin-bottom: calc(var(--field-gutter) * -1);
-      }
-
-      & + header,
-      & + div {
-        margin-top: var(--field-gutter);
       }
     }
 
