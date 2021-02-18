@@ -12,7 +12,10 @@ class JulkaisutModuleServiceProvider extends ServiceProviderBase implements Serv
    * {@inheritdoc}
    */
   public function alter(ContainerBuilder $container) {
-    $definition = $container->getDefinition('book.outline');
-    $definition->setClass('Drupal\julkaisut_module\ExtendedBookOutline');
+    $container->getDefinition('book.outline')
+      ->setClass('Drupal\julkaisut_module\ExtendedBookOutline');
+
+    $container->getDefinition('easy_breadcrumb.breadcrumb')
+      ->setClass('Drupal\julkaisut_module\BreadcrumbBuilder');
   }
 }
