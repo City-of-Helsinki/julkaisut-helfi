@@ -43,6 +43,7 @@ display:
             sort:
               advanced:
                 combine_rewrite: "Relevance Desc | Relevance\r\nRelevance Asc |\r\nYear Desc | Newest first\r\nYear Asc | Oldest first"
+      title: Search
   block_2:
     display_options:
       filters:

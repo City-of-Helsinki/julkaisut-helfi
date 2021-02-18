@@ -54,6 +54,7 @@ display:
             sort:
               advanced:
                 combine_rewrite: "Relevance Desc | Mest relevanta först\r\nRelevance Asc |\r\nYear Desc | Nyaste först\r\nYear Asc | Äldst först"
+      title: Sök
   page_2:
     display_options:
       exposed_form:

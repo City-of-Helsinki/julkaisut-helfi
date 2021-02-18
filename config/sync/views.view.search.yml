@@ -662,7 +662,7 @@ display:
           max_links: 100
       path: search
       exposed_block: false
-      title: ''
+      title: Haku
       defaults:
         title: false
         header: false
