@@ -37,8 +37,16 @@ export function toggle(el) {
 export function toggler(el) {
   el.addEventListener('keydown', (e) => {
     const isExpanded = el.getAttribute('aria-expanded') === 'true';
+    const targetId = el.getAttribute('aria-controls');
+    const target = document.getElementById(targetId);
 
     switch (e.key) {
+      case 'Enter':
+      case 'Space':
+      case ' ':
+        toggle(el);
+        e.preventDefault();
+        break;
       case 'Esc':
       case 'Escape':
         if (isExpanded) {
@@ -46,9 +54,28 @@ export function toggler(el) {
         }
         break;
     }
+
+    // Manage escape to close the current controlled target popup
+    if (target) {
+      target.addEventListener('keydown', (e) => {
+        switch (e.key) {
+          case 'Esc':
+          case 'Escape':
+            const wrapper = e.target.closest('[id]');
+            if (isExpanded && targetId === wrapper.id) {
+              toggle(el);
+              el.focus();
+            }
+            break;
+        }
+      })
+    }
+
   });
 
-  el.addEventListener('click', () => requestAnimationFrame(() => {
-    toggle(el);
-  }));
+  el.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    requestAnimationFrame(() => toggle(el));
+  });
 }

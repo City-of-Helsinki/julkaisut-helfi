@@ -28,6 +28,50 @@
 #}
 {{ book_tree.book_links(items, attributes, 0, is_expanded) }}
 
+{% macro item_label(item) %}
+  <span
+    {% if item.below %}
+      aria-hidden="true"
+    {% else %}
+      role="menuitem"
+      aria-disabled="true"
+    {% endif %}
+    class="book-tree__link {{ item.in_active_trail ? 'is-active-trail' }}"
+    tabindex="-1"
+  >
+    {{ item.title }}
+  </span>
+{% endmacro %}
+
+{% macro item_link(item) %}
+  {{ link(item.title, item.url, {
+    'class': [
+      'book-tree__link',
+      item.in_active_trail ? 'is-active-trail',
+      item.in_active_trail and not item.below ? 'is-active',
+    ],
+    'aria-current': item.in_active_trail and not item.below ? 'page' : null,
+    'role': 'menuitem'
+  }) }}
+{% endmacro %}
+
+{% macro item_submenu(item) %}
+  <a
+    href="#"
+    role="menuitem"
+    class="book-tree__submenu-trigger book-tree__link {{ item.in_active_trail ? 'is-active-trail' }}"
+    aria-haspopup="true"
+    aria-expanded="{{ item.in_active_trail ? 'true' : 'false' }}"
+    aria-controls="submenu-{{ item.title | clean_class }}"
+    data-submenu-trigger
+    data-close-icon="hds-icon hds-icon--minus hds-icon--size-s"
+  >
+    {{ item.title }}
+
+    <i class="hds-icon hds-icon--plus hds-icon--size-s" aria-hidden="true"></i>
+  </a>
+{% endmacro %}
+
 {% macro book_links(items, attributes, menu_level, is_expanded, parent) %}
   {% import _self as book_tree %}
   {% if items %}
@@ -35,20 +79,20 @@
       <button
         id="book-tree-trigger"
         class="book-tree__trigger"
-        aria-haspopup="true"
         aria-controls="book-tree"
         aria-expanded="{{ is_expanded ? 'true' : 'false' }}"
       >
         <span>{{ 'Table of Contents' | t }}</span>
         <i class="hds-icon hds-icon--angle-down hds-icon--size-s" aria-hidden="true"></i>
       </button>
-      <ul{{ attributes
-        .addClass('book-tree')
-        .addClass(is_expanded ? 'is-active')
-        .setAttribute('role', 'menubar')
-        .setAttribute('id', 'book-tree')
-        .setAttribute('aria-labelled-by', 'book-tree-trigger')
-      }}>
+      <div role="region">
+        <ul{{ attributes
+          .addClass('book-tree')
+          .addClass(is_expanded ? 'is-active')
+          .setAttribute('role', 'menubar')
+          .setAttribute('id', 'book-tree')
+          .setAttribute('aria-labelled-by', 'book-tree-trigger')
+        }}>
     {% else %}
       <ul
         class="book-tree__submenu {{ is_expanded ? 'is-active' }}"
@@ -60,6 +104,19 @@
       >
     {% endif %}
 
+    {# Begin by printing the parent if it had a page #}
+    {% if parent and parent.url %}
+      <li{{
+        parent.attributes
+          .removeClass('has-children')
+          .addClass('book-tree__item')
+          .setAttribute('role', 'none')
+      }}>
+        {{ book_tree.item_link(parent) }}
+      </li>
+    {% endif %}
+
+    {# Print all items #}
     {% for item in items %}
       <li{{
         item.attributes
@@ -67,48 +124,26 @@
           .addClass(item.below ? 'has-children' : '')
           .setAttribute('role', 'none')
       }}>
-        {% if item.url %}
-          {{ link(item.title, item.url, {
-            'class': [
-                'book-tree__link',
-                item.in_active_trail ? 'is-active-trail',
-                item.in_active_trail and not item.below ? 'is-active',
-            ],
-            'role': 'menuitem'
-          }) }}
+        {% if not item.below %}
+          {# If the item doesnt have a submenu, allow links #}
+          {% if item.url %}
+            {{ book_tree.item_link(item) }}
+          {% else %}
+            {{ book_tree.item_label(item) }}
+          {% endif %}
         {% else %}
-          <span
-            {% if item.below %}
-              aria-hidden="true"
-            {% else %}
-              role="menuitem"
-              aria-disabled="true"
-            {% endif %}
-            class="book-tree__link {{ item.in_active_trail ? 'is-active-trail' }}"
-            tabindex="-1"
-          >
-            {{ item.title }}
-          </span>
-        {% endif %}
+          {# It has a submenu, the the link is moved into it as the first item #}
+          {{ book_tree.item_submenu(item) }}
 
-        {% if item.below %}
-          <button
-            class="book-tree__submenu-trigger"
-            role="menuitem"
-            aria-haspopup="true"
-            aria-expanded="{{ item.in_active_trail ? 'true' : 'false' }}"
-            aria-controls="submenu-{{ item.title | clean_class }}"
-            aria-label="{{ item.title }}"
-            data-submenu-trigger
-            data-close-icon="hds-icon hds-icon--minus hds-icon--size-s"
-            id="submenu-trigger-{{ item.title| clean_class }}"
-          >
-            <i class="hds-icon hds-icon--plus hds-icon--size-s" aria-hidden="true"></i>
-          </button>
           {{ book_tree.book_links(item.below, attributes, menu_level + 1, item.in_active_trail, item) }}
         {% endif %}
       </li>
     {% endfor %}
-    </ul>
+    {% if menu_level == 0 %}
+        </ul>
+      </div>
+    {% else %}
+      </ul>
+    {% endif %}
   {% endif %}
 {% endmacro %}

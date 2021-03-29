@@ -31,7 +31,7 @@
     margin-bottom: 0;
     font-weight: bold;
 
-    & + ul {
+    & + [role="region"] {
       margin-top: 0;
     }
 
@@ -69,6 +69,11 @@
 
     &.is-active {
       text-decoration: underline;
+    }
+
+    &:focus {
+      position: relative;
+      z-index: 1;
     }
 
     // Second level
@@ -109,23 +114,17 @@
   }
 
   &__submenu-trigger {
-    position: absolute;
-    padding: var(--spacing-s);
-    right: 0;
-    top: 2px;
-    z-index: 1;
-    cursor: pointer;
+    .hds-icon {
+      position: absolute;
+      margin: var(--spacing-s);
+      right: 0;
+      top: 2px;
+      z-index: 1;
+      cursor: pointer;
+    }
 
     &[aria-expanded="true"] .hds-icon {
       mask-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M0 0h24v24H0z'/%3E%3Cpath fill='currentColor' d='M6 11h12v2H6z'/%3E%3C/g%3E%3C/svg%3E");
-    }
-
-    // When the book page doesnt have a link let the button take up all it's
-    // space
-    span.book-tree__link + & {
-      left: 0;
-      width: 100%;
-      text-align: right;
     }
   }
 }
