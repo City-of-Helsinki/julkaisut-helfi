@@ -2,6 +2,7 @@
 
 namespace Drupal\gutenberg_imagefilter\Plugin\Filter;
 
+use Drupal\Component\Utility\Html;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\file\Entity\File;
 use Drupal\file_mdm\FileMetadataManagerInterface;
@@ -111,6 +112,35 @@ class GutenbergImageFilter extends FilterBase implements ContainerFactoryPluginI
       }
     }
 
+    $content = $this->filterFigureElements($content);
+    return $content;
+  }
+
+  /**
+   * Set aria-hidden on figure elements that contain images without an alt text.
+   */
+  public function filterFigureElements(string $content): string {
+    $dom = Html::load($content);
+    $xpath = new \DOMXPath($dom);
+
+    foreach ($xpath->query("//figure[contains(@class, 'wp-block-image')]") as $node) {
+      /** @var \DOMElement $node */
+      /** @var \DOMElement $image */
+      $image = $node->getElementsByTagName('img')->item(0);
+      $alt = $image->getAttribute('alt') ?? '';
+
+      if (empty($alt)) {
+        $node->setAttribute('aria-hidden', 'true');
+      }
+    }
+
+    $content = Html::serialize($dom);
+    // TODO: The serializer strips newlines between these comments which causes them
+    // to become invalid blocks. We should instead use the new BlockParser
+    // available in the latest dev version of the gutenberg module.
+    $content = preg_replace('#(<!-- wp:.*? -->)<#', "$1\n<", $content);
+    $content = preg_replace('#(<!-- /wp:[^ ]+ -->)(<!-- wp:)#', "$1\n\n\n$2", $content);
+
     return $content;
   }
 
@@ -125,6 +155,7 @@ class GutenbergImageFilter extends FilterBase implements ContainerFactoryPluginI
 
     $width = preg_match('/ width="([0-9]+)"/', $image, $match_width) ? (int) $match_width[1] : 0;
     $height = preg_match('/ height="([0-9]+)"/', $image, $match_height) ? (int) $match_height[1] : 0;
+    $alt = preg_match('/ alt="([^"]+)"/', $image, $match_alt) ? $match_alt[1] : '';
 
     if (!$width || !$height) {
       $metadata = $this->fmdm->uri($file->getFileUri());
@@ -145,7 +176,7 @@ class GutenbergImageFilter extends FilterBase implements ContainerFactoryPluginI
     // ImageItem like object
     $item = (object) [
       'title' => $media->field_media_image->title,
-      'alt' => $media->field_media_image->alt,
+      'alt' => $alt,
       'entity' => $file,
       'width' => $width,
       'height' => $height,
