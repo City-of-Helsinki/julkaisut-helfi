@@ -214,6 +214,24 @@ function julkaisut_preprocess_field(&$variables) {
  */
 function julkaisut_preprocess_image(&$variables) {
   $variables['attributes']['loading'] = 'lazy';
+
+  // Always add the empty alt attribute
+  $variables['attributes']['alt'] = $variables['alt'];
+}
+
+function julkaisut_preprocess_media__image(&$variables) {
+  $caption = $variables['content']['field_caption'][0]['#context']['value'] ?? null;
+  /** @var Drupal\image\Plugin\Field\FieldType\ImageItem $image_item */
+  $image_item = $variables['content']['field_media_image'][0]['#item'] ?? null;
+
+  if ($image_item) {
+    $image_value = $image_item->getValue();
+
+    // If the image doesn't have an alt text. Hide the entire figure
+    if (empty($image_value['alt'])) {
+      $variables['attributes']['aria-hidden'] = 'true';
+    }
+  }
 }
 
 /**
