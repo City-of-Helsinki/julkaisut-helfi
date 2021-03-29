@@ -37,6 +37,10 @@ Drupal.behaviors.julkaisutTheme = {
       this.mobileMenu(context);
     }
 
+    if (jQuery?.ui?.autocomplete?.prototype?.options?.messages) {
+      this.translateJqueryUiMessages();
+    }
+
     this.bookMenu(context);
     this.responsiveTables(context);
     this.clipboard(context.querySelectorAll('[data-clipboard-text]'));
@@ -48,6 +52,20 @@ Drupal.behaviors.julkaisutTheme = {
     if (window.jQuery && settings.views && settings.views.ajaxViews) {
       window.jQuery(context).on('views_infinite_scroll.new_content', this.focusNewContent);
     }
+  },
+
+  translateJqueryUiMessages() {
+    jQuery.ui.autocomplete.prototype.options.messages = {
+      ...jQuery.ui.autocomplete.prototype.options.messages,
+
+      noResults: Drupal.t('No search results.'),
+      results: (count) => {
+        if (count > 0) {
+          return Drupal.t('@count results are available, use up and down arrow keys to navigate.', {'@count': count});
+        }
+        return Drupal.t('@count result is available, use up and down arrow keys to navigate.', {'@count': count});
+      },
+    };
   },
 
   markExternalLinks(links) {
