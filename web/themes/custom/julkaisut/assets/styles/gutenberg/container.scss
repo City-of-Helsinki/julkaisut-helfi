@@ -83,3 +83,9 @@
     transform: none;
   }
 }
+
+// For example captions inside an alignfull media block
+.is-container .alignfull .is-container {
+  padding-left: var(--viewport-gutter);
+  padding-right: var(--viewport-gutter);
+}
