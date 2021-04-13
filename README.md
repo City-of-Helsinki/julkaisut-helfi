@@ -55,10 +55,10 @@
     drush @self.vagrant config:export
 
     # Build & deploy to production
-    blt build:artifact --branch="master"
+    blt artifact:deploy --branch="master"
 
     # Build & deploy to staging (arbitrary branch)
-    blt build:artifact --branch="master-build"
+    blt artifact:deploy --branch="master-build"
 
 
 ### Migration
