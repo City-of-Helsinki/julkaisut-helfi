@@ -37,7 +37,7 @@ Drupal.behaviors.julkaisutTheme = {
       this.mobileMenu(context);
     }
 
-    if (jQuery?.ui?.autocomplete?.prototype?.options?.messages) {
+    if (window.jQuery?.ui?.autocomplete?.prototype?.options?.messages) {
       this.translateJqueryUiMessages();
     }
 
