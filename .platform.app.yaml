@@ -31,7 +31,7 @@ mounts:
       source_path: 'console'
 
 # The size of the persistent disk of the application (in MB).
-disk: 2048
+disk: 7168 # 7GB
 
 # The relationships of the application with services or other applications.
 #
