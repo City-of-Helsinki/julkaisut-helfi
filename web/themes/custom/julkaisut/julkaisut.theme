@@ -466,6 +466,10 @@ function julkaisut_preprocess_page(&$variables) {
     \Drupal::service('path.matcher')->isFrontPage() ? '<front>' : '<current>',
   ));
 
+  foreach ($links->links as $langcode => &$link) {
+    $link['attributes']['lang'] = $langcode;
+  }
+
   $variables['mobile_language_menu'] = [
     '#theme' => 'links',
     '#links' => $links->links,
