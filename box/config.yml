@@ -58,6 +58,8 @@ solr_xmx: "128M"
 extra_packages:
   - vim
 
+composer_keep_updated: true # required for downgrading to v1
+composer_version_branch: '--1'
 composer_global_packages:
   - { name: hirak/prestissimo, release: '^0.3' }
 
