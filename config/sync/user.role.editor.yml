@@ -51,6 +51,7 @@ permissions:
   - 'delete page revisions'
   - 'delete terms in magazine'
   - 'delete terms in tags'
+  - 'display eu cookie compliance popup'
   - 'edit any article content'
   - 'edit any book content'
   - 'edit any document media'

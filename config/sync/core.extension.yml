@@ -97,6 +97,7 @@ module:
   views: 10
   tvi: 15
   minimal: 1000
+  eu_cookie_compliance: 1001
 theme:
   stark: 0
   claro: 0

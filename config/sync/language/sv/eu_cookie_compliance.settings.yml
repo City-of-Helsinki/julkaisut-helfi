@@ -1,0 +1,6 @@
+popup_hide_button_message: Dölj
+popup_agree_button_message: 'Accept all cookies'
+popup_more_info_button_message: 'Show cookies'
+popup_info:
+  value: "<h3>This website uses cookies</h3>\r\n\r\n<p>Our website uses essential cookies to ensure site functionality. The site will also include third-party cookies, if you give your consent.</p>\r\n"
+disagree_button_label: 'Use only essential cookies'
