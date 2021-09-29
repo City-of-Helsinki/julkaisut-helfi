@@ -16,7 +16,7 @@
     ./vendor/bin/blt blt:init:shell-alias
 
     # Fetch the production database
-    ./vendor/bin/drush -Dssh.tty=0 @site-aliases.wgohfxclopgum.master sql:dump > production.sql
+    ./vendor/bin/drush -Dssh.tty=0 @site-aliases.julkaisut-hel-fi.master sql:dump > production.sql
     cat production.sql | ./vendor/bin/drush @self.vagrant sql:cli
 
     open http://julkaisut.test
@@ -39,10 +39,6 @@
     # Fetch the production database
     ./vendor/bin/drush -Dssh.tty=0 @site-aliases.julkaisut-hel-fi.master sql:dump > production.sql
     cat production.sql | ddev drush sql:cli
-
-    # Alternatively you can sync the database instead of export/import
-    ddev auth ssh
-    ddev drush sql:sync @site-aliases.julkaisut-hel-fi.master @self
 
     open https://julkaisut.ddev.site
 
