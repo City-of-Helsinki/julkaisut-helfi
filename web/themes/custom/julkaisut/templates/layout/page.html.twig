@@ -39,7 +39,10 @@
  * @see html.html.twig
  */
 #}
+{% include '@julkaisut/partials/matomo-script.html.twig' %}
+
 <div {{ attributes.addClass('site') }}>
+
   <header class="site__header" id="header">
     {% include '@julkaisut/layout/header.html.twig' %}
   </header>

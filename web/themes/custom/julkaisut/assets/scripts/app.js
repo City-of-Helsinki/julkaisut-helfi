@@ -14,6 +14,15 @@ const appHeight = () => {
 window.addEventListener('resize', debounce(appHeight, 150));
 appHeight();
 
+window.euCookieComplianceLoadScripts = () => {
+  const scripts = document.querySelectorAll('script[data-consent]');
+  for (let i = 0; i < scripts.length; i++) {
+    const script = scripts[i];
+    script.type = 'text/javascript';
+    script.replaceWith(script);
+  }
+};
+
 window.TablesawConfig = {
   i18n: {
     modeStack: Drupal.t('Stack'),
@@ -41,6 +50,7 @@ Drupal.behaviors.julkaisutTheme = {
       this.translateJqueryUiMessages();
     }
 
+    this.cookieConsent(context);
     this.bookMenu(context);
     this.responsiveTables(context);
     this.clipboard(context.querySelectorAll('[data-clipboard-text]'));
@@ -196,5 +206,15 @@ Drupal.behaviors.julkaisutTheme = {
       return;
     }
     new ClipboardJS(elements);
+  },
+
+  cookieConsent(context) {
+    const withdrawTriggers = context.querySelectorAll('.do-withdraw-cookie-consent');
+    for (let i = 0; i < withdrawTriggers.length; i++) {
+      withdrawTriggers[i].addEventListener('click', () => {
+        Drupal.eu_cookie_compliance.setStatus(null);
+        location.reload();
+      })
+    }
   }
 };

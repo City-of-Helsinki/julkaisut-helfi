@@ -31,6 +31,7 @@
         "drupal/custom_book_block": "^1.0@alpha",
         "drupal/devel": "^4.0",
         "drupal/easy_breadcrumb": "^1.13",
+        "drupal/eu_cookie_compliance": "^1.18",
         "drupal/facets": "1.x-dev",
         "drupal/file_mdm": "^2.1",
         "drupal/focal_point": "^1.5",

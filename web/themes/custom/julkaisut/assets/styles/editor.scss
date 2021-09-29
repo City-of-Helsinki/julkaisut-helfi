@@ -6,6 +6,11 @@
 @use "components";
 @use "gutenberg";
 
+// Hide the cookie popup
+#sliding-popup {
+  display: none !important;
+}
+
 .wp-block.is-reusable {
   max-width: unset;
 }

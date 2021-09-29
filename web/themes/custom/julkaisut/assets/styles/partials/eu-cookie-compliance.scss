@@ -1,0 +1,91 @@
+@use "common/breakpoints" as *;
+
+.eu-cookie-compliance-banner {
+  box-shadow: 0 0 10px rgb(0 0 0 / 40%);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--viewport-gutter);
+  max-width: 600px;
+
+  @include mq($from: medium) {
+    padding: var(--spacing-m);
+  }
+
+
+  .eu-cookie-compliance-content,
+  .eu-cookie-compliance-buttons,
+  .eu-cookie-compliance-message {
+    float: none;
+    max-width: none;
+    display: block;
+  }
+
+  .eu-cookie-compliance-message {
+    margin-bottom: var(--spacing-s);
+  }
+
+  .eu-cookie-compliance-buttons {
+    @include mq($until: small) {
+      button {
+        width: 100%;
+      }
+
+      button:not(:last-child) {
+        margin-bottom: var(--spacing-xs);
+      }
+    }
+
+    @include mq($from: small) {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+
+      button:not(:last-child) {
+        margin-right: var(--spacing-xs);
+      }
+    }
+  }
+
+  .find-more-button {
+    text-decoration: underline;
+    opacity: 0.8;
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+  }
+
+  .eu-cookie-compliance-buttons button {
+    color: var(--color-white);
+    border: solid 2px var(--color-white);
+    background-color: rgba(255, 255, 255, 0);
+    font-weight: 500;
+    padding: .75rem 1rem;
+    font-size: var(--fontsize-body-m);
+    line-height: var(--lineheight-s);
+    transition: background-color 0.2s ease-out;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    &.agree-button {
+      background-color: var(--color-white);
+      color: var(--color-primary);
+    }
+  }
+}
+
+.sliding-popup-top {
+  position: fixed;
+  top: auto !important;
+  bottom: 0 !important;
+
+  @include mq($from: large) {
+    left: var(--spacing-s);
+    bottom: var(--spacing-s) !important;
+  }
+}
