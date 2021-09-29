@@ -773,6 +773,10 @@ $settings['redis.connection']['host'] = '127.0.0.1';
 $settings['container_yamls'][] = 'modules/contrib/redis/example.services.yml';
 $settings['container_yamls'][] = 'modules/contrib/redis/redis.services.yml';
 
+if (getenv('IS_DDEV_PROJECT')) {
+  $settings['redis.connection']['host'] = 'redis';
+}
+
 /**
  * Load local development override configuration, if available.
  *
@@ -794,4 +798,10 @@ if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
 // Automatic Platform.sh settings.
 if (file_exists($app_root . '/' . $site_path . '/settings.platformsh.php')) {
   include $app_root . '/' . $site_path . '/settings.platformsh.php';
+}
+
+// Automatically generated include for settings managed by ddev.
+$ddev_settings = dirname(__FILE__) . '/settings.ddev.php';
+if (getenv('IS_DDEV_PROJECT') == 'true' && is_readable($ddev_settings)) {
+  require $ddev_settings;
 }

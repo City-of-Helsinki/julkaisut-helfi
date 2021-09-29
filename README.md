@@ -1,6 +1,6 @@
 # Development
 
-## Setup VM
+## Setup VM (Vagrant)
 
     # Clone the repository
     git clone https://github.com/generoi/julkaisut.git
@@ -16,8 +16,35 @@
     ./vendor/bin/blt blt:init:shell-alias
 
     # Fetch the production database
-    drush -Dssh.tty=0 @site-aliases.wgohfxclopgum.master sql:dump > production.sql
-    cat production.sql | drush @self.vagrant sql:cli
+    ./vendor/bin/drush -Dssh.tty=0 @site-aliases.wgohfxclopgum.master sql:dump > production.sql
+    cat production.sql | ./vendor/bin/drush @self.vagrant sql:cli
+
+    open http://julkaisut.test
+
+### Setup DDEV (Docker)
+
+    # Clone the repository
+    git clone https://github.com/generoi/julkaisut.git
+    cd julkaisut
+
+    # Install dependencies
+    composer install
+
+    # Launch container
+    ddev start
+
+    # Install `blt` alias
+    ./vendor/bin/blt blt:init:shell-alias
+
+    # Fetch the production database
+    ./vendor/bin/drush -Dssh.tty=0 @site-aliases.julkaisut-hel-fi.master sql:dump > production.sql
+    cat production.sql | ddev drush sql:cli
+
+    # Alternatively you can sync the database instead of export/import
+    ddev auth ssh
+    ddev drush sql:sync @site-aliases.julkaisut-hel-fi.master @self
+
+    open https://julkaisut.ddev.site
 
 ## Theme
 
