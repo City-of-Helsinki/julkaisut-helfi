@@ -12,9 +12,9 @@
         "drupal/admin_toolbar": "^2.3",
         "drupal/better_exposed_filters": "^5.0@beta",
         "drupal/content_language_access": "^1.0",
-        "drupal/core-composer-scaffold": "^9",
-        "drupal/core-project-message": "^9",
-        "drupal/core-recommended": "^9",
+        "drupal/core-composer-scaffold": "~9.1.0",
+        "drupal/core-project-message": "~9.1.0",
+        "drupal/core-recommended": "~9.1.0",
         "drupal/custom_book_block": "^1.0@alpha",
         "drupal/devel": "^4.0",
         "drupal/easy_breadcrumb": "^1.13",
@@ -56,7 +56,7 @@
         "optimize-autoloader": true,
         "sort-packages": true,
         "platform": {
-          "php": "7.4"
+          "php": "8.0"
         },
         "allow-plugins": {
             "composer/installers": true,
@@ -113,11 +113,11 @@
             "drupal/core": {
                 "Make exposed filter values available as tokens for text areas": "https://www.drupal.org/files/issues/2020-03-02/exposed_filter_tokens-2761273-21.patch",
                 "Notice: Undefined offset: 1 en Drupal\\Core\\StringTranslation\\PluralTranslatableMarkup->render()": "https://www.drupal.org/files/issues/2018-06-29/notice_undefined-2863629-11.patch",
-                "Allow users with access to unpublished nodes to create unpublished books": "https://www.drupal.org/files/issues/2020-09-17/26552-181.patch",
                 "Make Book navigation translatable": "./patches/2470896_185.patch",
                 "Cannot save unpublished versions of published content for users without manage book privileges": "https://www.drupal.org/files/issues/2020-07-14/2918537-61.patch",
                 "Untranslated menu items are displayed in menus": "https://www.drupal.org/files/issues/2020-05-14/2466553-75-d91x.patch",
-                "Return translated term name on views Content: Has taxonomy term ID (with depth)": "https://www.drupal.org/files/issues/2019-06-28/taxonomy_translation_2765297_0.patch"
+                "Return translated term name on views Content: Has taxonomy term ID (with depth)": "https://www.drupal.org/files/issues/2021-03-19/taxonomy_translation_2765297_63.patch",
+                "Unmet installation requirements may contain render elements": "https://www.drupal.org/files/issues/2021-11-03/2833864-24.patch"
             },
             "drupal/gutenberg": {
                 "Insert Image or Media shows blank modal Media Library window": "https://www.drupal.org/files/issues/2020-06-09/gutenberg-d9_media_library_support-3150127-4.patch",
@@ -127,7 +127,6 @@
                 "Inserting a link to a paragraph block returns an error": "https://www.drupal.org/files/issues/2020-06-08/gutenberg-add-type-to-content-search-ajax-call-3149823.patch"
             },
             "drupal/token": {
-              "token_element_children produce notice on integer keys": "https://www.drupal.org/files/issues/2020-06-23/3154183-2.patch",
               "Book parents translation": "https://www.drupal.org/files/issues/2018-06-28/token_8_1_3_2982284_parents_translation_02.patch"
             },
             "drupal/facets": {
@@ -140,7 +139,8 @@
                 "Route Enhancer to fix route match parameters.": "https://www.drupal.org/files/issues/2020-08-10/2993234-10.patch"
             },
             "drupal/custom_book_block": {
-                "Always expand not working for block modes other than `all_pages`": "https://www.drupal.org/files/issues/2020-09-21/issue-custom_book_block.patch"
+                "Always expand not working for block modes other than `all_pages`": "https://www.drupal.org/files/issues/2020-09-21/issue-custom_book_block.patch",
+                "Missing core book dependency on custom_book_block.info.yml file": "https://www.drupal.org/files/issues/2021-07-01/book-dependency-3221650-2.patch"
             },
             "drupal/language_switcher_extended": {
                 "Does not link to translated content": "./patches/language_switcher_extended-issue-3128516.patch"
