@@ -2,5 +2,9 @@ version: '3.6'
 services:
   web:
     environment:
-      - DATABASE_URL=mysql://db:db@db/db
-        # - DOMAIN_CURRENT_SITE=<example-project>.ddev.local
+      - REDIS_HOST=redis
+      - DRUPAL_DB_NAME=db
+      - DRUPAL_DB_USER=db
+      - DRUPAL_DB_PASS=db
+      - DRUPAL_DB_HOST=db
+      - DRUPAL_DB_PORT=3306

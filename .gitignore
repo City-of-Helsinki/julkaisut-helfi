@@ -1,32 +1,26 @@
-# Ignore configuration files that may contain sensitive information.
-settings.local.php
-local.settings.php
-local.drush.yml
-local.site.yml
-local.services.yml
-box/local.config.yml
-*.local
+# Ignore project files that should not be in version control
+drush/sites/
+node_modules
+public/core
+public/libraries
+public/modules/contrib
+!public/modules/contrib/helfi_*
+public/themes/contrib
+!public/themes/contrib/hdbt
+!public/themes/contrib/hdbt_admin
+public/sites/default/files
+vendor
+public/sites/simpletest/
+.phpunit.result.cache
+public/sites/default/local.settings.php
+public/sites/default/local.services.yml
 
-# Ignore drupal core.
-web/core
+# Ignore the folder created by PhpStorm
+.idea/*
 
-# Ignore paths that contain user-generated content.
-web/sites/*/files
-/files-private
-web/sites/*/private
+# Ignore OSX generated files
+._*
+.DS_Store
 
-# Ignore contrib modules. These should be created during build process.
-web/modules/contrib
-web/themes/contrib
-web/profiles/contrib
-web/libraries
-drush/Commands
-
-# Ignore custom theme build artifacts
-web/themes/custom/*/node_modules
-web/themes/custom/*/dist
-
-/vendor
-/.vagrant
-*.sql
-deployment_identifier
+!*.gitkeep
+!*.keepme

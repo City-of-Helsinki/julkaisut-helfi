@@ -1,26 +1,5 @@
 # Development
 
-## Setup VM (Vagrant)
-
-    # Clone the repository
-    git clone https://github.com/generoi/julkaisut.git
-    cd julkaisut
-
-    # Install dependencies
-    composer install
-
-    # Build VM
-    vagrant up
-
-    # Install `blt` alias
-    ./vendor/bin/blt blt:init:shell-alias
-
-    # Fetch the production database
-    ./vendor/bin/drush -Dssh.tty=0 @site-aliases.julkaisut-hel-fi.master sql:dump > production.sql
-    cat production.sql | ./vendor/bin/drush @self.vagrant sql:cli
-
-    open http://julkaisut.test
-
 ### Setup DDEV (Docker)
 
     # Clone the repository
@@ -33,9 +12,6 @@
     # Launch container
     ddev start
 
-    # Install `blt` alias
-    ./vendor/bin/blt blt:init:shell-alias
-
     # Fetch the production database
     ./vendor/bin/drush -Dssh.tty=0 @site-aliases.julkaisut-hel-fi.master sql:dump > production.sql
     cat production.sql | ddev drush sql:cli
@@ -44,7 +20,7 @@
 
 ## Theme
 
-    cd web/themes/custom/julkaisut
+    cd public/themes/custom/julkaisut
 
     # Install dependencies
     nvm use
@@ -75,7 +51,7 @@
 ## Deploy
 
     # Export configuration (commit it)
-    drush @self.vagrant config:export
+    ddev drush config:export
 
     # Build & deploy to production
     blt artifact:deploy --branch="master"
