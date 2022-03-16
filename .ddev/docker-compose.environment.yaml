@@ -13,3 +13,4 @@ services:
       - SOLR_PORT=8983
       - SOLR_PATH=/
       - SOLR_CORE=dev
+      - STAGE_FILE_PROXY_ORIGIN='https://julkaisut.hel.fi'
