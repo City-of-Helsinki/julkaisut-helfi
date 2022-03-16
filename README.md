@@ -18,6 +18,60 @@
 
     open https://julkaisut.ddev.site
 
+### Setup with druidfi makefile
+
+_TODO: Haven't been able to test it since druidfi image doesn't support MacBook M1._
+
+### Setup with Docker Compose
+
+If on MacBook M1, set
+`DRUPAL_IMAGE=ghcr.io/city-of-helsinki/drupal-docker-base:8.0` in `.env` and edit the `docker-compose.yml` with:
+
+```diff
+diff --git a/docker-compose.yml b/docker-compose.yml
+index d3ff7a08..3c22d139 100644
+--- a/docker-compose.yml
++++ b/docker-compose.yml
+@@ -7,7 +7,8 @@ services:
+     container_name: "${COMPOSE_PROJECT_NAME}-app"
+     image: "${DRUPAL_IMAGE}"
+     volumes:
+-      - .:/app:delegated
++      - .:/var/www/html:delegated
+       - ssh:/tmp/druid_ssh-agent:ro
++      - .:/var/www/html:delegated
+       - ssh:/tmp/druid_ssh-agent:ro
+     build:
+       context: ./docker/local
+@@ -17,6 +18,12 @@ services:
+       # XDEBUG_ENABLE: "true"
+       # DOCKERHOST: host.docker.internal
+       REDIS_HOST: redis
++      DRUPAL_DB_NAME: drupal
++      DRUPAL_DB_USER: drupal
++      DRUPAL_DB_PASS: drupal
++      DRUPAL_DB_HOST: db
++      DRUPAL_DB_PORT: 3306
+       SOLR_HOST: solr
+       SOLR_PORT: 8983
+       SOLR_PATH: "/"
+```
+
+Then proceed with
+
+    # Clone the repository
+    git clone https://github.com/generoi/julkaisut.git
+    cd julkaisut
+
+    # Install dependencies
+    composer install
+
+    docker-compose up
+
+    ./vendor/bin/drush -Dssh.tty=0 @site-aliases.julkaisut-hel-fi.master sql:dump > production.sql
+    cat production.sql | docker-compose exec -T -u root app bash -c "cd /var/www/html/public && drush sql:cli"
+    docker-compose exec -T -u root app bash -c "cd /var/www/html/public && drush cr"
+
 ## Theme
 
     cd public/themes/custom/julkaisut
@@ -53,11 +107,11 @@
     # Export configuration (commit it)
     ddev drush config:export
 
-    # Build & deploy to production
-    blt artifact:deploy --branch="master"
+    # Deploy to platform
+    git push platform master
 
     # Build & deploy to staging (arbitrary branch)
-    blt artifact:deploy --branch="master-build"
+    git push platform staging
 
 
 ### Migration
