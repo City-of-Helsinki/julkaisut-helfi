@@ -12,9 +12,9 @@
         "drupal/admin_toolbar": "^2.3",
         "drupal/better_exposed_filters": "^5.0@beta",
         "drupal/content_language_access": "^1.0",
-        "drupal/core-composer-scaffold": "~9.1.0",
-        "drupal/core-project-message": "~9.1.0",
-        "drupal/core-recommended": "~9.1.0",
+        "drupal/core-composer-scaffold": "~9.3.0",
+        "drupal/core-project-message": "~9.3.0",
+        "drupal/core-recommended": "~9.3.0",
         "drupal/custom_book_block": "^1.0@alpha",
         "drupal/devel": "^4.0",
         "drupal/easy_breadcrumb": "^1.13",
@@ -113,11 +113,9 @@
             "drupal/core": {
                 "Make exposed filter values available as tokens for text areas": "https://www.drupal.org/files/issues/2020-03-02/exposed_filter_tokens-2761273-21.patch",
                 "Notice: Undefined offset: 1 en Drupal\\Core\\StringTranslation\\PluralTranslatableMarkup->render()": "https://www.drupal.org/files/issues/2018-06-29/notice_undefined-2863629-11.patch",
-                "Make Book navigation translatable": "./patches/2470896_185.patch",
                 "Cannot save unpublished versions of published content for users without manage book privileges": "https://www.drupal.org/files/issues/2020-07-14/2918537-61.patch",
                 "Untranslated menu items are displayed in menus": "https://www.drupal.org/files/issues/2020-05-14/2466553-75-d91x.patch",
-                "Return translated term name on views Content: Has taxonomy term ID (with depth)": "https://www.drupal.org/files/issues/2021-03-19/taxonomy_translation_2765297_63.patch",
-                "Unmet installation requirements may contain render elements": "https://www.drupal.org/files/issues/2021-11-03/2833864-24.patch"
+                "Return translated term name on views Content: Has taxonomy term ID (with depth)": "https://www.drupal.org/files/issues/2021-03-19/taxonomy_translation_2765297_63.patch"
             },
             "drupal/gutenberg": {
                 "Insert Image or Media shows blank modal Media Library window": "https://www.drupal.org/files/issues/2020-06-09/gutenberg-d9_media_library_support-3150127-4.patch",
@@ -132,15 +130,10 @@
             "drupal/facets": {
                 "Create views plugins to render facets and summaries in filters and areas": "https://www.drupal.org/files/issues/2020-09-22/facet-3073444-104-Allow-facets-filter-in-views.patch"
             },
-            "drupal/search_api_autocomplete": {
-                "Autocomplete broken on views with Better Exposed Filters": "https://www.drupal.org/files/issues/2020-07-14/0001-Added-missing-process-callbacks-for-BEF.patch"
-            },
-            "drupal/tvi": {
-                "Route Enhancer to fix route match parameters.": "https://www.drupal.org/files/issues/2020-08-10/2993234-10.patch"
-            },
             "drupal/custom_book_block": {
-                "Always expand not working for block modes other than `all_pages`": "https://www.drupal.org/files/issues/2020-09-21/issue-custom_book_block.patch",
-                "Missing core book dependency on custom_book_block.info.yml file": "https://www.drupal.org/files/issues/2021-07-01/book-dependency-3221650-2.patch"
+                "Missing core book dependency on custom_book_block.info.yml file": "https://www.drupal.org/files/issues/2021-07-01/book-dependency-3221650-2.patch",
+                "Error: Call to a member function getCurrentRequest() on null (Drupal 9.2.x)": "https://www.drupal.org/files/issues/2021-07-01/call-to-a-member-function-3221656-2.patch",
+                "Place custom book block from block layout is not working in Drupal 9.2.x": "https://www.drupal.org/files/issues/2021-07-01/place-custom-book-block-3221654-2.patch"
             },
             "drupal/language_switcher_extended": {
                 "Does not link to translated content": "./patches/language_switcher_extended-issue-3128516.patch"

@@ -1,9 +1,13 @@
+_core:
+  default_config_hash: LWI5gcV7qtIl5h1xg7AWMtepAzBAvTaw_TOmsQbw9Tk
+langcode: fi
 max_links: 2000
 cron_generate: true
 cron_generate_interval: 12
 generate_duration: 10000
 remove_duplicates: true
 skip_untranslated: true
+disable_language_hreflang: false
 xsl: true
 base_url: ''
 default_variant: default
@@ -13,7 +17,3 @@ enabled_entity_types:
   - node
   - taxonomy_term
   - menu_link_content
-_core:
-  default_config_hash: LWI5gcV7qtIl5h1xg7AWMtepAzBAvTaw_TOmsQbw9Tk
-langcode: fi
-disable_language_hreflang: false

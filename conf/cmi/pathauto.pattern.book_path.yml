@@ -12,20 +12,20 @@ pattern: 'julkaisut/[node:book:parents:join-path]/[node:title]'
 selection_criteria:
   7a67864e-f5e9-406a-9d13-1c005d0b10e0:
     id: node_type
-    bundles:
-      book: book
     negate: false
+    uuid: 7a67864e-f5e9-406a-9d13-1c005d0b10e0
     context_mapping:
       node: node
-    uuid: 7a67864e-f5e9-406a-9d13-1c005d0b10e0
+    bundles:
+      book: book
   b3f0e392-7e8d-4262-9ee0-28a08eae46e4:
     id: language
-    langcodes:
-      fi: fi
     negate: false
+    uuid: b3f0e392-7e8d-4262-9ee0-28a08eae46e4
     context_mapping:
       language: 'node:langcode:language'
-    uuid: b3f0e392-7e8d-4262-9ee0-28a08eae46e4
+    langcodes:
+      fi: fi
 selection_logic: and
 weight: -5
 relationships:

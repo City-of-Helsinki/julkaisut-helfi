@@ -2,11 +2,11 @@ uuid: 88730cf9-2432-4241-863e-2b38ed29df2e
 langcode: fi
 status: true
 dependencies:
+  module:
+    - block_content
   enforced:
     module:
       - gutenberg
-  module:
-    - block_content
 _core:
   default_config_hash: 0nRdlyXwWiWvI4FdhHFKcKfOGaW3sirwqY0dUr5JIlg
 id: block_content.reusable_block

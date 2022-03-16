@@ -12,8 +12,6 @@ id: content_width
 label: 'Content width'
 image_style_mappings:
   -
-    breakpoint_id: responsive_image.viewport_sizing
-    multiplier: 1x
     image_mapping_type: sizes
     image_mapping:
       sizes: '(min-width: 800px) 800px, 100vw'
@@ -23,5 +21,7 @@ image_style_mappings:
         - large
         - medium
         - wide_1200
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
 breakpoint_group: responsive_image
 fallback_image_style: content_800_

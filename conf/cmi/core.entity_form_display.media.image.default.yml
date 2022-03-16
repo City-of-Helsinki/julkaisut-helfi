@@ -22,23 +22,23 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_caption:
+    type: string_textfield
     weight: 2
+    region: content
     settings:
       size: 120
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_media_image:
+    type: image_focal_point
     weight: 1
+    region: content
     settings:
+      progress_indicator: throbber
       preview_image_style: medium
       preview_link: true
       offsets: '50,50'
-      progress_indicator: throbber
     third_party_settings: {  }
-    type: image_focal_point
-    region: content
   langcode:
     type: language_select
     weight: 3
@@ -62,24 +62,24 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 7
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   translation:
     weight: 10
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   uid:
     type: entity_reference_autocomplete
     weight: 4
+    region: content
     settings:
       match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
-      match_limit: 10
-    region: content
     third_party_settings: {  }
 hidden: {  }

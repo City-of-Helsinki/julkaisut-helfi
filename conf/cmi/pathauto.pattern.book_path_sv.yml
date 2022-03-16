@@ -12,20 +12,20 @@ pattern: 'utgivningar/[node:book:parents:join-path]/[node:title]'
 selection_criteria:
   57749fe8-525c-4545-b52b-eda615610e1f:
     id: node_type
-    bundles:
-      book: book
     negate: false
+    uuid: 57749fe8-525c-4545-b52b-eda615610e1f
     context_mapping:
       node: node
-    uuid: 57749fe8-525c-4545-b52b-eda615610e1f
+    bundles:
+      book: book
   5be7fcea-8bb2-402d-ad37-425835e1abb3:
     id: language
-    langcodes:
-      sv: sv
     negate: false
+    uuid: 5be7fcea-8bb2-402d-ad37-425835e1abb3
     context_mapping:
       language: 'node:langcode:language'
-    uuid: 5be7fcea-8bb2-402d-ad37-425835e1abb3
+    langcodes:
+      sv: sv
 selection_logic: and
 weight: -10
 relationships:

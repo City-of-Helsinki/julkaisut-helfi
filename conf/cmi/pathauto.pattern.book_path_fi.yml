@@ -12,20 +12,20 @@ pattern: 'reports/[node:book:parents:join-path]/[node:title]'
 selection_criteria:
   8d76f878-42c2-4d82-bad4-b0c637bda007:
     id: node_type
-    bundles:
-      book: book
     negate: false
+    uuid: 8d76f878-42c2-4d82-bad4-b0c637bda007
     context_mapping:
       node: node
-    uuid: 8d76f878-42c2-4d82-bad4-b0c637bda007
+    bundles:
+      book: book
   603dbaf8-501d-496e-8144-e46274e2e177:
     id: language
-    langcodes:
-      en: en
     negate: false
+    uuid: 603dbaf8-501d-496e-8144-e46274e2e177
     context_mapping:
       language: 'node:langcode:language'
-    uuid: 603dbaf8-501d-496e-8144-e46274e2e177
+    langcodes:
+      en: en
 selection_logic: and
 weight: -10
 relationships:

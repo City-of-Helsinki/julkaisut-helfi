@@ -11,12 +11,12 @@ pattern: '[node:field_magazine:entity:parents]/[node:field_magazine:entity:name]
 selection_criteria:
   69259d8f-790d-43d0-9fae-b66cae214372:
     id: node_type
-    bundles:
-      article: article
     negate: false
+    uuid: 69259d8f-790d-43d0-9fae-b66cae214372
     context_mapping:
       node: node
-    uuid: 69259d8f-790d-43d0-9fae-b66cae214372
+    bundles:
+      article: article
 selection_logic: and
 weight: -5
 relationships: {  }

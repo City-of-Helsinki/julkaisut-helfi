@@ -2,13 +2,13 @@ uuid: 381b88d4-6ca9-4887-a159-a60a40f60def
 langcode: fi
 status: true
 dependencies:
-  enforced:
-    module:
-      - gutenberg
   module:
     - gutenberg
     - gutenberg_imagefilter
     - media
+  enforced:
+    module:
+      - gutenberg
 _core:
   default_config_hash: Ic8UoqwIESwxY47pWaNK5WyrlH_o9VoxwxO5-YTnCTw
 name: 'Gutenberg Blocks text format'
@@ -74,8 +74,8 @@ filters:
     weight: 100
     settings:
       default_view_mode: default
-      allowed_media_types: {  }
       allowed_view_modes: {  }
+      allowed_media_types: {  }
   filter_gutenberg_table_header_fixer_filter:
     id: filter_gutenberg_table_header_fixer_filter
     provider: gutenberg_imagefilter

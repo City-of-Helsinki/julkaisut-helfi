@@ -1,30 +1,14 @@
-uuid: 395a9e78-7525-4195-9fe7-43b510b47193
-cookie_lifetime: 100
-containing_element: body
-domain: ''
-domains_option: 1
-domains_list: ''
-eu_only: null
-eu_only_js: null
-exclude_paths: "/admin\r\n/admin/*\r\n/batch\r\n/node/add*\r\n/node/*/*\r\n/user/*/*\r\n/en/node/add*\r\n/en/node/*/*\r\n/fi/node/add*\r\n/fi/node/*/*\r\n/sv/node/add*\r\n/sv/node/*/*"
-exclude_admin_theme: true
+_core:
+  default_config_hash: EspchZru2hYTTeNNAnTw2uWwT-mjJ46KrM5XEVHJzS0
 langcode: fi
-popup_agreed:
-  value: "<h2>Thank you for accepting cookies</h2>\r\n\r\n<p>You can now hide this message or find out more about cookies.</p>\r\n"
-  format: editor
-popup_agree_button_message: 'Hyväksy kaikki evästeet'
-popup_agreed_enabled: false
-popup_bg_hex: ''
+uuid: 395a9e78-7525-4195-9fe7-43b510b47193
+popup_enabled: true
 popup_clicking_confirmation: false
 popup_scrolling_confirmation: false
-popup_delay: 0
-show_more_info: false
-popup_more_info_button_message: 'Näytä evästeet'
-popup_enabled: true
-popup_find_more_button_message: 'More info'
-popup_height: null
-popup_hide_agreed: false
-popup_hide_button_message: Hide
+eu_only: null
+eu_only_js: null
+popup_position: true
+fixed_top_position: false
 popup_info:
   value: "<h3>Tämä sivusto käyttää evästeitä</h3>\r\n\r\n<p>Käytämme verkkosivuillamme välttämättömiä evästeitä, jotta sivut toimivat. Sivuillamme käytetään myös kolmansien osapuolien evästeitä, jos annat hyväksyntäsi.</p>\r\n\r\n<p><a href=\"/fi/evasteet\" target=\"_blank\">Näytä evästeet</a></p>\r\n"
   format: editor
@@ -32,22 +16,43 @@ mobile_popup_info:
   value: ''
   format: gutenberg
 popup_info_template: new
+popup_agree_button_message: 'Hyväksy kaikki evästeet'
+popup_more_info_button_message: 'Näytä evästeet'
 mobile_breakpoint: 768
+popup_agreed_enabled: false
+popup_hide_agreed: false
+disagree_button_label: 'Vain välttämättömät evästeet'
+popup_agreed:
+  value: "<h2>Thank you for accepting cookies</h2>\r\n\r\n<p>You can now hide this message or find out more about cookies.</p>\r\n"
+  format: editor
+popup_find_more_button_message: 'More info'
+popup_hide_button_message: Hide
 popup_link: /fi/evasteet
 popup_link_new_window: true
-popup_position: true
-fixed_top_position: false
-popup_text_hex: ''
+popup_height: null
 popup_width: ''
+popup_delay: 0
+show_more_info: false
+popup_bg_hex: ''
+popup_text_hex: ''
+domain: ''
+domains_option: 1
+domains_list: ''
+exclude_paths: "/admin\r\n/admin/*\r\n/batch\r\n/node/add*\r\n/node/*/*\r\n/user/*/*\r\n/en/node/add*\r\n/en/node/*/*\r\n/fi/node/add*\r\n/fi/node/*/*\r\n/sv/node/add*\r\n/sv/node/*/*"
+exclude_admin_theme: true
+cookie_session: 0
+set_cookie_session_zero_on_disagree: 0
+cookie_lifetime: 100
+use_mobile_message: false
 use_bare_css: true
 disagree_do_not_show_popup: true
 reload_page: false
+reload_options: 0
+reload_routes_list: ''
 cookie_name: ''
 exclude_uid_1: false
 better_support_for_screen_readers: false
-use_mobile_message: false
 method: opt_in
-disagree_button_label: 'Vain välttämättömät evästeet'
 disabled_javascripts: ''
 automatic_cookies_removal: true
 allowed_cookies: ''
@@ -55,23 +60,18 @@ consent_storage_method: do_not_store
 withdraw_message:
   value: "<h2>We use cookies on this site to enhance your user experience</h2>\r\n\r\n<p>You have given your consent for us to set cookies.</p>\r\n"
   format: editor
-withdraw_action_button_label: 'Withdraw consent'
 withdraw_tab_button_label: 'Privacy settings'
+withdraw_action_button_label: 'Withdraw consent'
 withdraw_enabled: false
-enable_save_preferences_button: true
+withdraw_button_on_info_popup: false
 save_preferences_button_label: 'Save preferences'
 accept_all_categories_button_label: 'Accept all cookies'
-withdraw_button_on_info_popup: false
+enable_save_preferences_button: true
 domain_all_sites: false
 settings_tab_enabled: false
-reload_options: 0
-reload_routes_list: ''
+containing_element: body
 cookie_policy_version: 1.0.0
 cookie_value_disagreed: '0'
 cookie_value_agreed_show_thank_you: '1'
 cookie_value_agreed: '2'
 accessibility_focus: false
-_core:
-  default_config_hash: EspchZru2hYTTeNNAnTw2uWwT-mjJ46KrM5XEVHJzS0
-cookie_session: 0
-set_cookie_session_zero_on_disagree: 0
