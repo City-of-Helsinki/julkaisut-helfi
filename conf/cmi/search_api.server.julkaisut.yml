@@ -36,10 +36,10 @@ backend_config:
   connector: standard
   connector_config:
     scheme: http
-    host: localhost
-    port: 8983
+    host: solr
+    port: '8983'
     path: /
-    core: mainindex
+    core: dev
     timeout: 5
     index_timeout: 5
     optimize_timeout: 10
@@ -49,6 +49,7 @@ backend_config:
     http_method: AUTO
     jmx: false
     solr_install_dir: ''
+    skip_schema_check: false
   disabled_field_types: {  }
   disabled_caches: {  }
   disabled_request_handlers:
@@ -61,9 +62,9 @@ backend_config:
   index_single_documents_fallback_count: 10
   retrieve_data: false
   highlight_data: false
-  skip_schema_check: false
   server_prefix: ''
   domain: generic
   environment: default
   optimize: false
   site_hash: false
+  fallback_multiple: true
