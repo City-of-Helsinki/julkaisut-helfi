@@ -2,6 +2,7 @@ version: '3.6'
 services:
   web:
     environment:
+      - APP_ENV=dev
       - REDIS_HOST=redis
       - DRUPAL_DB_NAME=db
       - DRUPAL_DB_USER=db
