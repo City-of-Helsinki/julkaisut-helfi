@@ -135,5 +135,18 @@ if (
   // Register redis services to make sure we don't get a non-existent service
   // error while trying to enable the module.
   $settings['container_yamls'][] = 'modules/contrib/redis/redis.services.yml';
+}
 
+if (
+  ($solr_host = getenv('SOLR_HOST')) &&
+  ($solr_port = getenv('SOLR_PORT')) &&
+  ($solr_path = getenv('SOLR_PATH')) &&
+  ($solr_core = getenv('SOLR_CORE'))
+) {
+  $config['search_api.server.julkaisut']['backend_config']['connector_config'] = [
+    'host' => $solr_host,
+    'port' => $solr_port,
+    'path' => $solr_path,
+    'core' => $solr_core
+  ];
 }

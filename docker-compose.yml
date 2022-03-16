@@ -17,6 +17,10 @@ services:
       # XDEBUG_ENABLE: "true"
       # DOCKERHOST: host.docker.internal
       REDIS_HOST: redis
+      SOLR_HOST: solr
+      SOLR_PORT: 8983
+      SOLR_PATH: "/"
+      SOLR_CORE: dev
     networks:
       - internal
       - stonehenge-network
@@ -30,6 +34,15 @@ services:
   redis:
     container_name: "${COMPOSE_PROJECT_NAME}-redis"
     image: redis:6-alpine
+    networks:
+      - internal
+  solr:
+    container_name: "${COMPOSE_PROJECT_NAME}-solr"
+    build: ./docker/solr
+    volumes:
+      - solr_data:/var/lib/solr
+    ports:
+      - 8983
     networks:
       - internal
   db:
@@ -49,6 +62,7 @@ networks:
     external: true
 
 volumes:
+  solr_data:
   db_data:
   ssh:
     name: stonehenge-ssh

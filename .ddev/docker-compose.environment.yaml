@@ -9,3 +9,7 @@ services:
       - DRUPAL_DB_PASS=db
       - DRUPAL_DB_HOST=db
       - DRUPAL_DB_PORT=3306
+      - SOLR_HOST=solr
+      - SOLR_PORT=8983
+      - SOLR_PATH=/
+      - SOLR_CORE=dev
