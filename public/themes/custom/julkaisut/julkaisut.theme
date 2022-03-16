@@ -147,6 +147,19 @@ function julkaisut_preprocess_book_navigation(&$variables) {
 }
 
 /**
+ * Implements template_preprocess_views_exposed_form().
+ */
+function julkaisut_preprocess_views_exposed_form(&$variables) {
+  $form = &$variables['form'];
+
+  foreach (['field_year', 'field_year_1'] as $field) {
+    if (isset($form[$field]['#options']['All'])) {
+      $form[$field]['#options']['All'] = $form[$field]['#title'];
+    }
+  }
+}
+
+/**
  * Implements template_preprocess_field().
  *
  * Add an `is-root-container` to gutenberg fields.

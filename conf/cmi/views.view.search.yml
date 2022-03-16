@@ -686,47 +686,6 @@ display:
           parse_mode: sloppy_terms
           min_length: 3
           fields: {  }
-        facets:
-          id: facets
-          table: search_api_index_mainindex
-          field: facets
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: facets_filter
-          operator: '='
-          value: ''
-          group: 1
-          exposed: true
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: facet_uCYEktPK
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          facets:
-            year: year
-            tags: 0
         type:
           id: type
           table: search_api_index_mainindex
@@ -768,6 +727,136 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
+        field_year:
+          id: field_year
+          table: search_api_index_mainindex
+          field: field_year
+          relationship: none
+          group_type: group
+          admin_label: 'From year'
+          plugin_id: search_api_numeric
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_year_op
+            label: Year
+            description: null
+            use_operator: false
+            operator: field_year_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_year
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            min_placeholder: null
+            max_placeholder: null
+            placeholder: null
+          is_grouped: true
+          group_info:
+            label: Vuodesta
+            description: ''
+            identifier: field_year
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items:
+              1:
+                title: '2020'
+                operator: '>='
+                value:
+                  min: ''
+                  max: ''
+                  value: '2020'
+              2:
+                title: ''
+                operator: '='
+                value:
+                  min: ''
+                  max: ''
+                  value: ''
+              3:
+                title: ''
+                operator: '='
+                value:
+                  min: ''
+                  max: ''
+                  value: ''
+        field_year_1:
+          id: field_year_1
+          table: search_api_index_mainindex
+          field: field_year
+          relationship: none
+          group_type: group
+          admin_label: 'Until year'
+          plugin_id: search_api_numeric
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_year_1_op
+            label: Year
+            description: null
+            use_operator: false
+            operator: field_year_1_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_year_1
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            min_placeholder: null
+            max_placeholder: null
+            placeholder: null
+          is_grouped: true
+          group_info:
+            label: Vuoteen
+            description: ''
+            identifier: field_year_1
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items:
+              1:
+                title: '2020'
+                operator: '<='
+                value:
+                  min: ''
+                  max: ''
+                  value: '2020'
+              2:
+                title: ''
+                operator: '='
+                value:
+                  min: ''
+                  max: ''
+                  value: ''
+              3:
+                title: ''
+                operator: '='
+                value:
+                  min: ''
+                  max: ''
+                  value: ''
       filter_groups:
         operator: AND
         groups:
@@ -934,46 +1023,136 @@ display:
           parse_mode: sloppy_terms
           min_length: 3
           fields: {  }
-        facets:
-          id: facets
+        field_year:
+          id: field_year
           table: search_api_index_mainindex
-          field: facets
+          field: field_year
           relationship: none
           group_type: group
-          admin_label: ''
-          plugin_id: facets_filter
+          admin_label: 'From year'
+          plugin_id: search_api_numeric
           operator: '='
-          value: ''
+          value:
+            min: ''
+            max: ''
+            value: ''
           group: 1
           exposed: true
           expose:
-            operator_id: ''
-            label: ''
-            description: ''
+            operator_id: field_year_op
+            label: Year
+            description: null
             use_operator: false
-            operator: ''
+            operator: field_year_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: facet_uCYEktPK
+            identifier: field_year
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
-          is_grouped: false
+            min_placeholder: null
+            max_placeholder: null
+            placeholder: null
+          is_grouped: true
           group_info:
-            label: ''
+            label: Vuodesta
             description: ''
-            identifier: ''
+            identifier: field_year
             optional: true
             widget: select
             multiple: false
             remember: false
             default_group: All
             default_group_multiple: {  }
-            group_items: {  }
-          facets:
-            year_page: year_page
+            group_items:
+              1:
+                title: '2020'
+                operator: '>='
+                value:
+                  min: ''
+                  max: ''
+                  value: '2020'
+              2:
+                title: ''
+                operator: '='
+                value:
+                  min: ''
+                  max: ''
+                  value: ''
+              3:
+                title: ''
+                operator: '='
+                value:
+                  min: ''
+                  max: ''
+                  value: ''
+        field_year_1:
+          id: field_year_1
+          table: search_api_index_mainindex
+          field: field_year
+          relationship: none
+          group_type: group
+          admin_label: 'Until year'
+          plugin_id: search_api_numeric
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_year_1_op
+            label: Year
+            description: null
+            use_operator: false
+            operator: field_year_1_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_year_1
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            min_placeholder: null
+            max_placeholder: null
+            placeholder: null
+          is_grouped: true
+          group_info:
+            label: Vuoteen
+            description: ''
+            identifier: field_year_1
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items:
+              1:
+                title: '2020'
+                operator: '<='
+                value:
+                  min: ''
+                  max: ''
+                  value: '2020'
+              2:
+                title: ''
+                operator: '='
+                value:
+                  min: ''
+                  max: ''
+                  value: ''
+              3:
+                title: ''
+                operator: '='
+                value:
+                  min: ''
+                  max: ''
+                  value: ''
       filter_groups:
         operator: AND
         groups:
@@ -1149,46 +1328,136 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        facets:
-          id: facets
+        field_year:
+          id: field_year
           table: search_api_index_mainindex
-          field: facets
+          field: field_year
           relationship: none
           group_type: group
-          admin_label: ''
-          plugin_id: facets_filter
+          admin_label: 'From year'
+          plugin_id: search_api_numeric
           operator: '='
-          value: ''
+          value:
+            min: ''
+            max: ''
+            value: ''
           group: 1
           exposed: true
           expose:
-            operator_id: ''
-            label: ''
-            description: ''
+            operator_id: field_year_op
+            label: Year
+            description: null
             use_operator: false
-            operator: ''
+            operator: field_year_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: facet_sdrOH74Q
+            identifier: field_year
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
-          is_grouped: false
+            min_placeholder: null
+            max_placeholder: null
+            placeholder: null
+          is_grouped: true
           group_info:
-            label: ''
+            label: Vuodesta
             description: ''
-            identifier: ''
+            identifier: field_year
             optional: true
             widget: select
             multiple: false
             remember: false
             default_group: All
             default_group_multiple: {  }
-            group_items: {  }
-          facets:
-            year_tags: year_tags
+            group_items:
+              1:
+                title: '2020'
+                operator: '>='
+                value:
+                  min: ''
+                  max: ''
+                  value: '2020'
+              2:
+                title: ''
+                operator: '='
+                value:
+                  min: ''
+                  max: ''
+                  value: ''
+              3:
+                title: ''
+                operator: '='
+                value:
+                  min: ''
+                  max: ''
+                  value: ''
+        field_year_1:
+          id: field_year_1
+          table: search_api_index_mainindex
+          field: field_year
+          relationship: none
+          group_type: group
+          admin_label: 'Until year'
+          plugin_id: search_api_numeric
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_year_1_op
+            label: Year
+            description: null
+            use_operator: false
+            operator: field_year_1_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_year_1
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            min_placeholder: null
+            max_placeholder: null
+            placeholder: null
+          is_grouped: true
+          group_info:
+            label: Vuoteen
+            description: ''
+            identifier: field_year_1
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items:
+              1:
+                title: '2020'
+                operator: '<='
+                value:
+                  min: ''
+                  max: ''
+                  value: '2020'
+              2:
+                title: ''
+                operator: '='
+                value:
+                  min: ''
+                  max: ''
+                  value: ''
+              3:
+                title: ''
+                operator: '='
+                value:
+                  min: ''
+                  max: ''
+                  value: ''
       filter_groups:
         operator: AND
         groups:

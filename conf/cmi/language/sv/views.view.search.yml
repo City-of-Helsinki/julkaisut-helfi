@@ -28,6 +28,22 @@ display:
           expose:
             label: 'Vad söker du?'
             placeholder: Sök
+        field_year:
+          expose:
+            description: ''
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          group_info:
+            label: 'Från år'
+        field_year_1:
+          expose:
+            description: ''
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          group_info:
+            label: 'Fram till år'
       exposed_form:
         options:
           submit_button: 'Sök utgivning'
@@ -46,6 +62,22 @@ display:
           expose:
             label: 'Vad söker du?'
             placeholder: Sök
+        field_year:
+          expose:
+            description: ''
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          group_info:
+            label: 'Från år'
+        field_year_1:
+          expose:
+            description: ''
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          group_info:
+            label: 'Fram till år'
       exposed_form:
         options:
           submit_button: 'Sök utgivning'
@@ -68,4 +100,27 @@ display:
       header:
         area_text_custom:
           content: '<h3 role="status" class="result-count">[view:total-rows] resultat</h3>'
+      filters:
+        field_year:
+          expose:
+            description: ''
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          group_info:
+            label: 'Från år'
+        field_year_1:
+          expose:
+            description: ''
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          group_info:
+            label: 'Fram till år'
+  block_1:
+    display_options:
+      filters:
+        search_api_language:
+          expose:
+            description: ''
 label: Sök

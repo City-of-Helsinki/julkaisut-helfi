@@ -35,6 +35,22 @@ display:
           expose:
             label: 'What are you looking for?'
             placeholder: Search
+        field_year:
+          expose:
+            description: ''
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          group_info:
+            label: 'From year'
+        field_year_1:
+          expose:
+            description: ''
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          group_info:
+            label: 'Until year'
       exposed_form:
         options:
           submit_button: 'Search for publication'
@@ -51,6 +67,22 @@ display:
           expose:
             label: 'What are you looking for?'
             placeholder: Search
+        field_year:
+          expose:
+            description: ''
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          group_info:
+            label: 'From year'
+        field_year_1:
+          expose:
+            description: ''
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          group_info:
+            label: 'Until year'
       exposed_form:
         options:
           submit_button: 'Search for publication'
@@ -72,3 +104,26 @@ display:
       header:
         area_text_custom:
           content: '<h3 role="status" class="result-count">[view:total-rows] results</h3>'
+      filters:
+        field_year:
+          expose:
+            description: ''
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          group_info:
+            label: 'From year'
+        field_year_1:
+          expose:
+            description: ''
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          group_info:
+            label: 'Until year'
+  block_1:
+    display_options:
+      filters:
+        search_api_language:
+          expose:
+            description: ''

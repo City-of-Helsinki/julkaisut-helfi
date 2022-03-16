@@ -2,6 +2,7 @@
 
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\FieldableEntityInterface;
+use Drupal\views\ViewExecutable;
 
 /**
  * Implements hook_entity_presave().
@@ -13,5 +14,59 @@ function julkaisut_module_entity_presave(EntityInterface $entity){
     if ($entity->hasField('field_year')) {
       $entity->set('field_year', date('Y', $entity->created->value));
     }
+  }
+}
+
+
+/**
+ * Implements hook_views_pre_view().
+ */
+function julkaisut_module_views_pre_view(ViewExecutable $view, $display_id, array &$args) {
+  if ($view->id() === 'search') {
+    $filters = $view->display_handler->getOption('filters');
+    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+
+    static $years;
+    if (!isset($years)) {
+      $database = \Drupal::database();
+      $yearsQuery = $database->select('node__field_year', 'f');
+      $yearsQuery->join('node_field_data', 'n', 'n.nid = f.entity_id');
+
+      $years = $yearsQuery
+        ->condition('n.status', 1)
+        ->condition('n.langcode', $language)
+        ->fields('f', ['field_year_value'])
+        ->distinct()
+        ->execute()
+        ->fetchCol();
+
+      $years = array_map('intval', $years);
+      sort($years);
+    }
+
+    foreach (['field_year', 'field_year_1'] as $filter_name) {
+      if (!isset($filters[$filter_name])) {
+        continue;
+      }
+      $group_items = $filters[$filter_name]['group_info']['group_items'];
+      $previous_group_item = $group_items[1];
+      $filters[$filter_name]['group_info']['group_items'] = [];
+      $filters[$filter_name]['group_info']['group_items'][] = [
+
+      ];
+
+      foreach ($years as $idx => $year) {
+        $filters[$filter_name]['group_info']['group_items'][] = [
+          'title' => "$year",
+          'operator' => $previous_group_item['operator'],
+          'value' => [
+            'min' => '',
+            'max' => '',
+            'value' => $year,
+          ],
+        ];
+      }
+    }
+    $view->display_handler->overrideOption('filters', $filters);
   }
 }

@@ -68,7 +68,6 @@
     }
   }
 
-
   &.has-no-results .form-item-sort-bef-combine {
     display: none;
   }
@@ -87,8 +86,9 @@
     }
   }
 
-  .facets-views-plugin {
+  .facets {
     grid-area: facets;
+    margin-bottom: var(--field-gutter);
   }
 
   .form-item-sort-bef-combine {
@@ -115,7 +115,7 @@
   }
 }
 
-.block-facet--range-dropdowns > div {
+.facets__fields {
   display: grid;
 
   // Shrink on desktop
@@ -142,34 +142,38 @@
   > :last-child {
     grid-area: to;
   }
-}
 
-.facets-widget-range_dropdowns select {
-  /* removes the input shadow on iOS */
-  -webkit-appearance: none;
-  background-color: var(--input-background-default);
-  border: var(--border-width) solid var(--input-border-color-default);
-  border-radius: var(--border-radius);
-  box-sizing: border-box;
-  color: var(--input-color-default);
-  font-size: var(--fontsize-body-m);
-  height: var(--input-height);
-  line-height: 1;
-  padding: 0 calc(var(--spacing-s) + var(--spacing-l)) 0 var(--spacing-s);
-  width: 100%;
-  z-index: 1; // bugfix
-
-  &:hover {
-    border-color: var(--input-border-color-hover);
+  .form-item {
+    margin-bottom: 0;
   }
 
-  &:focus {
-    border-color: var(--input-border-color-focus);
-    outline: none;
-  }
+  .form-select {
+    /* removes the input shadow on iOS */
+    -webkit-appearance: none;
+    background-color: var(--input-background-default);
+    border: var(--border-width) solid var(--input-border-color-default);
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+    color: var(--input-color-default);
+    font-size: var(--fontsize-body-m);
+    height: var(--input-height);
+    line-height: 1;
+    padding: 0 calc(var(--spacing-s) + var(--spacing-l)) 0 var(--spacing-s);
+    width: 100%;
+    z-index: 1; // bugfix
 
-  &:not([readonly]):focus {
-    box-shadow: 0 0 0 var(--outline-width) var(--focus-outline-color);
-    transform: translate3d(0, 0, 0);
+    &:hover {
+      border-color: var(--input-border-color-hover);
+    }
+
+    &:focus {
+      border-color: var(--input-border-color-focus);
+      outline: none;
+    }
+
+    &:not([readonly]):focus {
+      box-shadow: 0 0 0 var(--outline-width) var(--focus-outline-color);
+      transform: translate3d(0, 0, 0);
+    }
   }
 }
