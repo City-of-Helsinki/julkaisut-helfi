@@ -7,7 +7,7 @@ name: app
 # in multiple versions. Check the PHP documentation
 # (https://docs.platform.sh/languages/php.html#supported-versions)
 # to find the supported versions for the 'php' type.
-type: 'php:7.4'
+type: 'php:8.0'
 
 # The 'mounts' describe writable, persistent filesystem mounts in the application.
 mounts:
@@ -50,8 +50,9 @@ build:
 hooks:
     build: |
       set -e
-      bash tools/install-redis.sh 4.3.0
       curl -sS https://platform.sh/cli/installer | php
+      composer install --no-progress --profile --prefer-dist --no-interaction --no-dev --optimize-autoloader
+      composer dump-autoload --optimize
     deploy: |
       set -e
       php ./drush/platformsh_generate_drush_yml.php
