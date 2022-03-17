@@ -122,7 +122,8 @@
                 "Video embed block not working in multi-language environment with shortcode for default language": "https://www.drupal.org/files/issues/2020-09-10/issue-3150008-6.patch",
                 "Incorrect watchdog_exception() usage": "https://www.drupal.org/files/issues/2020-09-10/issue-3170264-2.patch",
                 "Metadata bubbling error": "https://www.drupal.org/files/issues/2020-09-04/gutenberg-fix-metadata-bubbling-3078027-13.patch",
-                "Inserting a link to a paragraph block returns an error": "https://www.drupal.org/files/issues/2020-06-08/gutenberg-add-type-to-content-search-ajax-call-3149823.patch"
+                "Inserting a link to a paragraph block returns an error": "https://www.drupal.org/files/issues/2020-06-08/gutenberg-add-type-to-content-search-ajax-call-3149823.patch",
+                "Stuck loading Gutenberg (JS errors) when using Gutenberg with Drupal 9.2": "https://git.drupalcode.org/project/gutenberg/-/commit/ffe0bfdd2a37d4953c9d2e3a67e7fa4e5ecd79a7.patch"
             },
             "drupal/token": {
               "Book parents translation": "https://www.drupal.org/files/issues/2018-06-28/token_8_1_3_2982284_parents_translation_02.patch"
