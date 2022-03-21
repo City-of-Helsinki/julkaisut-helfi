@@ -207,7 +207,34 @@ Drupal.behaviors.julkaisutTheme = {
     if (!elements.length) {
       return;
     }
-    new ClipboardJS(elements);
+    const clipboard = new ClipboardJS(elements);
+    clipboard.on('success', (e) => {
+      const announcement = document.createElement('p');
+      const restoreOriginalLabel = () => {
+        e.trigger.nextSibling.textContent = '';
+        delete e.trigger.dataset.label;
+        e.trigger.parentElement.removeChild(announcement);
+
+        // On desktop we need to blur the button so that it hides the text
+        if (document.activeElement === e.trigger) {
+          e.trigger.blur();
+        }
+      }
+
+      e.trigger.setAttribute('data-label', Drupal.t('Copied link'));
+      // @see https://github.com/zenorocha/clipboard.js/issues/695
+      e.trigger.focus();
+      // Restore the original element once focus moves away
+      e.trigger.parentElement.addEventListener('mouseleave', restoreOriginalLabel, {once: true});
+      e.trigger.parentElement.addEventListener('focusout', restoreOriginalLabel, {once: true});
+
+      // Add an announcement for screen readers when the link has been copied.
+      announcement.classList.add('visually-hidden')
+      announcement.setAttribute('role', 'region');
+      announcement.setAttribute('aria-live', 'polite');
+      announcement.textContent = Drupal.t('Copied link');
+      e.trigger.parentElement.insertBefore(announcement, e.trigger.nextSibling);
+    });
   },
 
   cookieConsent(context) {

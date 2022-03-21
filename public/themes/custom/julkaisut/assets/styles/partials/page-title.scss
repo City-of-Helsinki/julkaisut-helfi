@@ -14,12 +14,81 @@
   button {
     color: var(--color-primary);
     margin-left: var(--spacing-4-xs);
+    position: relative;
+
+    --icon-size: var(--spacing-layout-xs);
 
     @include mq($from: medium) {
       margin-left: var(--spacing-s);
 
+      --icon-size: var(--spacing-l);
+
       .hds-icon {
         --icon-size: var(--spacing-l);
+      }
+    }
+
+    --tooltip-arrow-size: 8px;
+    --tooltip-overlap: 2px;
+
+    &::before {
+      position: absolute;
+      background-color: var(--color-black-10);
+      padding: var(--spacing-2-xs) var(--spacing-xs);
+      color: var(--color-black-90);
+      font-weight: 400;
+      left: 0;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      content: attr(aria-label);
+      font-size: var(--fontsize-body-s);
+      bottom: calc(50% + var(--icon-size) / 2 + var(--tooltip-arrow-size));
+
+      @media (prefers-reduced-motion: no-preference) {
+        transition: opacity 0.1s ease-out;
+      }
+
+      @include mq($until: xlarge) {
+        transform: translateX(calc(-100% + var(--icon-size) + var(--spacing-3-xs)));
+      }
+    }
+
+    // Override eg after interaction
+    &[data-label]::before {
+      content: attr(data-label);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      border: solid var(--tooltip-arrow-size) transparent;
+      border-top-width: calc(var(--tooltip-arrow-size) * 1.5);
+      border-top-color: var(--color-black-10);
+      opacity: 0;
+      visibility: hidden;
+      bottom: calc((50% + var(--icon-size) / 2) - var(--tooltip-arrow-size) - var(--tooltip-overlap));
+      left: calc(var(--icon-size) / 2 - var(--tooltip-arrow-size) / 2);
+
+      @media (prefers-reduced-motion: no-preference) {
+        transition: opacity 0.1s ease-out;
+      }
+    }
+
+    &:focus::before,
+    &:focus::after,
+    &:hover::before,
+    &:hover::after {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    // On touch device, hide the hover state.
+    @media (hover: none) {
+      &:not([data-label]):hover::before,
+      &:not([data-label]):hover::after {
+        opacity: 0;
+        visibility: hidden;
       }
     }
   }
