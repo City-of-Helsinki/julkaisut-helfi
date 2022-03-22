@@ -4,8 +4,8 @@ USER root
 RUN mkdir /solr-conf
 COPY /conf /solr-conf/conf/
 
-COPY docker/solr/start.sh .
-RUN chmod +x /start.sh
+COPY docker/solr/start.sh /solr-conf/
+RUN chmod +x /solr-conf/start.sh
 
 USER solr
-CMD ["/start.sh"]
+CMD ["/solr-conf/start.sh"]
