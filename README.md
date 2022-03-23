@@ -134,3 +134,14 @@ Then proceed with
     # Move staging database to production
     drush -Dssh.tty=0 @wgohfxclopgum.master-build sql:dump > production.sql
     cat production.sql | drush -Dssh.tty=0 @site-aliases.wgohfxclopgum.master sql:cli
+
+## OpenShift
+
+    brew install openshift-cli
+    open https://oauth-openshift.apps.arodevtest.hel.fi/oauth/token/request
+    oc get pods
+    oc rsh <pod-name>
+
+    oc rsh <pod-name> drush sql:dump --result-file=/tmp/dump.sql
+    oc rsync <pod-name>:/tmp/dump.sql .
+    oc rsh <pod-name> rm /tmp/dump.sql
