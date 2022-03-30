@@ -1,1 +1,182 @@
-(window["julkaisut-webpack"]=window["julkaisut-webpack"]||[]).push([[3],{1:function(e,t,r){e.exports=r("o9EL")},"1ZqX":function(e,t){!function(){e.exports=this.wp.data}()},GRId:function(e,t){!function(){e.exports=this.wp.element}()},HSyU:function(e,t){!function(){e.exports=this.wp.blocks}()},K9lf:function(e,t){!function(){e.exports=this.wp.compose}()},Y8OO:function(e,t){!function(){e.exports=this.wp.domReady}()},g56x:function(e,t){!function(){e.exports=this.wp.hooks}()},o9EL:function(e,t,r){"use strict";r.r(t);var c=r("cDf5"),o=r.n(c),i=r("GRId"),n=r("Y8OO"),a=r.n(n),l=r("1ZqX"),s=r("HSyU"),u=r("K9lf"),p=r("g56x"),b=window.drupalSettings;a()((function(){Object(s.registerBlockStyle)("core/image",{name:"koros-basic-top",label:"Basic Koros Top"}),Object(s.registerBlockStyle)("core/paragraph",{name:"excerpt",label:"Excerpt"}),Object(s.registerBlockStyle)("core/table",{name:"numeric-with-labels",label:"Numeric (with label on left)"}),Object(s.registerBlockStyle)("core/table",{name:"numeric",label:"Numeric (all cells)"})})),b.gutenberg._listeners.init.push((function(){Object(s.unregisterBlockStyle)("core/quote","large");var e=Object(l.subscribe)((function(){if("node/add/article"===b.path.currentPath){var t=Object(l.select)("core/block-editor").getBlocks,r=Object(l.dispatch)("core/block-editor").resetBlocks,c=t();Array.isArray(c)&&(e(),setTimeout((function(){0===(c=t()).length&&r(Object(s.synchronizeBlocksWithTemplate)(c,[["core/paragraph",{placeholder:"Write an introduction",className:"is-style-excerpt"}],["core/paragraph",{placeholder:"Add text or type / to add blocks"}]]))}),500))}else e()}))})),Object(p.addFilter)("editor.BlockListBlock","julkaisut/fix-drupal-media-attributes",Object(u.createHigherOrderComponent)((function(e){return function(t){return"core/image"===t.name&&(t.attributes.mediaAttrs={},"object"===o()(t.attributes.caption)&&(t.attributes.caption=t.attributes.caption.rendered)),Object(i.createElement)(e,t)}})))}},[[1,0,1]]]);
+(window["julkaisut-webpack"] = window["julkaisut-webpack"] || []).push([["/scripts/editor"],{
+
+/***/ "./assets/scripts/editor.js":
+/*!**********************************!*\
+  !*** ./assets/scripts/editor.js ***!
+  \**********************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/typeof */ "./node_modules/@babel/runtime/helpers/typeof.js");
+/* harmony import */ var _babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/dom-ready */ "@wordpress/dom-ready");
+/* harmony import */ var _wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _wordpress_compose__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/compose */ "@wordpress/compose");
+/* harmony import */ var _wordpress_compose__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_compose__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _wordpress_hooks__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @wordpress/hooks */ "@wordpress/hooks");
+/* harmony import */ var _wordpress_hooks__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_wordpress_hooks__WEBPACK_IMPORTED_MODULE_6__);
+
+
+
+
+
+
+
+var drupalSettings = window.drupalSettings;
+_wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_2___default()(function () {
+  Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__["registerBlockStyle"])('core/image', {
+    name: 'koros-basic-top',
+    label: 'Basic Koros Top'
+  });
+  Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__["registerBlockStyle"])('core/paragraph', {
+    name: 'excerpt',
+    label: 'Excerpt'
+  });
+  Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__["registerBlockStyle"])('core/table', {
+    name: 'numeric-with-labels',
+    label: 'Numeric (with label on left)'
+  });
+  Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__["registerBlockStyle"])('core/table', {
+    name: 'numeric',
+    label: 'Numeric (all cells)'
+  });
+});
+
+drupalSettings.gutenberg._listeners.init.push(function () {
+  Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__["unregisterBlockStyle"])('core/quote', 'large');
+  var unsubscribe = Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_3__["subscribe"])(function () {
+    if (drupalSettings.path.currentPath !== 'node/add/article') {
+      unsubscribe();
+      return;
+    }
+
+    var _select = Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_3__["select"])('core/block-editor'),
+        getBlocks = _select.getBlocks;
+
+    var _dispatch = Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_3__["dispatch"])('core/block-editor'),
+        resetBlocks = _dispatch.resetBlocks;
+
+    var blocks = getBlocks();
+
+    if (Array.isArray(blocks)) {
+      unsubscribe();
+      setTimeout(function () {
+        blocks = getBlocks();
+
+        if (blocks.length === 0) {
+          resetBlocks(Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__["synchronizeBlocksWithTemplate"])(blocks, [["core/paragraph", {
+            "placeholder": "Write an introduction",
+            "className": "is-style-excerpt"
+          }], ["core/paragraph", {
+            "placeholder": "Add text or type / to add blocks"
+          }]]));
+        }
+      }, 500);
+    }
+  });
+});
+
+Object(_wordpress_hooks__WEBPACK_IMPORTED_MODULE_6__["addFilter"])('editor.BlockListBlock', 'julkaisut/fix-drupal-media-attributes', Object(_wordpress_compose__WEBPACK_IMPORTED_MODULE_5__["createHigherOrderComponent"])(function (BlockListBlock) {
+  return function (props) {
+    if (props.name === 'core/image') {
+      props.attributes.mediaAttrs = {};
+
+      if (_babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0___default()(props.attributes.caption) === 'object') {
+        props.attributes.caption = props.attributes.caption.rendered;
+      }
+    }
+
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(BlockListBlock, props);
+  };
+}));
+
+/***/ }),
+
+/***/ 1:
+/*!****************************************!*\
+  !*** multi ./assets/scripts/editor.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! /home/doktor/projects/julkaisut-main/public/themes/custom/julkaisut/assets/scripts/editor.js */"./assets/scripts/editor.js");
+
+
+/***/ }),
+
+/***/ "@wordpress/blocks":
+/*!*****************************************!*\
+  !*** external {"this":["wp","blocks"]} ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function() { module.exports = this["wp"]["blocks"]; }());
+
+/***/ }),
+
+/***/ "@wordpress/compose":
+/*!******************************************!*\
+  !*** external {"this":["wp","compose"]} ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function() { module.exports = this["wp"]["compose"]; }());
+
+/***/ }),
+
+/***/ "@wordpress/data":
+/*!***************************************!*\
+  !*** external {"this":["wp","data"]} ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function() { module.exports = this["wp"]["data"]; }());
+
+/***/ }),
+
+/***/ "@wordpress/dom-ready":
+/*!*******************************************!*\
+  !*** external {"this":["wp","domReady"]} ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function() { module.exports = this["wp"]["domReady"]; }());
+
+/***/ }),
+
+/***/ "@wordpress/element":
+/*!******************************************!*\
+  !*** external {"this":["wp","element"]} ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function() { module.exports = this["wp"]["element"]; }());
+
+/***/ }),
+
+/***/ "@wordpress/hooks":
+/*!****************************************!*\
+  !*** external {"this":["wp","hooks"]} ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function() { module.exports = this["wp"]["hooks"]; }());
+
+/***/ })
+
+},[[1,"/scripts/manifest","/scripts/vendor"]]]);
+//# sourceMappingURL=editor.js.map
