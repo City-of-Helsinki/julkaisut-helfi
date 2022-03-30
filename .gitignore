@@ -24,3 +24,6 @@ public/sites/default/local.services.yml
 
 !*.gitkeep
 !*.keepme
+
+#Ignore Doksal files
+.docksal/
