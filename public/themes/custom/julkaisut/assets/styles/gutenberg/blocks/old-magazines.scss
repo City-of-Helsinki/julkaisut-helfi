@@ -1,0 +1,31 @@
+#block-old-magazines {
+  background: #E8F3FC;
+  padding: 60px 32px;
+  margin-block: 60px;
+  color: #1D1D1D;
+  div, h2 {
+    margin-inline: 0;
+  }
+  h2 {
+    font-size: 32px;
+    font-weight: normal;
+  }
+  .field--name-body {
+    margin-block: 20px 40px;
+  }
+  .field--type-link {
+    a {
+      color: #1D1D1D;
+      text-decoration: underline;
+      margin: 0;
+      position: relative;
+      &:after {
+        content: "\2192";
+        position: absolute;
+        right: -10px;
+        transform: translate(100%, 0);
+        font-weight: bold;
+      }
+    }
+  }
+}
