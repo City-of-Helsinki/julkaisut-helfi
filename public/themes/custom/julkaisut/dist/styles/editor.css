@@ -4071,6 +4071,36 @@ a.tablesaw-btn {
   margin-top: 0;
 }
 
+#block-old-magazines {
+  background: #E8F3FC;
+  padding: 60px 32px;
+  margin-block: 60px;
+  color: #1D1D1D;
+}
+#block-old-magazines div, #block-old-magazines h2 {
+  margin-inline: 0;
+}
+#block-old-magazines h2 {
+  font-size: 32px;
+  font-weight: normal;
+}
+#block-old-magazines .field--name-body {
+  margin-block: 20px 40px;
+}
+#block-old-magazines .field--type-link a {
+  color: #1D1D1D;
+  text-decoration: underline;
+  margin: 0;
+  position: relative;
+}
+#block-old-magazines .field--type-link a:after {
+  content: "\2192";
+  position: absolute;
+  right: -10px;
+  transform: translate(100%, 0);
+  font-weight: bold;
+}
+
 #sliding-popup {
   display: none !important;
 }
