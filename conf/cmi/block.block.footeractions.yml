@@ -16,7 +16,7 @@ provider: null
 plugin: 'system_menu_block:footer-actions'
 settings:
   id: 'system_menu_block:footer-actions'
-  label: Sivutoiminnot
+  label: 'Page actions'
   label_display: '0'
   provider: system
   level: 1

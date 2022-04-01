@@ -5,13 +5,13 @@ display:
         options:
           views_infinite_scroll:
             button_text: 'Ladda mer'
+          tags:
+            next: ››
+            previous: ‹‹
           expose:
             items_per_page_label: 'Inlägg per sida'
             items_per_page_options_all_label: '- Alla -'
             offset_label: Kompensera
-          tags:
-            previous: ‹‹
-            next: ››
       exposed_form:
         options:
           submit_button: Verkställ
@@ -19,7 +19,7 @@ display:
           exposed_sorts_label: 'Sortera efter'
           sort_asc_label: Stigande
           sort_desc_label: Fallande
-    display_title: Huvud
+    display_title: Förvald
   feed_1:
     display_title: Innehållsflöde
   page_1:

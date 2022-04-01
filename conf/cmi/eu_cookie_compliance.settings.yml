@@ -17,7 +17,7 @@ mobile_popup_info:
   format: gutenberg
 popup_info_template: new
 popup_agree_button_message: 'Hyväksy kaikki evästeet'
-popup_more_info_button_message: 'Näytä evästeet'
+popup_more_info_button_message: 'More info'
 mobile_breakpoint: 768
 popup_agreed_enabled: false
 popup_hide_agreed: false

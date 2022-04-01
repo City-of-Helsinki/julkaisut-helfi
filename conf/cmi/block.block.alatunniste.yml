@@ -11,12 +11,12 @@ dependencies:
 id: alatunniste
 theme: julkaisut
 region: footer_top
-weight: -3
+weight: -5
 provider: null
 plugin: 'system_menu_block:footer'
 settings:
   id: 'system_menu_block:footer'
-  label: Päänavigaatio
+  label: 'Primary navigation'
   label_display: '0'
   provider: system
   level: 1

@@ -3,8 +3,8 @@ langcode: fi
 status: true
 dependencies:
   module:
-    - ctools
     - custom_book_block
+    - node
     - system
   theme:
     - julkaisut

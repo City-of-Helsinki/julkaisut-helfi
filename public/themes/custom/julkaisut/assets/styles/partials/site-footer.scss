@@ -9,8 +9,13 @@
   padding: var(--spacing-layout-l) var(--spacing-layout-m) var(--spacing-layout-xs);
   text-align: center;
   font-size: var(--fontsize-body-m);
+  color: var(--color-white);
 
   --menu-item-padding: var(--spacing-2-xs) var(--spacing-xs);
+
+  a {
+    color: var(--color-white);
+  }
 
   @include mq($from: large) {
     padding-left: 0;
@@ -39,7 +44,6 @@
     }
 
     &-item a {
-      color: inherit;
       text-decoration: none;
       line-height: var(--lineheight-l);
       position: relative;
@@ -47,6 +51,10 @@
       align-items: center;
       justify-content: center;
       padding: var(--menu-item-padding);
+
+      &.is-active {
+        color:  var(--color-white);
+      }
 
       .external-link-icon {
         transform: translateX(calc(100% + var(--spacing-3-xs)));
@@ -72,6 +80,11 @@
         grid-gap: var(--spacing-xs);
         margin-bottom: var(--spacing-s);
       }
+    }
+
+    // Invert image from black to white
+    .site-logo__icon {
+      filter: invert(1);
     }
   }
 
