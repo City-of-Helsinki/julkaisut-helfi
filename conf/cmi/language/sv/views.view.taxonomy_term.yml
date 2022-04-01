@@ -19,7 +19,7 @@ display:
           exposed_sorts_label: 'Sortera efter'
           sort_asc_label: Stigande
           sort_desc_label: Fallande
-    display_title: Förvald
+    display_title: Huvud
   feed_1:
     display_title: Innehållsflöde
   page_1:

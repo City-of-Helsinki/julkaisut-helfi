@@ -541,7 +541,9 @@ display:
         sorts: true
         filters: false
         filter_groups: false
+        header: false
       display_description: ''
+      header: {  }
       display_extenders: {  }
       block_description: 'Raportit - aikajärjestyksessä'
     cache_metadata:

@@ -11,7 +11,7 @@ dependencies:
 id: copyright
 theme: julkaisut
 region: footer_bottom
-weight: -6
+weight: 0
 provider: null
 plugin: 'block_content:1a1483c2-767f-4933-ba3e-63b668f12c6b'
 settings:
