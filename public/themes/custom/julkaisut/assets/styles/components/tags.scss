@@ -5,8 +5,9 @@
   margin-bottom: var(--spacing-l);
 
   h3 {
-    font-size: var(--fontsize-heading-m);
+    font-size: 24px;
     margin-bottom: var(--spacing-s);
+    font-weight: 500;
 
     @include mq($from: large) {
       font-size: var(--fontsize-heading-l);
@@ -39,11 +40,10 @@
 
 .tag__item a {
   font-size: var(--fontsize-body-s);
-  color: #00005E;
+  color: #191919;
   font-weight: 500;
-  background-color: var(--color-bus-light-5);
+  background-color: #E4E4E4;
   padding: 7px 16px;
-  border-radius: 40px;
   text-decoration: none;
   display: inline-block;
   text-align: center;
@@ -53,3 +53,37 @@
     text-decoration: underline;
   }
 }
+
+.block-views-blocktaxonomy-terms-terms--block-2 {
+  margin: 60px 0 60px;
+  .views-element-container {
+    padding: 0;
+    margin: 40px 0 40px;
+  }
+  header {
+    h3 {
+      font-size: 24px;
+      margin: 0;
+      font-weight: 500;
+    }
+  }
+  .pager {
+    justify-content: left;
+    margin: 0;
+    .pager__item {
+      border: none;
+      padding: 0;
+      width: auto;
+      height: auto;
+    }
+    .button {
+      color: #121212;
+      text-decoration: underline;
+      font-size: 18px;
+    }
+  }
+  .tag__group {
+    margin-block: 16px;
+  }
+}
+
