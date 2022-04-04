@@ -17,7 +17,7 @@ plugin: 'system_menu_block:footer'
 settings:
   id: 'system_menu_block:footer'
   label: 'Primary navigation'
-  label_display: '0'
+  label_display: visible
   provider: system
   level: 1
   depth: 0
