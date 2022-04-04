@@ -25,14 +25,14 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_copyright:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   field_image:
     type: entity_reference_entity_view
@@ -41,7 +41,15 @@ content:
       view_mode: banner
       link: false
     third_party_settings: {  }
-    weight: 2
+    weight: 3
+    region: content
+  field_magazine:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 0
     region: content
   field_tags:
     type: entity_reference_label
@@ -49,12 +57,11 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
 hidden:
   field_featured_image_caption: true
   field_featured_image_width: true
-  field_magazine: true
   field_year: true
   langcode: true
   links: true
