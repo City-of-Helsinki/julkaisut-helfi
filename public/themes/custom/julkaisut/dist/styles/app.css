@@ -4516,26 +4516,26 @@ a.tablesaw-btn {
 }
 
 .book-navigation {
-  font-size: 0.875rem;
-  font-size: var(--fontsize-body-s);
+  font-size: 1rem;
+  font-size: var(--fontsize-body-m);
   display: grid;
   grid-template-columns: 1fr 1fr;
   list-style-type: none;
   padding-left: 0;
-  background-color: #0000bf;
-  background-color: var(--color-bus);
+  background-color: #0072c6;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 10;
   box-shadow: 0px -3px 6px #00000029;
+  height: 80px;
 }
 .book-navigation .hds-icon {
   flex: 0 0 auto;
 }
 .book-navigation__previous {
-  background-color: #3333CB;
+  background-color: #338ED1;
 }
 .book-navigation__previous .hds-icon {
   margin-right: 0.75rem;
@@ -4588,6 +4588,9 @@ a.tablesaw-btn {
 }
 .book-navigation li a:hover, .book-navigation li a:focus {
   text-decoration: underline;
+}
+.book-navigation .hds-icon.hds-icon--size-xs {
+  --icon-size: var(--spacing-layout-m);
 }
 
 @media (max-width: 61.99em) {

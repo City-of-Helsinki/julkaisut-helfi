@@ -275,7 +275,24 @@ Drupal.behaviors.julkaisutTheme = {
       });
     }
   }
-};
+}; // Change book navigation from fixed to static when scroll to footer
+
+var bookNav = document.querySelector('.book-navigation');
+var footer = document.querySelector('.site__footer');
+
+function checkOffset() {
+  function getRectTop(el) {
+    var rect = el.getBoundingClientRect();
+    return rect.top;
+  }
+
+  if (document.body.scrollTop + window.innerHeight < getRectTop(footer) + document.body.scrollTop + 48) bookNav.style.position = 'fixed'; // restore when you scroll up
+  else bookNav.style.position = 'static';
+}
+
+document.addEventListener("scroll", function () {
+  checkOffset();
+});
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery")))
 
 /***/ }),
@@ -567,10 +584,10 @@ function toggler(el) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/genero/genero/public/themes/custom/julkaisut/assets/scripts/app.js */"./assets/scripts/app.js");
-__webpack_require__(/*! /var/www/genero/genero/public/themes/custom/julkaisut/assets/styles/app.scss */"./assets/styles/app.scss");
-__webpack_require__(/*! /var/www/genero/genero/public/themes/custom/julkaisut/assets/styles/print.scss */"./assets/styles/print.scss");
-module.exports = __webpack_require__(/*! /var/www/genero/genero/public/themes/custom/julkaisut/assets/styles/editor.scss */"./assets/styles/editor.scss");
+__webpack_require__(/*! /home/doktor/projects/julkaisut-main/public/themes/custom/julkaisut/assets/scripts/app.js */"./assets/scripts/app.js");
+__webpack_require__(/*! /home/doktor/projects/julkaisut-main/public/themes/custom/julkaisut/assets/styles/app.scss */"./assets/styles/app.scss");
+__webpack_require__(/*! /home/doktor/projects/julkaisut-main/public/themes/custom/julkaisut/assets/styles/print.scss */"./assets/styles/print.scss");
+module.exports = __webpack_require__(/*! /home/doktor/projects/julkaisut-main/public/themes/custom/julkaisut/assets/styles/editor.scss */"./assets/styles/editor.scss");
 
 
 /***/ }),
