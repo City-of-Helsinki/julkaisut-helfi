@@ -1,0 +1,8 @@
+uuid: f3eb127d-119b-4f87-af38-e7c185bed6b5
+langcode: en
+status: true
+dependencies: {  }
+id: old_magazines
+label: 'old magazines'
+revision: 0
+description: ''

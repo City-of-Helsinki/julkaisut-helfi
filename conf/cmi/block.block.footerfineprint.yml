@@ -11,7 +11,7 @@ dependencies:
 id: footerfineprint
 theme: julkaisut
 region: footer_bottom
-weight: -5
+weight: 0
 provider: null
 plugin: 'system_menu_block:footer-fineprint'
 settings:

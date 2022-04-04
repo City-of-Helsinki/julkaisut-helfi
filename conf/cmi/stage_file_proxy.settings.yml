@@ -3,6 +3,6 @@ _core:
 langcode: fi
 hotlink: false
 origin: 'https://julkaisut.hel.fi'
-origin_dir: ''
+origin_dir: sites/default/files
 use_imagecache_root: true
 verify: true

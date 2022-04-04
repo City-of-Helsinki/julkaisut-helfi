@@ -4,3 +4,25 @@ display:
       header:
         area_text_custom:
           content: '<h2>Magazines</h2>'
+  block_3:
+    display_options:
+      header:
+        area:
+          content:
+            value: "<h3>Theme</h3>\r\n"
+            format: editor
+      pager:
+        options:
+          views_infinite_scroll:
+            button_text: 'Show all…'
+  block_4:
+    display_options:
+      header:
+        area:
+          content:
+            value: "<h3>Industries and businesses</h3>\r\n"
+            format: editor
+      pager:
+        options:
+          views_infinite_scroll:
+            button_text: 'Show all…'

@@ -4,3 +4,25 @@ display:
       header:
         area_text_custom:
           content: '<h2>Tidningar</h2>'
+  block_3:
+    display_options:
+      header:
+        area:
+          content:
+            value: "<h3>Tema</h3>\r\n"
+            format: editor
+      pager:
+        options:
+          views_infinite_scroll:
+            button_text: 'Vis alt…'
+  block_4:
+    display_options:
+      header:
+        area:
+          content:
+            value: "<h3>Bransjer og bedrifter</h3>\r\n"
+            format: editor
+      pager:
+        options:
+          views_infinite_scroll:
+            button_text: 'Vis alt…'

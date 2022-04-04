@@ -11,7 +11,7 @@ dependencies:
 id: custombooknavigation
 theme: julkaisut
 region: content
-weight: -6
+weight: -8
 provider: null
 plugin: custom_book_navigation
 settings:

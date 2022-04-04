@@ -9,7 +9,7 @@ dependencies:
 id: sitebranding
 theme: julkaisut
 region: footer_top
-weight: -6
+weight: -4
 provider: null
 plugin: system_branding_block
 settings:

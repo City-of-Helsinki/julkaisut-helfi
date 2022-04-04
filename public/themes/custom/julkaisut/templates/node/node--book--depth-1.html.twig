@@ -7,6 +7,8 @@
     {% block node__content_wrapper %}
       <div class="is-container published-date node__published">
         <p>{% trans %}Published on {{ date }}{% endtrans %}</p>
+
+        {{ content.field_pdf }}
       </div>
 
 
@@ -17,8 +19,6 @@
 
         <div class="node__meta">
           {{ content.field_tags }}
-
-          {{ content.field_pdf }}
 
           {% include '@julkaisut/partials/share-links.html.twig' with {
             url: url_absolute.toString(),
