@@ -68,42 +68,49 @@ page_allowed_blocks:
   core-embed/wordpress-tv: 0
 page_allowed_drupal_blocks:
   'entity_view:node': 0
+  'entity_view:taxonomy_term': 0
   'entity_view:user': 0
   page_title_block: 0
-  devel_switch_user: 0
+  'block_content:1a1483c2-767f-4933-ba3e-63b668f12c6b': 0
+  'block_content:fb47da76-a331-42e6-a464-5542d80f280b': 0
+  'block_content:c486a07d-272f-4801-94e8-f4d1bc319ff1': 0
+  'block_content:6068773f-cd1d-4cc7-8d70-39f3f87cd5b1': 0
+  'block_content:55fbdec5-a435-4942-85c4-2ea6d4f434c9': 0
+  'facet_block:year': 0
   'facet_block:year_page': 0
   'facet_block:year_tags': 0
-  'facet_block:year': 0
-  'language_block:language_interface': 0
-  node_syndicate_block: 0
+  masquerade: 0
+  user_login_block: 0
   'views_block:julkaisuja-block_4': 'views_block:julkaisuja-block_4'
   'views_block:julkaisuja-block_5': 'views_block:julkaisuja-block_5'
+  'views_block:taxonomy_terms_terms_-block_5': 'views_block:taxonomy_terms_terms_-block_5'
+  'views_block:julkaisuja-block_3': 'views_block:julkaisuja-block_3'
   'views_block:julkaisuja-block_2': 'views_block:julkaisuja-block_2'
   'views_block:julkaisuja-block_1': 'views_block:julkaisuja-block_1'
   'views_block:search-block_2': 'views_block:search-block_2'
-  'views_block:julkaisuja-block_3': 'views_block:julkaisuja-block_3'
   'views_block:search-block_1': 'views_block:search-block_1'
   'views_block:taxonomy_terms_terms_-block_2': 'views_block:taxonomy_terms_terms_-block_2'
   'views_block:book_outline-block_1': 0
+  'views_block:taxonomy_terms_terms_-block_4': 0
   'views_block:content_recent-block_1': 0
   'views_block:related-block_1': 0
   'views_block:taxonomy_terms_terms_-block_1': 0
+  'views_block:taxonomy_terms_terms_-block_3': 0
   'views_block:who_s_online-who_s_online_block': 0
-  user_login_block: 0
-  masquerade: 0
-  system_breadcrumb_block: 0
-  system_powered_by_block: 0
-  system_branding_block: 0
-  system_messages_block: 0
-  'system_menu_block:devel': 0
+  book_navigation: 0
+  custom_book_navigation: 0
   'system_menu_block:footer': 0
   'system_menu_block:footer-actions': 0
   'system_menu_block:footer-fineprint': 0
-  book_navigation: 0
-  custom_book_navigation: 0
   'system_menu_block:main': 0
   'system_menu_block:social-media': 0
   'system_menu_block:account': 0
+  system_breadcrumb_block: 0
+  'language_block:language_interface': 0
+  system_messages_block: 0
+  system_powered_by_block: 0
+  system_branding_block: 0
+  node_syndicate_block: 0
 article_enable_full: 1
 article_template: ''
 article_template_lock: none
