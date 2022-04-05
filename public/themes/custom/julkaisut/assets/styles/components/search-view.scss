@@ -13,6 +13,12 @@
     height: 600px;
   }
 
+  @media (min-width: 767px) {
+    justify-content: center;
+  }
+  max-width: var(--content-width);
+  margin-inline: auto;
+
   // Except on taxonomy search pages, move the header below the filter form
   body:not(.path-taxonomy) & {
     display: flex;
@@ -63,13 +69,13 @@
   }
 
   .views-exposed-form {
-    position: relative;
-    display: block;
-    top: 170px;
-    left: 70px;
-    width: 500px;
-    height: 126px;
-    padding: 0 10px;
+    //position: relative;
+    //display: block;
+    //top: 170px;
+    //left: 70px;
+    //width: 500px;
+    //height: 126px;
+    //padding: 0 10px;
 
     @include mq($from: medium) {
       //display: grid;
@@ -80,8 +86,8 @@
       //display: block;
     }
     @media (max-width: 767px) {
-      top: 60px;
-      left: 24px;
+      margin-top: 60px;
+      margin-left: 24px;
       max-width: 300px;
     }
   }
@@ -144,6 +150,50 @@
     display: none;
   }
 
+  //&:before {
+  //  content: "";
+  //  position: absolute;
+  //  width: 100%;
+  //  height: 500px;
+  //  top: -100px;
+  //  background: url("../images/search/background-wave-mobile.svg") center center repeat;
+  //  z-index: 0;
+  //}
+  //&:after {
+  //  content: "";
+  //  position: absolute;
+  //  top: -30px;
+  //  right: 0;
+  //  width: 100%;
+  //  height: 100%;
+  //  background: url("../images/search/search-background-mobile.jpg") bottom center no-repeat;
+  //  z-index: -1;
+  //  background-size: contain;
+  //}
+  //@media (min-width: 767px) {
+  //  &:before {
+  //    top: 0;
+  //    width: 82%;
+  //    height: 100%;
+  //    background: url("../images/search/background-wave.svg") right center no-repeat;
+  //  }
+  //  &:after {
+  //    top: 0;
+  //    right: 0;
+  //    width: 100%;
+  //    height: 100%;
+  //    background: url("../images/search/search-background.jpg") right center no-repeat;
+  //  }
+  //}
+
+}
+#main-content {
+  .block-views-blocksearch-block-1 {
+    max-width: 100%;
+  }
+}
+
+.block-views-blocksearch-block-1 {
   &:before {
     content: "";
     position: absolute;
@@ -151,7 +201,7 @@
     height: 500px;
     top: -100px;
     background: url("../images/search/background-wave-mobile.svg") center center repeat;
-    z-index: 0;
+    z-index: -1;
   }
   &:after {
     content: "";
@@ -161,22 +211,41 @@
     width: 100%;
     height: 100%;
     background: url("../images/search/search-background-mobile.jpg") bottom center no-repeat;
-    z-index: -1;
+    z-index: -2;
     background-size: contain;
   }
   @media (min-width: 767px) {
     &:before {
       top: 0;
-      width: 82%;
+      left: -15px;
+      width: 85%;
       height: 100%;
       background: url("../images/search/background-wave.svg") right center no-repeat;
     }
     &:after {
       top: 0;
-      right: 0;
+      right: -15px;
       width: 100%;
       height: 100%;
       background: url("../images/search/search-background.jpg") right center no-repeat;
+    }
+  }
+  @media (min-width: 1248px) {
+    &:before {
+      top: 0;
+      left: -15px;
+      width: 70%;
+      height: 100%;
+      background: url("../images/search/background-wave.svg") right center no-repeat;
+      background-size: cover;
+    }
+    &:after {
+      top: 0;
+      right: -15px;
+      width: 70%;
+      height: 100%;
+      background: url("../images/search/search-background.jpg") right center no-repeat;
+      background-size: cover;
     }
   }
 
