@@ -82,6 +82,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-bottom: solid 1px var(--color-black-20);
 
     // Stack the logo + name on mobile
     @include mq($until: small) {
@@ -90,11 +91,6 @@
         grid-gap: var(--spacing-xs);
         margin-bottom: var(--spacing-s);
       }
-    }
-
-    // Invert image from black to white
-    .site-logo__icon {
-      filter: invert(1);
     }
   }
 
@@ -198,8 +194,31 @@
     // The last row is horizontal on large screens
     .region-footer-bottom {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      padding-top: 10px;
+      // Invert image from black to white
+      .site-logo__icon {
+        filter: invert(1);
+      }
+      .site-logo__name {
+        display: none;
+      }
+      .menu--footer-fineprint {
+        .menu {
+          margin: 0 10px;
+          &-item {
+            border-right: white 1px solid;
+            margin-right: 5px;
+            padding-right: 5px;
+            &:last-child {
+              border-right: none;
+            }
+          }
+        }
+      }
+      .menu--footer-actions {
+        margin-left: auto;
+      }
     }
 
     // Align with borders on larger screens

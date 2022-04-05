@@ -1,6 +1,6 @@
 uuid: cd9d86a5-611b-41b1-8e5c-4439d7502486
 langcode: fi
-status: true
+status: false
 dependencies:
   config:
     - system.menu.social-media
@@ -11,7 +11,7 @@ dependencies:
 id: socialmedia
 theme: julkaisut
 region: footer
-weight: -4
+weight: -9
 provider: null
 plugin: 'system_menu_block:social-media'
 settings:

@@ -107,7 +107,7 @@ Object(_wordpress_hooks__WEBPACK_IMPORTED_MODULE_6__["addFilter"])('editor.Block
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /var/www/genero/genero/public/themes/custom/julkaisut/assets/scripts/editor.js */"./assets/scripts/editor.js");
+module.exports = __webpack_require__(/*! /home/doktor/projects/julkaisut-main/public/themes/custom/julkaisut/assets/scripts/editor.js */"./assets/scripts/editor.js");
 
 
 /***/ }),
