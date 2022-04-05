@@ -108,7 +108,7 @@
   }
 
   .region-footer-bottom {
-    font-size: var(--fontsize-body-s);
+    font-size: var(--fontsize-body-m);
   }
 
   // Footer main menu is a grid of two cells on mobile
@@ -203,15 +203,26 @@
       .site-logo__name {
         display: none;
       }
+      .field--type-text-with-summary {
+        border-right: white 1px solid;
+        margin-right: 5px;
+        padding: 0 5px 0 0;
+      }
       .menu--footer-fineprint {
         .menu {
           margin: 0 10px;
           &-item {
-            border-right: white 1px solid;
-            margin-right: 5px;
-            padding-right: 5px;
+            a {
+              border-right: white 1px solid;
+              margin-right: 5px;
+              padding: 0;
+              padding-right: 5px;
+
+            }
             &:last-child {
-              border-right: none;
+              a {
+                border-right: none;
+              }
             }
           }
         }

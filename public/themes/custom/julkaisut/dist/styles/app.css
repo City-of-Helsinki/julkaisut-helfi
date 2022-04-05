@@ -5051,8 +5051,8 @@ a.tablesaw-btn {
   padding-bottom: calc(var(--spacing-m) - var(--spacing-xs));
 }
 .site-footer .region-footer-bottom {
-  font-size: 0.875rem;
-  font-size: var(--fontsize-body-s);
+  font-size: 1rem;
+  font-size: var(--fontsize-body-m);
 }
 .site-footer .menu--footer .menu {
   display: grid;
@@ -5134,15 +5134,21 @@ a.tablesaw-btn {
   .site-footer .region-footer-bottom .site-logo__name {
     display: none;
   }
+  .site-footer .region-footer-bottom .field--type-text-with-summary {
+    border-right: white 1px solid;
+    margin-right: 5px;
+    padding: 0 5px 0 0;
+  }
   .site-footer .region-footer-bottom .menu--footer-fineprint .menu {
     margin: 0 10px;
   }
-  .site-footer .region-footer-bottom .menu--footer-fineprint .menu-item {
+  .site-footer .region-footer-bottom .menu--footer-fineprint .menu-item a {
     border-right: white 1px solid;
     margin-right: 5px;
+    padding: 0;
     padding-right: 5px;
   }
-  .site-footer .region-footer-bottom .menu--footer-fineprint .menu-item:last-child {
+  .site-footer .region-footer-bottom .menu--footer-fineprint .menu-item:last-child a {
     border-right: none;
   }
   .site-footer .region-footer-bottom .menu--footer-actions {
