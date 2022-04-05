@@ -5021,6 +5021,8 @@ a.tablesaw-btn {
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-bottom: solid 1px #cccccc;
+  border-bottom: solid 1px var(--color-black-20);
 }
 @media (max-width: 35.99em) {
   .site-footer .region-footer-top .site-logo {
@@ -5030,9 +5032,6 @@ a.tablesaw-btn {
     margin-bottom: 1rem;
     margin-bottom: var(--spacing-s);
   }
-}
-.site-footer .region-footer-top .site-logo__icon {
-  filter: invert(1);
 }
 .site-footer .region-footer {
   border-top: solid 1px #cccccc;
@@ -5126,8 +5125,28 @@ a.tablesaw-btn {
   }
   .site-footer .region-footer-bottom {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    padding-top: 10px;
+  }
+  .site-footer .region-footer-bottom .site-logo__icon {
+    filter: invert(1);
+  }
+  .site-footer .region-footer-bottom .site-logo__name {
+    display: none;
+  }
+  .site-footer .region-footer-bottom .menu--footer-fineprint .menu {
+    margin: 0 10px;
+  }
+  .site-footer .region-footer-bottom .menu--footer-fineprint .menu-item {
+    border-right: white 1px solid;
+    margin-right: 5px;
+    padding-right: 5px;
+  }
+  .site-footer .region-footer-bottom .menu--footer-fineprint .menu-item:last-child {
+    border-right: none;
+  }
+  .site-footer .region-footer-bottom .menu--footer-actions {
+    margin-left: auto;
   }
   .site-footer .menu-item:last-child a {
     padding-right: 0;

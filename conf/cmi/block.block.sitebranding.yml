@@ -8,8 +8,8 @@ dependencies:
     - julkaisut
 id: sitebranding
 theme: julkaisut
-region: footer_top
-weight: -4
+region: footer_bottom
+weight: -8
 provider: null
 plugin: system_branding_block
 settings:
