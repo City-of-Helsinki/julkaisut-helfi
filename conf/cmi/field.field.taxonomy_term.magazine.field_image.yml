@@ -12,7 +12,7 @@ entity_type: taxonomy_term
 bundle: magazine
 label: 'Featured Image'
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -23,7 +23,6 @@ settings:
       image: image
     sort:
       field: _none
-      direction: ASC
     auto_create: false
     auto_create_bundle: ''
 field_type: entity_reference

@@ -183,7 +183,7 @@ display:
         type: grid
         options:
           uses_fields: false
-          columns: 3
+          columns: 4
           automatic_width: true
           alignment: horizontal
           row_class_custom: ''
@@ -234,8 +234,33 @@ display:
     display_plugin: block
     position: 1
     display_options:
+      pager:
+        type: infinite_scroll
+        options:
+          offset: 0
+          items_per_page: 4
+          total_pages: null
+          id: 0
+          tags:
+            next: 'Next ›'
+            previous: '‹ Previous'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          views_infinite_scroll:
+            button_text: 'Lataa lisää'
+            automatically_load_content: false
+            initially_load_all_pages: false
       defaults:
+        use_ajax: false
+        pager: false
         footer: false
+      use_ajax: true
       display_description: ''
       footer:
         entity_block:
@@ -251,13 +276,16 @@ display:
           view_mode: default
           tokenize: false
           bypass_access: true
-      display_extenders: {  }
+      display_extenders:
+        simple_sitemap_display_extender: {  }
+        metatag_display_extender: {  }
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
+        - url.query_args
         - user.permissions
       tags: {  }
   block_2:
@@ -1095,7 +1123,7 @@ display:
         type: infinite_scroll
         options:
           offset: 0
-          items_per_page: 5
+          items_per_page: 3
           total_pages: null
           id: 0
           tags:

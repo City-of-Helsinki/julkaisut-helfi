@@ -2,7 +2,6 @@ _core:
   default_config_hash: NlDIUdPDDX0V4owUbxlYWoCwMZv_Wnv-wqzepvT5drs
 langcode: fi
 mode: process_untranslated
-current_language_mode: no_link
 untranslated_handler: no_link
 hide_single_link: false
 show_langcode: false

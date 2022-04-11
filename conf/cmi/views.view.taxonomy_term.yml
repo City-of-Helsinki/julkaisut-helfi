@@ -242,7 +242,7 @@ display:
           query_tags: {  }
       relationships: {  }
       css_class: ''
-      use_ajax: true
+      use_ajax: false
       show_admin_links: false
       link_display: page_1
       link_url: ''
@@ -337,6 +337,7 @@ display:
           changefreq: ''
           arguments: {  }
           max_links: 100
+        metatag_display_extender: {  }
       path: taxonomy/term/%
     cache_metadata:
       max-age: -1
