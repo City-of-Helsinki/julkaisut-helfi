@@ -5011,7 +5011,8 @@ a.tablesaw-btn {
   margin-left: 0;
 }
 .site-footer .menu--footer {
-  margin-bottom: 15px;
+  max-width: 1264px;
+  margin: 0 auto;
 }
 .site-footer .menu--footer h2 {
   font-size: 20px;
@@ -5051,8 +5052,6 @@ a.tablesaw-btn {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-bottom: solid 1px #cccccc;
-  border-bottom: solid 1px var(--color-black-20);
 }
 @media (max-width: 35.99em) {
   .site-footer .region-footer-top .site-logo {
@@ -5166,17 +5165,13 @@ a.tablesaw-btn {
   }
   .site-footer .region-footer-bottom .field--type-text-with-summary {
     border-right: white 1px solid;
-    margin-right: 5px;
-    padding: 0 5px 0 0;
-  }
-  .site-footer .region-footer-bottom .menu--footer-fineprint .menu {
-    margin: 0 10px;
+    margin-right: 8px;
+    padding: 0 8px 0 0;
   }
   .site-footer .region-footer-bottom .menu--footer-fineprint .menu-item a {
     border-right: white 1px solid;
-    margin-right: 5px;
-    padding: 0;
-    padding-right: 5px;
+    margin-right: 8px;
+    padding: 0 8px 0 0;
   }
   .site-footer .region-footer-bottom .menu--footer-fineprint .menu-item:last-child a {
     border-right: none;
@@ -5191,6 +5186,45 @@ a.tablesaw-btn {
     display: grid;
     grid-template-columns: auto;
   }
+}
+
+.site-footer {
+  max-width: 100%;
+}
+.site-footer .region-footer-top {
+  margin: 0 32px;
+}
+.site-footer .region-footer-top h2 {
+  font-size: 28px;
+  font-weight: 500;
+}
+.site-footer .region-footer-top .menu-item {
+  margin-top: 8px;
+  font-weight: 400;
+}
+.site-footer .region-footer-top .menu :first-child {
+  margin-top: 0;
+}
+.site-footer .footer-bottom-wraper {
+  padding-bottom: 0;
+  margin: 90px 32px 0;
+}
+.site-footer .footer-bottom-wraper .region-footer-bottom {
+  border-top: solid 1px #b2b2b2;
+  max-width: 1264px;
+  margin: 0 auto;
+}
+.site-footer .footer-bottom-wraper .region-footer-bottom .site-logo {
+  width: 100px;
+  grid-gap: 0.75rem;
+  grid-gap: var(--spacing-xs);
+}
+.site-footer .footer-bottom-wraper .region-footer-bottom .menu--footer-actions a {
+  margin-bottom: 25px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: 14px;
+  margin-right: 5px;
 }
 
 .site-languages {

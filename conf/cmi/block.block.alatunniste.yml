@@ -16,7 +16,7 @@ provider: null
 plugin: 'system_menu_block:footer'
 settings:
   id: 'system_menu_block:footer'
-  label: 'Primary navigation'
+  label: Julkaisut.hel.fi
   label_display: visible
   provider: system
   level: 1

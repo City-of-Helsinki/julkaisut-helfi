@@ -39,7 +39,8 @@
     margin-left: 0;
 
     &--footer {
-      margin-bottom: 15px;
+      max-width: 1264px;
+      margin: 0 auto;
       h2 {
         font-size: 20px;
         margin: 15px 0;
@@ -82,7 +83,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-bottom: solid 1px var(--color-black-20);
 
     // Stack the logo + name on mobile
     @include mq($until: small) {
@@ -205,19 +205,16 @@
       }
       .field--type-text-with-summary {
         border-right: white 1px solid;
-        margin-right: 5px;
-        padding: 0 5px 0 0;
+        margin-right: 8px;
+        padding: 0 8px 0 0;
       }
       .menu--footer-fineprint {
         .menu {
-          margin: 0 10px;
           &-item {
             a {
               border-right: white 1px solid;
-              margin-right: 5px;
-              padding: 0;
-              padding-right: 5px;
-
+              margin-right: 8px;
+              padding: 0 8px 0 0;
             }
             &:last-child {
               a {
@@ -242,4 +239,46 @@
       grid-template-columns: auto;
     }
   }
+}
+.site-footer {
+  max-width: 100%;
+  .region-footer-top {
+    margin: 0 32px;
+    h2 {
+      font-size: 28px;
+      font-weight: 500;
+    }
+    .menu {
+      &-item {
+        margin-top: 8px;
+        font-weight: 400;
+      }
+      :first-child {
+        margin-top: 0;
+      }
+    }
+  }
+  .footer-bottom-wraper {
+    padding-bottom: 0;
+    margin: 90px 32px 0;
+    .region-footer-bottom {
+      border-top: solid 1px #b2b2b2;
+      max-width: 1264px;
+      margin: 0 auto;
+      .site-logo {
+        width: 100px;
+        grid-gap: var(--spacing-xs);
+      }
+      .menu--footer-actions {
+        a {
+          margin-bottom: 25px;
+          font-size: 1.5rem;
+          font-weight: 500;
+          margin-top: 14px;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+
 }
