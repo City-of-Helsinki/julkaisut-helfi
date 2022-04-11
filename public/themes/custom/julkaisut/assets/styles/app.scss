@@ -1,6 +1,6 @@
 @use "common/fonts";
 @use "config" with ($is-editor: false);
-@use "~hds-core/lib/base";
+@use "~hds-core/lib/base" ;
 @use "~hds-core/lib/components/text-input/text-input";
 @use "common/frontend";
 @use "common/utils";
@@ -8,3 +8,10 @@
 @use "components";
 @use "gutenberg";
 @use "partials";
+:root {
+  --color-bus: #0072C6;
+  --color-bus-light-20: #E8F3FC;
+  --color-bus-light-50: #F5A3C7;
+}
+
+
