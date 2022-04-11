@@ -4346,6 +4346,12 @@ a.tablesaw-btn {
   margin-top: 0;
 }
 
+.path-taxonomy .term__wrapper .teaser:after {
+  content: "\2192";
+  font-weight: bold;
+  font-size: 35px;
+}
+
 #block-old-magazines {
   background: #E8F3FC;
   padding: 60px 32px;
