@@ -584,10 +584,10 @@ function toggler(el) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/doktor/project/genero/public/themes/custom/julkaisut/assets/scripts/app.js */"./assets/scripts/app.js");
-__webpack_require__(/*! /home/doktor/project/genero/public/themes/custom/julkaisut/assets/styles/app.scss */"./assets/styles/app.scss");
-__webpack_require__(/*! /home/doktor/project/genero/public/themes/custom/julkaisut/assets/styles/print.scss */"./assets/styles/print.scss");
-module.exports = __webpack_require__(/*! /home/doktor/project/genero/public/themes/custom/julkaisut/assets/styles/editor.scss */"./assets/styles/editor.scss");
+__webpack_require__(/*! /var/www/genero/genero/public/themes/custom/julkaisut/assets/scripts/app.js */"./assets/scripts/app.js");
+__webpack_require__(/*! /var/www/genero/genero/public/themes/custom/julkaisut/assets/styles/app.scss */"./assets/styles/app.scss");
+__webpack_require__(/*! /var/www/genero/genero/public/themes/custom/julkaisut/assets/styles/print.scss */"./assets/styles/print.scss");
+module.exports = __webpack_require__(/*! /var/www/genero/genero/public/themes/custom/julkaisut/assets/styles/editor.scss */"./assets/styles/editor.scss");
 
 
 /***/ }),
