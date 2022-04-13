@@ -299,7 +299,6 @@ document.addEventListener("scroll", function () {
 (function () {
   window.rnsData = {
     apiKey: 'oyp8ikjx4fndltql',
-    canonicalUrl: 'https://www.hel.fi/en/urban-environment-and-traffic/parking',
     categories: ['Julkaisut']
   };
   var s = document.createElement('script');
