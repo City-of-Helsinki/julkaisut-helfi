@@ -228,14 +228,24 @@ function checkOffset() {
     var rect = el.getBoundingClientRect();
     return rect.top;
   }
-
-  if(document.body.scrollTop + window.innerHeight < (getRectTop(footer) + document.body.scrollTop + 48))
-    bookNav.style.position = 'fixed'; // restore when you scroll up
-  else
-    bookNav.style.position = 'static';
-
+  if (bookNav) {
+    if (document.body.scrollTop + window.innerHeight < (getRectTop(footer) + document.body.scrollTop + 48))
+      bookNav.style.position = 'fixed'; // restore when you scroll up
+    else
+      bookNav.style.position = 'static';
+  }
 }
 
 document.addEventListener("scroll", function(){
   checkOffset();
 });
+
+(function() {
+  window.rnsData = {
+    apiKey: 'oyp8ikjx4fndltql',
+    categories: ['Julkaisut']
+  };
+  var s = document.createElement('script');
+  s.src = 'https://cdn.reactandshare.com/plugin/rns.js';
+  document.body.appendChild(s);
+}());
