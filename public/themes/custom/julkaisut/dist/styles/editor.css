@@ -4341,10 +4341,16 @@ a.tablesaw-btn {
   margin-top: 0;
 }
 
-.path-taxonomy .term__wrapper .teaser:after {
+.path-taxonomy .term__wrapper .teaser:after, .path-taxonomy .block-views-blocktaxonomy-terms-terms--block-5 .teaser:after, .path-frontpage .term__wrapper .teaser:after, .path-frontpage .block-views-blocktaxonomy-terms-terms--block-5 .teaser:after {
   content: "\2192";
   font-weight: bold;
   font-size: 35px;
+}
+.path-taxonomy .term__wrapper .teaser .teaser__title, .path-taxonomy .block-views-blocktaxonomy-terms-terms--block-5 .teaser .teaser__title, .path-frontpage .term__wrapper .teaser .teaser__title, .path-frontpage .block-views-blocktaxonomy-terms-terms--block-5 .teaser .teaser__title {
+  margin-block: 24px;
+}
+.path-taxonomy .term__wrapper .teaser .teaser__date, .path-taxonomy .block-views-blocktaxonomy-terms-terms--block-5 .teaser .teaser__date, .path-frontpage .term__wrapper .teaser .teaser__date, .path-frontpage .block-views-blocktaxonomy-terms-terms--block-5 .teaser .teaser__date {
+  display: none;
 }
 
 #block-old-magazines {

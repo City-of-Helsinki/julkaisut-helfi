@@ -15,13 +15,19 @@
   }
 }
 
-.path-taxonomy {
-  .term__wrapper {
+.path-taxonomy, .path-frontpage {
+  .term__wrapper, .block-views-blocktaxonomy-terms-terms--block-5 {
     .teaser {
       &:after {
         content: "\2192";
         font-weight: bold;
         font-size: 35px;
+      }
+      .teaser__title {
+        margin-block: 24px;
+      }
+      .teaser__date {
+        display: none;
       }
     }
   }
