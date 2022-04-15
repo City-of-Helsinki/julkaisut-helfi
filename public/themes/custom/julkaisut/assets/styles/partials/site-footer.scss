@@ -6,14 +6,14 @@
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding: var(--spacing-layout-l) var(--spacing-layout-m) var(--spacing-layout-xs);
+  padding: var(--spacing-layout-l) var(--spacing-layout-xs) var(--spacing-layout-xs);
   text-align: center;
   font-size: var(--fontsize-body-m);
   color: var(--color-white);
 
   --menu-item-padding: var(--spacing-2-xs) var(--spacing-xs);
 
-  a {
+  a, span {
     color: var(--color-white);
   }
 
@@ -112,10 +112,10 @@
   }
 
   // Footer main menu is a grid of two cells on mobile
-  .menu--footer .menu {
-    display: grid;
-    grid-template-columns: auto auto;
-  }
+  //.menu--footer .menu {
+  //  display: grid;
+  //  grid-template-columns: auto auto;
+  //}
 
   .menu--footer-actions a[href="#top"]::after {
     content: '';
@@ -211,10 +211,11 @@
       .menu--footer-fineprint {
         .menu {
           &-item {
-            a {
+            a, span {
               border-right: white 1px solid;
               margin-right: 8px;
               padding: 0 8px 0 0;
+              color: var(--color-white);
             }
             &:last-child {
               a {
@@ -244,6 +245,8 @@
   max-width: 100%;
   .region-footer-top {
     margin: 0 32px;
+    display: block;
+    text-align: start;
     h2 {
       font-size: 28px;
       font-weight: 500;
@@ -265,9 +268,50 @@
       border-top: solid 1px #b2b2b2;
       max-width: 1264px;
       margin: 0 auto;
+      flex-wrap: wrap;
+      text-align: start;
+      padding-top: 10px;
+      @media (max-width: 991px) {
+        font-size: 16px;
+        .menu--footer-fineprint {
+          margin-top: 10px;
+          .menu {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: start;
+            &-item {
+              a, span {
+                border-right: white 1px solid;
+                margin-right: 8px;
+                padding: 0 8px 0 0;
+                color: var(--color-white);
+              }
+              &:last-child {
+                a {
+                  border-right: none;
+                }
+              }
+            }
+          }
+        }
+      }
+
       .site-logo {
-        width: 100px;
-        grid-gap: var(--spacing-xs);
+        height: 40px;
+        width: auto;
+        margin-right: 10px;
+        grid-template-columns: auto;
+        &__icon {
+          filter: invert(1);
+          img {
+            height: 40px;
+            width: auto;
+          }
+        }
+        &__name {
+          display: none;
+        }
       }
       .menu--footer-actions {
         a {
@@ -276,6 +320,9 @@
           font-weight: 500;
           margin-top: 14px;
           margin-right: 5px;
+          @media (max-width: 991px) {
+            font-size: 20px;
+          }
         }
       }
     }
