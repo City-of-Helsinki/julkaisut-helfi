@@ -323,6 +323,10 @@
           @media (max-width: 991px) {
             font-size: 20px;
           }
+          @media (max-width: 575px) {
+            text-align: right;
+            display: block;
+          }
         }
       }
     }

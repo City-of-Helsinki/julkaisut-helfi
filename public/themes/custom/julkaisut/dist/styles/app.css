@@ -5492,6 +5492,12 @@ a.tablesaw-btn {
     font-size: 20px;
   }
 }
+@media (max-width: 575px) {
+  .site-footer .footer-bottom-wraper .region-footer-bottom .menu--footer-actions a {
+    text-align: right;
+    display: block;
+  }
+}
 
 .site-languages {
   display: flex;
