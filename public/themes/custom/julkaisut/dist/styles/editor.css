@@ -2432,7 +2432,7 @@ body:not(.path-taxonomy) .search-view > header :last-child {
 .page-wrapper .center-block .node__featured-image {
   width: 280px;
   max-height: 395px;
-  margin: 0 0 0 auto;
+  margin: -182px 0 0 auto;
   transform: none !important;
 }
 .page-wrapper .center-block .node__featured-image .field--name-field-media-image {

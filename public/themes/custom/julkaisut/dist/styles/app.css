@@ -2643,7 +2643,7 @@ body:not(.path-taxonomy) .search-view > header :last-child {
 .page-wrapper .center-block .node__featured-image {
   width: 280px;
   max-height: 395px;
-  margin: 0 0 0 auto;
+  margin: -182px 0 0 auto;
   transform: none !important;
 }
 .page-wrapper .center-block .node__featured-image .field--name-field-media-image {
@@ -5967,7 +5967,7 @@ a.tablesaw-btn {
 .node__meta {
   display: grid;
   margin-top: 0;
-  grid-template-areas: "tags        tags" "translation translation" "pdf         share" "print       share";
+  grid-template-areas: "tags        tags" "translation translation" "read-msg    share" "print       share";
 }
 @media (min-width: 62em) {
   .node__meta {
@@ -5986,8 +5986,8 @@ a.tablesaw-btn {
     margin-bottom: var(--spacing-m);
   }
 }
-.node__meta .field--name-field-pdf {
-  grid-area: pdf;
+.node__meta .read-publication {
+  grid-area: read-msg;
 }
 .node__meta .share-links {
   grid-area: share;
