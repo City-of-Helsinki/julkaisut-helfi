@@ -2624,6 +2624,16 @@ body:not(.path-taxonomy) .search-view > header :last-child {
   margin: 0 0 0 auto;
   transform: none !important;
 }
+.page-wrapper .center-block .node__featured-image .field--name-field-media-image {
+  text-align: center;
+}
+.page-wrapper .center-block .node__featured-image .field--name-field-media-image img {
+  width: 280px;
+  height: 395px;
+  object-position: center;
+  object-fit: cover;
+  margin: 0 auto;
+}
 
 @media (max-width: 767px) {
   .page-wrapper {
@@ -2638,7 +2648,7 @@ body:not(.path-taxonomy) .search-view > header :last-child {
     width: 100%;
   }
   .page-wrapper .center-block .node__featured-image {
-    margin: 0 auto;
+    margin: -24px auto 34px;
   }
 }
 .is-container,

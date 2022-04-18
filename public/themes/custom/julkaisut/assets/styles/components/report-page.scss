@@ -16,6 +16,16 @@
       max-height: 395px;
       margin: 0 0 0 auto;
       transform: none !important;
+      .field--name-field-media-image {
+        text-align: center;
+        img {
+          width: 280px;
+          height: 395px;
+          object-position: center;
+          object-fit: cover;
+          margin: 0 auto;
+        }
+      }
     }
   }
 
@@ -31,7 +41,7 @@
         width: 100%;
       }
       .node__featured-image {
-        margin: 0 auto;
+        margin: -24px auto 34px;
       }
     }
   }
