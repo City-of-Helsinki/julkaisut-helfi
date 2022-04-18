@@ -50,4 +50,28 @@
       }
     }
   }
+  .media--type-image {
+    text-align: center;
+    margin-bottom: 24px;
+    img {
+      width: 282px;
+      height: 399px;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  @media (max-width: 767px) {
+    .media--type-image {
+      img {
+        width: 345px;
+        height: 488px;
+      }
+    }
+  }
+  @media (max-width: 575px) {
+    &__title, &__date {
+      max-width: 345px;
+      margin: 0 auto;
+    }
+  }
 }

@@ -1030,6 +1030,28 @@ iframe {
     font-size: var(--fontsize-body-xl);
   }
 }
+.teaser .media--type-image {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.teaser .media--type-image img {
+  width: 282px;
+  height: 399px;
+  object-fit: cover;
+  object-position: center;
+}
+@media (max-width: 767px) {
+  .teaser .media--type-image img {
+    width: 345px;
+    height: 488px;
+  }
+}
+@media (max-width: 575px) {
+  .teaser__title, .teaser__date {
+    max-width: 345px;
+    margin: 0 auto;
+  }
+}
 
 .form-no-label label {
   position: absolute !important;
