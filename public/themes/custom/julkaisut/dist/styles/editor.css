@@ -2391,6 +2391,45 @@ body:not(.path-taxonomy) .search-view > header :last-child {
   margin-block: 16px;
 }
 
+.page-wrapper {
+  margin: 0 auto;
+}
+.page-wrapper .center-block {
+  display: flex;
+  width: calc(304 * 1px );
+  width: calc(var(--container-width) * 1px );
+  padding: 0;
+}
+.page-wrapper .center-block .book-content {
+  max-width: 792px;
+  transform: none !important;
+  width: 66.6%;
+  margin-left: 0;
+  margin-right: 25px;
+}
+.page-wrapper .center-block .node__featured-image {
+  width: 280px;
+  max-height: 395px;
+  margin: 0 0 0 auto;
+  transform: none !important;
+}
+
+@media (max-width: 767px) {
+  .page-wrapper {
+    width: 100%;
+  }
+  .page-wrapper .center-block {
+    flex-direction: column;
+    padding: 0 15px;
+    width: 100%;
+  }
+  .page-wrapper .center-block .book-content {
+    width: 100%;
+  }
+  .page-wrapper .center-block .node__featured-image {
+    margin: 0 auto;
+  }
+}
 .is-container,
 .is-root-container {
   padding-left: 15px;

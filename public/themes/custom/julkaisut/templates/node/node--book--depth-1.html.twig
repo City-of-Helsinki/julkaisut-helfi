@@ -5,45 +5,51 @@
     {{ title_prefix }}
 
     {% block node__content_wrapper %}
-      <div class="is-container published-date node__published">
-        <p>{% trans %}Published on {{ date }}{% endtrans %}</p>
+      <div class="page-wrapper">
+        <div class="center-block is-container">
+          <div class="book-content">
+            <div class="is-container published-date node__published">
+              <p>{% trans %}Published on {{ date }}{% endtrans %}</p>
 
-        {{ content.field_pdf }}
-      </div>
+              {{ content.field_pdf }}
+            </div>
 
+            <div class="is-container node__metadata">
+              {{ content.body }}
 
-      <div class="is-container node__metadata">
-        {{ content.body }}
+              {{ content.field_copyright }}
 
-        {{ content.field_copyright }}
+              <div class="node__meta">
+                {{ content.field_tags }}
 
-        <div class="node__meta">
-          {{ content.field_tags }}
+                {% include '@julkaisut/partials/share-links.html.twig' with {
+                  url: url_absolute.toString(),
+                  title: node.title(),
+                } %}
 
-          {% include '@julkaisut/partials/share-links.html.twig' with {
-            url: url_absolute.toString(),
-            title: node.title(),
-          } %}
+                {{ translation_links }}
 
-          {{ translation_links }}
+              </div>
+            </div>
+
+            <div class="node__book-outline is-container">
+              {{ drupal_block('custom_book_navigation', {
+                'max_levels': 0,
+                'block_mode': '',
+                'always_expand': true,
+                'target_book': node.book.bid
+              }) }}
+            </div>
+
+            <div class="node__content">
+              {{ content|without('field_copyright', 'field_tags', 'field_pdf', 'field_image', 'body') }}
+            </div>
+          </div>
+          <div class="node__featured-image">
+            {% include '@julkaisut/partials/featured-image.html.twig' %}
+          </div>
         </div>
-      </div>
 
-      <div class="node__featured-image">
-        {% include '@julkaisut/partials/featured-image.html.twig' %}
-      </div>
-
-      <div class="node__book-outline is-container">
-        {{ drupal_block('custom_book_navigation', {
-          'max_levels': 0,
-          'block_mode': '',
-          'always_expand': true,
-          'target_book': node.book.bid
-        }) }}
-      </div>
-
-      <div class="node__content">
-        {{ content|without('field_copyright', 'field_tags', 'field_pdf', 'field_image', 'body') }}
       </div>
     {% endblock %}
   </article>
