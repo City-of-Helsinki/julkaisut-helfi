@@ -1213,8 +1213,10 @@ body:not(.path-taxonomy) .search-view > header {
 body:not(.path-taxonomy) .search-view > header :last-child {
   margin-bottom: 0;
 }
-.search-view header {
-  margin-bottom: 60px;
+@media (max-width: 576px) {
+  .search-view header {
+    margin-bottom: 60px;
+  }
 }
 .search-view header p {
   font-size: 22px;
