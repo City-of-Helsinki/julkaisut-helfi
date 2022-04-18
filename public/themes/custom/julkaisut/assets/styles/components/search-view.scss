@@ -41,6 +41,13 @@
     }
   }
 
+  header {
+    margin-bottom: 60px;
+    p {
+      font-size: 22px;
+    }
+  }
+
   .result-count {
     margin-top: calc(var(--spacing-m) * -1 + var(--spacing-xs));
   }
@@ -69,7 +76,7 @@
   }
 
   .views-exposed-form {
-
+    position: relative;
     @include mq($from: medium) {
       grid-template-areas:
         "search none none"
@@ -89,6 +96,9 @@
 
   .form-item-search {
     grid-area: search;
+    position: relative;
+    width: 100%;
+    max-width: 560px;
 
     label {
       font-size: var(--fontsize-heading-m);
@@ -100,7 +110,6 @@
       color: #FFFFFF;
       @media (max-width: 767px) {
         font-size: 40px;
-
       }
 
       @include mq($from: medium) {
@@ -125,6 +134,33 @@
 
   .form-item-sort-bef-combine {
     grid-area: sort;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(0, 100%);
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    .hds-text-input__label {
+      color: #1B1B1B;
+      font-size: 16px;
+      font-weight: bold;
+      padding-right: 24px;
+      margin: 0;
+    }
+    #edit-sort-bef-combine {
+      padding: 0 30px 0 15px;
+    }
+    .form-select {
+      border: 1px solid #CCCCCC;
+    }
+    @media (max-width: 576px) {
+      left: 0;
+      bottom: -60px;
+    }
   }
 
   // Add a gutter between search filters/actions and results
