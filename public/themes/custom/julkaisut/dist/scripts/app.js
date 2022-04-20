@@ -304,7 +304,15 @@ document.addEventListener("scroll", function () {
   var s = document.createElement('script');
   s.src = 'https://cdn.reactandshare.com/plugin/rns.js';
   document.body.appendChild(s);
-})();
+})(); // Change text for publicated pdf
+
+
+var publicated = document.querySelector('.publicated');
+var pdfButton = document.querySelector('.wp-block-button__link');
+
+if (publicated) {
+  pdfButton.textContent = Drupal.t("Read the accessible publication below");
+}
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery")))
 
 /***/ }),
@@ -596,10 +604,10 @@ function toggler(el) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/genero/genero/public/themes/custom/julkaisut/assets/scripts/app.js */"./assets/scripts/app.js");
-__webpack_require__(/*! /var/www/genero/genero/public/themes/custom/julkaisut/assets/styles/app.scss */"./assets/styles/app.scss");
-__webpack_require__(/*! /var/www/genero/genero/public/themes/custom/julkaisut/assets/styles/print.scss */"./assets/styles/print.scss");
-module.exports = __webpack_require__(/*! /var/www/genero/genero/public/themes/custom/julkaisut/assets/styles/editor.scss */"./assets/styles/editor.scss");
+__webpack_require__(/*! /home/doktor/project/genero/public/themes/custom/julkaisut/assets/scripts/app.js */"./assets/scripts/app.js");
+__webpack_require__(/*! /home/doktor/project/genero/public/themes/custom/julkaisut/assets/styles/app.scss */"./assets/styles/app.scss");
+__webpack_require__(/*! /home/doktor/project/genero/public/themes/custom/julkaisut/assets/styles/print.scss */"./assets/styles/print.scss");
+module.exports = __webpack_require__(/*! /home/doktor/project/genero/public/themes/custom/julkaisut/assets/styles/editor.scss */"./assets/styles/editor.scss");
 
 
 /***/ }),
