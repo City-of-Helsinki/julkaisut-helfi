@@ -5563,14 +5563,11 @@ a.tablesaw-btn {
   margin: 0 auto;
   flex-wrap: wrap;
   text-align: start;
-  padding-top: 10px;
+  padding-top: 24px;
 }
 @media (max-width: 991px) {
   .site-footer .footer-bottom-wraper .region-footer-bottom {
     font-size: 16px;
-  }
-  .site-footer .footer-bottom-wraper .region-footer-bottom .menu--footer-fineprint {
-    margin-top: 10px;
   }
   .site-footer .footer-bottom-wraper .region-footer-bottom .menu--footer-fineprint .menu {
     display: flex;
@@ -5589,6 +5586,9 @@ a.tablesaw-btn {
     border-right: none;
   }
 }
+.site-footer .footer-bottom-wraper .region-footer-bottom #block-sitebranding, .site-footer .footer-bottom-wraper .region-footer-bottom #block-footerfineprint {
+  margin-bottom: 16px;
+}
 .site-footer .footer-bottom-wraper .region-footer-bottom .site-logo {
   height: 40px;
   width: auto;
@@ -5606,11 +5606,10 @@ a.tablesaw-btn {
   display: none;
 }
 .site-footer .footer-bottom-wraper .region-footer-bottom .menu--footer-actions a {
-  margin-bottom: 25px;
   font-size: 1.5rem;
   font-weight: 500;
-  margin-top: 14px;
-  margin-right: 5px;
+  padding: 0;
+  margin: 0 5px 10px;
 }
 @media (max-width: 991px) {
   .site-footer .footer-bottom-wraper .region-footer-bottom .menu--footer-actions a {
