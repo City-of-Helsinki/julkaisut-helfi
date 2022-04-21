@@ -1189,6 +1189,17 @@ iframe {
   display: block;
 }
 
+h2 {
+  --line-height: 1;
+  font-size: 2rem;
+}
+@media (min-width: 992px) {
+  h2 {
+    --line-height: 1;
+    font-size: 3rem;
+  }
+}
+
 .teaser {
   position: relative;
   --teaser-spacing: var(--spacing-2-xs);
@@ -1568,7 +1579,8 @@ body:not(.path-taxonomy) .search-view > header :last-child {
 }
 
 #main-content .block-views-blocksearch-block-1 {
-  max-width: 100%;
+  max-width: 1920px;
+  margin-inline: auto;
 }
 
 .block-views-blocksearch-block-1:before {
