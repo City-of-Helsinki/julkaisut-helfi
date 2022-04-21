@@ -1,7 +1,20 @@
+<div class="site-header-top">
+  <div class="header-top" id="hdbt-header-top" drupal-hdbt-selector="hdbt-header-top">
+    <a href="https://hel.fi" class="link-to-site-frontpage">Hel.fi</a>
+    {{ drupal_menu('top-menu', 1, 0, TRUE) }}
+  </div>
+</div>
 <div class="site-header">
-
   <div class="site-header__logo">
     {{ drupal_block('system_branding_block') }}
+  </div>
+
+  <div class="site-header__languages">
+    {{ drupal_block('language_block:language_interface') }}
+  </div>
+
+  <div class="site-header__search">
+    {% include '@julkaisut/partials/search.html.twig' %}
   </div>
 
   <div class="site-header__hamburger-button">
@@ -12,26 +25,22 @@
       aria-controls="header"
       data-toggle-label="{{ 'Close navigation'|t }}"
     >
-      <i class="hds-icon hds-icon--search hds-icon--size-s" aria-hidden="true"></i>
+{#      <i class="hds-icon hds-icon--search hds-icon--size-s" aria-hidden="true"></i>#}
       <span aria-hidden="true"></span>
     </button>
   </div>
 
-  <div class="site-header__search">
-    {% include '@julkaisut/partials/search.html.twig' %}
-  </div>
-
   {{ page.header }}
 
-  <div class="site-header__languages">
-    {{ drupal_block('language_block:language_interface') }}
-  </div>
-</div>
 
+</div>
+<div class="mobile site-header__languages">
+  {{ drupal_block('language_block:language_interface') }}
+</div>
 <nav class="site-navbar" aria-label="{{ 'Main navigation' | t }}">
   {{ drupal_menu('main', 1, 0, TRUE) }}
 </nav>
 
-<nav class="site-mobile-languages" aria-label="{{ 'Languages' | t }}">
-  {{ mobile_language_menu }}
-</nav>
+{#<nav class="site-mobile-languages" aria-label="{{ 'Languages' | t }}">#}
+{#  {{ mobile_language_menu }}#}
+{#</nav>#}

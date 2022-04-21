@@ -25,13 +25,13 @@
     flex: 1 0 auto;
   }
 
-  &__search {
-    display: none;
-
-    @include mq($from: large) {
-      display: block;
-    }
-  }
+  //&__search {
+  //  display: none;
+  //
+  //  @include mq($from: large) {
+  //    display: block;
+  //  }
+  //}
 
   &__hamburger-button {
     display: block;
@@ -49,36 +49,29 @@
     }
   }
 
+  &__languages.mobile {
+    height: 49px;
+    display: flex;
+    align-items: center;
+    padding: 0 32px;
+    .site-languages {
+      margin: 0;
+    }
+    @media (min-width: 992px) {
+      display: none;
+    }
+  }
+
   // When navigation is activated on mobile
   .is-active & {
     border-bottom: 0;
 
-    .site-header__search {
-      display: block;
-      padding-top: var(--spacing-m);
-      margin-top: 10px; // site-header custom padding
-      position: relative;
+    .site-navbar {
 
-      @include mq($from: large) {
-        padding-left: calc(var(--spacing-m) - var(--spacing-s));
-        padding-right: calc(var(--spacing-m) - var(--spacing-s));
-        padding-bottom: calc(var(--spacing-m) - 10px); // custom padding on .site-header
-      }
-
-      &::before {
-        content: '';
-        position: absolute;
-        display: block;
-        width: 100vw;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 0;
-        border-top: solid 1px var(--color-black-20);
-      }
-
-      // Move last and take up whole row
-      order: 5;
-      flex-basis: 100%;
     }
   }
+}
+.site-header {
+  max-width: 100%;
+  padding: 17px 32px;
 }

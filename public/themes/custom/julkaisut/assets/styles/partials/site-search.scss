@@ -59,3 +59,24 @@
     }
   }
 }
+.site-header__search {
+  .site-search {
+    &__field, label {
+      display: none;
+    }
+    &__button {
+      position: static;
+      margin-top: -9px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      .search-text {
+        font-size: 14px;
+      }
+      .hds-icon {
+        margin: 0 auto;
+      }
+    }
+  }
+}

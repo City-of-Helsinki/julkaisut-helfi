@@ -169,6 +169,7 @@ Drupal.behaviors.julkaisutTheme = {
 
   mobileMenu(context) {
     const trigger = context.querySelector('.site-hamburger-button');
+    const html = context.getElementsByTagName('html')[0];
 
     if (trigger) {
       toggler(trigger);
@@ -180,11 +181,12 @@ Drupal.behaviors.julkaisutTheme = {
 
         trigger.addEventListener('click', () => {
           const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
-
           if (isExpanded) {
             mobileMenuFocusTrap.deactivate();
+            html.style.overflow = "scroll";
           } else {
             mobileMenuFocusTrap.activate();
+            html.style.overflow = "hidden";
           }
         });
       }
