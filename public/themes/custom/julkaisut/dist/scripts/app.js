@@ -226,6 +226,7 @@ Drupal.behaviors.julkaisutTheme = {
   },
   mobileMenu: function mobileMenu(context) {
     var trigger = context.querySelector('.site-hamburger-button');
+    var html = context.getElementsByTagName('html')[0];
 
     if (trigger) {
       Object(_components_toggler__WEBPACK_IMPORTED_MODULE_6__["toggler"])(trigger); // Trap focus within the mobile menu while it's open.
@@ -239,8 +240,10 @@ Drupal.behaviors.julkaisutTheme = {
 
           if (isExpanded) {
             mobileMenuFocusTrap.deactivate();
+            html.style.overflow = "scroll";
           } else {
             mobileMenuFocusTrap.activate();
+            html.style.overflow = "hidden";
           }
         });
       }

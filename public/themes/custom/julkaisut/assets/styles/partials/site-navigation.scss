@@ -30,6 +30,7 @@
     display: flex;
     align-items: center;
     padding: var(--spacing-s) var(--spacing-l);
+    font-weight: normal;
 
     // Make space for trigger
     .has-children > & {
