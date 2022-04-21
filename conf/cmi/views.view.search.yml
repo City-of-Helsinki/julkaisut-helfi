@@ -1174,7 +1174,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: false
-          content: "<div role=\"status\">\r\n<h1>Hakutulokset ([view:total-rows])</h1>\r\n{% if filters.search_api_fulltext %}\r\n<h3>Sanalle \"{{ filters.search_api_fulltext }}\"</h3>\r\n{% endif %}\r\n</div>"
+          content: "{% if filters.search_api_fulltext or filters.facets %}\r\n<div role=\"status\">\r\n{% if filters.search_api_fulltext %}\r\n<p> <b>[view:total-rows]</b> tulosta sanalle \"{{ filters.search_api_fulltext }}\"</p>\r\n{% endif %}\r\n</div>\r\n{% endif %}"
           tokenize: true
       exposed_block: false
       display_extenders:
