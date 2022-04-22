@@ -31,7 +31,25 @@
     align-items: center;
     padding: var(--spacing-s) var(--spacing-l);
     font-weight: normal;
-
+      &.is-active {
+        font-weight: bold;
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          bottom: -5px;
+          border-bottom: solid 5px transparent;
+          transition: all 100ms ease-out;
+          width: 100%;
+          height: 4px;
+          background-color: #000000;
+        }
+        @media (max-width: 991px) {
+          &:after {
+            width: 0;
+          }
+        }
+      }
     // Make space for trigger
     .has-children > & {
       padding-right: calc(var(--spacing-s) + var(--spacing-s));
@@ -95,17 +113,6 @@
       padding-right: 0;
 
       // A bottom border bar shown on hover and active state
-      &::after {
-        content: '';
-        display: block;
-        position: absolute;
-        left: 50%;
-        right: 50%;
-        bottom: 0;
-        border-bottom: solid 5px transparent;
-        transition: all 100ms ease-out;
-      }
-
       .is-level-0 > &:hover::after,
       .is-level-0 > &:focus::after,
       .is-level-0[aria-expanded="true"] > &::after {
