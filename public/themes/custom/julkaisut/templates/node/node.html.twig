@@ -85,7 +85,7 @@
     {% block node__content_wrapper %}
       <div class="is-container">
         <div class="published-date">
-          <p>{% trans %}Published on {{ date }}{% endtrans %}</p>
+          {% if content.field_magazine %}{{ content.field_magazine }}{% else %}<p>{% trans %}Published on {{ date }}{% endtrans %}</p>{% endif %}
         </div>
 
         {{ content.field_copyright }}
@@ -108,7 +108,7 @@
       {{ content.body }}
 
       <div class="is-container">
-        {{ content|without('body', 'field_tags', 'field_image') }}
+        {{ content|without('body', 'field_tags', 'field_image', 'field_magazine') }}
       </div>
     {% endblock %}
   </article>
