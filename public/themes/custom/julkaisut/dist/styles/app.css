@@ -5140,7 +5140,7 @@ a.tablesaw-btn {
   margin-bottom: calc(1.5rem * -1 + 1rem);
   margin-bottom: calc(var(--spacing-m) * -1 + var(--spacing-s));
 }
-.published-date p {
+.published-date p, .published-date .field--name-field-magazine {
   font-size: 1rem;
   font-size: var(--fontsize-heading-xxs);
   font-weight: bold;
@@ -5149,9 +5149,10 @@ a.tablesaw-btn {
   margin-top: 0;
   margin-bottom: 1.5rem;
   margin-bottom: var(--spacing-m);
+  display: inline-block;
 }
 @media (min-width: 62em) {
-  .published-date p {
+  .published-date p, .published-date .field--name-field-magazine {
     font-size: 1.25rem;
     font-size: var(--fontsize-heading-s);
   }
