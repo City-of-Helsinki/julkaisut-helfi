@@ -38,19 +38,9 @@ display:
         field_year:
           group_info:
             label: 'From year'
-          expose:
-            description: ''
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
         field_year_1:
           group_info:
             label: 'Until year'
-          expose:
-            description: ''
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
       exposed_form:
         options:
           submit_button: 'Search for publication'
@@ -70,19 +60,9 @@ display:
         field_year:
           group_info:
             label: 'From year'
-          expose:
-            description: ''
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
         field_year_1:
           group_info:
             label: 'Until year'
-          expose:
-            description: ''
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
       exposed_form:
         options:
           submit_button: 'Search for publication'
@@ -108,22 +88,6 @@ display:
         field_year:
           group_info:
             label: 'From year'
-          expose:
-            description: ''
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
         field_year_1:
           group_info:
             label: 'Until year'
-          expose:
-            description: ''
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
-  block_1:
-    display_options:
-      filters:
-        search_api_language:
-          expose:
-            description: ''
