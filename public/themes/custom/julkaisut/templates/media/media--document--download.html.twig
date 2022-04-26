@@ -22,7 +22,7 @@
 %}
 <article{{ attributes.addClass(classes) }}>
   {% if file_url %}
-    <a class="wp-block-button wp-block-button__link is-style-small" href="{{ file_url }}" target="_blank">
+    <a class="wp-block-button wp-block-button__link is-style-small" href="{{ file_url }}" target="_blank" aria-label="Read the accessible publication below">
       {{ 'Download PDF' | t }}
     </a>
   {% elseif content %}

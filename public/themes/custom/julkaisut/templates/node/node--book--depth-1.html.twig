@@ -9,14 +9,12 @@
         <div class="center-block is-container">
           <div class="book-content">
             <div class="is-container published-date node__published">
-              {% if not node.book.has_children %}
+              <div class="pdf-link">
                 {{ content.field_pdf }}
-              {% else %}
-                <div class="publicated">
-                  {{ content.field_pdf }}
-                </div>
-              {% endif %}
+              </div>
+
               <p>{% trans %}Published on {{ date }}{% endtrans %}</p>
+
             </div>
 
             <div class="is-container node__metadata">
@@ -31,12 +29,6 @@
                   url: url_absolute.toString(),
                   title: node.title(),
                 } %}
-
-                {% if node.book.has_children %}
-                  <div class="read-publication">
-{#                    {{ content.field_pdf }}#}
-                  </div>
-                {% endif %}
 
                 {{ translation_links }}
 

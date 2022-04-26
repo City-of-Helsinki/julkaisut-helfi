@@ -252,10 +252,3 @@ document.addEventListener("scroll", function(){
   document.body.appendChild(s);
 }());
 
-// Change text for publicated pdf
-var publicated = document.querySelector('.publicated');
-var pdfButton = document.querySelector('.wp-block-button__link');
-
-if(publicated) {
-  pdfButton.textContent = Drupal.t("Read the accessible publication below");
-}
