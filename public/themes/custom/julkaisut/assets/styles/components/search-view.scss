@@ -114,9 +114,9 @@
         font-size: 40px;
       }
 
-      @include mq($from: medium) {
-        font-size: var(--fontsize-heading-l);
-      }
+      //@include mq($from: medium) {
+      //  font-size: var(--fontsize-heading-l);
+      //}
     }
     .form-text {
       width: 415px;

@@ -31,19 +31,9 @@ display:
         field_year:
           group_info:
             label: 'Från år'
-          expose:
-            description: ''
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
         field_year_1:
           group_info:
             label: 'Fram till år'
-          expose:
-            description: ''
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
       exposed_form:
         options:
           submit_button: 'Sök utgivning'
@@ -65,19 +55,9 @@ display:
         field_year:
           group_info:
             label: 'Från år'
-          expose:
-            description: ''
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
         field_year_1:
           group_info:
             label: 'Fram till år'
-          expose:
-            description: ''
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
       exposed_form:
         options:
           submit_button: 'Sök utgivning'
@@ -104,23 +84,7 @@ display:
         field_year:
           group_info:
             label: 'Från år'
-          expose:
-            description: ''
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
         field_year_1:
           group_info:
             label: 'Fram till år'
-          expose:
-            description: ''
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
-  block_1:
-    display_options:
-      filters:
-        search_api_language:
-          expose:
-            description: ''
 label: Sök

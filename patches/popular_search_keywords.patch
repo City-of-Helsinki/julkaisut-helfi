@@ -1,0 +1,23 @@
+diff --git a/templates/popular-search-keywords-block.html.twig b/templates/popular-search-keywords-block.html.twig
+index 7f9c7ca..fb44c6e 100644
+--- a/templates/popular-search-keywords-block.html.twig
++++ b/templates/popular-search-keywords-block.html.twig
+@@ -4,12 +4,12 @@
+  */
+ #}
+ 
+-<ul>
++<ul class="popular_search_key">
+   {% for keyword, num in stats %}
+-    <li>
+-      <a href="{{ path }}?{{ param_name }}={{ keyword }}">
+-        {{ keyword }} ({{ num }})
++    <li class="popular_search_keyword">
++      <a class="popular_search_keyword_link" href="{{ path }}?{{ param_name }}={{ keyword }}">
++        {{ keyword }} <span class="popular_search_keyword_num">{{ num }}</span>
+       </a>
+     </li>
+   {% endfor %}
+-</ul>
+\ No newline at end of file
++</ul>
