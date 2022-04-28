@@ -9,7 +9,6 @@
     line-height: var(--lineheight-m);
     margin-top: 0;
     margin-bottom: var(--spacing-m);
-    display: inline-block;
 
     @include mq($from: large) {
       font-size: var(--fontsize-heading-s);

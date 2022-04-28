@@ -5179,7 +5179,6 @@ a.tablesaw-btn {
   margin-top: 0;
   margin-bottom: 1.5rem;
   margin-bottom: var(--spacing-m);
-  display: inline-block;
 }
 @media (min-width: 62em) {
   .published-date p, .published-date .field--name-field-magazine {
