@@ -1,4 +1,4 @@
-.block-popular-search-keywords {
+.block-popular-search-keywords, #block-naitahaetaanpaljon {
   margin-top: 40px;
   max-width: 300px;
   h2 {
@@ -7,7 +7,7 @@
     margin-bottom: 20px;
     font-weight: normal;
   }
-  .popular_search_key {
+  .popular_search_key, .field--name-body {
     list-style: none;
     padding: 0;
     display: flex;
@@ -21,10 +21,25 @@
         text-decoration: none;
         border: 1px solid #fff;
         line-height: 1;
+        font-size: 14px;
       }
       &_num {
         display: none;
       }
+    }
+    p {
+      margin: 0 8px 0 0;
+      padding: 8px;
+      color: #fff;
+      text-decoration: none;
+      border: 1px solid #fff;
+      line-height: 1;
+      font-size: 14px;
+    }
+    a {
+      color: #fff;
+      text-decoration: none;
+      line-height: 1;
     }
   }
   @media (max-width: 767px) {

@@ -2522,38 +2522,53 @@ body:not(.path-taxonomy) .search-view > header :last-child {
     margin: -24px auto 34px;
   }
 }
-.block-popular-search-keywords {
+.block-popular-search-keywords, #block-naitahaetaanpaljon {
   margin-top: 40px;
   max-width: 300px;
 }
-.block-popular-search-keywords h2 {
+.block-popular-search-keywords h2, #block-naitahaetaanpaljon h2 {
   font-size: 18px;
   color: #fff;
   margin-bottom: 20px;
   font-weight: normal;
 }
-.block-popular-search-keywords .popular_search_key {
+.block-popular-search-keywords .popular_search_key, .block-popular-search-keywords .field--name-body, #block-naitahaetaanpaljon .popular_search_key, #block-naitahaetaanpaljon .field--name-body {
   list-style: none;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
 }
-.block-popular-search-keywords .popular_search_keyword {
+.block-popular-search-keywords .popular_search_keyword, .block-popular-search-keywords .field--name-bodyword, #block-naitahaetaanpaljon .popular_search_keyword, #block-naitahaetaanpaljon .field--name-bodyword {
   margin-bottom: 24px;
 }
-.block-popular-search-keywords .popular_search_keyword_link {
+.block-popular-search-keywords .popular_search_keyword_link, .block-popular-search-keywords .field--name-bodyword_link, #block-naitahaetaanpaljon .popular_search_keyword_link, #block-naitahaetaanpaljon .field--name-bodyword_link {
   margin: 0 8px 0 0;
   padding: 8px;
   color: #fff;
   text-decoration: none;
   border: 1px solid #fff;
   line-height: 1;
+  font-size: 14px;
 }
-.block-popular-search-keywords .popular_search_keyword_num {
+.block-popular-search-keywords .popular_search_keyword_num, .block-popular-search-keywords .field--name-bodyword_num, #block-naitahaetaanpaljon .popular_search_keyword_num, #block-naitahaetaanpaljon .field--name-bodyword_num {
   display: none;
 }
+.block-popular-search-keywords .popular_search_key p, .block-popular-search-keywords .field--name-body p, #block-naitahaetaanpaljon .popular_search_key p, #block-naitahaetaanpaljon .field--name-body p {
+  margin: 0 8px 0 0;
+  padding: 8px;
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid #fff;
+  line-height: 1;
+  font-size: 14px;
+}
+.block-popular-search-keywords .popular_search_key a, .block-popular-search-keywords .field--name-body a, #block-naitahaetaanpaljon .popular_search_key a, #block-naitahaetaanpaljon .field--name-body a {
+  color: #fff;
+  text-decoration: none;
+  line-height: 1;
+}
 @media (max-width: 767px) {
-  .block-popular-search-keywords {
+  .block-popular-search-keywords, #block-naitahaetaanpaljon {
     margin-left: 24px;
   }
 }
