@@ -1063,6 +1063,12 @@ h2 {
     margin: 0 auto;
   }
 }
+.teaser:after {
+  content: "\2192";
+  font-weight: bold;
+  font-size: 35px;
+  transform: scaleX(1.4);
+}
 
 .form-no-label label {
   position: absolute !important;

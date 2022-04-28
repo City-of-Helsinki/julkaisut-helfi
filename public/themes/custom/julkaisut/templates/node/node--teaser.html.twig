@@ -11,6 +11,10 @@
       {% endif %}
     </div>
 
+    <h3{{ title_attributes.addClass('teaser__title') }}>
+      <a href="{{ url }}" data-article-link>{{ label }}</a>
+    </h3>
+
     <div class="teaser__date">
       {% block node__date %}
         {% include '@julkaisut/partials/published-date.html.twig' %}
@@ -22,10 +26,6 @@
         </p>
       {% endif %}
     </div>
-
-    <h3{{ title_attributes.addClass('teaser__title') }}>
-      <a href="{{ url }}" data-article-link>{{ label }}</a>
-    </h3>
 
     {{ content|without('field_image') }}
   </article>

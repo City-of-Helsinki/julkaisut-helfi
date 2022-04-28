@@ -74,4 +74,10 @@
       margin: 0 auto;
     }
   }
+  &:after {
+    content: "\2192";
+    font-weight: bold;
+    font-size: 35px;
+    transform: scaleX(1.4);
+  }
 }
