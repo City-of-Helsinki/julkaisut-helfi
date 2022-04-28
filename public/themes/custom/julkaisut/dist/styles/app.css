@@ -2765,7 +2765,7 @@ body:not(.path-taxonomy) .search-view > header :last-child {
   display: none;
 }
 .block-popular-search-keywords .popular_search_key p, .block-popular-search-keywords .field--name-body p, #block-naitahaetaanpaljon .popular_search_key p, #block-naitahaetaanpaljon .field--name-body p {
-  margin: 0 8px 0 0;
+  margin: 0 8px 8px 0;
   padding: 8px;
   color: #fff;
   text-decoration: none;
