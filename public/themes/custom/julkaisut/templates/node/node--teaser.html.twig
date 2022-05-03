@@ -3,7 +3,7 @@
 {% block node %}
   <article{{attributes.addClass(classes, 'teaser') }} data-article-link-wrapper>
     {# Teaser images are purely decorative #}
-    <div aria-hidden="true">
+    <div aria-hidden="true" class="picture">
       {% if content.field_image[0] is not empty %}
         {{ content.field_image }}
       {% else %}
@@ -11,20 +11,24 @@
       {% endif %}
     </div>
 
-    <h3{{ title_attributes.addClass('teaser__title') }}>
-      <a href="{{ url }}" data-article-link>{{ label }}</a>
-    </h3>
+    <div class="info-wrapper">
 
-    <div class="teaser__date">
-      {% block node__date %}
-        {% include '@julkaisut/partials/published-date.html.twig' %}
-      {% endblock %}
+      <h3{{ title_attributes.addClass('teaser__title') }}>
+        <a href="{{ url }}" data-article-link>{{ label }}</a>
+      </h3>
 
-      {% if type_label %}
-        <p class="teaser__label">
-          {{ type_label }}
-        </p>
-      {% endif %}
+      <div class="teaser__date">
+        {% block node__date %}
+          {% include '@julkaisut/partials/published-date.html.twig' %}
+        {% endblock %}
+
+        {% if type_label %}
+          <p class="teaser__label">
+            {{ type_label }}
+          </p>
+        {% endif %}
+      </div>
+
     </div>
 
     {{ content|without('field_image') }}
