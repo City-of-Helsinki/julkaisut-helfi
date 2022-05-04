@@ -3,7 +3,7 @@ langcode: fi
 status: true
 dependencies:
   config:
-    - block.block.popularsearchblockmainindex
+    - block.block.naitahaetaanpaljon
     - search_api.index.mainindex
   module:
     - better_exposed_filters
@@ -484,7 +484,7 @@ display:
           exposed: true
           expose:
             operator_id: search_api_fulltext_op
-            label: 'Mitä haet?'
+            label: 'Mitä julkaisua etsit?'
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
@@ -533,8 +533,8 @@ display:
       use_ajax: false
       display_description: ''
       header:
-        entity_block:
-          id: entity_block
+        entity_block_1:
+          id: entity_block_1
           table: views
           field: entity_block
           relationship: none
@@ -542,7 +542,7 @@ display:
           admin_label: ''
           plugin_id: entity
           empty: true
-          target: popularsearchblockmainindex
+          target: naitahaetaanpaljon
           view_mode: default
           tokenize: false
           bypass_access: true
@@ -1013,7 +1013,7 @@ display:
             operator_limit_selection: false
             operator_list: {  }
             identifier: search
-            required: false
+            required: true
             remember: false
             multiple: false
             remember_roles:
@@ -1021,7 +1021,9 @@ display:
               anonymous: '0'
               editor: '0'
               administrator: '0'
+            expose_fields: false
             placeholder: Haku
+            searched_fields_id: ''
           is_grouped: false
           group_info:
             label: ''
