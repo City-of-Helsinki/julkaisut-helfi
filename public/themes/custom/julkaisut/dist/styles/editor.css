@@ -982,6 +982,7 @@ h2 {
   --line-height: 1;
   font-size: 2rem;
   font-weight: normal;
+  color: #191919;
 }
 @media (min-width: 992px) {
   h2 {
@@ -1017,6 +1018,7 @@ h2 {
   margin-left: var(--spacing-3-xs);
 }
 .teaser__date {
+  color: #191919;
   margin-top: var(--teaser-spacing);
   margin-bottom: 0.25rem;
   margin-bottom: var(--spacing-3-xs);
