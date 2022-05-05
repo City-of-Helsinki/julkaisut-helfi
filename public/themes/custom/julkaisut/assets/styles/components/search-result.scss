@@ -103,7 +103,7 @@
         height: 450px;
         z-index: -100;
         background: url("../images/search/background-wave-mobile.svg") top center repeat-x;
-        background-size: auto 105%;
+        background-size: auto 104%;
         @media (max-width: 767px) {
           top: 53px;
           //height: calc(450px - 53px);
@@ -234,7 +234,7 @@
         .views-row {
           .search-result {
             border: none;
-            padding: 24px 0 0 0;
+            padding: 32px 0 0 0;
             border-top: 1px solid #ccc;
             .search-result__content {
               .search-result__children {
@@ -252,8 +252,7 @@
                   &__title {
                     margin-bottom: 8px;
                     a {
-                      font-size: 16px;
-                      font-weight: bold;
+                      font: normal normal bold 16px/22px Helsinki Grotesk;
                     }
                   }
                   &__content {
@@ -272,9 +271,7 @@
                 a {
                   color: inherit;
                   text-decoration: none;
-                  font-size: 32px;
-                  font-weight: normal;
-                  line-height: 1;
+                  font: normal normal normal 32px/38px Helsinki Grotesk;
                 }
               }
               .search-result__date {
@@ -293,9 +290,14 @@
               margin-left: 0;
               display: flex;
               align-items: center;
-              flex-basis: 42%;
+              width: fit-content;
+              //flex-basis: 42%;
               .field--name-field-image {
                 width: 100%;
+                img {
+                  min-width: 150px;
+                  width: 100%;
+                }
               }
             }
             @media (max-width: 767px) {
@@ -308,8 +310,7 @@
                 width: 100%;
                 .search-result__title {
                   a {
-                    font-size: 24px;
-                    font-weight: 500;
+                    font: normal normal 500 24px/32px Helsinki Grotesk;
                   }
                 }
                 .search-result__date {

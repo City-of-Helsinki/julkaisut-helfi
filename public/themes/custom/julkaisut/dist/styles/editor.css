@@ -1660,7 +1660,7 @@ body:not(.path-taxonomy) .search-view > header :last-child {
   height: 450px;
   z-index: -100;
   background: url("../images/search/background-wave-mobile.svg") top center repeat-x;
-  background-size: auto 105%;
+  background-size: auto 104%;
 }
 @media (max-width: 767px) {
   .path-search .page-content .is-container:nth-child(2):before {
@@ -1790,7 +1790,7 @@ body:not(.path-taxonomy) .search-view > header :last-child {
 }
 .path-search .page-content .search-view .views-infinite-scroll-content-wrapper .views-row .search-result {
   border: none;
-  padding: 24px 0 0 0;
+  padding: 32px 0 0 0;
   border-top: 1px solid #ccc;
 }
 .path-search .page-content .search-view .views-infinite-scroll-content-wrapper .views-row .search-result .search-result__content .search-result__children {
@@ -1811,8 +1811,7 @@ body:not(.path-taxonomy) .search-view > header :last-child {
   margin-bottom: 8px;
 }
 .path-search .page-content .search-view .views-infinite-scroll-content-wrapper .views-row .search-result .search-result__content .search-result__children .search-result__title a {
-  font-size: 16px;
-  font-weight: bold;
+  font: normal normal bold 16px/22px Helsinki Grotesk;
 }
 .path-search .page-content .search-view .views-infinite-scroll-content-wrapper .views-row .search-result .search-result__content .search-result__children .search-result__content {
   margin-block: 0;
@@ -1829,9 +1828,7 @@ body:not(.path-taxonomy) .search-view > header :last-child {
 .path-search .page-content .search-view .views-infinite-scroll-content-wrapper .views-row .search-result .search-result__content .search-result__title a {
   color: inherit;
   text-decoration: none;
-  font-size: 32px;
-  font-weight: normal;
-  line-height: 1;
+  font: normal normal normal 32px/38px Helsinki Grotesk;
 }
 .path-search .page-content .search-view .views-infinite-scroll-content-wrapper .views-row .search-result .search-result__content .search-result__date {
   font-size: 16px;
@@ -1848,9 +1845,15 @@ body:not(.path-taxonomy) .search-view > header :last-child {
   margin-left: 0;
   display: flex;
   align-items: center;
-  flex-basis: 42%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .path-search .page-content .search-view .views-infinite-scroll-content-wrapper .views-row .search-result .search-result__image .field--name-field-image {
+  width: 100%;
+}
+.path-search .page-content .search-view .views-infinite-scroll-content-wrapper .views-row .search-result .search-result__image .field--name-field-image img {
+  min-width: 150px;
   width: 100%;
 }
 @media (max-width: 767px) {
@@ -1864,8 +1867,7 @@ body:not(.path-taxonomy) .search-view > header :last-child {
     width: 100%;
   }
   .path-search .page-content .search-view .views-infinite-scroll-content-wrapper .views-row .search-result .search-result__content .search-result__title a {
-    font-size: 24px;
-    font-weight: 500;
+    font: normal normal 500 24px/32px Helsinki Grotesk;
   }
   .path-search .page-content .search-view .views-infinite-scroll-content-wrapper .views-row .search-result .search-result__content .search-result__date {
     font-size: 16px;
