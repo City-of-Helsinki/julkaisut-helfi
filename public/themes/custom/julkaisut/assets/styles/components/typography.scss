@@ -137,6 +137,8 @@ iframe {
 h2 {
   --line-height: 1;
   font-size: 2rem;
+  font-weight: normal;
+  color: #191919;
   @media (min-width: 992px) {
     --line-height: 1;
     font-size: 3rem;
