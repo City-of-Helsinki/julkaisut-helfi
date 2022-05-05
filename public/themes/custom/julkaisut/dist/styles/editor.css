@@ -40,6 +40,14 @@
   font-weight: bold;
   text-rendering: optimizeLegibility;
 }
+/* Webfont: HelsinkiGrotesk-MediumItalic */
+@font-face {
+  font-family: "HelsinkiGrotesk";
+  src: url("../fonts/HelsinkiGrotesk-MediumItalic.woff") format("woff");
+  font-style: italic;
+  font-weight: 500;
+  text-rendering: optimizeLegibility;
+}
 :root {
   --color-primary: var(--color-bus);
   --block-gutter-s: var(--spacing-m);
