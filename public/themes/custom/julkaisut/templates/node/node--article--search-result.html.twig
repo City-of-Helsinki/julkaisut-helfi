@@ -5,7 +5,9 @@
     {% block node__title parent() %}
 
     <div class="search-result__date">
-      {% block node__date parent() %}
+      {% block node__date %}
+        {% include '@julkaisut/partials/published-date-search.html.twig' %}
+      {% endblock %}
     </div>
   </div>
 
