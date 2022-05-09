@@ -2161,9 +2161,15 @@ body:not(.path-taxonomy) .search-view > header :last-child {
   padding: 32px 0 0 0;
   border-top: 1px solid #ccc;
 }
+.path-search .page-content .search-view .views-infinite-scroll-content-wrapper .views-row .search-result .search-result__content .search-result__children {
+  background: #F1F1F1;
+}
 .path-search .page-content .search-view .views-infinite-scroll-content-wrapper .views-row .search-result .search-result__content .search-result__children .search-result__child {
   margin: 0;
   padding-left: 24px;
+}
+.path-search .page-content .search-view .views-infinite-scroll-content-wrapper .views-row .search-result .search-result__content .search-result__children .search-result__child:first-child {
+  padding-top: 24px;
 }
 .path-search .page-content .search-view .views-infinite-scroll-content-wrapper .views-row .search-result .search-result__content .search-result__children .search-result__child:last-child.search-result__content {
   padding: 0;
