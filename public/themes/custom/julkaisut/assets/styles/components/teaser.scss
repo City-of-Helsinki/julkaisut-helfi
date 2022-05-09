@@ -10,9 +10,8 @@
   }
 
   &__title {
-    line-height: 1.4;
     margin-bottom: 0;
-
+    word-break: break-all;
     a {
       color: inherit;
       text-decoration: none;
@@ -101,9 +100,6 @@
         width: 100%;
         margin-bottom: 12px;
         font-size: 18px;
-        a {
-
-        }
       }
       .teaser__date {
         width: 100%;

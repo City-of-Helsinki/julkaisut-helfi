@@ -626,7 +626,7 @@ template {
   color: #1a1a1a;
   color: var(--color-black-90);
   line-height: 1.5;
-  line-height: 1.5;
+  line-height: 28px;
   line-height: var(--lineheight-l);
 }
 
@@ -670,7 +670,7 @@ template {
 
 .text-sm {
   font-size: 0.875rem;
-  font-size: 0.875rem;
+  font-size: 16px;
   font-size: var(--fontsize-body-s);
   line-height: 1.75;
   line-height: 1.75;
@@ -1014,9 +1014,9 @@ body {
 body {
   font-family: HelsinkiGrotesk;
   font-family: var(--font-default);
-  line-height: 1.5;
+  line-height: 28px;
   line-height: var(--lineheight-l);
-  font-size: 1.125rem;
+  font-size: 18px;
   font-size: var(--fontsize-body-l);
   color: #1a1a1a;
   color: var(--color-black-90);
@@ -1210,6 +1210,151 @@ h2 {
   }
 }
 
+h1,
+h2,
+h3 {
+  font-weight: normal;
+}
+
+h4 {
+  font-weight: 600;
+}
+
+h5,
+h6 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 64px;
+  line-height: 64px;
+}
+
+h2 {
+  font-size: 48px;
+  line-height: 48px;
+}
+
+h3 {
+  font-size: 32px;
+  line-height: 32px;
+}
+
+h4 {
+  font-size: 24px;
+  line-height: 28px;
+}
+
+h5 {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+h6 {
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.helper-text {
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 500;
+}
+
+.card_title {
+  font-size: 34px;
+  line-height: 42px;
+  font-weight: 600;
+}
+
+.large_link {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 500;
+}
+
+.quote,
+blockquote,
+q {
+  font-size: 32px;
+  line-height: 48px;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.form-label {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
+
+@media (max-width: 575px) {
+  h1,
+h2 {
+    font-weight: normal;
+  }
+
+  h3,
+h4,
+h5 {
+    font-weight: 600;
+  }
+
+  h6 {
+    font-weight: bold;
+  }
+
+  h1 {
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  h2 {
+    font-size: 32px;
+    line-height: 32px;
+  }
+
+  h3 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  h4 {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  h5 {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  h6 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .card_title {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 600;
+  }
+
+  .quote,
+blockquote,
+q {
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: normal;
+    font-style: italic;
+  }
+
+  .form-label {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+  }
+}
 .teaser {
   position: relative;
   --teaser-spacing: var(--spacing-2-xs);
@@ -1220,8 +1365,8 @@ h2 {
   }
 }
 .teaser__title {
-  line-height: 1.4;
   margin-bottom: 0;
+  word-break: break-all;
 }
 .teaser__title a {
   color: inherit;
@@ -1250,11 +1395,11 @@ h2 {
   }
 }
 .teaser__date p {
-  font-size: 0.875rem;
+  font-size: 16px;
   font-size: var(--fontsize-body-s);
   font-weight: normal;
   margin-bottom: 0;
-  line-height: 1;
+  line-height: 24px;
   line-height: var(--lineheight-s);
 }
 @media (min-width: 62em) {
@@ -1401,7 +1546,7 @@ h2 {
   line-height: 1.15;
 }
 .hds-text-input .hds-text-input__label {
-  font-size: 1.125rem;
+  font-size: 18px;
   font-size: var(--fontsize-body-l);
 }
 
@@ -1466,7 +1611,7 @@ figure.media {
   margin: 0;
 }
 figure.media figcaption {
-  font-size: 0.875rem;
+  font-size: 16px;
   font-size: var(--fontsize-body-s);
   text-align: left;
   font-style: italic;
@@ -1547,7 +1692,7 @@ body:not(.path-taxonomy) .search-view > header :last-child {
 .search-view .hds-text-input__label {
   margin-bottom: 1rem;
   margin-bottom: var(--spacing-s);
-  line-height: 1;
+  line-height: 24px;
   line-height: var(--lineheight-s);
 }
 @media (min-width: 48em) {
@@ -1587,7 +1732,7 @@ body:not(.path-taxonomy) .search-view > header :last-child {
   font-size: var(--fontsize-heading-m);
   margin-bottom: 1.5rem;
   margin-bottom: var(--spacing-m);
-  line-height: 1;
+  line-height: 24px;
   line-height: var(--lineheight-s);
   text-align: left;
   font: normal normal normal 64px/64px HelsinkiGrotesk;
@@ -1859,7 +2004,7 @@ body:not(.path-taxonomy) .search-view > header :last-child {
 }
 @media (max-width: 47.99em) {
   .search-result__child .search-result {
-    font-size: 0.875rem;
+    font-size: 16px;
     font-size: var(--fontsize-body-s);
   }
   .search-result__child .search-result .search-result__title {
@@ -2778,7 +2923,7 @@ body:not(.path-taxonomy) .search-view > header :last-child {
 }
 
 .tag__item a {
-  font-size: 0.875rem;
+  font-size: 16px;
   font-size: var(--fontsize-body-s);
   color: #191919;
   font-weight: 500;
@@ -3046,7 +3191,7 @@ body:not(.path-taxonomy) .search-view > header :last-child {
 
 .has-body-s-font-size {
   font-weight: normal;
-  font-size: 0.875rem;
+  font-size: 16px;
   font-size: var(--fontsize-body-s);
 }
 
@@ -3058,7 +3203,7 @@ body:not(.path-taxonomy) .search-view > header :last-child {
 
 .has-body-l-font-size {
   font-weight: normal;
-  font-size: 1.125rem;
+  font-size: 18px;
   font-size: var(--fontsize-body-l);
 }
 
@@ -3891,7 +4036,7 @@ body:not(.path-taxonomy) .search-view > header :last-child {
   flex-direction: column;
 }
 .wp-block-gallery .blocks-gallery-item figcaption {
-  font-size: 0.875rem;
+  font-size: 16px;
   font-size: var(--fontsize-body-s);
   position: static;
   background: none;
@@ -3943,7 +4088,7 @@ body:not(.path-taxonomy) .search-view > header :last-child {
   padding: 21px 32px;
   font-size: 1rem;
   font-size: var(--fontsize-body-m);
-  line-height: 1;
+  line-height: 24px;
   line-height: var(--lineheight-s);
 }
 .wp-block-button__link.has-bus-light-5-background-color {
@@ -4033,8 +4178,8 @@ body:not(.path-taxonomy) .search-view > header :last-child {
 .wp-block-button.is-style-small {
   padding: 10px 16px 9px;
   font-weight: 500;
-  font-size: 0.875rem;
-  font-size: var(--fontsize-body-s);
+  font-size: 14px;
+  line-height: 21px;
 }
 
 .wp-block-embed-youtube .wp-block-embed__wrapper {
@@ -4092,7 +4237,7 @@ body:not(.path-taxonomy) .search-view > header :last-child {
   }
 }
 .wp-block-quote cite {
-  font-size: 1.125rem;
+  font-size: 18px;
   font-size: var(--fontsize-body-l);
   color: inherit;
 }
@@ -4808,7 +4953,7 @@ a.tablesaw-btn {
 }
 
 .wp-block-table {
-  font-size: 0.875rem;
+  font-size: 16px;
   font-size: var(--fontsize-body-s);
 }
 .wp-block-table td,
@@ -4928,7 +5073,7 @@ a.tablesaw-btn {
 
 .breadcrumb.breadcrumb {
   padding-bottom: 0;
-  font-size: 0.875rem;
+  font-size: 16px;
   font-size: var(--fontsize-body-s);
 }
 .breadcrumb.breadcrumb li::before {
@@ -5033,7 +5178,7 @@ a.tablesaw-btn {
   padding: 0.75rem 1rem;
   font-size: 1rem;
   font-size: var(--fontsize-body-m);
-  line-height: 1;
+  line-height: 24px;
   line-height: var(--lineheight-s);
   transition: background-color 0.2s ease-out;
 }
@@ -5063,7 +5208,7 @@ a.tablesaw-btn {
 }
 
 .field--name-field-copyright {
-  font-size: 0.875rem;
+  font-size: 16px;
   font-size: var(--fontsize-body-s);
   margin-top: 1rem;
   margin-top: var(--spacing-s);
@@ -5152,7 +5297,7 @@ a.tablesaw-btn {
 }
 .book-navigation li a span {
   display: inline-block;
-  max-height: calc(3em * 1.5);
+  max-height: calc(3em * 28px);
   max-height: calc(3em * var(--lineheight-l));
   overflow: hidden;
   text-overflow: ellipsis;
@@ -5208,7 +5353,7 @@ a.tablesaw-btn {
 }
 @media (min-width: 62em) {
   .book-tree__trigger {
-    font-size: 1.125rem;
+    font-size: 18px;
     font-size: var(--fontsize-body-l);
   }
 }
@@ -5233,7 +5378,7 @@ a.tablesaw-btn {
 }
 @media (min-width: 62em) {
   .book-tree__link {
-    font-size: 1.125rem;
+    font-size: 18px;
     font-size: var(--fontsize-body-l);
   }
 }
@@ -5255,7 +5400,7 @@ a.tablesaw-btn {
   background-color: #f1f1f1;
   background-color: var(--color-black-5);
   font-weight: 400;
-  font-size: 0.875rem;
+  font-size: 16px;
   font-size: var(--fontsize-body-s);
 }
 @media (min-width: 62em) {
@@ -5565,7 +5710,7 @@ a.tablesaw-btn {
   color: var(--color-black-90);
 }
 .site-footer .menu-item a {
-  line-height: 1.5;
+  line-height: 28px;
   line-height: var(--lineheight-l);
   position: relative;
   display: flex;
@@ -5657,7 +5802,7 @@ a.tablesaw-btn {
 @media (min-width: 36em) {
   .site-footer {
     text-align: left;
-    font-size: 1.125rem;
+    font-size: 18px;
     font-size: var(--fontsize-body-l);
     --menu-item-padding: var(--spacing-m) var(--spacing-s);
   }
@@ -5828,7 +5973,7 @@ a.tablesaw-btn {
   position: relative;
   font-weight: bold;
   align-items: center;
-  line-height: 1.5;
+  line-height: 28px;
   line-height: var(--lineheight-l);
   padding-top: 1rem;
   padding-top: var(--spacing-s);
@@ -5863,7 +6008,7 @@ a.tablesaw-btn {
 .site-languages__item > a, .site-languages__item > span {
   color: inherit;
   text-decoration: none;
-  line-height: 1.5;
+  line-height: 28px;
   line-height: var(--lineheight-l);
   padding: 0;
   display: block;
@@ -5993,7 +6138,7 @@ a.tablesaw-btn {
 }
 @media (min-width: 62em) {
   .site-navigation {
-    font-size: 1.125rem;
+    font-size: 18px;
     font-size: var(--fontsize-body-l);
     max-width: calc(304 * 1px);
     max-width: calc(var(--container-width) * 1px);
@@ -6008,7 +6153,7 @@ a.tablesaw-btn {
 .site-navigation__link {
   color: inherit;
   text-decoration: none;
-  line-height: 1.5;
+  line-height: 28px;
   line-height: var(--lineheight-l);
   position: relative;
   display: flex;
@@ -6385,6 +6530,10 @@ a.tablesaw-btn {
   --color-bus: #0072C6;
   --color-bus-light-20: #E8F3FC;
   --color-bus-light-50: #F5A3C7;
+  --fontsize-body-l: 18px;
+  --lineheight-l: 28px;
+  --fontsize-body-s: 16px;
+  --lineheight-s: 24px;
   --grid-columns: 12;
 }
 /*# sourceMappingURL=app.css.map*/
