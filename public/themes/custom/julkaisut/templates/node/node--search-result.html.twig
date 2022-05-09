@@ -26,13 +26,16 @@
 
 
         {% if elements['#children'] %}
-          <div class="search-result__children">
+        <dl class="search-accordion">
+          <dt>{% trans %}Show keyword in context{% endtrans %}</dt>
+          <dd class="search-result__children">
           {% for item in elements['#children'] %}
             <div class="search-result__child">
             {{ item.content }}
             </div>
           {% endfor %}
-          </div>
+          </dd>
+        </dl>
         {% endif %}
       </div>
     {% endblock %}
