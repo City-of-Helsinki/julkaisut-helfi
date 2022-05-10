@@ -9,13 +9,17 @@
   h2 {
     font-size: 32px;
     font-weight: normal;
+    line-height: 38px;
+    @media (max-width: 575px) {
+      line-height: 32px;
+    }
   }
   .field--name-body {
     margin-block: 20px 40px;
   }
   .field--type-link {
     a {
-      color: #1D1D1D;
+      color: #191919;
       text-decoration: underline;
       margin: 0;
       position: relative;

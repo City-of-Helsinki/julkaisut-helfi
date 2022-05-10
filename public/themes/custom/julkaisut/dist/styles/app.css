@@ -1201,7 +1201,7 @@ h2 {
   --line-height: 1;
   font-size: 2rem;
   font-weight: normal;
-  color: #191919;
+  color: #121212;
 }
 @media (min-width: 992px) {
   h2 {
@@ -1264,7 +1264,7 @@ h6 {
 .card_title {
   font-size: 34px;
   line-height: 42px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .large_link {
@@ -1337,7 +1337,7 @@ h5 {
   .card_title {
     font-size: 20px;
     line-height: 30px;
-    font-weight: 600;
+    font-weight: 500;
   }
 
   .quote,
@@ -1383,10 +1383,12 @@ q {
 }
 .teaser__date {
   color: #191919;
-  margin-top: var(--teaser-spacing);
+  margin-top: 0;
   margin-bottom: 0.25rem;
   margin-bottom: var(--spacing-3-xs);
   display: flex;
+  font-size: 16px;
+  line-height: 22px;
 }
 @media (min-width: 62em) {
   .teaser__date {
@@ -1457,6 +1459,8 @@ q {
     width: 100%;
     margin-bottom: 12px;
     font-size: 18px;
+    line-height: 26px;
+    font-weight: bold;
   }
   .teaser .info-wrapper .teaser__date {
     width: 100%;
@@ -2958,14 +2962,19 @@ body:not(.path-taxonomy) .search-view > header :last-child {
   border: 3px solid #000000;
   border: 3px solid var(--color-black);
   padding: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .pager .pager__item .button {
-  color: #000000;
-  color: var(--color-black);
+  color: #121212;
   text-decoration: none;
   font-size: 1rem;
   font-size: var(--fontsize-body-m);
-  line-height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 22px;
 }
 
 .tag__group {
@@ -3033,9 +3042,16 @@ body:not(.path-taxonomy) .search-view > header :last-child {
   margin: 40px 0 40px;
 }
 .block-views-blocktaxonomy-terms-terms--block-2 header h3 {
-  font-size: 24px;
+  font-size: 32px;
+  line-height: 32px;
   margin: 0;
-  font-weight: 500;
+  font-weight: normal;
+}
+@media (max-width: 575px) {
+  .block-views-blocktaxonomy-terms-terms--block-2 header h3 {
+    font-size: 24px;
+    line-height: 32px;
+  }
 }
 .block-views-blocktaxonomy-terms-terms--block-2 .pager {
   justify-content: left;
@@ -3051,9 +3067,22 @@ body:not(.path-taxonomy) .search-view > header :last-child {
   color: #121212;
   text-decoration: underline;
   font-size: 18px;
+  line-height: 28px;
+  font-weight: normal;
+}
+@media (max-width: 575px) {
+  .block-views-blocktaxonomy-terms-terms--block-2 .pager .button {
+    font-size: 16px;
+    line-height: 26px;
+  }
 }
 .block-views-blocktaxonomy-terms-terms--block-2 .tag__group {
   margin-block: 16px;
+}
+.block-views-blocktaxonomy-terms-terms--block-2 .tag__group .tag__list a {
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: normal;
 }
 
 .page-wrapper {
@@ -3114,6 +3143,7 @@ body:not(.path-taxonomy) .search-view > header :last-child {
   color: #fff;
   margin-bottom: 20px;
   font-weight: normal;
+  line-height: 28px;
 }
 .block-popular-search-keywords .popular_search_key, .block-popular-search-keywords .field--name-body, #block-naitahaetaanpaljon .popular_search_key, #block-naitahaetaanpaljon .field--name-body {
   list-style: none;
@@ -3142,7 +3172,7 @@ body:not(.path-taxonomy) .search-view > header :last-child {
   color: #fff;
   text-decoration: none;
   border: 1px solid #fff;
-  line-height: 1;
+  line-height: 26px;
   font-size: 14px;
 }
 .block-popular-search-keywords .popular_search_key a, .block-popular-search-keywords .field--name-body a, #block-naitahaetaanpaljon .popular_search_key a, #block-naitahaetaanpaljon .field--name-body a {
@@ -4265,9 +4295,9 @@ body:not(.path-taxonomy) .search-view > header :last-child {
 }
 .wp-block-button.is-style-small {
   padding: 10px 16px 9px;
-  font-weight: 500;
   font-size: 14px;
-  line-height: 21px;
+  line-height: 26px;
+  font-weight: normal;
 }
 
 .wp-block-embed-youtube .wp-block-embed__wrapper {
@@ -5141,12 +5171,18 @@ a.tablesaw-btn {
 #block-old-magazines h2 {
   font-size: 32px;
   font-weight: normal;
+  line-height: 38px;
+}
+@media (max-width: 575px) {
+  #block-old-magazines h2 {
+    line-height: 32px;
+  }
 }
 #block-old-magazines .field--name-body {
   margin-block: 20px 40px;
 }
 #block-old-magazines .field--type-link a {
-  color: #1D1D1D;
+  color: #191919;
   text-decoration: underline;
   margin: 0;
   position: relative;
@@ -5161,8 +5197,8 @@ a.tablesaw-btn {
 
 .breadcrumb.breadcrumb {
   padding-bottom: 0;
-  font-size: 16px;
-  font-size: var(--fontsize-body-s);
+  font-size: 14px;
+  line-height: 20px;
 }
 .breadcrumb.breadcrumb li::before {
   content: " / ";
@@ -5558,14 +5594,20 @@ a.tablesaw-btn {
   margin-bottom: calc(var(--spacing-m) * -1 + var(--spacing-s));
 }
 .published-date p, .published-date .field--name-field-magazine {
+  color: #191919;
   font-size: 1rem;
   font-size: var(--fontsize-heading-xxs);
   font-weight: bold;
-  line-height: 1.2;
-  line-height: var(--lineheight-m);
+  line-height: 30px;
   margin-top: 0;
   margin-bottom: 1.5rem;
   margin-bottom: var(--spacing-m);
+}
+@media (max-width: 575px) {
+  .published-date p, .published-date .field--name-field-magazine {
+    font-size: 18px;
+    line-height: 28px;
+  }
 }
 @media (min-width: 62em) {
   .published-date p, .published-date .field--name-field-magazine {
@@ -5581,6 +5623,8 @@ a.tablesaw-btn {
 }
 .share-links__heading {
   margin-bottom: 0;
+  font-size: 16px;
+  line-height: 22px;
 }
 .share-links__link {
   color: inherit;
@@ -6561,6 +6605,7 @@ a.tablesaw-btn {
 }
 .node--type-book.node--view-mode-full.node--book-depth-1 .node__metadata {
   grid-area: metadata;
+  color: #191919;
 }
 .node--type-book.node--view-mode-full.node--book-depth-1 .node__metadata .field--name-body {
   margin-bottom: 0;
@@ -6614,6 +6659,11 @@ a.tablesaw-btn {
     display: none;
   }
 }
+.field--name-description a {
+  color: #000000;
+  color: var(--color-black);
+}
+
 :root {
   --color-bus: #0072C6;
   --color-bus-light-20: #E8F3FC;

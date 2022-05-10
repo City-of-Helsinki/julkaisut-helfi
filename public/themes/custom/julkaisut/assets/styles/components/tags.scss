@@ -62,9 +62,14 @@
   }
   header {
     h3 {
-      font-size: 24px;
+      font-size: 32px;
+      line-height: 32px;
       margin: 0;
-      font-weight: 500;
+      font-weight: normal;
+      @media (max-width: 575px) {
+        font-size: 24px;
+        line-height: 32px;
+      }
     }
   }
   .pager {
@@ -80,10 +85,23 @@
       color: #121212;
       text-decoration: underline;
       font-size: 18px;
+      line-height: 28px;
+      font-weight: normal;
+      @media (max-width: 575px) {
+        font-size: 16px;
+        line-height: 26px;
+      }
     }
   }
   .tag__group {
     margin-block: 16px;
+    .tag__list {
+      a {
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: normal;
+      }
+    }
   }
 }
 

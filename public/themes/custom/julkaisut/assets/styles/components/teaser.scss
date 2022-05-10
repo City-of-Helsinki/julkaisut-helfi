@@ -31,9 +31,11 @@
 
   &__date {
     color: #191919;
-    margin-top: var(--teaser-spacing);
+    margin-top: 0;
     margin-bottom: var(--spacing-3-xs);
     display: flex;
+    font-size: 16px;
+    line-height: 22px;
 
     @include mq($from: large) {
       margin-bottom: var(--spacing-2-xs);
@@ -100,6 +102,8 @@
         width: 100%;
         margin-bottom: 12px;
         font-size: 18px;
+        line-height: 26px;
+        font-weight: bold;
       }
       .teaser__date {
         width: 100%;

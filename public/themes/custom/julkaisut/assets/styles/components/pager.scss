@@ -18,11 +18,17 @@
     text-align: center;
     border: 3px solid var(--color-black);
     padding: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     .button {
-      color: var(--color-black);
+      color: #121212;
       text-decoration: none;
       font-size: var(--fontsize-body-m);
-      line-height: 36px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 22px;
     }
   }
 }
