@@ -80,9 +80,6 @@
 
     @include mq($until: medium) {
       font-size: var(--fontsize-body-s);
-      .search-result__title {
-        color: var(--color-black-70);
-      }
     }
   }
 
@@ -248,6 +245,12 @@
                   &:last-child.search-result__content {
                     padding: 0;
                   }
+                  @media (max-width: 767px) {
+                    padding-left: 16px;
+                    &:first-child {
+                      padding-top: 16px;
+                    }
+                  }
                 }
                 .search-result {
                   border-top: none;
@@ -255,16 +258,21 @@
                   &__title {
                     margin-bottom: 8px;
                     a {
-                      font: normal normal bold 16px/22px Helsinki Grotesk;
+                      font: normal normal bold 16px/22px HelsinkiGrotesk;
                     }
                   }
                   &__content {
                     margin-block: 0;
                     padding: 0 0 24px 0;
+                    line-height: 22px;
+                    color: #656565;
                     .is-highlight {
                       color: #0072C6;
                       font-style: italic;
                       font-weight: 500;
+                    }
+                    @media (max-width: 767px) {
+                      padding: 0 0 16px 0;
                     }
                   }
                 }
@@ -373,9 +381,9 @@
               .search-result__title {
                 margin-bottom: 16px;
                 a {
-                  color: inherit;
+                  color: #191919;
                   text-decoration: none;
-                  font: normal normal normal 32px/38px Helsinki Grotesk;
+                  font: normal normal normal 32px/38px HelsinkiGrotesk;
                 }
               }
               .search-result__date {
@@ -383,6 +391,7 @@
                 font-weight: bold;
                 margin-bottom: 0;
                 color: #1B1B1B;
+                line-height: 24px;
               }
               .field--name-body {
                 font-size: 16px;
@@ -414,7 +423,7 @@
                 width: 100%;
                 .search-result__title {
                   a {
-                    font: normal normal 500 24px/32px Helsinki Grotesk;
+                    font: normal normal 500 24px/32px HelsinkiGrotesk;
                   }
                 }
                 .search-result__date {

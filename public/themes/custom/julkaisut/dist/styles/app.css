@@ -2011,10 +2011,6 @@ body:not(.path-taxonomy) .search-view > header :last-child {
     font-size: 16px;
     font-size: var(--fontsize-body-s);
   }
-  .search-result__child .search-result .search-result__title {
-    color: #4c4c4c;
-    color: var(--color-black-70);
-  }
 }
 .search-result__child {
   margin-top: var(--card-gutter);
@@ -2178,6 +2174,14 @@ body:not(.path-taxonomy) .search-view > header :last-child {
 .path-search .page-content .search-view .views-infinite-scroll-content-wrapper .views-row .search-result .search-result__content .search-result__children .search-result__child:last-child.search-result__content {
   padding: 0;
 }
+@media (max-width: 767px) {
+  .path-search .page-content .search-view .views-infinite-scroll-content-wrapper .views-row .search-result .search-result__content .search-result__children .search-result__child {
+    padding-left: 16px;
+  }
+  .path-search .page-content .search-view .views-infinite-scroll-content-wrapper .views-row .search-result .search-result__content .search-result__children .search-result__child:first-child {
+    padding-top: 16px;
+  }
+}
 .path-search .page-content .search-view .views-infinite-scroll-content-wrapper .views-row .search-result .search-result__content .search-result__children .search-result {
   border-top: none;
   padding-block: 0;
@@ -2186,16 +2190,23 @@ body:not(.path-taxonomy) .search-view > header :last-child {
   margin-bottom: 8px;
 }
 .path-search .page-content .search-view .views-infinite-scroll-content-wrapper .views-row .search-result .search-result__content .search-result__children .search-result__title a {
-  font: normal normal bold 16px/22px Helsinki Grotesk;
+  font: normal normal bold 16px/22px HelsinkiGrotesk;
 }
 .path-search .page-content .search-view .views-infinite-scroll-content-wrapper .views-row .search-result .search-result__content .search-result__children .search-result__content {
   margin-block: 0;
   padding: 0 0 24px 0;
+  line-height: 22px;
+  color: #656565;
 }
 .path-search .page-content .search-view .views-infinite-scroll-content-wrapper .views-row .search-result .search-result__content .search-result__children .search-result__content .is-highlight {
   color: #0072C6;
   font-style: italic;
   font-weight: 500;
+}
+@media (max-width: 767px) {
+  .path-search .page-content .search-view .views-infinite-scroll-content-wrapper .views-row .search-result .search-result__content .search-result__children .search-result__content {
+    padding: 0 0 16px 0;
+  }
 }
 .path-search .page-content .search-view .views-infinite-scroll-content-wrapper .views-row .search-result .search-result__content .search-accordion-container {
   padding-block: 24px;
@@ -2286,15 +2297,16 @@ body:not(.path-taxonomy) .search-view > header :last-child {
   margin-bottom: 16px;
 }
 .path-search .page-content .search-view .views-infinite-scroll-content-wrapper .views-row .search-result .search-result__content .search-result__title a {
-  color: inherit;
+  color: #191919;
   text-decoration: none;
-  font: normal normal normal 32px/38px Helsinki Grotesk;
+  font: normal normal normal 32px/38px HelsinkiGrotesk;
 }
 .path-search .page-content .search-view .views-infinite-scroll-content-wrapper .views-row .search-result .search-result__content .search-result__date {
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 0;
   color: #1B1B1B;
+  line-height: 24px;
 }
 .path-search .page-content .search-view .views-infinite-scroll-content-wrapper .views-row .search-result .search-result__content .field--name-body {
   font-size: 16px;
@@ -2327,7 +2339,7 @@ body:not(.path-taxonomy) .search-view > header :last-child {
     width: 100%;
   }
   .path-search .page-content .search-view .views-infinite-scroll-content-wrapper .views-row .search-result .search-result__content .search-result__title a {
-    font: normal normal 500 24px/32px Helsinki Grotesk;
+    font: normal normal 500 24px/32px HelsinkiGrotesk;
   }
   .path-search .page-content .search-view .views-infinite-scroll-content-wrapper .views-row .search-result .search-result__content .search-result__date {
     font-size: 16px;
