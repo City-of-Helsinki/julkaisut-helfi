@@ -1966,6 +1966,7 @@ body:not(.path-taxonomy) .search-view > header :last-child {
 @media (max-width: 767px) {
   .path-search .page-content .search-view .views-infinite-scroll-content-wrapper .views-row .search-result .search-result__content .search-result__children .search-result__child {
     padding-left: 16px;
+    padding-right: 16px;
   }
   .path-search .page-content .search-view .views-infinite-scroll-content-wrapper .views-row .search-result .search-result__content .search-result__children .search-result__child:first-child {
     padding-top: 16px;
