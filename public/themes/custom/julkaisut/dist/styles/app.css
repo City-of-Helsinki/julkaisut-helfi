@@ -6027,6 +6027,8 @@ a.tablesaw-btn {
 .site-footer .region-footer-top h2 {
   font-size: 28px;
   font-weight: 500;
+  color: #ffffff;
+  color: var(--color-white);
 }
 .site-footer .region-footer-top .menu-item {
   margin-top: 8px;
