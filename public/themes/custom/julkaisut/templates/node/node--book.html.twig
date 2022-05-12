@@ -1,6 +1,10 @@
 {% extends '@julkaisut/node/node.html.twig' %}
 
 {% block node__content_wrapper %}
+  <div class="node__title is-container">
+    {{ drupal_block('page_title_block', {'label_display': false}) }}
+  </div>
+
   <div class="is-container node__metadata">
     {{ content.field_copyright }}
 

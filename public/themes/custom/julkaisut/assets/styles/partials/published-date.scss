@@ -1,19 +1,15 @@
 @use "common/breakpoints" as *;
 
 .published-date {
-  margin-bottom: calc(var(--spacing-m) * -1 + var(--spacing-s));
+  margin-bottom: 0;
 
-  p, .field--name-field-magazine {
-    color: #191919;
+  p,
+  .field--name-field-magazine {
     font-size: var(--fontsize-heading-xxs);
-    font-weight: bold;
-    line-height: 30px;
+    font-weight: 700;
+    line-height: var(--lineheight-m);
     margin-top: 0;
     margin-bottom: var(--spacing-m);
-    @media (max-width: 575px) {
-      font-size: 18px;
-      line-height: 28px;
-    }
 
     @include mq($from: large) {
       font-size: var(--fontsize-heading-s);

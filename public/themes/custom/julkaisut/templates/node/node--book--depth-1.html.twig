@@ -1,59 +1,58 @@
 {% extends '@julkaisut/node/node.html.twig' %}
 
 {% block node %}
-  <article{{attributes.addClass(classes).addClass('node--book-depth-'~node.book.depth) }}>
-    {{ title_prefix }}
+  <div class="is-container">
+    <article{{attributes.addClass(classes).addClass('node--book-depth-'~node.book.depth) }}>
+      {{ title_prefix }}
 
-    {% block node__content_wrapper %}
-      <div class="page-wrapper">
-        <div class="center-block is-container">
-          <div class="book-content">
-            <div class="is-container published-date node__published">
-              <div class="pdf-link">
-                {{ content.field_pdf }}
-              </div>
+      {% block node__content_wrapper %}
+        <div class="node__title is-container">
+          {{ drupal_block('page_title_block', {'label_display': false}) }}
+        </div>
 
-              <p>{% trans %}Published on {{ date }}{% endtrans %}</p>
+        <div class="published-date node__published is-container">
+          <p>{% trans %}Published on {{ date }}{% endtrans %}</p>
 
-            </div>
-
-            <div class="is-container node__metadata">
-              {{ content.body }}
-
-              {{ content.field_copyright }}
-
-              <div class="node__meta">
-                {{ content.field_tags }}
-
-                {% include '@julkaisut/partials/share-links.html.twig' with {
-                  url: url_absolute.toString(),
-                  title: node.title(),
-                } %}
-
-                {{ translation_links }}
-
-              </div>
-            </div>
-
-            <div class="node__book-outline is-container">
-              {{ drupal_block('custom_book_navigation', {
-                'max_levels': 0,
-                'block_mode': '',
-                'always_expand': true,
-                'target_book': node.book.bid
-              }) }}
-            </div>
-
-            <div class="node__content">
-              {{ content|without('field_copyright', 'field_tags', 'field_pdf', 'field_image', 'body') }}
-            </div>
-          </div>
-          <div class="node__featured-image">
-            {% include '@julkaisut/partials/featured-image.html.twig' %}
+          <div class="pdf-link">
+            {{ content.field_pdf }}
           </div>
         </div>
 
-      </div>
-    {% endblock %}
-  </article>
+        <div class="node__metadata is-container">
+          {{ content.body }}
+
+          {{ content.field_copyright }}
+
+          <div class="node__meta">
+            {{ content.field_tags }}
+
+            {% include '@julkaisut/partials/share-links.html.twig' with {
+              url: url_absolute.toString(),
+              title: node.title(),
+            } %}
+
+            {{ translation_links }}
+
+          </div>
+        </div>
+
+        <div class="node__book-outline">
+          {{ drupal_block('custom_book_navigation', {
+            'max_levels': 0,
+            'block_mode': '',
+            'always_expand': true,
+            'target_book': node.book.bid
+          }) }}
+        </div>
+
+        <div class="node__content">
+          {{ content|without('field_copyright', 'field_tags', 'field_pdf', 'field_image', 'body') }}
+        </div>
+
+        <div class="node__featured-image">
+          {{ content.field_image }}
+        </div>
+      {% endblock %}
+    </article>
+  </div>
 {% endblock %}
