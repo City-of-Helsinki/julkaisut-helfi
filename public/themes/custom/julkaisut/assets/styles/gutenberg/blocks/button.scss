@@ -6,8 +6,9 @@
 
  .wp-block-button {
   --button-color: var(--color-white);
-  --button-background: var(--color-primary);
-  --button-background-hover: var(--color-bus-dark-50);
+  --button-background: var(--color-black);
+  --button-background-hover: var(--color-primary);
+  --button-border-width: 0px;
 
   color: var(--button-color);;
   background-color: var(--button-background);
@@ -23,20 +24,18 @@
     color: var(--button-color);
   }
 
+  &.is-style-outline {
+    --button-border-width: 3px;
+  }
+
   &.is-style-small,
   &.is-style-outline {
     --button-color: var(--button-background);
-    background-color: transparent !important;
 
-    &.wp-block-button__link,
-    & .wp-block-button__link {
-      border: 2px solid;
-    }
+    background-color: transparent !important;
 
     &:hover,
     &:focus {
-      --button-color: var(--button-background-hover);
-
       &,
       & .wp-block-button__link {
         text-decoration: underline;
@@ -58,10 +57,11 @@
 
   &__link {
     border-radius: 0;
-    padding: 21px 32px;
+    padding: calc(21px - var(--button-border-width) * 2) calc(32px - var(--button-border-width) * 2);
     font-size: var(--fontsize-body-m);
     line-height: var(--lineheight-s);
-
+    box-sizing: border-box;
+    border: solid var(--button-border-width) currentColor;
 
     @each $name in gutenberg.$palette-colors-light {
       &.has-#{$name}-background-color {
@@ -75,9 +75,10 @@
   }
 
   &.is-style-small {
+    --button-border-width: 2px;
+
     padding: 10px 16px 9px;
     font-size: 14px;
-    line-height: 26px;
-    font-weight: normal;
+    line-height: 1;
   }
 }

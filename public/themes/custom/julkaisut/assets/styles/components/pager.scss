@@ -11,24 +11,4 @@
   @include mq($from: medium) {
     font-size: var(--fontsize-heading-s);
   }
-
-  & &__item {
-    width: 139px;
-    height: 56px;
-    text-align: center;
-    border: 3px solid var(--color-black);
-    padding: 7px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .button {
-      color: #121212;
-      text-decoration: none;
-      font-size: var(--fontsize-body-m);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      line-height: 22px;
-    }
-  }
 }
