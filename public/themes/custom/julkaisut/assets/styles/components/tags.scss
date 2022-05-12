@@ -40,10 +40,11 @@
 
 .tag__item a {
   font-size: var(--fontsize-body-s);
-  color: #191919;
-  font-weight: 500;
-  background-color: #E4E4E4;
-  padding: 7px 16px;
+  color: var(--color-black-90);
+  font-weight: 400;
+  background-color: var(--color-black-10);
+  padding: 10px 8px;
+  line-height: 1;
   text-decoration: none;
   display: inline-block;
   text-align: center;
