@@ -2,19 +2,18 @@
 
 {% block node %}
   <article{{attributes.addClass(classes, 'teaser') }} data-article-link-wrapper>
-    {# Teaser images are purely decorative #}
-    <div aria-hidden="true" class="picture">
-      {% if content.field_image[0] is not empty %}
-        {{ content.field_image }}
-      {% else %}
-        <img src="/{{ directory }}/dist/images/placeholder.png" role="presentation">
-      {% endif %}
-    </div>
+    <a href="{{ url }}" class="teaser__link">
+      {# Teaser images are purely decorative #}
+      <div aria-hidden="true" class="teaser__image">
+        {% if content.field_image[0] is not empty %}
+          {{ content.field_image }}
+        {% else %}
+          <img src="/{{ directory }}/dist/images/placeholder.png" role="presentation">
+        {% endif %}
+      </div>
 
-    <div class="info-wrapper">
-
-      <h3{{ title_attributes.addClass(['teaser__title', 'card_title']) }}>
-        <a href="{{ url }}" data-article-link>{{ label }}</a>
+      <h3{{ title_attributes.addClass(['teaser__title']) }}>
+        {{ label }}
       </h3>
 
       <div class="teaser__date">
@@ -29,8 +28,11 @@
         {% endif %}
       </div>
 
-    </div>
+      {{ content|without('field_image') }}
 
-    {{ content|without('field_image') }}
+      <div class="teaser__arrow">
+        <span class="hds-icon hds-icon--arrow-right hds-icon--size-l" aria-hidden="true"></span>
+      </div>
+    </a>
   </article>
 {% endblock %}

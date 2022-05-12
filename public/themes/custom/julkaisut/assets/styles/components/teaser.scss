@@ -3,15 +3,36 @@
 .teaser {
   position: relative;
 
-  --teaser-spacing: var(--spacing-2-xs);
+  &__link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
 
-  @include mq($from: medium) {
-    --teaser-spacing: var(--spacing-xs);
+    &:hover,
+    &:focus {
+      .teaser__title {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__image {
+    grid-area: image;
+    margin-bottom: var(--spacing-s);
   }
 
   &__title {
+    grid-area: title;
     margin-bottom: 0;
-    word-break: break-all;
+    // H5
+    font-size: var(--fontsize-heading-xs);
+    line-height: var(--lineheight-l);
+    font-weight: 600;
+
+    @include mq($from: medium) {
+      font-size: var(--fontsize-heading-s);
+    }
+
     a {
       color: inherit;
       text-decoration: none;
@@ -30,138 +51,57 @@
   }
 
   &__date {
-    color: #191919;
-    margin-top: 0;
-    margin-bottom: var(--spacing-3-xs);
+    grid-area: date;
+    color: var(--color-black-90);
+    margin-top: var(--spacing-s);
     display: flex;
-    font-size: 16px;
-    line-height: 22px;
-
-    @include mq($from: large) {
-      margin-bottom: var(--spacing-2-xs);
-    }
 
     p {
-      font-size: var(--fontsize-body-s);
+      font-size: var(--fontsize-body-m);
       font-weight: normal;
       margin-bottom: 0;
       line-height: var(--lineheight-s);
+    }
+  }
 
-      @include mq($from: large) {
-        font-size: var(--fontsize-body-xl);
-      }
-    }
-  }
-  .media--type-image {
-    text-align: center;
-    margin-bottom: 24px;
-    img {
-      width: 282px;
-      height: 399px;
-      object-fit: cover;
-      object-position: center;
-    }
-  }
-  @media (max-width: 767px) {
-    .media--type-image {
-      img {
-        width: 345px;
-        height: 488px;
-      }
-    }
-  }
-  &:after {
-    content: "\2192";
-    font-weight: bold;
-    font-size: 35px;
-    transform: scaleX(1.4);
-  }
-}
-.teaser {
-  @media (max-width: 575px) {
-    display: flex;
-    height: auto;
-      .field--name-field-image {
-        margin-right: 16px;
-        figure {
-          width: 20.5vw;
-          margin-bottom: 0;
-          img {
-            width: 25vw;
-            height: 28.6vw;
-            margin-right: 16px;
-          }
-        }
-      }
-    .info-wrapper {
-      width: 100%;
-      position: relative;
-      padding-bottom: 23px;
+  &__arrow {
+    grid-area: arrow;
+    margin-left: -4px;
+    margin-top: var(--spacing-m);
+    transition: transform .2s linear;
 
-      .teaser__title {
-        width: 100%;
-        margin-bottom: 12px;
-        font-size: 18px;
-        line-height: 26px;
-        font-weight: bold;
-      }
-      .teaser__date {
-        width: 100%;
-        p {
-          font-size: 16px;
-        }
+    .teaser:hover & {
+      transform: translateX(16px);
+    }
+  }
 
-      }
-      &:after {
-        content: "\2192";
-        font-weight: bold;
-        font-size: 22px;
-        transform: scaleX(1.4);
-        grid-area: arrow;
-        position: absolute;
-        left: 3px;
-        bottom: -5px;
+  @include mq($until: medium) {
+    &__link {
+      display: grid;
+      grid-template-areas:
+        "image title"
+        "image date"
+        "image arrow";
+      grid-template-columns: 76px 1fr;
+      grid-template-rows: auto auto 1fr;
+      column-gap: var(--spacing-s);
+    }
+
+    &__date {
+      margin-top: var(--spacing-2-xs);
+    }
+
+    &__arrow {
+      margin-top: var(--spacing-xs);
+      margin-bottom: calc(var(--spacing-xs) * -1);
+
+      .hds-icon {
+        --icon-size: var(--spacing-layout-s);
       }
     }
-    &:after {
-      display: none;
-      content: "";
-    }
-    .field--name-name {
-      &:after {
-        content: "\2192";
-        font-weight: bold;
-        font-size: 22px;
-        transform: scaleX(1.4);
-        grid-area: arrow;
-        position: absolute;
-        left: 27.5%;
-        bottom: -5px;
-      }
-    }
-  }
-  @media (max-width: 365px) {
-    .info-wrapper {
-      .teaser__title {
-        font-size: 16px;
-      }
-      .teaser__date {
-        p {
-          font-size: 14px;
-        }
-      }
-    }
-  }
-  @media (max-width: 365px) {
-    .info-wrapper {
-      .teaser__title {
-        font-size: 14px;
-      }
-      .teaser__date {
-        p {
-          font-size: 12px;
-        }
-      }
+
+    &__image {
+      margin-bottom: 0;
     }
   }
 }
