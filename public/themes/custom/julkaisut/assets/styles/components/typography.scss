@@ -50,8 +50,6 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: bold;
-  line-height: var(--lineheight-m);
   margin-top: 0;
   margin-bottom: var(--spacing-m);
 
@@ -66,10 +64,12 @@ h6 {
 }
 
 h1 {
-  font-size: var(--fontsize-heading-l);
+  font-size: 40px;
+  font-weight: 400;
+  line-height: var(--lineheight-s);
 
   @include mq($from: large) {
-    font-size: var(--fontsize-heading-xl);
+    font-size: 64px;
   }
 
   @media (max-width: 400px) {
@@ -78,31 +78,57 @@ h1 {
 }
 
 h2 {
-  font-size: var(--fontsize-heading-m);
+  font-size: 32px;
+  font-weight: 400;
+  line-height: var(--lineheight-s);
 
   @include mq($from: medium) {
-    font-size: var(--fontsize-heading-l);
+    font-size: 48px;
   }
 }
 
 h3 {
-  font-size: var(--fontsize-heading-xs);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: var(--lineheight-m);
 
   @include mq($from: medium) {
-    font-size: var(--fontsize-heading-m);
+    font-size: 32px;
+    line-height: var(--lineheight-s);
+    font-weight: 400;
   }
 }
 
 h4 {
-  font-size: var(--fontsize-heading-s);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: var(--lineheight-m);
+
+  @include mq($from: medium) {
+    font-size: 24px;
+  }
 }
 
 h5 {
-  font-size: var(--fontsize-heading-xs);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: var(--lineheight-m);
+
+  @include mq($from: medium) {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: var(--lineheight-l);
+  }
 }
 
 h6 {
-  font-size: var(--fontsize-heading-xxs);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: var(--lineheight-l);
+
+  @include mq($from: medium) {
+    font-size: 18px;
+  }
 }
 
 p {
@@ -145,47 +171,6 @@ h2 {
   }
 }
 
-// New typography.
-h1,
-h2,
-h3 {
-  font-weight: normal;
-}
-h4 {
-  font-weight: 600;
-}
-h5,
-h6 {
-  font-weight: bold;
-}
-
-h1 {
-  font-size: 64px;
-  line-height: 64px;
-}
-h2 {
-  font-size: 48px;
-  line-height: 48px;
-}
-h3 {
-  font-size: 32px;
-  line-height: 32px;
-}
-h4 {
-  font-size: 24px;
-  line-height: 28px;
-}
-
-h5 {
-  font-size: 20px;
-  line-height: 30px;
-}
-
-h6 {
-  font-size: 18px;
-  line-height: 28px;
-}
-
 .helper-text {
   font-size: 14px;
   line-height: 21px;
@@ -221,46 +206,6 @@ q {
 
 // Mobile typography.
 @media (max-width: 575px) {
-  h1,
-  h2 {
-    font-weight: normal;
-  }
-  h3,
-  h4,
-  h5 {
-    font-weight: 600;
-  }
-  h6 {
-    font-weight: bold;
-  }
-
-  h1 {
-    font-size: 40px;
-    line-height: 40px;
-  }
-  h2 {
-    font-size: 32px;
-    line-height: 32px;
-  }
-  h3 {
-    font-size: 24px;
-    line-height: 32px;
-  }
-  h4 {
-    font-size: 20px;
-    line-height: 26px;
-  }
-
-  h5 {
-    font-size: 18px;
-    line-height: 22px;
-  }
-
-  h6 {
-    font-size: 16px;
-    line-height: 24px;
-  }
-
   .card_title {
     font-size: 20px;
     line-height: 30px;
