@@ -55,16 +55,16 @@ $mq-breakpoints: (
     --container-width: var(--container-width-l);
     --grid-gutter: 24px;
     --grid-columns: 12;
-    --content-width: calc(var(--container-width) / var(--grid-columns) * 8px); // 8 columns
-    --alignwide-width: calc(var(--container-width) * 1px);
+    --content-width: calc(var(--container-width) / var(--grid-columns) * 8); // 8 columns
+    --alignwide-width: var(--container-width);
   }
 
   @include mq($from: xlarge) {
     --container-width: var(--container-width-xl);
     --grid-gutter: 24px;
     --grid-columns: 12;
-    --content-width: calc(var(--container-width) / var(--grid-columns) * 8px); // 8 columns
-    --alignwide-width: calc(var(--container-width) * 1px);
+    --content-width: calc(var(--container-width) / var(--grid-columns) * 8); // 8 columns
+    --alignwide-width: var(--container-width);
     --alignfull-width: 2000px;
   }
 }

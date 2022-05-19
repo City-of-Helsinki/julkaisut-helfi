@@ -13,7 +13,7 @@
 
   @include mq($from: large) {
     font-size: var(--fontsize-body-l);
-    max-width: calc(var(--container-width) * 1px);
+    max-width: var(--container-width);
   }
 
   &__item {

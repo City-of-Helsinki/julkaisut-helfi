@@ -20,7 +20,7 @@
   @include mq($from: large) {
     padding-left: 0;
     padding-right: 0;
-    max-width: calc(var(--container-width) * 1px);
+    max-width: var(--container-width);
   }
 
   // Remove the container padding in text blcoks
