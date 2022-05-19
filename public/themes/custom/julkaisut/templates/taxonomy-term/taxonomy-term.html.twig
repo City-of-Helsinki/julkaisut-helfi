@@ -28,6 +28,9 @@
 {% block term %}
   <div{{ attributes }}>
     {{ title_prefix }}
+    <div class="term__title is-container">
+      {{ drupal_block('page_title_block', {'label_display': false}) }}
+    </div>
     {{ title_suffix }}
 
     {% block term__content_wrapper %}
