@@ -15,8 +15,9 @@ $mq-breakpoints: (
 
 :root {
   // Shorthands
-
-  --color-primary: var(--color-bus);
+  --color-primary: var(--color-coat-of-arms); // #0072c6
+  --color-secondary: var(--color-fog-light); // #e8f3fc
+  --color-accent: var(--color-suomenlinna); // #f5a3c7
 
   // Vertical gutters between blocks
 
