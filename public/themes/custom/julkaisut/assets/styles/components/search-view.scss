@@ -55,9 +55,7 @@
     margin-bottom: var(--field-gutter);
 
     @at-root .search-view .views-exposed-form {
-      @include mq($from: medium) {
-        margin-bottom: calc(var(--field-gutter) * -1);
-      }
+      margin-bottom: calc(var(--field-gutter) * -1);
     }
 
   }
@@ -93,21 +91,19 @@
     max-width: 560px;
 
     label {
-      font-size: var(--fontsize-heading-m);
-      margin-bottom: var(--spacing-m);
+      // H1
+      font-size: 40px;
+      font-weight: 400;
       line-height: var(--lineheight-s);
-      text-align: left;
-      font: normal normal normal 64px/64px var(--font-default);
-      letter-spacing: 0;
-      color: #FFFFFF;
-      @media (max-width: 767px) {
-        font-size: 40px;
+      color: inherit;
+
+      @include mq($from: large) {
+        font-size: 64px;
       }
 
-      //@include mq($from: medium) {
-      //  font-size: var(--fontsize-heading-l);
-      //}
+      margin-bottom: var(--spacing-s);
     }
+
     .form-text {
       width: 415px;
       height: 46px;

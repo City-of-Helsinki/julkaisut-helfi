@@ -59,6 +59,8 @@ $palette-colors-light:
 @each $name in $palette-colors-dark {
   .has-#{$name}-background-color {
     color: var(--color-white);
+
+    --button-background: var(--color-white);
   }
 }
 

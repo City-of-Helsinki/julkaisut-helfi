@@ -70,4 +70,9 @@
       }
     }
   }
+
+  // Button in eg. frontpage block has a smaller gutter
+  p + .wp-block-buttons {
+    margin-top: calc(-1 * var(--block-gutter-s) + var(--spacing-xs));
+  }
 }

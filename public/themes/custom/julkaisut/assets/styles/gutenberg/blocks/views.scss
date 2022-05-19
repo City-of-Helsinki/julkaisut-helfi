@@ -5,6 +5,10 @@
 
   &:not(:last-child) {
     margin-bottom: var(--block-gutter-l);
+
+    .wp-block-media-text__content & {
+      margin-bottom: var(--block-gutter);
+    }
   }
 
   // In preprocess we're bumping out the alignwide class to the block wrapper

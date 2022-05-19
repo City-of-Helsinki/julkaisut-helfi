@@ -81,9 +81,19 @@
 
     &.wp-block-button__link,
     .wp-block-button__link {
-      padding: 10px 16px 9px;
+      padding: 10px 8px 9px;
       font-size: 14px;
       line-height: 1;
     }
+  }
+}
+
+.wp-block-media-text {
+  &.has-background .wp-block-button {
+    --button-border-width: 1px;
+  }
+
+  .wp-block-button.is-style-small {
+    margin-right: calc(8px - 4px); // inner-block gaps
   }
 }
