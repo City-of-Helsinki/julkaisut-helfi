@@ -11,17 +11,24 @@
   grid-template-areas:
     "tags        tags"
     "translation translation"
+    "pdf         share"
     "print       share";
 
   @include mq($from: medium) {
     grid-template-areas:
       "tags        share"
+      "pdf         share"
       "translation share"
       "print       share";
   }
 
   .field--name-field-tags {
     grid-area: tags;
+  }
+
+  .field--name-field-pdf {
+    margin-top: var(--spacing-s);
+    grid-area: pdf;
   }
 
   .share-links {
