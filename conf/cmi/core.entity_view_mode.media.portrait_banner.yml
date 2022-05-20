@@ -1,0 +1,10 @@
+uuid: a27afda2-8141-4630-bb00-d21f5183965b
+langcode: fi
+status: true
+dependencies:
+  module:
+    - media
+id: media.portrait_banner
+label: 'Portrait banner'
+targetEntityType: media
+cache: true
