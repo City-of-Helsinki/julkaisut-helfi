@@ -3,7 +3,6 @@ langcode: fi
 status: true
 dependencies:
   config:
-    - block.block.naitahaetaanpaljon
     - search_api.index.mainindex
   module:
     - better_exposed_filters
@@ -532,20 +531,7 @@ display:
         header: false
       use_ajax: false
       display_description: ''
-      header:
-        entity_block_1:
-          id: entity_block_1
-          table: views
-          field: entity_block
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: entity
-          empty: true
-          target: naitahaetaanpaljon
-          view_mode: default
-          tokenize: false
-          bypass_access: true
+      header: {  }
       display_extenders:
         simple_sitemap_display_extender: {  }
         metatag_display_extender: {  }

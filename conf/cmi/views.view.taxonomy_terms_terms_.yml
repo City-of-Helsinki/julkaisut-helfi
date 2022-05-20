@@ -3,7 +3,6 @@ langcode: fi
 status: true
 dependencies:
   config:
-    - block.block.old_magazines
     - block.block.views_block__taxonomy_terms_terms__block_3
     - block.block.views_block__taxonomy_terms_terms__block_4
     - core.entity_view_mode.taxonomy_term.teaser
@@ -262,20 +261,7 @@ display:
         footer: false
       use_ajax: true
       display_description: ''
-      footer:
-        entity_block:
-          id: entity_block
-          table: views
-          field: entity_block
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: entity
-          empty: false
-          target: old_magazines
-          view_mode: default
-          tokenize: false
-          bypass_access: true
+      footer: {  }
       display_extenders:
         simple_sitemap_display_extender: {  }
         metatag_display_extender: {  }

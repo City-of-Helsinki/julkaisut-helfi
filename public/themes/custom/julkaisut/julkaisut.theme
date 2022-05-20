@@ -6,6 +6,7 @@
  */
 
 use Drupal\block\Entity\Block;
+use Drupal\block_content\Entity\BlockContent;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Render\Markup;
@@ -15,6 +16,7 @@ use Drupal\menu_link_content\Plugin\Menu\MenuLinkContent;
 use Drupal\node\Entity\Node;
 use Drupal\responsive_image\Entity\ResponsiveImageStyle;
 use Drupal\taxonomy\Entity\Term;
+use Drupal\views\Plugin\views\display\Page;
 use Drupal\views\ViewExecutable;
 
 /**
@@ -128,6 +130,18 @@ function julkaisut_theme_suggestions_taxonomy_term_alter(array &$suggestions, ar
   $suggestions[] = 'taxonomy_term__' . $view_mode;
   $suggestions[] = 'taxonomy_term__' . $term->bundle() . '__' . $view_mode;
   $suggestions[] = 'taxonomy_term__' . $term->id() . '__' . $view_mode;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function julkaisut_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  // Custom Blocks (Bundles and view mode).
+  if ($variables['elements']['#base_plugin_id'] === 'block_content' && isset($variables['elements']['content']['#block_content'])) {
+    // Bundle type.
+    $bundle = $variables['elements']['content']['#block_content']->bundle();
+    $suggestions[] = 'block__' . $bundle;
+  }
 }
 
 /**
@@ -554,6 +568,13 @@ function julkaisut_preprocess_block(&$variables) {
       $logo_filename = ($langcode === 'sv') ? 'helsinki-sv.svg' : 'helsinki-fi.svg';
       $variables['site_logo'] = file_create_url($variables['directory'] . "/dist/images/logo/$logo_filename");
       break;
+    case 'block_content':
+      /** @var BlockContent $block_content */
+      if ($block_content = $variables['content']['#block_content']) {
+        $variables['attributes']['class'][] = sprintf('block--%s', $block_content->bundle());
+      }
+
+      break;
   }
 
   if (isset($variables['elements']['#id'])) {
@@ -609,6 +630,27 @@ function julkaisut_preprocess_views_view(&$variables) {
         $variables['attributes']['class'][] = 'has-no-results';
       }
       break;
+  }
+
+  if ($variables['view']->display_handler instanceof Page) {
+    $theme = \Drupal::theme()->getActiveTheme()->getName();
+    $blocks = \Drupal::entityTypeManager()->getStorage('block')
+      ->loadByProperties([
+        'theme' => $theme,
+        'region' => 'view_region',
+      ]);
+
+    $builder = \Drupal::entityTypeManager()->getViewBuilder('block');
+    uasort($blocks, 'Drupal\block\Entity\Block::sort');
+    $build = [];
+    foreach ($blocks as $key => $block) {
+      if ($block->access('view')) {
+        $build[$key] = $builder->view($block);
+      }
+    }
+
+    // Add build to region
+    $variables['view_region'] = $build;
   }
 }
 
