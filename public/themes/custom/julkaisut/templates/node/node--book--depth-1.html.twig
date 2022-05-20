@@ -13,9 +13,12 @@
         <div class="published-date node__published is-container">
           <p>{% trans %}Published on {{ date }}{% endtrans %}</p>
 
-          <div class="pdf-link">
+          <p class="pdf-link">
+            {% if node.book.has_children %}
+              <span class="visually-hidden">{% trans %}Read the accessible publication below, or {% endtrans %}</span>
+            {% endif %}
             {{ content.field_pdf }}
-          </div>
+          </p>
         </div>
 
         <div class="node__metadata is-container">

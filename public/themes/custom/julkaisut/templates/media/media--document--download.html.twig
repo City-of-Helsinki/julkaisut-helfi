@@ -20,12 +20,10 @@
     view_mode ? 'media--view-mode-' ~ view_mode.id()|clean_class,
   ]
 %}
-<article{{ attributes.addClass(classes) }}>
-  {% if file_url %}
-    <a class="wp-block-button wp-block-button__link is-style-small" href="{{ file_url }}" target="_blank" aria-label="{{"Read the accessible publication below" | t }}">
-      {{ 'Download PDF' | t }}
-    </a>
-  {% elseif content %}
-    {{ content }}
-  {% endif %}
-</article>
+{% if file_url %}
+  <a class="wp-block-button wp-block-button__link is-style-small" href="{{ file_url }}" target="_blank">
+    {{ 'Download PDF' | t }}
+  </a>
+{% elseif content %}
+  {{ content }}
+{% endif %}
