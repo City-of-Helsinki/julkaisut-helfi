@@ -1,11 +1,5 @@
 @use "common/breakpoints" as *;
 
-.path-search {
-  @media screen and (min-width: 928px) {
-    --content-width: 898px; // ?
-  }
-}
-
 .search-view {
   --field-gutter: var(--spacing-s);
   position: relative;
@@ -233,9 +227,15 @@
   }
 }
 
+.path-taxonomy,
 .path-search {
+  @media screen and (min-width: 928px) {
+    --content-width: 898px; // ?
+  }
+
   .block-system-breadcrumb-block {
     color: var(--color-white);
+    z-index: 1;
 
     a {
       color: var(--color-white);
@@ -250,9 +250,17 @@
     }
   }
 
+  .search-view {
+    padding-top: var(--spacing-layout-l);
+
+    header {
+      z-index: 1;
+      position: relative;
+    }
+  }
+
   .search-view .views-exposed-form {
     color: var(--color-white);
-    padding-top: var(--spacing-layout-l);
     padding-bottom: calc(var(--spacing-layout-l) + 24px);
     margin-bottom: var(--spacing-layout-xs);
 
@@ -274,9 +282,12 @@
       left: 0;
       right: 0;
       bottom: 0;
-      height: 450px;
+      height: 1000px;
       z-index: -100;
-      background: url("../images/search/background-wave-mobile.svg") top center repeat-x;
+      mask-image: svg-load('./images/koros/rect.svg'), svg-load('./images/koros/basic.svg');
+      transform: rotate(180deg);
+      background-color: var(--color-primary);
+
       background-size: auto 104%;
       margin-left: -50vw;
       margin-right: -50vw;
@@ -284,6 +295,7 @@
 
     .form-actions {
       display: block;
+      width: 100%;
 
       @include mq($until: medium) {
         margin-top: var(--spacing-l);
@@ -304,6 +316,20 @@
 
     @include mq($from: medium) {
       font-size: 48px;
+    }
+  }
+}
+
+.path-taxonomy {
+  .search-view header {
+    color: var(--color-white);
+  }
+
+  .views-exposed-form.views-exposed-form {
+    margin-bottom: 150px;
+
+    @include mq($from: medium) {
+      margin-bottom: 120px;
     }
   }
 }
