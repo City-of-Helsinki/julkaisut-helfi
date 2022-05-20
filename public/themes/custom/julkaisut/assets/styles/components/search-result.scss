@@ -91,7 +91,9 @@
 .path-search {
   .page-content {
     .is-container:nth-child(2) {
-      &:before {
+      color: var(--color-white);
+
+      &::before {
         content: '';
         position: absolute;
         left: 0;
@@ -101,6 +103,7 @@
         z-index: -100;
         background: url("../images/search/background-wave-mobile.svg") top center repeat-x;
         background-size: auto 104%;
+
         @media (max-width: 767px) {
           top: 53px;
           //height: calc(450px - 53px);
@@ -110,6 +113,7 @@
       //background-size: cover;
       position: relative;
     }
+
     #block-breadcrumbs {
       color: var(--color-white);
       margin-top: 0;
@@ -150,6 +154,7 @@
           }
           &:after {
             right: 8px;
+            background-color: var(--color-black);
           }
         }
         .form-item-search {
@@ -159,9 +164,6 @@
           }
           input {
             width: 100%;
-          }
-          .hds-icon.hds-icon--size-s {
-            --icon-size: 16px;
           }
         }
         .facets {
@@ -178,6 +180,7 @@
           .form-item {
             &:after {
               right: 8px;
+              background-color: var(--color-black);
             }
           }
         }

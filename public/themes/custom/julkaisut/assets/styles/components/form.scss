@@ -62,9 +62,15 @@
 .form-type-search-api-autocomplete {
   position: relative;
 
-  .hds-icon {
+  > [type="submit"],
+  > .hds-icon {
     position: absolute;
     margin-left: calc(var(--icon-size) * -1 - var(--spacing-xs));
     bottom: calc((var(--input-height) - var(--icon-size)) / 2);
+    color: var(--input-color-default);
+  }
+
+  .hds-icon {
+    --icon-size: 16px;
   }
 }

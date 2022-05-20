@@ -612,7 +612,11 @@ function julkaisut_preprocess(&$variables) {
     case 'select':
       $variables['attributes']['class'][] = 'hds-text-input__input';
       if (isset($variables['element']['#type']) && $variables['element']['#type'] === 'search_api_autocomplete') {
-        $variables['children'] = Markup::create('<i class="hds-icon hds-icon--search hds-icon--size-s" aria-hidden="true"></i>');
+        $variables['children'] = Markup::create(sprintf('
+          <button type="submit" aria-label="%s">
+            <i class="hds-icon hds-icon--search hds-icon--size-s" aria-hidden="true"></i>
+          </button>
+        ', t('Search')));
       }
       break;
     case 'input__submit':
