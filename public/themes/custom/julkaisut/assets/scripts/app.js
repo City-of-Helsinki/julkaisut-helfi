@@ -64,6 +64,7 @@ Drupal.behaviors.julkaisutTheme = {
 
     if (window.jQuery && settings.views && settings.views.ajaxViews) {
       window.jQuery(context).on('views_infinite_scroll.new_content', this.focusNewContent);
+      window.jQuery(context).on('views_infinite_scroll.new_content', this.announceStatus);
     }
   },
 
@@ -98,6 +99,18 @@ Drupal.behaviors.julkaisutTheme = {
       link.appendChild(icon.cloneNode(true));
       link.appendChild(srLabel.cloneNode(true));
       link.classList.add('is-external-link');
+    }
+  },
+
+  announceStatus(e, newRows) {
+    const viewContainer = e.target.closest('.views-element-container');
+    const status = viewContainer.querySelector('header [role="status"]');
+
+    if (status) {
+      const parent = status.parentElement;
+      status.removeAttribute('aria-hidden');
+      status.parentElement.removeChild(status);
+      parent.appendChild(status);
     }
   },
 

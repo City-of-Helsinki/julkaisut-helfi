@@ -1007,18 +1007,16 @@ display:
       use_ajax: true
       display_description: ''
       header:
-        area:
-          id: area
+        area_text_custom:
+          id: area_text_custom
           table: views
-          field: area
+          field: area_text_custom
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: text
+          plugin_id: text_custom
           empty: false
-          content:
-            value: '<h3>Teemat</h3>'
-            format: editor
+          content: "<h3>Teemat</h3>\r\n<div role=\"status\" class=\"visually-hidden\" aria-hidden=\"true\">\r\n<p>[view:total-rows] tulosta</p>\r\n</div>"
           tokenize: false
       rendering_language: '***LANGUAGE_language_interface***'
       display_extenders:
@@ -1329,18 +1327,16 @@ display:
       use_ajax: true
       display_description: ''
       header:
-        area:
-          id: area
+        area_text_custom:
+          id: area_text_custom
           table: views
-          field: area
+          field: area_text_custom
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: text
+          plugin_id: text_custom
           empty: false
-          content:
-            value: '<h3>Toimialat ja liikelaitokset</h3>'
-            format: editor
+          content: "<h3>Toimialat ja liikelaitokset</h3>\r\n<div role=\"status\" class=\"visually-hidden\" aria-hidden=\"true\">\r\n<p>[view:total-rows] tulosta</p>\r\n</div>"
           tokenize: false
       display_extenders:
         simple_sitemap_display_extender: {  }
