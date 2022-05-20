@@ -1,0 +1,30 @@
+{% extends '@julkaisut/node/node.html.twig' %}
+
+{% block node__content_wrapper %}
+  <div class="is-container">
+    <div class="published-date">
+      {% if content.field_magazine %}{{ content.field_magazine }}{% endif %}
+    </div>
+    {{ content.field_copyright }}
+
+    <div class="node__meta">
+
+      {{ content.field_tags }}
+
+      {% include '@julkaisut/partials/print-button.html.twig' %}
+
+      {% include '@julkaisut/partials/share-links.html.twig' with {
+        url: url_absolute.toString(),
+        title: node.title(),
+      } %}
+    </div>
+  </div>
+
+  {% include '@julkaisut/partials/featured-image.html.twig' %}
+
+  {{ content.body }}
+
+  <div class="is-container">
+    {{ content|without('body', 'field_tags', 'field_image', 'field_magazine') }}
+  </div>
+{% endblock %}
