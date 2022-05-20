@@ -59,6 +59,8 @@ Drupal.behaviors.julkaisutTheme = {
     this.scrollToTop(context.querySelectorAll('[href="#top"]'));
     this.markExternalLinks(context.querySelectorAll('a[target="_blank"]'));
 
+    this.stickyBookNav(context);
+
     if (window.jQuery && settings.views && settings.views.ajaxViews) {
       window.jQuery(context).on('views_infinite_scroll.new_content', this.focusNewContent);
     }
@@ -245,29 +247,30 @@ Drupal.behaviors.julkaisutTheme = {
         location.reload();
       })
     }
+  },
+
+  stickyBookNav(context) {
+    // Change book navigation from fixed to static when scroll to footer
+    const bookNav = context.querySelector('.book-navigation');
+    const footer = context.querySelector('.site__footer');
+
+    if (!bookNav || !footer) {
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          bookNav.classList.remove('is-sticky');
+        } else {
+          bookNav.classList.add('is-sticky');
+        }
+      }
+    }, {threshold: 0});
+
+    observer.observe(footer);
   }
 };
-
-// Change book navigation from fixed to static when scroll to footer
-var bookNav = document.querySelector('.book-navigation');
-var footer = document.querySelector('.site__footer');
-
-function checkOffset() {
-  function getRectTop(el){
-    var rect = el.getBoundingClientRect();
-    return rect.top;
-  }
-  if (bookNav) {
-    if (document.body.scrollTop + window.innerHeight < (getRectTop(footer) + document.body.scrollTop + 48))
-      bookNav.style.position = 'fixed'; // restore when you scroll up
-    else
-      bookNav.style.position = 'static';
-  }
-}
-
-document.addEventListener("scroll", function(){
-  checkOffset();
-});
 
 (function() {
   window.rnsData = {
