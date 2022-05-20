@@ -13,14 +13,14 @@
 
       {{ content.field_pdf }}
 
+      {{ translation_links }}
+
       {% include '@julkaisut/partials/print-button.html.twig' %}
 
       {% include '@julkaisut/partials/share-links.html.twig' with {
         url: url_absolute.toString(),
         title: node.title(),
       } %}
-
-      {{ translation_links }}
     </div>
   </div>
 
