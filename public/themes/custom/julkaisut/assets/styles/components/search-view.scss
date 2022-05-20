@@ -1,5 +1,11 @@
 @use "common/breakpoints" as *;
 
+.path-search {
+  @media screen and (min-width: 928px) {
+    --content-width: 898px; // ?
+  }
+}
+
 .search-view {
   --field-gutter: var(--spacing-s);
   position: relative;
@@ -11,8 +17,6 @@
   @media (min-width: 767px) {
     justify-content: center;
   }
-  max-width: var(--content-width);
-  margin-inline: auto;
 
   // Except on taxonomy search pages, move the header below the filter form
   body:not(.path-taxonomy) & {
@@ -37,9 +41,10 @@
   }
 
   header {
-    @media (max-width: 576px) {
+    @include mq($until: medium) {
       margin-bottom: 60px;
     }
+
     p {
       font-size: 22px;
     }
@@ -63,9 +68,10 @@
   .hds-text-input__label {
     margin-bottom: var(--spacing-s);
     line-height: var(--lineheight-s);
+    font-weight: 400;
+    font-size: var(--fontsize-heading-xs);
 
     @include mq($from: medium) {
-      font-size: var(--fontsize-heading-m);
       margin-bottom: var(--spacing-xs);
     }
   }
@@ -113,6 +119,10 @@
     }
   }
 
+  .form-type-select {
+    color: var(--input-color-default);
+  }
+
   .facets {
     grid-area: facets;
     margin-bottom: var(--field-gutter);
@@ -120,9 +130,8 @@
 
   .form-item-sort-bef-combine {
     grid-area: sort;
-
     position: absolute;
-    bottom: 0;
+    bottom: calc(-1 * var(--spacing-layout-m));
     right: 0;
     transform: translate(0, 100%);
     display: flex;
@@ -130,6 +139,7 @@
     align-items: center;
     justify-content: space-between;
     margin: 0;
+
     .hds-text-input__label {
       color: #1B1B1B;
       font-size: 16px;
@@ -138,14 +148,15 @@
       margin: 0;
     }
     .form-select {
-      padding: 0 30px 0 15px;
+      padding: 0 45px 0 15px;
     }
     .form-select {
       border: 1px solid #CCCCCC;
     }
-    @media (max-width: 576px) {
+
+    @include mq($until: medium) {
       left: 0;
-      bottom: -60px;
+      bottom: -78px;
     }
   }
 
@@ -154,16 +165,10 @@
     margin-top: calc(var(--field-gutter) + var(--spacing-2-xs));
   }
 
-  // Gutter between rows
-  .views-row:not(:last-child) {
-    margin-bottom: var(--spacing-m);
-  }
-
   .form-actions {
     display: none;
   }
 }
-
 
 .facets__fields {
   display: grid;
@@ -201,7 +206,7 @@
     /* removes the input shadow on iOS */
     -webkit-appearance: none;
     background-color: var(--input-background-default);
-    border: var(--border-width) solid var(--input-border-color-default);
+    border: 0;
     border-radius: var(--border-radius);
     box-sizing: border-box;
     color: var(--input-color-default);
@@ -224,6 +229,81 @@
     &:not([readonly]):focus {
       box-shadow: 0 0 0 var(--outline-width) var(--focus-outline-color);
       transform: translate3d(0, 0, 0);
+    }
+  }
+}
+
+.path-search {
+  .block-system-breadcrumb-block {
+    color: var(--color-white);
+
+    a {
+      color: var(--color-white);
+    }
+  }
+
+  .form-item-search .form-text {
+    width: 100%;
+
+    @include mq($from: medium) {
+      width: calc(100% - var(--spacing-xl));
+    }
+  }
+
+  .search-view .views-exposed-form {
+    color: var(--color-white);
+    padding-top: var(--spacing-layout-l);
+    padding-bottom: calc(var(--spacing-layout-l) + 24px);
+    margin-bottom: var(--spacing-layout-xs);
+
+    @include mq($from: medium) {
+      display: flex;
+      align-items: flex-end;
+      flex-wrap: wrap;
+    }
+
+    @include mq($until: medium) {
+      .form-text {
+        width: 100%;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 450px;
+      z-index: -100;
+      background: url("../images/search/background-wave-mobile.svg") top center repeat-x;
+      background-size: auto 104%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+    }
+
+    .form-actions {
+      display: block;
+
+      @include mq($until: medium) {
+        margin-top: var(--spacing-l);
+      }
+
+      .button:focus,
+      .button:hover {
+        background-color: var(--button-background);
+      }
+    }
+  }
+
+  .search-view .form-item-search label {
+    // H2
+    font-size: 32px;
+    font-weight: 400;
+    line-height: var(--lineheight-s);
+
+    @include mq($from: medium) {
+      font-size: 48px;
     }
   }
 }

@@ -60,6 +60,7 @@ Drupal.behaviors.julkaisutTheme = {
     this.markExternalLinks(context.querySelectorAll('a[target="_blank"]'));
 
     this.stickyBookNav(context);
+    this.searchResultAccordion(context);
 
     if (window.jQuery && settings.views && settings.views.ajaxViews) {
       window.jQuery(context).on('views_infinite_scroll.new_content', this.focusNewContent);
@@ -269,6 +270,14 @@ Drupal.behaviors.julkaisutTheme = {
     }, {threshold: 0});
 
     observer.observe(footer);
+  },
+
+  searchResultAccordion(context) {
+    const triggers = context.querySelectorAll('.search-result__accordion-trigger');
+    for (let i = 0; i < triggers.length; i++) {
+      const trigger = triggers[i];
+      toggler(trigger);
+    }
   }
 };
 

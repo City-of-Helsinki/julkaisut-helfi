@@ -11,11 +11,19 @@
         {% endblock %}
 
         {% if node.book and node.book.depth == 1 %}
-          <div class="search-result__date">
-            {% block node__date parent() %}
+          <div class="search-result__date published-date">
+            {% block node__date %}
+              <p>{% trans %}Published on {{ date }}{% endtrans %}</p>
+            {% endblock %}
           </div>
 
           {{ content|without('search_api_excerpt', 'field_image') }}
+
+          {% if elements['#children'] %}
+            <div class="search-result__child">
+              {{ elements['#children'].0.content }}
+            </div>
+          {% endif %}
         {% else %}
           {% if content.search_api_excerpt is not empty %}
             <p>{{ content.search_api_excerpt }}</p>
@@ -24,20 +32,40 @@
           {% endif %}
         {% endif %}
 
+        {% if elements['#children']|length > 1 %}
+          <button
+            id="search-result-accordion-{{ node.id }}"
+            class="search-result__accordion-trigger"
+            aria-controls="search-result-children-{{ node.id }}"
+            aria-label="{% trans %}Keyword in context{% endtrans %}"
+            aria-expanded="false"
+          >
+            {% trans %}Show keyword in context{% endtrans %}
 
-        {% if elements['#children'] %}
-        <dl class="search-accordion">
-          <dt>{% trans %}Show keyword in context{% endtrans %}</dt>
-          <dd class="search-result__children">
-          {% for item in elements['#children'] %}
-            <div class="search-result__child">
-            {{ item.content }}
-            </div>
-          {% endfor %}
-          </dd>
-        </dl>
+            <i class="hds-icon hds-icon--angle-down hds-icon--size-s" aria-hidden="true"></i>
+          </button>
+          <section
+            id="search-result-children-{{ node.id }}"
+            class="search-result__accordion-content"
+            aria-labelledby="search-result-accordion-{{ node.id }}"
+          >
+            <ul class="search-result__children">
+              {% for item in elements['#children'] %}
+                <li class="search-result__child">
+                  {{ item.content }}
+                </li>
+              {% endfor %}
+              </dd>
+            </ul>
+          </section>
         {% endif %}
       </div>
+
+      {% if not node.book or node.book.depth == 1 %}
+        <div class="search-result__image">
+          {{content.field_image}}
+        </div>
+      {% endif %}
     {% endblock %}
   </article>
 {% endblock %}

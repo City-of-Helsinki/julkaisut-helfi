@@ -187,7 +187,7 @@ display:
           expose:
             label: Relevance
             field_identifier: search_api_relevance
-          exposed: false
+          exposed: true
         created:
           id: created
           table: search_api_index_mainindex
