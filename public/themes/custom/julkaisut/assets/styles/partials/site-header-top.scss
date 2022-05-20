@@ -1,11 +1,18 @@
 .site-header-top {
-  max-width: 100%;
-  padding: 0 32px;
   background-color: #f2f2f2;
+  padding-left: var(--viewport-gutter);
+  padding-right: var(--viewport-gutter);
+
   .header-top {
     height: 48px;
     display: flex;
     align-items: center;
+
+    // Layout
+    max-width: var(--alignwide-width);
+    margin-left: auto;
+    margin-right: auto;
+
     .menu {
       margin-left: auto;
       width: fit-content;

@@ -36,11 +36,14 @@
     color: var(--color-black-90);
     display: flex;
     font-size: 16px;
-    &:last-child {
-      a {
-        margin-right: 0;
-      }
+
+    &:last-child a {
+      margin-right: 0;
     }
+  }
+
+  &__item:not(.is-active) > a:hover {
+    text-decoration: underline;
   }
 
   &__item > a,
@@ -52,7 +55,6 @@
     display: block;
     width: 100%;
     margin-right: 16px;
-
 
     &.is-active {
       font-weight: bold;

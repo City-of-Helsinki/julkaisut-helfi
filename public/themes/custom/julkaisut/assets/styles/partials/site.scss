@@ -1,12 +1,24 @@
+@use "common/breakpoints" as *;
+
 .site {
   display: grid;
   grid-template-rows: auto 1fr auto;
   grid-template-columns: minmax(0, 1fr);
   height: 100%;
+
+  --site-horizontal-gutter: var(--viewport-gutter);
+
+  @include mq($from: large) {
+    --site-horizontal-gutter: var(--spacing-l);
+  }
 }
 
 .site__header {
   background-color: var(--color-white);
+  max-width: var(--alignfull-width);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
   z-index: 100;
 
   &.is-active {

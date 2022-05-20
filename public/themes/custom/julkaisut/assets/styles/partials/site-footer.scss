@@ -31,8 +31,6 @@
     margin-bottom: 0;
   }
 
-
-
   .menu {
     display: flex;
     flex-direction: column;
@@ -128,6 +126,11 @@
     mask-size: auto;
     mask-image: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M0 0h24v24H0z'/%3E%3Cpath fill='currentColor' d='M12 3.636L18.364 10l-1.414 1.414L13 7.464V20h-2V7.465l-3.95 3.95L5.636 10z'/%3E%3C/g%3E%3C/svg%3E");
     margin-left: var(--spacing-3-xs);
+
+    @include mq($until: small) {
+      position: relative;
+      top: 5px;
+    }
   }
 
   // Footer bottom menu is a grid of three cells on mobile
@@ -241,17 +244,20 @@
     }
   }
 }
+
 .site-footer {
   max-width: 100%;
+
   .region-footer-top {
-    margin: 0 32px;
     display: block;
     text-align: start;
+
     h2 {
       font-size: 28px;
       font-weight: 500;
       color: var(--color-white);
     }
+
     .menu {
       &-item {
         margin-top: 8px;
@@ -264,7 +270,8 @@
   }
   .footer-bottom-wraper {
     padding-bottom: 0;
-    margin: 90px 32px 0;
+    margin-top: 90px;
+
     .region-footer-bottom {
       border-top: solid 1px #b2b2b2;
       max-width: 1264px;
@@ -272,6 +279,7 @@
       flex-wrap: wrap;
       text-align: start;
       padding-top: 24px;
+
       @media (max-width: 991px) {
         font-size: 16px;
         .menu--footer-fineprint {

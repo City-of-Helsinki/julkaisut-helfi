@@ -3,7 +3,7 @@
 .site-logo {
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-gap: var(--spacing-m);
+  grid-gap: var(--spacing-s);
   align-items: center;
 
   @include mq($from: large) {
@@ -23,8 +23,13 @@
   }
 
   &__name {
-    font-weight: bold;
     text-decoration: none;
     color: inherit;
+    font-weight: 400;
+    font-size: var(--fontsize-body-m);
+
+    @include mq($from: large) {
+      font-size: var(--fontsize-body-xl);
+    }
   }
 }

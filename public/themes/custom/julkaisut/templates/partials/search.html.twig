@@ -1,9 +1,4 @@
-<form class="site-search hds-text-input" action="{{ path('view.search.page_1') }}" method="get" accept-charset="UTF-8" role="search">
-  <label class="site-search__label" for="search-field">{{ 'What are you looking for?' | t }}</label>
-  <input id="search-field" class="site-search__field hds-text-input__input" type="text" placeholder="{{ 'Search…'|t }}" name="search">
-
-  <button class="site-search__button" type="submit">
-    <i class="hds-icon hds-icon--search hds-icon--size-s" aria-hidden="true"></i>
-    <span class="search-text">{{ 'Search' | t }}</span>
-  </button>
-</form>
+<a class="site-search" href="{{ path('view.search.page_1') }}">
+  <i class="hds-icon hds-icon--search hds-icon--size-s" aria-hidden="true"></i>
+  <span class="site-search__icon-label">{{ 'Search' | t }}</span>
+</a>

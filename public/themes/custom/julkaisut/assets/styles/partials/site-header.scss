@@ -2,43 +2,40 @@
 @use "common/utils" as *;
 
 .site-header {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+  padding-top: var(--spacing-s);
+  padding-bottom: var(--spacing-s);
+  padding-left: var(--viewport-gutter);
+  padding-right: var(--viewport-gutter);
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px var(--spacing-s);
+
+  &__inner {
+    // Layout
+    max-width: var(--alignwide-width);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   @include mq($until: large) {
     border-bottom: solid 1px var(--color-black-20);
-  }
+    position: fixed;
+    z-index: 10;
+    background-color: var(--color-white);
+    padding-top: var(--spacing-2-xs);
+    padding-bottom: var(--spacing-2-xs);
 
-  @include mq($from: large) {
-    padding-left: 0;
-    padding-right: 0;
-    max-width: var(--container-width);
+    &__languages.mobile {
+      margin-top: 68px; // height of fixed nav
+    }
   }
 
   &__logo {
     // push remaining columns to the right
     flex: 1 0 auto;
-    .site-logo {
-      &__name {
-        --line-height: 1.5;
-        font-size: 1.25rem;
-        font-weight: 400;
-      }
-    }
   }
-
-  //&__search {
-  //  display: none;
-  //
-  //  @include mq($from: large) {
-  //    display: block;
-  //  }
-  //}
 
   &__hamburger-button {
     display: block;
@@ -60,11 +57,14 @@
     height: 49px;
     display: flex;
     align-items: center;
-    padding: 0 32px;
+    padding-left: var(--viewport-gutter);
+    padding-right: var(--viewport-gutter);
+
     .site-languages {
       margin: 0;
     }
-    @media (min-width: 992px) {
+
+    @include mq($from: large) {
       display: none;
     }
   }
@@ -72,23 +72,5 @@
   // When navigation is activated on mobile
   .is-active & {
     border-bottom: 0;
-
-    .site-navbar {
-
-    }
-  }
-}
-.site-header {
-  max-width: 100%;
-  padding: 17px 32px;
-}
-@media (max-width: 991px) {
-  .site-header {
-    position: fixed;
-    z-index: 10;
-    background-color: #ffffff;
-    &__languages.mobile {
-      margin-top: 86px;
-    }
   }
 }
