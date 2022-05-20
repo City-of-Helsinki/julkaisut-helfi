@@ -21,10 +21,10 @@
     @include mq($from: medium) {
       margin-left: var(--spacing-s);
 
-      --icon-size: var(--spacing-l);
+      --icon-size: var(--spacing-2-xl);
 
       .hds-icon {
-        --icon-size: var(--spacing-l);
+        --icon-size: var(--spacing-2-xl);
       }
     }
 
