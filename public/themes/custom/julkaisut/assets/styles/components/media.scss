@@ -12,5 +12,9 @@ figure.media {
     @include mq($from: large) {
       font-size: var(--fontsize-body-m);
     }
+
+    .wp-block-image.alignfull & {
+      transform: translateX(calc((var(--alignwide-width) - var(--content-width))/2 * -1));
+    }
   }
 }
