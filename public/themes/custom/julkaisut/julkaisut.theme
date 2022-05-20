@@ -535,7 +535,6 @@ function julkaisut_preprocess_links__language_block(&$variables) {
 
   foreach ($variables['links'] as $langcode => &$link) {
     if (!empty($link['link'])) {
-      $link['link']['#options']['attributes']['role'] = 'menuitem';
       $link['link']['#options']['attributes']['lang'] = $langcode;
     } else {
       $link['attributes']

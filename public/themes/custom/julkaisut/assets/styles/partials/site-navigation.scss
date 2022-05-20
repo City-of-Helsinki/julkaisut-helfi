@@ -126,13 +126,6 @@
         right: 0;
         border-bottom-color: var(--color-black-90);
       }
-
-      &:focus {
-        outline: none;
-        box-shadow: 0 0 0 3px var(--color-focus-outline-text-input-default);
-        transform: translate3d(0, 0, 0);
-        border-radius: 2px;
-      }
     }
 
     &__submenu-trigger {

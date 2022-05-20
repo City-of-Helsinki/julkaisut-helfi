@@ -57,11 +57,9 @@
     attributes
       .addClass('site-languages__menu')
       .setAttribute('id', 'site-languages')
-      .setAttribute('role', 'menu')
-      .setAttribute('aria-label', 'Languages' | t)
   }}>
     {%- for item in links -%}
-      <li{{ item.attributes.addClass('site-languages__item') }}>
+      <li{{ item.attributes.addClass('site-languages__item').setAttribute('role', 'none') }}>
         {%- if item.link -%}
           {{ item.link }}
         {%- elseif item.text_attributes -%}
