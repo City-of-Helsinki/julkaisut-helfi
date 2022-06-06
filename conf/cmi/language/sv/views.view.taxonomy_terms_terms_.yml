@@ -9,7 +9,7 @@ display:
       pager:
         options:
           views_infinite_scroll:
-            button_text: 'Vis alt…'
+            button_text: 'Visa alla teman'
       header:
         area_text_custom:
           content: "<h3>Teman</h3>\r\n<div role=\"status\" class=\"visually-hidden\" aria-hidden=\"true\">\r\n<p>[view:total-rows] resultat.</p>\r\n</div>"
@@ -18,7 +18,7 @@ display:
       pager:
         options:
           views_infinite_scroll:
-            button_text: 'Vis alt…'
+            button_text: 'Visa alla branscher'
       header:
         area_text_custom:
           content: "<h3>Branscher och företag</h3>\r\n<div role=\"status\" class=\"visually-hidden\" aria-hidden=\"true\">\r\n<p>[view:total-rows] resultat.</p>\r\n</div>"

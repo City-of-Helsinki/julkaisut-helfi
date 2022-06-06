@@ -9,7 +9,7 @@ display:
       pager:
         options:
           views_infinite_scroll:
-            button_text: 'Show all…'
+            button_text: 'Show all themes'
       header:
         area_text_custom:
           content: "<h3>Themes</h3>\r\n<div role=\"status\" class=\"visually-hidden\" aria-hidden=\"true\">\r\n<p>[view:total-rows] results</p>\r\n</div>"
@@ -18,7 +18,7 @@ display:
       pager:
         options:
           views_infinite_scroll:
-            button_text: 'Show all…'
+            button_text: 'Show all industries'
       header:
         area_text_custom:
           content: "<h3>Industries and businesses</h3>\r\n<div role=\"status\" class=\"visually-hidden\" aria-hidden=\"true\">\r\n<p>[view:total-rows] results</p>\r\n</div>"
