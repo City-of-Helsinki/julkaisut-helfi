@@ -293,14 +293,3 @@ Drupal.behaviors.julkaisutTheme = {
     }
   }
 };
-
-(function() {
-  window.rnsData = {
-    apiKey: 'oyp8ikjx4fndltql',
-    categories: ['Julkaisut']
-  };
-  var s = document.createElement('script');
-  s.src = 'https://cdn.reactandshare.com/plugin/rns.js';
-  document.body.appendChild(s);
-}());
-
