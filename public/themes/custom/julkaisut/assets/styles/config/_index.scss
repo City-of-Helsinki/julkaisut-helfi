@@ -10,7 +10,7 @@ $mq-breakpoints: (
   medium: hds.$breakpoint-m,
   large: hds.$breakpoint-l,
   xlarge: hds.$breakpoint-xl,
-  alignfull: 1920px,
+  alignfull: 1950px,
 );
 
 :root {
@@ -65,6 +65,6 @@ $mq-breakpoints: (
     --grid-columns: 12;
     --content-width: calc(var(--container-width) / var(--grid-columns) * 8); // 8 columns
     --alignwide-width: var(--container-width);
-    --alignfull-width: 1920px;
+    --alignfull-width: 1950px;
   }
 }
