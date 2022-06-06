@@ -31,6 +31,7 @@
         "drupal/merge_translations": "^1.1",
         "drupal/metatag": "^1.14",
         "drupal/pathauto": "^1.8",
+        "drupal/popular_search_keywords": "^1.0",
         "drupal/recreate_block_content": "^2.0",
         "drupal/redirect": "^1.6",
         "drupal/redis": "^1.4",
@@ -44,7 +45,7 @@
         "drupal/stage_file_proxy": "1.x-dev",
         "drupal/tvi": "^1.0@RC",
         "drupal/twig_tweak": "^2.6",
-        "drupal/views_infinite_scroll": "1.x-dev",
+        "drupal/views_infinite_scroll": "^2.0",
         "drush/drush": "^10.3",
         "npm-asset/jquery-ui-touch-punch": "^0.2.3",
         "oomphinc/composer-installers-extender": "^2.0",
@@ -145,6 +146,9 @@
             },
             "drupal/content_language_access": {
                 "Book navigation links not available on translations [TODO]": "./patches/content_language_acccess.patch"
+            },
+            "drupal/popular_search_keywords": {
+                "Custom template": "./patches/popular_search_keywords.patch"
             }
         },
         "installer-types": [
@@ -165,5 +169,8 @@
             "type": "composer",
             "url": "https://asset-packagist.org"
         }
-    ]
+    ],
+    "require-dev": {
+        "drupal/stage_file_proxy": "^1.2"
+    }
 }

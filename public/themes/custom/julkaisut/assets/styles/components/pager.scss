@@ -11,8 +11,4 @@
   @include mq($from: medium) {
     font-size: var(--fontsize-heading-s);
   }
-
-  & &__item {
-    padding: 0;
-  }
 }

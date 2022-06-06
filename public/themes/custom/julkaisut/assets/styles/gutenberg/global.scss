@@ -15,47 +15,19 @@ $fontsizes-heading:
   'heading-xl';
 
 $palette-colors:
-  'bus',
-  'bus-dark-50',
-  'bus-light-50',
-  'bus-light-5',
-  'coat-of-arms-blue',
-  'summer',
-  'summer-light-20',
-  'copper',
-  'copper-light-20',
-  'fog-light-20',
-  'suomenlinna',
-  'suomenlinna-light-20',
-  'engel-light-20',
-  'black-90',
-  'black-60'
-  'black-50',
-  'black-20',
-  'black-5',
+  'primary',
+  'secondary',
+  'accent',
+  'black',
   'white';
 
 $palette-colors-dark:
-  'bus',
-  'bus-dark-50',
-  'bus-light-50',
-  'coat-of-arms-blue',
-  'black-90',
-  'black-60'
-  'black-50';
+  'primary',
+  'black';
 
 $palette-colors-light:
-  'bus-light-5',
-  'summer',
-  'summer-light-20',
-  'copper',
-  'copper-light-20',
-  'fog-light-20',
-  'suomenlinna',
-  'suomenlinna-light-20',
-  'engel-light-20',
-  'black-20',
-  'black-5',
+  'secondary',
+  'accent',
   'white';
 
 @each $name in $fontsizes-body {
@@ -87,6 +59,8 @@ $palette-colors-light:
 @each $name in $palette-colors-dark {
   .has-#{$name}-background-color {
     color: var(--color-white);
+
+    --button-background: var(--color-white);
   }
 }
 

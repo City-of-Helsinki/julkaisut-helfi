@@ -11,9 +11,11 @@
   width: 100%;
   font-size: var(--fontsize-body-m);
 
+  // Layout
+  max-width: var(--alignwide-width);
+
   @include mq($from: large) {
     font-size: var(--fontsize-body-l);
-    max-width: calc(var(--container-width) * 1px);
   }
 
   &__item {
@@ -30,6 +32,29 @@
     display: flex;
     align-items: center;
     padding: var(--spacing-s) var(--spacing-l);
+    font-weight: normal;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &.is-active {
+      font-weight: bold;
+
+      @include mq($from: large) {
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          bottom: -5px;
+          border-bottom: solid 5px transparent;
+          transition: all 100ms ease-out;
+          width: 100%;
+          height: 4px;
+          background-color: var(--color-black);
+        }
+      }
+    }
 
     // Make space for trigger
     .has-children > & {
@@ -94,30 +119,12 @@
       padding-right: 0;
 
       // A bottom border bar shown on hover and active state
-      &::after {
-        content: '';
-        display: block;
-        position: absolute;
-        left: 50%;
-        right: 50%;
-        bottom: 0;
-        border-bottom: solid 5px transparent;
-        transition: all 100ms ease-out;
-      }
-
       .is-level-0 > &:hover::after,
       .is-level-0 > &:focus::after,
       .is-level-0[aria-expanded="true"] > &::after {
         left: 0;
         right: 0;
         border-bottom-color: var(--color-black-90);
-      }
-
-      &:focus {
-        outline: none;
-        box-shadow: 0 0 0 3px var(--color-focus-outline-text-input-default);
-        transform: translate3d(0, 0, 0);
-        border-radius: 2px;
       }
     }
 

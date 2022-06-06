@@ -1,11 +1,12 @@
 @use "common/breakpoints" as *;
 
 .published-date {
-  margin-bottom: calc(var(--spacing-m) * -1 + var(--spacing-s));
+  margin-bottom: 0;
 
-  p {
+  p,
+  .field--name-field-magazine {
     font-size: var(--fontsize-heading-xxs);
-    font-weight: bold;
+    font-weight: 700;
     line-height: var(--lineheight-m);
     margin-top: 0;
     margin-bottom: var(--spacing-m);

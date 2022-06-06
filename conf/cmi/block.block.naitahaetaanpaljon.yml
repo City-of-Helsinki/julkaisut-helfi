@@ -1,0 +1,27 @@
+uuid: e3f23c67-86ef-4a30-ab58-732353d1095c
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - julkaisut
+id: naitahaetaanpaljon
+theme: julkaisut
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:3e806e2f-4ced-4e80-a3ce-ae0569cad6c7'
+settings:
+  id: 'block_content:3e806e2f-4ced-4e80-a3ce-ae0569cad6c7'
+  label: 'Näitä haetaan paljon:'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: default
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<none>'

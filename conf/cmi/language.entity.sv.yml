@@ -3,7 +3,7 @@ langcode: sv
 status: true
 dependencies: {  }
 id: sv
-label: 'På svenska'
+label: Svenska
 direction: ltr
 weight: -8
 locked: false

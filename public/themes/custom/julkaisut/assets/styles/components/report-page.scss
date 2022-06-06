@@ -1,0 +1,48 @@
+.page-wrapper {
+  margin: 0 auto;
+  .center-block {
+    display: flex;
+    width: calc(var(--container-width) * 1px );
+    padding: 0;
+    .book-content {
+      max-width: 792px;
+      transform: none !important;
+      width: 66.6%;
+      margin-left: 0;
+      margin-right: 25px;
+    }
+    .node__featured-image {
+      width: 280px;
+      max-height: 395px;
+      margin: -182px 0 0 auto;
+      transform: none !important;
+      .field--name-field-media-image {
+        text-align: center;
+        img {
+          width: 280px;
+          height: 395px;
+          object-position: center;
+          object-fit: cover;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+}
+@media (max-width: 767px) {
+  .page-wrapper {
+    width: 100%;
+    .center-block {
+      flex-direction: column;
+      padding: 0 15px;
+      width: 100%;
+      .book-content {
+        width: 100%;
+      }
+      .node__featured-image {
+        margin: -24px auto 34px;
+      }
+    }
+  }
+}

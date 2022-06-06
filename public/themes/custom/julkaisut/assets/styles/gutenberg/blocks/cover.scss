@@ -1,0 +1,16 @@
+@use "common/breakpoints" as *;
+
+.wp-block-cover {
+  padding: var(--spacing-layout-l) var(--spacing-layout-s);
+  min-height: auto;
+
+  & &__inner-container {
+    width: 100%;
+    color: inherit;
+
+    // Left align all content
+    > * {
+      margin-left: 0;
+    }
+  }
+}

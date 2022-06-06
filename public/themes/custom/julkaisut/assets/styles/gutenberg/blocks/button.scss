@@ -4,11 +4,14 @@
  * Button
  */
 
- .wp-block-button {
+ :root {
   --button-color: var(--color-white);
-  --button-background: var(--color-primary);
-  --button-background-hover: var(--color-bus-dark-50);
+  --button-background: var(--color-black);
+  --button-background-hover: var(--color-primary);
+  --button-border-width: 0px;
+ }
 
+ .wp-block-button {
   color: var(--button-color);;
   background-color: var(--button-background);
   font-weight: 500;
@@ -23,20 +26,19 @@
     color: var(--button-color);
   }
 
+  &.is-style-outline {
+    --button-border-width: 3px;
+  }
+
+  &.is-style-text,
   &.is-style-small,
   &.is-style-outline {
     --button-color: var(--button-background);
-    background-color: transparent !important;
 
-    &.wp-block-button__link,
-    & .wp-block-button__link {
-      border: 2px solid;
-    }
+    background-color: transparent !important;
 
     &:hover,
     &:focus {
-      --button-color: var(--button-background-hover);
-
       &,
       & .wp-block-button__link {
         text-decoration: underline;
@@ -58,9 +60,11 @@
 
   &__link {
     border-radius: 0;
-    padding: 21px 32px;
+    padding: calc(21px - var(--button-border-width) * 2) calc(32px - var(--button-border-width) * 2);
     font-size: var(--fontsize-body-m);
     line-height: var(--lineheight-s);
+    box-sizing: border-box;
+    border: solid var(--button-border-width) currentColor;
 
     @each $name in gutenberg.$palette-colors-light {
       &.has-#{$name}-background-color {
@@ -74,8 +78,39 @@
   }
 
   &.is-style-small {
-    padding: 10px 16px 9px;
-    font-weight: 500;
-    font-size: var(--fontsize-body-s);
+    --button-border-width: 2px;
+
+    &.wp-block-button__link,
+    .wp-block-button__link {
+      padding: 10px 8px 9px;
+      font-size: 14px;
+      line-height: 1;
+    }
+  }
+
+  &.is-style-text {
+    &.wp-block-button__link,
+    .wp-block-button__link {
+      padding: 0;
+      text-decoration: underline;
+      display: flex;
+      align-items: center;
+
+      .hds-icon {
+        margin-left: 0.5ch;
+        text-decoration: none;
+        margin-bottom: calc((var(--icon-size) - 1em) / 2 * -1);
+      }
+    }
+  }
+}
+
+.wp-block-media-text {
+  &.has-background .wp-block-button {
+    --button-border-width: 1px;
+  }
+
+  .wp-block-button.is-style-small {
+    margin-right: calc(8px - 4px); // inner-block gaps
   }
 }

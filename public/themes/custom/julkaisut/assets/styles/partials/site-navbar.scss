@@ -1,12 +1,14 @@
 @use "common/breakpoints" as *;
 
 .site-navbar {
-  padding-top: var(--spacing-2-xs);
   border-top: solid 1px var(--color-black-20);
   background-color: var(--color-white);
-  z-index: 100;
+  z-index: 9;
   transition: transform 200ms ease-out;
   display: none;
+  border-bottom: solid 1px var(--color-black-20);
+  padding-bottom: 5px;
+  padding-top: 5px;
 
   @include mq($from: large) {
     display: block;
@@ -16,17 +18,41 @@
     display: block;
     animation: slide-in 300ms ease-out;
     border-top: 0;
+    position: absolute;
+    width: 100%;
+    top: 68px;
+    border-bottom: none;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
 @keyframes slide-in {
   0% {
     opacity: 0;
-    transform: translateX(-100%);
+    transform: translateY(-100%);
   }
 
   100% {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
+  }
+}
+
+// .site-navbar {
+//   .site-navigation {
+//     max-width: 100%;
+//     padding: 0 32px;
+//   }
+// }
+
+.is-active .site-navbar .site-navigation {
+  padding: 0;
+
+  &__item {
+    border-bottom: solid 1px var(--color-black-20);
+    &:first-child {
+      border-top: solid 1px var(--color-black-20);
+    }
   }
 }

@@ -11,12 +11,12 @@ dependencies:
 id: footerfineprint
 theme: julkaisut
 region: footer_bottom
-weight: 0
+weight: -6
 provider: null
 plugin: 'system_menu_block:footer-fineprint'
 settings:
   id: 'system_menu_block:footer-fineprint'
-  label: 'Muut linkit'
+  label: 'Other links'
   label_display: '0'
   provider: system
   level: 1

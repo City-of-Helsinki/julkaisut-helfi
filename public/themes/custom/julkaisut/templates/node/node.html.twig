@@ -108,7 +108,7 @@
       {{ content.body }}
 
       <div class="is-container">
-        {{ content|without('body', 'field_tags', 'field_image') }}
+        {{ content|without('body', 'field_tags', 'field_image', 'field_magazine') }}
       </div>
     {% endblock %}
   </article>

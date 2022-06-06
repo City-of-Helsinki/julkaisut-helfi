@@ -1,3 +1,5 @@
+@use "common/breakpoints" as *;
+
 .block-views {
   &:not(:first-child) {
     margin-top: var(--spacing-m);
@@ -5,6 +7,10 @@
 
   &:not(:last-child) {
     margin-bottom: var(--block-gutter-l);
+
+    .wp-block-media-text__content & {
+      margin-bottom: var(--block-gutter);
+    }
   }
 
   // In preprocess we're bumping out the alignwide class to the block wrapper
@@ -12,5 +18,76 @@
   &.alignwide .alignwide:first-child,
   &.alignfull .alignfull:first-child {
     margin-top: 0;
+  }
+}
+
+// .path-taxonomy, .path-frontpage {
+//   .term__wrapper, .block-views-blocktaxonomy-terms-terms--block-5 {
+//     .teaser {
+//       &:after {
+//         content: "\2192";
+//         font-weight: bold;
+//         font-size: 35px;
+//       }
+//       .teaser__title {
+//         margin-block: 24px;
+//       }
+//       .teaser__date {
+//         display: none;
+//       }
+//     }
+//   }
+// }
+
+// Terms List with load more shown on frontpage
+// Load more should look like a link instead of a button
+.block-views-blocktaxonomy-terms-terms--block-2 {
+  .pager {
+    justify-content: left;
+    margin: 0;
+
+    .pager__item {
+      border: none;
+      padding: 0;
+      width: auto;
+      height: auto;
+    }
+
+    .wp-block-button,
+    .wp-block-button__link {
+      background: inherit;
+      color: inherit;
+      font-weight: 400;
+      border: 0;
+      padding: 0;
+      font-size: var(--fontsize-body-m);
+      text-decoration: underline;
+
+      @include mq($from: medium) {
+        font-size: var(--fontsize-body-l);
+      }
+    }
+  }
+
+  h3 {
+    // H4
+    font-size: 20px;
+    font-weight: 500;
+    line-height: var(--lineheight-m);
+    margin-bottom: 0;
+
+    @include mq($from: medium) {
+      font-size: 24px;
+    }
+  }
+
+  // Remove .is-container gutter
+  .views-element-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .tag__group {
+    margin-block: var(--spacing-s);
   }
 }

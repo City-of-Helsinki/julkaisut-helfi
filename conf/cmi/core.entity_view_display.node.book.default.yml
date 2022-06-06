@@ -40,7 +40,7 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: banner
+      view_mode: portrait_banner
       link: false
     third_party_settings: {  }
     weight: 1

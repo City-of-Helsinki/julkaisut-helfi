@@ -1,0 +1,8 @@
+accordion_style:
+  version: 1.x
+  js:
+    js/search_accordion.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal

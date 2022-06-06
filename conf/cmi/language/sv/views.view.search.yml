@@ -29,21 +29,21 @@ display:
             label: 'Vad söker du?'
             placeholder: Sök
         field_year:
-          expose:
-            description: ''
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
           group_info:
             label: 'Från år'
-        field_year_1:
           expose:
             description: ''
             min_placeholder: ''
             max_placeholder: ''
             placeholder: ''
+        field_year_1:
           group_info:
             label: 'Fram till år'
+          expose:
+            description: ''
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
       exposed_form:
         options:
           submit_button: 'Sök utgivning'
@@ -56,28 +56,28 @@ display:
     display_options:
       header:
         area_text_custom:
-          content: "{% if filters.search_api_fulltext or filters.facets %}\r\n<div role=\"status\">\r\n<h1>Sökresultat ([view:total-rows])</h1>\r\n{% if filters.search_api_fulltext %}\r\n<h3>För orden \"{{ filters.search_api_fulltext }}\"</h3>\r\n{% endif %}\r\n</div>\r\n{% endif %}"
+          content: "{% if filters.search_api_fulltext or filters.facets %}\r\n<div role=\"status\">\r\n{% if filters.search_api_fulltext %}\r\n<p> <b>[view:total-rows]</b> för orden \"{{ filters.search_api_fulltext }}\"</p>\r\n{% endif %}\r\n</div>\r\n{% endif %}"
       filters:
         search_api_fulltext:
           expose:
             label: 'Vad söker du?'
             placeholder: Sök
         field_year:
-          expose:
-            description: ''
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
           group_info:
             label: 'Från år'
-        field_year_1:
           expose:
             description: ''
             min_placeholder: ''
             max_placeholder: ''
             placeholder: ''
+        field_year_1:
           group_info:
             label: 'Fram till år'
+          expose:
+            description: ''
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
       exposed_form:
         options:
           submit_button: 'Sök utgivning'
@@ -102,25 +102,29 @@ display:
           content: '<h3 role="status" class="result-count">[view:total-rows] resultat</h3>'
       filters:
         field_year:
-          expose:
-            description: ''
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
           group_info:
             label: 'Från år'
-        field_year_1:
           expose:
             description: ''
             min_placeholder: ''
             max_placeholder: ''
             placeholder: ''
+        field_year_1:
           group_info:
             label: 'Fram till år'
+          expose:
+            description: ''
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
   block_1:
     display_options:
       filters:
         search_api_language:
           expose:
             description: ''
+        search_api_fulltext:
+          expose:
+            label: 'Vilken publikation söker du efter?'
+            placeholder: Sök
 label: Sök

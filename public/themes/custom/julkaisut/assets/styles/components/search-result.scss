@@ -1,43 +1,51 @@
 @use "common/breakpoints" as *;
 
 .search-result {
-  --card-padding: var(--spacing-s);
-  --card-gutter: var(--spacing-xs);
+  --card-padding: var(--spacing-l);
+  --card-gutter: var(--spacing-m);
 
-  @include mq($from: medium) {
-    --card-padding: var(--spacing-m);
-    --card-gutter: var(--spacing-s);
+  font-size: var(--fontsize-body-m);
+  padding-top: var(--card-padding);
+  padding-bottom: var(--card-padding);
+  border-top: 1px solid var(--color-black-20);
+  display: flex;
+  flex-direction: column;
+
+  &__image {
+    @include mq($until: medium) {
+      order: -1;
+      margin-bottom: var(--spacing-m);
+
+      .node--type-book & {
+        display: none;
+      }
+    }
   }
 
-  color: var(--color-black-70);
-  padding: var(--card-padding);
-  border: solid 2px var(--color-black-20);
-  display: flex;
-
+  // On mobile image is stacked
   @include mq($from: medium) {
-    align-items: center;
+    flex-direction: row;
+
+    &__image {
+      order: 1;
+      margin-left: var(--card-padding);
+      width: calc(var(--card-padding) + 178px);
+    }
   }
 
   &__content {
     flex-basis: 100%;
   }
 
-  &__image {
-    margin-left: var(--card-padding);
-    width: calc(var(--card-padding) + 128px);
-
-    @include mq($from: medium) {
-      width: calc(var(--card-padding) + 120px);
-    }
-  }
-
-  &__date {
+  & &__date {
     color: var(--color-black-90);
-    margin-bottom: var(--spacing-3-xs);
+
+    &:not(:last-child) {
+      margin-bottom: var(--spacing-s);
+    }
 
     p {
       font-size: var(--fontsize-body-m);
-      font-weight: 500;
       margin-bottom: 0;
     }
   }
@@ -48,8 +56,7 @@
   }
 
   &__title {
-    color: var(--color-black-90);
-    margin-bottom: var(--spacing-2-xs);
+    margin-bottom: var(--spacing-s);
 
     &:last-child {
       margin-bottom: 0;
@@ -67,26 +74,57 @@
   }
 
   &__child & {
-    color: var(--color-black-40);
-    border-width: 1px;
-
-    @include mq($from: medium) {
-      font-size: var(--fontsize-body-m);
-    }
+    border: 0;
+    padding: 0;
+    color: var(--color-black-60);
 
     .search-result__title {
-      font-size: var(--fontsize-heading-xxs);
-    }
-
-    @include mq($until: medium) {
-      font-size: var(--fontsize-body-s);
-      .search-result__title {
-        color: var(--color-black-70);
-      }
+      font-size: var(--fontsize-body-m);
+      font-weight: 700;
+      color: var(--color-black);
+      margin-bottom: var(--spacing-2-xs);
     }
   }
 
-  &__child {
+  &__child:not(:first-child) {
     margin-top: var(--card-gutter);
+  }
+
+  &__children {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  &__accordion-trigger {
+    font-size: var(--fontsize-body-m);
+    font-weight: 700;
+    line-height: var(--lineheight-m);
+    text-decoration: underline;
+    margin-top: var(--spacing-s);
+    display: flex;
+    align-items: center;
+
+    .hds-icon {
+      transition: transform 0.1s ease-out;
+    }
+
+    &[aria-expanded="true"] .hds-icon {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__accordion-content {
+    display: none;
+    background-color: #f8f8f8; // shade doesnt exist in hds
+    margin-top: var(--spacing-2-xs);
+    padding: var(--spacing-s);
+
+    @include mq($from: medium) {
+      padding: var(--spacing-m);
+    }
+
+    &.is-active {
+      display: block;
+    }
   }
 }

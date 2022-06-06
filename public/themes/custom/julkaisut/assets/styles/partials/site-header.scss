@@ -2,35 +2,39 @@
 @use "common/utils" as *;
 
 .site-header {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+  padding-top: var(--spacing-s);
+  padding-bottom: var(--spacing-s);
+  padding-left: var(--viewport-gutter);
+  padding-right: var(--viewport-gutter);
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px var(--spacing-s);
+
+  &__inner {
+    // Layout
+    max-width: var(--alignwide-width);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   @include mq($until: large) {
     border-bottom: solid 1px var(--color-black-20);
-  }
+    position: fixed;
+    z-index: 10;
+    background-color: var(--color-white);
+    padding-top: var(--spacing-2-xs);
+    padding-bottom: var(--spacing-2-xs);
 
-  @include mq($from: large) {
-    padding-left: 0;
-    padding-right: 0;
-    max-width: calc(var(--container-width) * 1px);
+    &__languages.mobile {
+      margin-top: 68px; // height of fixed nav
+    }
   }
 
   &__logo {
     // push remaining columns to the right
     flex: 1 0 auto;
-  }
-
-  &__search {
-    display: none;
-
-    @include mq($from: large) {
-      display: block;
-    }
   }
 
   &__hamburger-button {
@@ -49,36 +53,24 @@
     }
   }
 
+  &__languages.mobile {
+    height: 49px;
+    display: flex;
+    align-items: center;
+    padding-left: var(--viewport-gutter);
+    padding-right: var(--viewport-gutter);
+
+    .site-languages {
+      margin: 0;
+    }
+
+    @include mq($from: large) {
+      display: none;
+    }
+  }
+
   // When navigation is activated on mobile
   .is-active & {
     border-bottom: 0;
-
-    .site-header__search {
-      display: block;
-      padding-top: var(--spacing-m);
-      margin-top: 10px; // site-header custom padding
-      position: relative;
-
-      @include mq($from: large) {
-        padding-left: calc(var(--spacing-m) - var(--spacing-s));
-        padding-right: calc(var(--spacing-m) - var(--spacing-s));
-        padding-bottom: calc(var(--spacing-m) - 10px); // custom padding on .site-header
-      }
-
-      &::before {
-        content: '';
-        position: absolute;
-        display: block;
-        width: 100vw;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 0;
-        border-top: solid 1px var(--color-black-20);
-      }
-
-      // Move last and take up whole row
-      order: 5;
-      flex-basis: 100%;
-    }
   }
 }

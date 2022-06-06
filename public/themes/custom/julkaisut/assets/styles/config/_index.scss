@@ -10,13 +10,14 @@ $mq-breakpoints: (
   medium: hds.$breakpoint-m,
   large: hds.$breakpoint-l,
   xlarge: hds.$breakpoint-xl,
-  alignfull: 2000px,
+  alignfull: 1950px,
 );
 
 :root {
   // Shorthands
-
-  --color-primary: var(--color-bus);
+  --color-primary: var(--color-coat-of-arms); // #0072c6
+  --color-secondary: var(--color-fog-light); // #e8f3fc
+  --color-accent: var(--color-suomenlinna); // #f5a3c7
 
   // Vertical gutters between blocks
 
@@ -36,7 +37,7 @@ $mq-breakpoints: (
   --grid-gutter: 12px;
   --grid-columns: 4;
   --alignwide-width: 100%;
-  --alignfull-width: unset;
+  --alignfull-width: 100vw;
 
   @include mq($from: small, $until: medium) {
     --container-width: var(--container-width-s);
@@ -54,16 +55,16 @@ $mq-breakpoints: (
     --container-width: var(--container-width-l);
     --grid-gutter: 24px;
     --grid-columns: 12;
-    --content-width: calc(var(--container-width) / var(--grid-columns) * 8px); // 8 columns
-    --alignwide-width: calc(var(--container-width) * 1px);
+    --content-width: calc(var(--container-width) / var(--grid-columns) * 8); // 8 columns
+    --alignwide-width: var(--container-width);
   }
 
   @include mq($from: xlarge) {
     --container-width: var(--container-width-xl);
     --grid-gutter: 24px;
     --grid-columns: 12;
-    --content-width: calc(var(--container-width) / var(--grid-columns) * 8px); // 8 columns
-    --alignwide-width: calc(var(--container-width) * 1px);
-    --alignfull-width: 2000px;
+    --content-width: calc(var(--container-width) / var(--grid-columns) * 8); // 8 columns
+    --alignwide-width: var(--container-width);
+    --alignfull-width: 1950px;
   }
 }

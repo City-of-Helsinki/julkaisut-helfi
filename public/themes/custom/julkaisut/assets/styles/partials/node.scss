@@ -14,30 +14,43 @@
     "pdf         share"
     "print       share";
 
+  @include mq($from: medium) {
+    grid-template-areas:
+      "tags        share"
+      "pdf         share"
+      "translation share"
+      "print       share";
+  }
+
   .field--name-field-tags {
     grid-area: tags;
-    margin-bottom: var(--spacing-s);
-
-    @include mq($from: medium) {
-      margin-bottom: var(--spacing-m);
-    }
   }
 
   .field--name-field-pdf {
+    margin-top: var(--spacing-s);
     grid-area: pdf;
   }
 
   .share-links {
     grid-area: share;
+    align-items: flex-end;
   }
 
   .print-button {
+    margin-top: var(--spacing-s);
     grid-area: print;
   }
 
   .translation-links {
     grid-area: translation;
-    margin-bottom: var(--spacing-m);
+
+    &:not(:first-child) {
+      margin-top: var(--spacing-s);
+
+      @include mq($from: medium) {
+        margin-top: var(--spacing-m);
+      }
+    }
   }
 }
 
@@ -51,34 +64,47 @@
   }
 }
 
-// .node--type-book.node--view-mode-full {
-//   // Place behind footer koro
-//   .node__featured-image {
-//     margin-bottom: calc(var(--spacing-layout-xs) * -1 - 15px);
-//
-//     @include mq($from: large) {
-//       margin-bottom: calc(var(--spacing-layout-m) * -1 - 15px);
-//     }
-//   }
-// }
-
 .node--type-book.node--view-mode-full.node--book-depth-1 {
   display: grid;
+  max-width: var(--alignwide-width);
+  margin-left: auto;
+  margin-right: auto;
+  transform: none;
 
   grid-template-areas:
+    "title"
     "published"
     "metadata"
-    "image"
     "book-outline"
-    "content";
+    "content"
+    "image";
 
   @include mq($from: large) {
+    // 792+128+280
     grid-template-areas:
-      "published"
-      "metadata"
-      "book-outline"
-      "image"
-      "content";
+      "title          image"
+      "published      image"
+      "metadata       image"
+      "book-outline   image"
+      "content        image";
+
+    column-gap: var(--spacing-layout-2-xl);
+    grid-template-columns: 3fr 1fr;
+  }
+
+  .is-container > * {
+    transform: none;
+    width: 100%;
+    max-width: none;
+  }
+
+  .pdf-link {
+    margin-top: 0;
+  }
+
+  .node__title {
+    grid-area: title;
+    margin-top: 0;
   }
 
   .node__published {
@@ -92,6 +118,7 @@
 
   .node__metadata {
     grid-area: metadata;
+    color: #191919;
 
     .field--name-body {
       margin-bottom: 0;
@@ -105,10 +132,16 @@
   }
 
   .node__featured-image {
+    margin-top: 0;
     grid-area: image;
+
+    @include mq($until: large) {
+      margin-top: var(--spacing-m);
+    }
   }
 
   .node__book-outline {
     grid-area: book-outline;
+    margin-top: var(--spacing-xl);
   }
 }

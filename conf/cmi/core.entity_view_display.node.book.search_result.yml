@@ -27,9 +27,9 @@ content:
     type: smart_trim
     label: hidden
     settings:
-      trim_length: 150
-      trim_type: chars
-      trim_suffix: ''
+      trim_length: 30
+      trim_type: words
+      trim_suffix: …
       wrap_output: false
       wrap_class: trimmed
       more_link: false
@@ -42,6 +42,15 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
+  field_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
   search_api_excerpt:
     settings: {  }
     third_party_settings: {  }
@@ -50,7 +59,6 @@ content:
 hidden:
   field_copyright: true
   field_featured_image_caption: true
-  field_image: true
   field_pdf: true
   field_tags: true
   field_wide_contentwidth: true

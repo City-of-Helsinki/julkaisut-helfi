@@ -3,15 +3,35 @@
 .teaser {
   position: relative;
 
-  --teaser-spacing: var(--spacing-2-xs);
+  &__link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
 
-  @include mq($from: medium) {
-    --teaser-spacing: var(--spacing-xs);
+    &:hover,
+    &:focus {
+      .teaser__title {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__image {
+    grid-area: image;
+    margin-bottom: var(--spacing-s);
   }
 
   &__title {
-    line-height: 1.4;
+    grid-area: title;
     margin-bottom: 0;
+    // H5
+    font-size: var(--fontsize-heading-xs);
+    line-height: var(--lineheight-l);
+    font-weight: 500;
+
+    @include mq($from: medium) {
+      font-size: var(--fontsize-heading-s);
+    }
 
     a {
       color: inherit;
@@ -31,23 +51,74 @@
   }
 
   &__date {
-    margin-top: var(--teaser-spacing);
-    margin-bottom: var(--spacing-3-xs);
+    grid-area: date;
+    color: var(--color-black-90);
+    margin-top: var(--spacing-s);
     display: flex;
 
-    @include mq($from: large) {
-      margin-bottom: var(--spacing-2-xs);
-    }
-
     p {
-      font-size: var(--fontsize-body-s);
+      font-size: var(--fontsize-body-m);
       font-weight: normal;
       margin-bottom: 0;
       line-height: var(--lineheight-s);
+    }
+  }
 
-      @include mq($from: large) {
-        font-size: var(--fontsize-body-xl);
+  &__arrow {
+    grid-area: arrow;
+    margin-left: -4px;
+    margin-top: var(--spacing-m);
+    transition: transform .2s linear;
+
+    .teaser:hover & {
+      transform: translateX(16px);
+    }
+  }
+
+  @include mq($until: medium) {
+    &__link {
+      display: grid;
+      grid-template-areas:
+        "image title"
+        "image date"
+        "image arrow";
+      grid-template-columns: 76px 1fr;
+      grid-template-rows: auto auto 1fr;
+      column-gap: var(--spacing-s);
+    }
+
+    &__date {
+      margin-top: var(--spacing-2-xs);
+    }
+
+    &__arrow {
+      margin-top: var(--spacing-xs);
+      margin-bottom: calc(var(--spacing-xs) * -1);
+
+      .hds-icon {
+        --icon-size: var(--spacing-layout-s);
       }
     }
+
+    &__image {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Align arrows to the bottom of a teaser
+.cell > .teaser {
+  height: 100%;
+
+  .teaser__link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .teaser__arrow {
+    flex: 1 0 auto;
+    display: flex;
+    align-items: flex-end;
   }
 }

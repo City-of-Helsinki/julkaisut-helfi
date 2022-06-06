@@ -5,7 +5,7 @@ dependencies:
   config:
     - views.view.related
   module:
-    - ctools
+    - node
     - views
   theme:
     - julkaisut

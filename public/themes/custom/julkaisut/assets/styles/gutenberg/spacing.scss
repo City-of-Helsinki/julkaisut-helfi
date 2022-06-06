@@ -7,10 +7,14 @@
 
 // The root container only
 .is-root-container {
-  overflow-x: hidden;
-  overflow-y: hidden;
   margin-top: var(--spacing-m);
   margin-bottom: var(--spacing-m);
+
+  > .wp-block-media-text.alignfull:first-child,
+  > .wp-block-cover.alignfull:first-child {
+    margin-top: calc(-1 * var(--spacing-m) - 1px);
+    z-index: 100;
+  }
 }
 
 // Any container that can contain blocks or inner blocks.
@@ -26,6 +30,7 @@
     margin-bottom: var(--block-gutter);
   }
 
+  > .wp-block-buttons,
   > p,
   > ul,
   > ol {

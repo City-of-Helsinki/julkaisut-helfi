@@ -21,7 +21,7 @@
 
   tfoot {
     font-weight: bold;
-    background-color: var(--color-bus-light-20);
+    background-color: var(--color-secondary);
   }
 
   tbody tr:not(:first-child) {
@@ -58,7 +58,7 @@
   &.is-style-stripes tbody tr:nth-child(odd),
   &.is-style-numeric tbody tr:nth-child(odd),
   &.is-style-numeric-with-labels tbody tr:nth-child(odd) {
-    background-color: var(--color-bus-light-5);
+    background-color: var(--color-secondary);
   }
 
   &.is-style-numeric tfoot td,

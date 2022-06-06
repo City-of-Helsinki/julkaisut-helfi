@@ -6,6 +6,7 @@
  */
 
 use Drupal\block\Entity\Block;
+use Drupal\block_content\Entity\BlockContent;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Render\Markup;
@@ -15,6 +16,7 @@ use Drupal\menu_link_content\Plugin\Menu\MenuLinkContent;
 use Drupal\node\Entity\Node;
 use Drupal\responsive_image\Entity\ResponsiveImageStyle;
 use Drupal\taxonomy\Entity\Term;
+use Drupal\views\Plugin\views\display\Page;
 use Drupal\views\ViewExecutable;
 
 /**
@@ -45,12 +47,9 @@ function julkaisut_preprocess_node(&$variables) {
     }
     /** @var Drupal\node\Entity\Node $translation */
     $translation = $node->getTranslation($langcode);
-    // Cannot change the name of English language
-    // @see https://www.drupal.org/project/drupal/issues/2797961
-    $label = ['en' => 'In English'];
     $variables['translation_links']['#items'][] = [
       '#type' => 'link',
-      '#title' => Markup::create($label[$langcode] ?? $language->getName()),
+      '#title' => $language->getName(),
       '#attributes' => [
         'lang' => $translation->language()->getId(),
       ],
@@ -128,6 +127,18 @@ function julkaisut_theme_suggestions_taxonomy_term_alter(array &$suggestions, ar
   $suggestions[] = 'taxonomy_term__' . $view_mode;
   $suggestions[] = 'taxonomy_term__' . $term->bundle() . '__' . $view_mode;
   $suggestions[] = 'taxonomy_term__' . $term->id() . '__' . $view_mode;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function julkaisut_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  // Custom Blocks (Bundles and view mode).
+  if ($variables['elements']['#base_plugin_id'] === 'block_content' && isset($variables['elements']['content']['#block_content'])) {
+    // Bundle type.
+    $bundle = $variables['elements']['content']['#block_content']->bundle();
+    $suggestions[] = 'block__' . $bundle;
+  }
 }
 
 /**
@@ -448,6 +459,18 @@ function julkaisut_preprocess_media__document__download(&$variables) {
 }
 
 /**
+ * Implements template_preprocess_html().
+ */
+function julkaisut_preprocess_html(&$variables) {
+  /** @var Drupal\taxonomy\Entity\Term|null $term */
+  $term = \Drupal::routeMatch()->getParameter('taxonomy_term');
+
+  if ($term) {
+    $variables['attributes']['class'][] = 'path-taxonomy--' . $term->bundle();
+  }
+}
+
+/**
  * Implements template_preprocess_page().
  */
 function julkaisut_preprocess_page(&$variables) {
@@ -513,15 +536,8 @@ function julkaisut_preprocess_taxonomy_term(&$variables) {
  * Implemennts template_preprocess_link__language_block();
  */
 function julkaisut_preprocess_links__language_block(&$variables) {
-  // Cannot change the name of English language
-  // @see https://www.drupal.org/project/drupal/issues/2797961
-  if ($variables['links']['en']['link']['#title'] ?? null) {
-    $variables['links']['en']['link']['#title'] = 'In English';
-  }
-
   foreach ($variables['links'] as $langcode => &$link) {
     if (!empty($link['link'])) {
-      $link['link']['#options']['attributes']['role'] = 'menuitem';
       $link['link']['#options']['attributes']['lang'] = $langcode;
     } else {
       $link['attributes']
@@ -553,6 +569,13 @@ function julkaisut_preprocess_block(&$variables) {
       $langcode = Drupal::service('language_manager')->getCurrentLanguage()->getId();
       $logo_filename = ($langcode === 'sv') ? 'helsinki-sv.svg' : 'helsinki-fi.svg';
       $variables['site_logo'] = file_create_url($variables['directory'] . "/dist/images/logo/$logo_filename");
+      break;
+    case 'block_content':
+      /** @var BlockContent $block_content */
+      if ($block_content = $variables['content']['#block_content']) {
+        $variables['attributes']['class'][] = sprintf('block--%s', $block_content->bundle());
+      }
+
       break;
   }
 
@@ -590,8 +613,15 @@ function julkaisut_preprocess(&$variables) {
     case 'input__url':
     case 'select':
       $variables['attributes']['class'][] = 'hds-text-input__input';
-      if (isset($variables['element']['#type']) && $variables['element']['#type'] === 'search_api_autocomplete') {
-        $variables['children'] = Markup::create('<i class="hds-icon hds-icon--search hds-icon--size-s" aria-hidden="true"></i>');
+
+      if (\Drupal::service('path.matcher')->isFrontPage()) {
+        if (isset($variables['element']['#type']) && $variables['element']['#type'] === 'search_api_autocomplete') {
+          $variables['children'] = Markup::create(sprintf('
+            <button type="submit" class="wp-block-button wp-block-button__link">
+              %s <i class="hds-icon hds-icon--search hds-icon--size-s" aria-hidden="true"></i>
+            </button>
+          ', t('Search')));
+        }
       }
       break;
     case 'input__submit':
@@ -609,6 +639,27 @@ function julkaisut_preprocess_views_view(&$variables) {
         $variables['attributes']['class'][] = 'has-no-results';
       }
       break;
+  }
+
+  if ($variables['view']->display_handler instanceof Page) {
+    $theme = \Drupal::theme()->getActiveTheme()->getName();
+    $blocks = \Drupal::entityTypeManager()->getStorage('block')
+      ->loadByProperties([
+        'theme' => $theme,
+        'region' => 'view_region',
+      ]);
+
+    $builder = \Drupal::entityTypeManager()->getViewBuilder('block');
+    uasort($blocks, 'Drupal\block\Entity\Block::sort');
+    $build = [];
+    foreach ($blocks as $key => $block) {
+      if ($block->access('view')) {
+        $build[$key] = $builder->view($block);
+      }
+    }
+
+    // Add build to region
+    $variables['view_region'] = $build;
   }
 }
 

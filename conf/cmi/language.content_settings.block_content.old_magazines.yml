@@ -1,0 +1,16 @@
+uuid: 1aa34eae-6313-4e1e-b3cc-3c24daf05763
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.old_magazines
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: block_content.old_magazines
+target_entity_type_id: block_content
+target_bundle: old_magazines
+default_langcode: site_default
+language_alterable: true

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "080298a328207c1f9fdfff11a2a424fc",
+    "content-hash": "ee292a712ee3bd80da841a8569b71060",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2926,10 +2926,6 @@
                 {
                     "name": "See other contributors",
                     "homepage": "https://www.drupal.org/node/1538032/committers"
-                },
-                {
-                    "name": "svenryen",
-                    "homepage": "https://www.drupal.org/user/667244"
                 }
             ],
             "description": "This module aims at making the website compliant with the new EU cookie regulation.",
@@ -3280,6 +3276,10 @@
                 {
                     "name": "RobLoach",
                     "homepage": "https://www.drupal.org/user/61114"
+                },
+                {
+                    "name": "bnjmnm",
+                    "homepage": "https://www.drupal.org/user/2369194"
                 },
                 {
                     "name": "jjeff",
@@ -3834,6 +3834,53 @@
             }
         },
         {
+            "name": "drupal/popular_search_keywords",
+            "version": "1.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/popular_search_keywords.git",
+                "reference": "1.0.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/popular_search_keywords-1.0.7.zip",
+                "reference": "1.0.7",
+                "shasum": "5c398138fcbab4c5b5887338997ca7d986e3db80"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9",
+                "drupal/search_api": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.7",
+                    "datestamp": "1627038973",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "poorva",
+                    "homepage": "https://www.drupal.org/u/poorva",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "This produle provides a block with a list of the popular search keywords in the site.",
+            "homepage": "https://www.drupal.org/project/popular_search_keywords",
+            "support": {
+                "source": "https://cgit.drupalcode.org/popular_search_keywords",
+                "issues": "https://www.drupal.org/project/issues/popular_search_keywords"
+            }
+        },
+        {
             "name": "drupal/recreate_block_content",
             "version": "dev-2.x",
             "source": {
@@ -3975,6 +4022,14 @@
                 {
                     "name": "Berdir",
                     "homepage": "https://www.drupal.org/user/214652"
+                },
+                {
+                    "name": "greg.1.anderson",
+                    "homepage": "https://www.drupal.org/user/438598"
+                },
+                {
+                    "name": "kporras07",
+                    "homepage": "https://www.drupal.org/user/1349780"
                 },
                 {
                     "name": "pounard",
@@ -4733,26 +4788,29 @@
         },
         {
             "name": "drupal/views_infinite_scroll",
-            "version": "dev-1.x",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/views_infinite_scroll.git",
-                "reference": "20e84097fce68219e03192ea6dc69ef3a4bf81c9"
+                "reference": "2.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/views_infinite_scroll-2.0.0.zip",
+                "reference": "2.0.0",
+                "shasum": "9e1bc62131c8577609f2b2c520d749ac0a9b4142"
             },
             "require": {
-                "drupal/core": "^8.8 || ^9"
+                "drupal/core": "^9.2"
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
                 "drupal": {
-                    "version": "8.x-1.8+3-dev",
-                    "datestamp": "1631339674",
+                    "version": "2.0.0",
+                    "datestamp": "1641878440",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Dev releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
                 }
             },
@@ -4782,8 +4840,7 @@
             "homepage": "https://www.drupal.org/project/views_infinite_scroll",
             "support": {
                 "source": "https://git.drupalcode.org/project/views_infinite_scroll"
-            },
-            "time": "2020-09-28T15:52:04+00:00"
+            }
         },
         {
             "name": "drush/drush",
@@ -10047,8 +10104,7 @@
         "drupal/masquerade": 10,
         "drupal/media_library_edit": 15,
         "drupal/stage_file_proxy": 20,
-        "drupal/tvi": 5,
-        "drupal/views_infinite_scroll": 20
+        "drupal/tvi": 5
     },
     "prefer-stable": true,
     "prefer-lowest": false,

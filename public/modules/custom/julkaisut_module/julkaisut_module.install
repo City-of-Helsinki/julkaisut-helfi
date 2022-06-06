@@ -1,0 +1,63 @@
+<?php
+
+use Drupal\node\Entity\Node;
+
+function julkaisut_module_update_9001() {
+  $database = \Drupal::database();
+
+  $color_map = [
+    'bus' => 'primary',
+    'bus-dark-50' => 'primary',
+    'bus-light-50' => 'secondary',
+    'bus-light-5' => 'secondary',
+
+    'coat-of-arms-blue' => 'primary',
+    'summer' => 'accent',
+    'summer-light-20' => 'secondary',
+    'copper' => 'accent',
+    'copper-light-20' => 'secondary',
+
+    'fog-light-20' => 'secondary',
+    'suomenlinna' => 'accent',
+    'suomenlinna-light-20' => 'secondary',
+    'engel-light-20' => 'secondary',
+
+    'black-90' => 'black',
+    'black-60' => 'black',
+    'black-50' => 'black',
+    'black-20' => 'black',
+    'black-5' => 'black',
+  ];
+
+  foreach ($color_map as $color_before => $color_after) {
+    $records = $database->select('node__body', 'body')
+      ->fields('body', ['entity_id', 'langcode'])
+      ->condition('body_value', '%:"' . $database->escapeLike($color_before) . '"%', 'LIKE')
+      ->execute();
+
+    foreach ($records as $record) {
+      /** @var Node $node */
+      $node = \Drupal::entityTypeManager()->getStorage('node')->load($record->entity_id);
+      $translation = $node->getTranslation($record->langcode);
+
+      $replacedValue = str_replace(
+        [
+          '"backgroundColor":"' . $color_before . '"',
+          '"color":"' . $color_before . '"',
+          'has-' . $color_before . '-background-color',
+          'has-' . $color_before . '-color',
+        ],
+        [
+          '"backgroundColor":"' . $color_after . '"',
+          '"color":"' . $color_after . '"',
+          'has-' . $color_after . '-background-color',
+          'has-' . $color_after . '-color',
+        ],
+        $translation->body->value
+      );
+
+      $translation->body->value = $replacedValue;
+      $translation->save();
+    }
+  }
+}

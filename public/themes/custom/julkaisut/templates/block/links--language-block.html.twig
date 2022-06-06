@@ -42,26 +42,24 @@
     {%- endif -%}
   {%- endif -%}
 
-  <button
-    class="site-languages__button"
-    aria-haspopup="true"
-    aria-controls="site-languages"
-    aria-expanded="false"
-    aria-label="{{ 'Languages' | t }}"
-  >
-    {{ current_language.getId() }}
-    <span class="site-languages__trigger hds-icon hds-icon--angle-down hds-icon--size-m" aria-hidden="true"></span>
-  </button>
+{#  <button#}
+{#    class="site-languages__button"#}
+{#    aria-haspopup="true"#}
+{#    aria-controls="site-languages"#}
+{#    aria-expanded="false"#}
+{#    aria-label="{{ 'Languages' | t }}"#}
+{#  >#}
+{#    {{ current_language.getId() }}#}
+{#    <span class="site-languages__trigger hds-icon hds-icon--angle-down hds-icon--size-m" aria-hidden="true"></span>#}
+{#  </button>#}
 
   <ul{{
     attributes
       .addClass('site-languages__menu')
       .setAttribute('id', 'site-languages')
-      .setAttribute('role', 'menu')
-      .setAttribute('aria-label', 'Languages' | t)
   }}>
     {%- for item in links -%}
-      <li{{ item.attributes.addClass('site-languages__item') }}>
+      <li{{ item.attributes.addClass('site-languages__item').setAttribute('role', 'none') }}>
         {%- if item.link -%}
           {{ item.link }}
         {%- elseif item.text_attributes -%}

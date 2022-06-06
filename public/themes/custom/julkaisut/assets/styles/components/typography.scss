@@ -49,9 +49,13 @@ h2,
 h3,
 h4,
 h5,
-h6 {
-  font-weight: bold;
-  line-height: var(--lineheight-m);
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
   margin-top: 0;
   margin-bottom: var(--spacing-m);
 
@@ -65,11 +69,14 @@ h6 {
  }
 }
 
-h1 {
-  font-size: var(--fontsize-heading-l);
+h1,
+.h1 {
+  font-size: 40px;
+  font-weight: 400;
+  line-height: var(--lineheight-s);
 
   @include mq($from: large) {
-    font-size: var(--fontsize-heading-xl);
+    font-size: 64px;
   }
 
   @media (max-width: 400px) {
@@ -77,32 +84,63 @@ h1 {
   }
 }
 
-h2 {
-  font-size: var(--fontsize-heading-m);
+h2,
+.h2 {
+  font-size: 32px;
+  font-weight: 400;
+  line-height: var(--lineheight-s);
 
   @include mq($from: medium) {
-    font-size: var(--fontsize-heading-l);
+    font-size: 48px;
   }
 }
 
-h3 {
-  font-size: var(--fontsize-heading-xs);
+h3,
+.h3 {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: var(--lineheight-m);
 
   @include mq($from: medium) {
-    font-size: var(--fontsize-heading-m);
+    font-size: 32px;
+    line-height: var(--lineheight-s);
+    font-weight: 400;
   }
 }
 
-h4 {
-  font-size: var(--fontsize-heading-s);
+h4,
+.h4 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: var(--lineheight-m);
+
+  @include mq($from: medium) {
+    font-size: 24px;
+  }
 }
 
-h5 {
-  font-size: var(--fontsize-heading-xs);
+h5,
+.h5 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: var(--lineheight-m);
+
+  @include mq($from: medium) {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: var(--lineheight-l);
+  }
 }
 
-h6 {
-  font-size: var(--fontsize-heading-xxs);
+h6,
+.h6 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: var(--lineheight-l);
+
+  @include mq($from: medium) {
+    font-size: 18px;
+  }
 }
 
 p {
@@ -131,4 +169,73 @@ ol {
 
 iframe {
   display: block;
+}
+
+
+h2 {
+  --line-height: 1;
+  font-size: 2rem;
+  font-weight: normal;
+  color: #121212;
+  @media (min-width: 992px) {
+    --line-height: 1;
+    font-size: 3rem;
+  }
+}
+
+.helper-text {
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 500;
+}
+
+.card_title {
+  font-size: 34px;
+  line-height: 42px;
+  font-weight: 500;
+}
+
+.large_link {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 500;
+}
+
+.quote,
+blockquote,
+q {
+  font-size: 32px;
+  line-height: 48px;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.form-label {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
+
+// Mobile typography.
+@media (max-width: 575px) {
+  .card_title {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 500;
+  }
+
+  .quote,
+  blockquote,
+  q {
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: normal;
+    font-style: italic;
+  }
+
+  .form-label {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+  }
 }
