@@ -47,12 +47,9 @@ function julkaisut_preprocess_node(&$variables) {
     }
     /** @var Drupal\node\Entity\Node $translation */
     $translation = $node->getTranslation($langcode);
-    // Cannot change the name of English language
-    // @see https://www.drupal.org/project/drupal/issues/2797961
-    $label = ['en' => 'In English'];
     $variables['translation_links']['#items'][] = [
       '#type' => 'link',
-      '#title' => Markup::create($label[$langcode] ?? $language->getName()),
+      '#title' => $language->getName(),
       '#attributes' => [
         'lang' => $translation->language()->getId(),
       ],
@@ -527,12 +524,6 @@ function julkaisut_preprocess_taxonomy_term(&$variables) {
  * Implemennts template_preprocess_link__language_block();
  */
 function julkaisut_preprocess_links__language_block(&$variables) {
-  // Cannot change the name of English language
-  // @see https://www.drupal.org/project/drupal/issues/2797961
-  if ($variables['links']['en']['link']['#title'] ?? null) {
-    $variables['links']['en']['link']['#title'] = 'In English';
-  }
-
   foreach ($variables['links'] as $langcode => &$link) {
     if (!empty($link['link'])) {
       $link['link']['#options']['attributes']['lang'] = $langcode;
