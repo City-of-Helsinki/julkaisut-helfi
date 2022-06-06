@@ -59,20 +59,3 @@
     pointer-events: none;
   }
 }
-
-.form-type-search-api-autocomplete {
-  position: relative;
-
-  &,
-  .hds-icon {
-    --icon-size: 24px;
-  }
-
-  > [type="submit"],
-  > .hds-icon {
-    position: absolute;
-    margin-left: calc(var(--icon-size) * -1 - var(--spacing-xs));
-    bottom: calc((var(--input-height) - var(--icon-size)) / 2 - 2px);
-    color: var(--input-color-default);
-  }
-}

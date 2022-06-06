@@ -87,8 +87,10 @@
   .form-item-search {
     grid-area: search;
     position: relative;
-    width: 100%;
     max-width: 560px;
+    flex-wrap: wrap;
+    display: flex;
+    gap: var(--spacing-s);
 
     label {
       // H1
@@ -96,19 +98,44 @@
       font-weight: 400;
       line-height: var(--lineheight-s);
       color: inherit;
+      flex: 1 0 100%;
 
       @include mq($from: large) {
         font-size: 64px;
       }
 
-      margin-bottom: var(--spacing-s);
+      margin-bottom: 0;
     }
 
     .form-text {
       border: none;
-      width: 415px;
-      @media (max-width: 767px) {
-        width: 90%;
+      flex: 1 0 auto;
+      width: auto;
+
+      @at-root .path-frontpage & {
+        max-width: 350px;
+
+        @media (max-width: 767px) {
+          max-width: 90%;
+        }
+      }
+    }
+
+    [type="submit"] {
+      background: var(--color-black);
+      color: var(--color-white);
+      height: var(--input-height);
+      border: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      .hds-icon {
+        margin-left: 1ch;
       }
     }
   }
@@ -242,14 +269,6 @@
     }
   }
 
-  .form-item-search .form-text {
-    width: 100%;
-
-    @include mq($from: medium) {
-      width: calc(100% - var(--spacing-xl));
-    }
-  }
-
   .search-view {
     padding-top: var(--spacing-layout-l);
 
@@ -263,6 +282,7 @@
     color: var(--color-white);
     padding-bottom: calc(var(--spacing-layout-l) + 24px);
     margin-bottom: var(--spacing-layout-xs);
+    column-gap: var(--spacing-xl);
 
     @include mq($from: medium) {
       display: flex;
