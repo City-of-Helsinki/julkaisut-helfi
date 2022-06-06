@@ -17,6 +17,7 @@
   &.is-style-koros {
     position: relative;
     overflow: hidden;
+    min-height: 480px;
 
     --layer-width: min(100vw, var(--alignfull-width));
 
