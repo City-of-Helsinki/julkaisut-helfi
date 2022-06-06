@@ -6,7 +6,7 @@ dependencies:
     - image.style.search_result_128x100_
     - image.style.search_result_256x200_
     - image.style.search_result_345x138_
-    - image.style.search_result_690x27_
+    - image.style.search_result_690x276
   theme:
     - julkaisut
 id: search_result
@@ -26,8 +26,8 @@ image_style_mappings:
     image_mapping:
       sizes: 100vw
       sizes_image_styles:
-        - search_result_690x27_
         - search_result_345x138_
+        - search_result_690x276
     breakpoint_id: julkaisut.xsmall
     multiplier: 1x
 breakpoint_group: julkaisut

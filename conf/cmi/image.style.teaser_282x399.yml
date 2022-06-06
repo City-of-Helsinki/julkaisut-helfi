@@ -4,7 +4,7 @@ status: true
 dependencies:
   module:
     - focal_point
-name: teaser_384x299_
+name: teaser_282x399
 label: 'Teaser (282x399)'
 effects:
   0e4a8635-6cfe-4315-9e2c-f943390ae130:
