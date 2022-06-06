@@ -13,7 +13,10 @@
   > .wp-block-media-text.alignfull:first-child,
   > .wp-block-cover.alignfull:first-child {
     margin-top: calc(-1 * var(--spacing-m) - 1px);
-    z-index: 100;
+
+    @include mq($from: large) {
+      z-index: 100;
+    }
   }
 }
 
