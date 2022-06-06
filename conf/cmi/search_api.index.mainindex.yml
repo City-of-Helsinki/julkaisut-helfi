@@ -220,12 +220,14 @@ processor_settings:
     weights:
       preprocess_query: -30
   entity_status: {  }
+  entity_type: {  }
   highlight:
     weights:
       postprocess_query: 0
     prefix: '<strong class="is-highlight">'
     suffix: '</strong>'
     excerpt: true
+    excerpt_always: false
     excerpt_length: 256
     exclude_fields:
       - title
@@ -279,6 +281,16 @@ processor_settings:
   language_with_fallback: {  }
   rendered_item: {  }
   reverse_entity_references: {  }
+  solr_boost_more_recent:
+    weights:
+      preprocess_query: 0
+    boosts:
+      created:
+        boost: !!float 1
+        resolution: NOW/DAY
+        m: '3.16e-11'
+        a: 0.1
+        b: 0.05
   solr_date_range:
     weights:
       preprocess_index: 0
@@ -287,7 +299,10 @@ processor_settings:
       preprocess_index: 0
     boosts:
       'entity:node':
-        datasource_boost: !!float 1
+        datasource_boost: !!float 0
+        bundle_boosts:
+          article: !!float 0
+          book: !!float 0
 tracker_settings:
   default:
     indexing_order: fifo
