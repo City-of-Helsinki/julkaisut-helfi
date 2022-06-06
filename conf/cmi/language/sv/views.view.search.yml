@@ -125,6 +125,6 @@ display:
             description: ''
         search_api_fulltext:
           expose:
-            label: 'Vad söker du?'
+            label: 'Vilken publikation söker du efter?'
             placeholder: Sök
 label: Sök

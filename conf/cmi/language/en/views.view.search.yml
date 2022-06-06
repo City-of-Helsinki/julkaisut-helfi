@@ -129,5 +129,5 @@ display:
             description: ''
         search_api_fulltext:
           expose:
-            label: 'What are you looking for?'
+            label: 'What publication are you looking for? '
             placeholder: Search
