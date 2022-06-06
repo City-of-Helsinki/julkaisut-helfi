@@ -1,12 +1,10 @@
 popup_agreed:
-  value: "<h2>Thank you for accepting cookies</h2>\r\n\r\n<p>You can now hide this message or find out more about cookies.</p>\r\n"
+  value: "<h3>Thank you for accepting cookies</h3>\r\n\r\n<p>You can now hide this message or find out more about cookies.</p>\r\n"
 popup_agree_button_message: 'Accept all cookies'
-popup_more_info_button_message: 'More info'
-popup_find_more_button_message: 'More info'
 popup_hide_button_message: Dölj
 popup_info:
   value: "<h3>This website uses cookies</h3>\r\n<p>Our website uses essential cookies to ensure site functionality. The site will also include third-party cookies, if you give your consent.</p>\r\n<p><a href=\"/sv/cookies\" target=\"_blank\">Show cookies</a></p>"
 popup_link: /sv/cookies
 disagree_button_label: 'Use only essential cookies'
 withdraw_message:
-  value: "<h2>We use cookies on this site to enhance your user experience</h2>\r\n\r\n<p>You have given your consent for us to set cookies.</p>\r\n"
+  value: "<h3>We use cookies on this site to enhance your user experience</h3>\r\n\r\n<p>You have given your consent for us to set cookies.</p>\r\n"
