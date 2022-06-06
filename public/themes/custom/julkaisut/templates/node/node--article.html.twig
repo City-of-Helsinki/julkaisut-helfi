@@ -3,7 +3,7 @@
 {% block node__content_wrapper %}
   <div class="is-container">
     <div class="published-date">
-      {% if content.field_magazine %}{{ content.field_magazine }}{% endif %}
+      <p>{% trans %}Published on {{ date }}{% endtrans %}</p>
     </div>
     {{ content.field_copyright }}
 
