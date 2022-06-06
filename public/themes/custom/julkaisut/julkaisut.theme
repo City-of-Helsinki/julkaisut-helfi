@@ -459,6 +459,18 @@ function julkaisut_preprocess_media__document__download(&$variables) {
 }
 
 /**
+ * Implements template_preprocess_html().
+ */
+function julkaisut_preprocess_html(&$variables) {
+  /** @var Drupal\taxonomy\Entity\Term|null $term */
+  $term = \Drupal::routeMatch()->getParameter('taxonomy_term');
+
+  if ($term) {
+    $variables['attributes']['class'][] = 'path-taxonomy--' . $term->bundle();
+  }
+}
+
+/**
  * Implements template_preprocess_page().
  */
 function julkaisut_preprocess_page(&$variables) {

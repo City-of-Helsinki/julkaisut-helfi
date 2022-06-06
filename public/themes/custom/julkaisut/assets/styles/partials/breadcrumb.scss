@@ -3,6 +3,7 @@
 
   font-size: 14px;
   line-height: 20px;
+  margin-bottom: var(--spacing-layout-l);
 
   li::before {
     content: " / ";
