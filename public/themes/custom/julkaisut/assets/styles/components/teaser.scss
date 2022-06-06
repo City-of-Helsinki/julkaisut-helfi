@@ -27,7 +27,7 @@
     // H5
     font-size: var(--fontsize-heading-xs);
     line-height: var(--lineheight-l);
-    font-weight: 600;
+    font-weight: 500;
 
     @include mq($from: medium) {
       font-size: var(--fontsize-heading-s);
