@@ -6,10 +6,6 @@
   grid-gap: var(--spacing-s);
   align-items: center;
 
-  @include mq($from: large) {
-    grid-gap: var(--spacing-l);
-  }
-
   &__icon {
     // Offset so the text within the logo is vertically centered
     margin-bottom: -5px;
