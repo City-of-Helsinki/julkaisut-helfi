@@ -75,9 +75,9 @@
     "title"
     "published"
     "metadata"
-    "image"
     "book-outline"
-    "content";
+    "content"
+    "image";
 
   @include mq($from: large) {
     // 792+128+280
