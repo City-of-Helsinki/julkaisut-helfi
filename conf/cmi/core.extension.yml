@@ -35,6 +35,7 @@ module:
   gtm: 0
   gutenberg: 0
   gutenberg_imagefilter: 0
+  helfi_azure_fs: 0
   image: 0
   inline_form_errors: 0
   jquery_ui: 0
