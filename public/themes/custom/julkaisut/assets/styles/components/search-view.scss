@@ -92,6 +92,10 @@
     display: flex;
     gap: var(--spacing-s);
 
+    @at-root .path-frontpage & {
+      --input-height: 52px;
+    }
+
     label {
       // H1
       font-size: 40px;
