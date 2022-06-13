@@ -22,9 +22,6 @@ display:
       header:
         area_text_custom:
           content: "<h3>Industries and businesses</h3>\r\n<div role=\"status\" class=\"visually-hidden\" aria-hidden=\"true\">\r\n<p>[view:total-rows] results</p>\r\n</div>"
-  block_1:
+  block_5:
     display_options:
-      pager:
-        options:
-          views_infinite_scroll:
-            button_text: 'Load More'
+      use_more_text: 'Show all'

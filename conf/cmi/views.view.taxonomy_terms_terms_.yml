@@ -234,27 +234,9 @@ display:
     position: 1
     display_options:
       pager:
-        type: infinite_scroll
+        type: none
         options:
           offset: 0
-          items_per_page: 4
-          total_pages: null
-          id: 0
-          tags:
-            next: 'Next ›'
-            previous: '‹ Previous'
-          expose:
-            items_per_page: false
-            items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
-            offset: false
-            offset_label: Offset
-          views_infinite_scroll:
-            button_text: 'Lataa lisää'
-            automatically_load_content: false
-            initially_load_all_pages: false
       defaults:
         use_ajax: false
         pager: false
@@ -271,7 +253,6 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - url.query_args
         - user.permissions
       tags: {  }
   block_2:
@@ -775,6 +756,21 @@ display:
             automatically_load_content: false
             initially_load_all_pages: true
       sorts:
+        name:
+          id: name
+          table: taxonomy_term_field_data
+          field: name
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
         field_published_value:
           id: field_published_value
           table: taxonomy_term__field_published
@@ -789,21 +785,6 @@ display:
             field_identifier: field_published_value
           exposed: false
           granularity: second
-        tid:
-          id: tid
-          table: taxonomy_term_field_data
-          field: tid
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: taxonomy_term
-          entity_field: tid
-          plugin_id: standard
-          order: ASC
-          expose:
-            label: ''
-            field_identifier: ''
-          exposed: false
       arguments: {  }
       filters:
         status:
@@ -1125,6 +1106,36 @@ display:
             button_text: 'Näytä kaikki toimialat'
             automatically_load_content: false
             initially_load_all_pages: false
+      sorts:
+        name:
+          id: name
+          table: taxonomy_term_field_data
+          field: name
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+        field_published_value:
+          id: field_published_value
+          table: taxonomy_term__field_published
+          field: field_published_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: datetime
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: field_published_value
+          exposed: false
+          granularity: second
       arguments: {  }
       filters:
         status:
@@ -1318,6 +1329,7 @@ display:
         row: false
         relationships: false
         fields: false
+        sorts: false
         arguments: false
         filters: false
         filter_groups: false
@@ -1356,6 +1368,11 @@ display:
     display_plugin: block
     position: 1
     display_options:
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 4
       arguments: {  }
       filters:
         status:
@@ -1464,12 +1481,23 @@ display:
         groups:
           1: AND
       defaults:
+        pager: false
+        use_more: false
+        use_more_always: false
+        use_more_text: false
+        link_display: false
+        link_url: false
         arguments: false
         filters: false
         filter_groups: false
         header: false
         footer: false
       display_description: ''
+      use_more: true
+      use_more_always: true
+      use_more_text: 'Näytä kaikki'
+      link_display: custom_url
+      link_url: taxonomy/term/4
       header: {  }
       footer: {  }
       display_extenders:

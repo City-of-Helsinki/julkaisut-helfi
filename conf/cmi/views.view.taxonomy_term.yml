@@ -50,6 +50,7 @@ display:
           views_infinite_scroll:
             button_text: 'Lataa lisää'
             automatically_load_content: false
+            initially_load_all_pages: false
       exposed_form:
         type: basic
         options:
@@ -244,7 +245,7 @@ display:
           query_tags: {  }
       relationships: {  }
       css_class: ''
-      use_ajax: false
+      use_ajax: true
       show_admin_links: false
       link_display: page_1
       link_url: ''

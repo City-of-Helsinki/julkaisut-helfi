@@ -1497,7 +1497,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: true
-          content: '<h3 role="status" class="result-count">[view:total-rows] tuloksia</h3>'
+          content: '<h3 role="status" class="result-count">[view:total-rows] tulosta</h3>'
           tokenize: false
       exposed_block: false
       display_extenders: {  }
