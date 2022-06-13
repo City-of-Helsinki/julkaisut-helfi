@@ -631,6 +631,10 @@ function julkaisut_preprocess(&$variables) {
 }
 
 function julkaisut_preprocess_views_view(&$variables) {
+  if ($variables['more']) {
+    $variables['more']['#attributes']['class'][] = 'wp-block-button is-style-outline wp-block-button__link';
+  }
+
   switch ($variables['id']) {
     case 'search':
       $variables['attributes']['class'][] = 'search-view';
