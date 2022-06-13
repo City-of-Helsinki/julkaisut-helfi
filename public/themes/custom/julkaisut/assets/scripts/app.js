@@ -104,7 +104,7 @@ Drupal.behaviors.julkaisutTheme = {
 
   announceStatus(e, newRows) {
     const viewContainer = e.target.closest('.views-element-container');
-    const status = viewContainer.querySelector('header [role="status"]');
+    const status = viewContainer?.querySelector('header [role="status"]');
 
     if (status) {
       const parent = status.parentElement;
