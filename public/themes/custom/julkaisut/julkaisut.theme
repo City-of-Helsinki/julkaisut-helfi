@@ -299,9 +299,9 @@ function julkaisut_preprocess_views_view_unformatted(&$variables) {
  */
 function julkaisut_views_pre_render(ViewExecutable $view) {
   if ($view->id() === 'search') {
-      $groups = set_search_group([], $view);
-      $view->total_rows = count($view->result) + count($groups);
-      $view->pager->total_items = count($view->result) + count($groups);
+      $groups = !empty(set_search_group([], $view)) ? count(set_search_group([], $view)) : count($view->result);
+      $view->total_rows = $groups;
+      $view->pager->total_items = $groups;
   }
 
 }
