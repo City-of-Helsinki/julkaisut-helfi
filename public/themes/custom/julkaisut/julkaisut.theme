@@ -15,6 +15,7 @@ use Drupal\media\Entity\Media;
 use Drupal\menu_link_content\Plugin\Menu\MenuLinkContent;
 use Drupal\node\Entity\Node;
 use Drupal\responsive_image\Entity\ResponsiveImageStyle;
+use Drupal\search_api\Plugin\views\ResultRow;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\views\Plugin\views\display\Page;
 use Drupal\views\ViewExecutable;
@@ -289,57 +290,7 @@ function julkaisut_preprocess_views_view_unformatted(&$variables) {
   /** @var Drupal\views\ViewExecutable $view */;
   $view = $variables['view'];
   if ($view->id() === 'search') {
-    $builder = \Drupal::entityTypeManager()->getViewBuilder('node');
-
-    /** @var Drupal\node\Entity\Node[] $node */
-    $groups = [];
-
-    foreach ($variables['rows'] as $row) {
-      /** @var Drupal\node\Entity\Node $node */
-      $node = $row['content']['#node'];
-
-      switch ($node->getType()) {
-        case 'book':
-          $parent = NULL;
-          $parent_id = $node->book['pid'];
-
-          while($parent_id) {
-            $parent = Node::load($parent_id);
-            $parent_id = $parent->book['pid'];
-          }
-
-          if ($parent) {
-            $group_id = 'nid:' . $parent->id();
-
-            if (!isset($groups[$group_id])) {
-              $groups[$group_id] = [
-                'parent' => ['content' => $builder->view($parent, 'search_result')],
-                'attributes' => [],
-              ];
-            }
-
-            $groups[$group_id]['parent']['content']['#children'][] = $row;
-          }
-          else {
-            $group_id = 'nid:' . $node->id();
-            $groups[$group_id] = [
-              'parent' => $row,
-            ];
-          }
-
-          break;
-        case 'article':
-          // $parent = $node->field_magazine->entity;
-          $group_id = 'nid:' . $node->id();
-          $groups[$group_id] = [
-            'parent' => $row,
-          ];
-
-          break;
-      }
-    }
-
-    $variables['groups'] = $groups;
+    $variables['groups'] = set_search_group($variables['rows']);
   }
 }
 
@@ -348,61 +299,77 @@ function julkaisut_preprocess_views_view_unformatted(&$variables) {
  */
 function julkaisut_views_pre_render(ViewExecutable $view) {
   if ($view->id() === 'search') {
-    $builder = \Drupal::entityTypeManager()->getViewBuilder('node');
+      $groups = set_search_group([], $view);
+      $view->total_rows = count($view->result) + count($groups);
+      $view->pager->total_items = count($view->result) + count($groups);
+  }
 
-    /** @var Drupal\node\Entity\Node[] $node */
-    $groups = [];
+}
 
-    foreach ($view->result as $row) {
+/**
+ * Create groups in search view.
+ */
+function set_search_group($rows = [], $view = []) {
+  $builder = \Drupal::entityTypeManager()->getViewBuilder('node');
+
+  /** @var Drupal\node\Entity\Node[] $node */
+  $groups = [];
+  if (!empty($view)) {
+    $rows = $view->result;
+  }
+  foreach ($rows as $row) {
+    if ($row instanceof ResultRow) {
       $node = $row->_entity;
       $row_build = ['content' => $builder->view($node, 'search_result')];
 
-      switch ($node->getType()) {
-        case 'book':
-          $parent = NULL;
-          $parent_id = $node->book['pid'];
+    }
+    else {
+      $node = $row['content']['#node'];
+    }
 
-          while($parent_id) {
-            $parent = Node::load($parent_id);
-            $parent_id = $parent->book['pid'];
-          }
+    switch ($node->getType()) {
+      case 'book':
+        $parent = NULL;
+        $parent_id = $node->book['pid'];
 
-          if ($parent) {
-            $group_id = 'nid:' . $parent->id();
+        while($parent_id) {
+          $parent = Node::load($parent_id);
+          $parent_id = $parent->book['pid'];
+        }
 
-            if (!isset($groups[$group_id])) {
-              $groups[$group_id] = [
-                'parent' => ['content' => $builder->view($parent, 'search_result')],
-                'attributes' => [],
-              ];
-            }
+        if ($parent) {
+          $group_id = 'nid:' . $parent->id();
 
-            $groups[$group_id]['parent']['content']['#children'][] = $row_build;
-          }
-          else {
-            $group_id = 'nid:' . $node->id();
+          if (!isset($groups[$group_id])) {
             $groups[$group_id] = [
-              'parent' => $row_build,
+              'parent' => ['content' => $builder->view($parent, 'search_result')],
+              'attributes' => [],
             ];
           }
 
-          break;
-
-        case 'article':
-          // $parent = $node->field_magazine->entity;
+          $groups[$group_id]['parent']['content']['#children'][] = $row instanceof ResultRow ? $row_build : $row;
+        }
+        else {
           $group_id = 'nid:' . $node->id();
           $groups[$group_id] = [
-            'parent' => ['content' => $row_build],
+            'parent' => $row instanceof ResultRow ? $row_build : $row,
           ];
+        }
 
-          break;
-      }
+        break;
+
+      case 'article':
+        // $parent = $node->field_magazine->entity;
+        $group_id = 'nid:' . $node->id();
+        $groups[$group_id] = [
+          'parent' => $row instanceof ResultRow ? $row_build : $row,
+        ];
+
+        break;
     }
   }
 
-  $view->total_rows = count($view->result) + count($groups);
-  $view->pager->total_items = count($view->result) + count($groups);
-
+  return $groups;
 }
 
 /**
