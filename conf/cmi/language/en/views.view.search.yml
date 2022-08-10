@@ -27,9 +27,6 @@ display:
           content: "{% if filters.search_api_fulltext or filters.facets %}\r\n<div role=\"status\">\r\n<h1>Search results ([view:total-rows])</h1>\r\n{% if filters.search_api_fulltext %}\r\n<h3>For the phrase \"{{ filters.search_api_fulltext }}\"</h3>\r\n{% endif %}\r\n</div>\r\n{% endif %}"
   page_1:
     display_options:
-      header:
-        area_text_custom:
-          content: "{% if filters.search_api_fulltext or filters.facets %}\r\n<div role=\"status\">\r\n{% if filters.search_api_fulltext %}\r\n<p> <b>[view:total-rows]</b> for the phrase \"{{ filters.search_api_fulltext }}\"</p>\r\n{% endif %}\r\n</div>\r\n{% endif %}"
       filters:
         search_api_fulltext:
           expose:
@@ -38,19 +35,9 @@ display:
         field_year:
           group_info:
             label: 'From year'
-          expose:
-            description: ''
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
         field_year_1:
           group_info:
             label: 'Until year'
-          expose:
-            description: ''
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
       exposed_form:
         options:
           submit_button: 'Search for publication'
@@ -70,19 +57,9 @@ display:
         field_year:
           group_info:
             label: 'From year'
-          expose:
-            description: ''
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
         field_year_1:
           group_info:
             label: 'Until year'
-          expose:
-            description: ''
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
       exposed_form:
         options:
           submit_button: 'Search for publication'
@@ -108,25 +85,12 @@ display:
         field_year:
           group_info:
             label: 'From year'
-          expose:
-            description: ''
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
         field_year_1:
           group_info:
             label: 'Until year'
-          expose:
-            description: ''
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
   block_1:
     display_options:
       filters:
-        search_api_language:
-          expose:
-            description: ''
         search_api_fulltext:
           expose:
             label: 'What publication are you looking for? '

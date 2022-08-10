@@ -31,19 +31,9 @@ display:
         field_year:
           group_info:
             label: 'Från år'
-          expose:
-            description: ''
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
         field_year_1:
           group_info:
             label: 'Fram till år'
-          expose:
-            description: ''
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
       exposed_form:
         options:
           submit_button: 'Sök utgivning'
@@ -54,9 +44,6 @@ display:
                 combine_rewrite: "Relevance Desc | Mest relevanta först\r\nRelevance Asc |\r\nYear Desc | Nyaste först\r\nYear Asc | Äldst först"
   page_1:
     display_options:
-      header:
-        area_text_custom:
-          content: "{% if filters.search_api_fulltext or filters.facets %}\r\n<div role=\"status\">\r\n{% if filters.search_api_fulltext %}\r\n<p> <b>[view:total-rows]</b> för orden \"{{ filters.search_api_fulltext }}\"</p>\r\n{% endif %}\r\n</div>\r\n{% endif %}"
       filters:
         search_api_fulltext:
           expose:
@@ -65,19 +52,9 @@ display:
         field_year:
           group_info:
             label: 'Från år'
-          expose:
-            description: ''
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
         field_year_1:
           group_info:
             label: 'Fram till år'
-          expose:
-            description: ''
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
       exposed_form:
         options:
           submit_button: 'Sök utgivning'
@@ -104,25 +81,12 @@ display:
         field_year:
           group_info:
             label: 'Från år'
-          expose:
-            description: ''
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
         field_year_1:
           group_info:
             label: 'Fram till år'
-          expose:
-            description: ''
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
   block_1:
     display_options:
       filters:
-        search_api_language:
-          expose:
-            description: ''
         search_api_fulltext:
           expose:
             label: 'Vilken publikation söker du efter?'

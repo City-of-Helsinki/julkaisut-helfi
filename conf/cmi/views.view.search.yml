@@ -1069,27 +1069,28 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items:
-              1:
+              - {  }
+              -
                 title: '2020'
                 operator: '>='
                 value:
                   min: ''
                   max: ''
                   value: '2020'
-              2:
-                title: ''
-                operator: '='
+              -
+                title: '2021'
+                operator: '>='
                 value:
                   min: ''
                   max: ''
-                  value: ''
-              3:
-                title: ''
-                operator: '='
+                  value: '2021'
+              -
+                title: '2022'
+                operator: '>='
                 value:
                   min: ''
                   max: ''
-                  value: ''
+                  value: '2022'
         field_year_1:
           id: field_year_1
           table: search_api_index_mainindex
@@ -1134,27 +1135,28 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items:
-              1:
+              - {  }
+              -
                 title: '2020'
                 operator: '<='
                 value:
                   min: ''
                   max: ''
                   value: '2020'
-              2:
-                title: ''
-                operator: '='
+              -
+                title: '2021'
+                operator: '<='
                 value:
                   min: ''
                   max: ''
-                  value: ''
-              3:
-                title: ''
-                operator: '='
+                  value: '2021'
+              -
+                title: '2022'
+                operator: '<='
                 value:
                   min: ''
                   max: ''
-                  value: ''
+                  value: '2022'
       filter_groups:
         operator: AND
         groups:
@@ -1166,18 +1168,7 @@ display:
         filter_groups: false
         header: false
       display_description: ''
-      header:
-        area_text_custom:
-          id: area_text_custom
-          table: views
-          field: area_text_custom
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: text_custom
-          empty: false
-          content: "{% if filters.search_api_fulltext or filters.facets %}\r\n<div role=\"status\">\r\n{% if filters.search_api_fulltext %}\r\n<p> <b>[view:total-rows]</b> tulosta sanalle \"{{ filters.search_api_fulltext }}\"</p>\r\n{% endif %}\r\n</div>\r\n{% endif %}"
-          tokenize: true
+      header: {  }
       exposed_block: false
       display_extenders:
         simple_sitemap_display_extender:
@@ -1188,6 +1179,7 @@ display:
           arguments: {  }
           max_links: 100
       path: search
+      pager_element: 0
     cache_metadata:
       max-age: -1
       contexts:

@@ -293,6 +293,7 @@ function julkaisut_preprocess_views_view_unformatted(&$variables) {
 
     /** @var Drupal\node\Entity\Node[] $node */
     $groups = [];
+
     foreach ($variables['rows'] as $row) {
       /** @var Drupal\node\Entity\Node $node */
       $node = $row['content']['#node'];
@@ -340,6 +341,14 @@ function julkaisut_preprocess_views_view_unformatted(&$variables) {
 
     $variables['groups'] = $groups;
   }
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function julkaisut_views_pre_render(ViewExecutable $view) {
+  $view->total_rows = count($view->result);
+  $view->pager->total_items = count($view->result);
 }
 
 /**
