@@ -293,6 +293,7 @@ function julkaisut_preprocess_views_view_unformatted(&$variables) {
 
     /** @var Drupal\node\Entity\Node[] $node */
     $groups = [];
+
     foreach ($variables['rows'] as $row) {
       /** @var Drupal\node\Entity\Node $node */
       $node = $row['content']['#node'];
@@ -340,6 +341,68 @@ function julkaisut_preprocess_views_view_unformatted(&$variables) {
 
     $variables['groups'] = $groups;
   }
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function julkaisut_views_pre_render(ViewExecutable $view) {
+  if ($view->id() === 'search') {
+    $builder = \Drupal::entityTypeManager()->getViewBuilder('node');
+
+    /** @var Drupal\node\Entity\Node[] $node */
+    $groups = [];
+
+    foreach ($view->result as $row) {
+      $node = $row->_entity;
+      $row_build = ['content' => $builder->view($node, 'search_result')];
+
+      switch ($node->getType()) {
+        case 'book':
+          $parent = NULL;
+          $parent_id = $node->book['pid'];
+
+          while($parent_id) {
+            $parent = Node::load($parent_id);
+            $parent_id = $parent->book['pid'];
+          }
+
+          if ($parent) {
+            $group_id = 'nid:' . $parent->id();
+
+            if (!isset($groups[$group_id])) {
+              $groups[$group_id] = [
+                'parent' => ['content' => $builder->view($parent, 'search_result')],
+                'attributes' => [],
+              ];
+            }
+
+            $groups[$group_id]['parent']['content']['#children'][] = $row_build;
+          }
+          else {
+            $group_id = 'nid:' . $node->id();
+            $groups[$group_id] = [
+              'parent' => $row_build,
+            ];
+          }
+
+          break;
+
+        case 'article':
+          // $parent = $node->field_magazine->entity;
+          $group_id = 'nid:' . $node->id();
+          $groups[$group_id] = [
+            'parent' => ['content' => $row_build],
+          ];
+
+          break;
+      }
+    }
+  }
+
+  $view->total_rows = count($view->result) + count($groups);
+  $view->pager->total_items = count($view->result) + count($groups);
+
 }
 
 /**
