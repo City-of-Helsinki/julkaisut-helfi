@@ -19,6 +19,7 @@ use Drupal\taxonomy\Entity\Term;
 use Drupal\views\Plugin\views\display\Page;
 use Drupal\views\ViewExecutable;
 
+const ROWS_PER_PAGE = 2;
 /**
  * Implements template_preprocess_node().
  */
@@ -283,11 +284,22 @@ function julkaisut_preprocess_responsive_image(&$variables) {
 }
 
 /**
+ * Implements hook_views_pre_render().
+ */
+function julkaisut_views_pre_render(ViewExecutable $view) {
+  if ($view->id() === 'search') {
+    $view->total_rows = count($view->result);
+    $view->getPager()->total_items = count($view->result);
+  }
+}
+
+/**
  * Implements template_preprocess_views_view_unformatted().
  */
 function julkaisut_preprocess_views_view_unformatted(&$variables) {
   /** @var Drupal\views\ViewExecutable $view */;
   $view = $variables['view'];
+
   if ($view->id() === 'search') {
     $builder = \Drupal::entityTypeManager()->getViewBuilder('node');
 
@@ -337,11 +349,12 @@ function julkaisut_preprocess_views_view_unformatted(&$variables) {
           break;
       }
     }
-
+    $variables['#attached']['library'][] = 'julkaisut/custom-load-more';
+    $variables['#attached']['drupalSettings']['julkaisut'] = ['rows_per_page' => ROWS_PER_PAGE];
     $variables['groups'] = $groups;
+    $variables['rows_per_page'] = ROWS_PER_PAGE;
   }
 }
-
 /**
  * Implements template_preprocess_menu().
  */
