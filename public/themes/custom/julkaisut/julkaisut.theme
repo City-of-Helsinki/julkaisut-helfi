@@ -287,8 +287,10 @@ function julkaisut_preprocess_responsive_image(&$variables) {
  * Implements hook_views_pre_render().
  */
 function julkaisut_views_pre_render(ViewExecutable $view) {
-  $view->total_rows = count($view->result);
-  $view->getPager()->total_items = count($view->result);
+  if ($view->id() === 'search') {
+    $view->total_rows = count($view->result);
+    $view->getPager()->total_items = count($view->result);
+  }
 }
 
 /**
