@@ -1,5 +1,5 @@
 (function ($, Drupal, drupalSettings) {
-  Drupal.behaviors.julkaisutTheme = {
+  Drupal.behaviors.julkaisutCustomLoadMore = {
   attach(context, settings) {
     var elements = document.getElementsByClassName('display-none');
     document.querySelector('#load_more_button').addEventListener('click', function () {
