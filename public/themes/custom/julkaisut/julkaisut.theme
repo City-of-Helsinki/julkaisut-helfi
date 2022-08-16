@@ -19,7 +19,7 @@ use Drupal\taxonomy\Entity\Term;
 use Drupal\views\Plugin\views\display\Page;
 use Drupal\views\ViewExecutable;
 
-const ROWS_PER_PAGE = 2;
+const ROWS_PER_PAGE = 20;
 /**
  * Implements template_preprocess_node().
  */
