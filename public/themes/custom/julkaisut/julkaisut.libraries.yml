@@ -17,6 +17,14 @@ global-scripts:
     - julkaisut/polyfill
     - core/drupal
 
+custom-load-more:
+  version: VERSION
+  js:
+    dist/scripts/custom_load_more.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+
 polyfill:
   header: true
   js:
