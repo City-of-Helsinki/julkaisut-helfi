@@ -22,10 +22,15 @@
 {% endif %}
 {% if groups %}
   {% for group in groups %}
-    <div class="views-row">
+    <div class="views-row {% if loop.index > rows_per_page %} display-none {% endif %}">
       {{ group.parent.content }}
     </div>
   {% endfor %}
+  <ul{{ attributes }} id="load_more_ul">
+    <li class="pager__item wp-block-button is-style-outline">
+      <a class="wp-block-button__link" id="load_more_button" title="{{ 'Load more items'|t }}" rel="next">{{ 'Load more'|t }}</a>
+    </li>
+  </ul>
 {% else %}
   {% for row in rows %}
     {%
@@ -38,3 +43,4 @@
     </div>
   {% endfor %}
 {% endif %}
+
