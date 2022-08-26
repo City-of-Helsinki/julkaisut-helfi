@@ -458,7 +458,7 @@ function close(el) {
 function keydownListener(e) {
   var currentLink = e.target; // The element that would trigger a submenu
 
-  var currentItem = currentLink.matches('[aria-haspopup]') ? currentLink : currentLink.closest('[aria-haspopup');
+  var currentItem = currentLink.matches('[aria-haspopup]') ? currentLink : currentLink.closest('[aria-haspopup]');
   var isInSubmenu = !!currentLink.closest('[role="menu"]');
   var nextItem = currentLink.matches('a') ? currentLink.parentElement.nextElementSibling : currentLink.nextElementSibling;
   var prevItem = currentLink.matches('a') ? currentLink.parentElement.previousElementSibling : currentLink.previousElementSibling;
