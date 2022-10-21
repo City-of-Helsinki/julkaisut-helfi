@@ -1013,7 +1013,7 @@ display:
       tags: {  }
   block_4:
     id: block_4
-    display_title: 'Industries and businesses'
+    display_title: 'Divisions'
     display_plugin: block
     position: 2
     display_options:
@@ -1348,12 +1348,12 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: false
-          content: "<h3>Toimialat ja liikelaitokset</h3>\r\n<div role=\"status\" class=\"visually-hidden\" aria-hidden=\"true\">\r\n<p>[view:total-rows] tulosta</p>\r\n</div>"
+          content: "<h3>Toimialat</h3>\r\n<div role=\"status\" class=\"visually-hidden\" aria-hidden=\"true\">\r\n<p>[view:total-rows] tulosta</p>\r\n</div>"
           tokenize: false
       display_extenders:
         simple_sitemap_display_extender: {  }
         metatag_display_extender: {  }
-      block_description: 'Industries and businesses'
+      block_description: 'Divisions'
     cache_metadata:
       max-age: -1
       contexts:
