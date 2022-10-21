@@ -904,7 +904,7 @@ display:
           value:
             min: ''
             max: ''
-            value: '27'
+            value: '73'
           group: 1
           exposed: false
           expose:
