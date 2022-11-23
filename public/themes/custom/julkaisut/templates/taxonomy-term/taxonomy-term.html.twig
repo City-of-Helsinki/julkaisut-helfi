@@ -28,7 +28,12 @@
 {% block term %}
   <div{{ attributes }}>
     {{ title_prefix }}
-    {{ title_suffix }}
+    {% block term__title %}
+      <div class="term__title is-container">
+        {{ drupal_block('page_title_block', {'label_display': false}) }}
+      </div>
+      {{ title_suffix }}
+    {% endblock %}
 
     {% block term__content_wrapper %}
       {{ content|without('field_published', 'field_copyright', 'field_tags', 'field_pdf', 'field_image') }}

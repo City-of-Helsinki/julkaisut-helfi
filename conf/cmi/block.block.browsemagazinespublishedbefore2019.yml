@@ -1,0 +1,30 @@
+uuid: e47069ef-5eb8-4f81-a63f-1bc9595be5fe
+langcode: fi
+status: true
+dependencies:
+  content:
+    - 'block_content:old_magazines:47c38c5b-5f67-45d6-8ca2-c52095dc1b46'
+  module:
+    - block_content
+    - system
+  theme:
+    - julkaisut
+id: browsemagazinespublishedbefore2019
+theme: julkaisut
+region: view_region
+weight: 0
+provider: null
+plugin: 'block_content:47c38c5b-5f67-45d6-8ca2-c52095dc1b46'
+settings:
+  id: 'block_content:47c38c5b-5f67-45d6-8ca2-c52095dc1b46'
+  label: 'Selaa lehtiä julkaistu ennen 2019'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /taxonomy/term/4

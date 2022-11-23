@@ -35,24 +35,24 @@
     {#{{ tree }}#}
     {% if has_links %}
       <h2 id="book-label-{{ book_id }}" class="visually-hidden">{{ 'Book traversal links for'|t }} {{ book_title }}</h2>
-      <ul class="book-navigation">
-      <li class="book-navigation__previous">
-        {% if prev_url %}
-          <a href="{{ prev_url }}" rel="prev" title="{{ 'Go to previous page'|t }}">
-            <i class="hds-icon hds-icon--angle-left hds-icon--size-xs" aria-hidden="true"></i>
-            <span>{{ prev_title }}</span>
-          </a>
-        {% endif %}
-      </li>
-      <li class="book-navigation__next">
-        {% if next_url %}
-          <a href="{{ next_url }}" rel="next" title="{{ 'Go to next page'|t }}">
-            <span>{{ next_title }}</span>
-            <i class="hds-icon hds-icon--angle-right hds-icon--size-xs" aria-hidden="true"></i>
-          </a>
-        {% endif %}
-      </li>
-    </ul>
+      <ul class="book-navigation is-sticky">
+        <li class="book-navigation__previous">
+          {% if prev_url %}
+            <a href="{{ prev_url }}" rel="prev" title="{{ 'Go to previous page'|t }}">
+              <i class="hds-icon hds-icon--angle-left hds-icon--size-xs" aria-hidden="true"></i>
+              <span>{{ prev_title }}</span>
+            </a>
+          {% endif %}
+        </li>
+        <li class="book-navigation__next">
+          {% if next_url %}
+            <a href="{{ next_url }}" rel="next" title="{{ 'Go to next page'|t }}">
+              <span>{{ next_title }}</span>
+              <i class="hds-icon hds-icon--angle-right hds-icon--size-xs" aria-hidden="true"></i>
+            </a>
+          {% endif %}
+        </li>
+      </ul>
     {% endif %}
   </nav>
 {% endif %}

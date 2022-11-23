@@ -3,15 +3,15 @@ langcode: fi
 status: true
 dependencies:
   module:
-    - ctools
     - custom_book_block
+    - node
     - system
   theme:
     - julkaisut
 id: custombooknavigation
 theme: julkaisut
 region: content
-weight: -6
+weight: -8
 provider: null
 plugin: custom_book_navigation
 settings:

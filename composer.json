@@ -24,6 +24,7 @@
         "drupal/focal_point": "^1.5",
         "drupal/gtm": "^1.5",
         "drupal/gutenberg": "^2.0@beta",
+        "drupal/helfi_azure_fs": "^1.0",
         "drupal/jquery_ui_touch_punch": "^1.0",
         "drupal/language_switcher_extended": "^1.0@beta",
         "drupal/masquerade": "^2.0@beta",
@@ -31,6 +32,7 @@
         "drupal/merge_translations": "^1.1",
         "drupal/metatag": "^1.14",
         "drupal/pathauto": "^1.8",
+        "drupal/popular_search_keywords": "^1.0",
         "drupal/recreate_block_content": "^2.0",
         "drupal/redirect": "^1.6",
         "drupal/redis": "^1.4",
@@ -40,14 +42,15 @@
         "drupal/search_api_solr": "^4.1",
         "drupal/simple_sitemap": "^3.7",
         "drupal/smart_trim": "^1.3",
+        "drupal/smtp": "^1.0",
         "drupal/stage_file_proxy": "1.x-dev",
         "drupal/tvi": "^1.0@RC",
         "drupal/twig_tweak": "^2.6",
-        "drupal/views_infinite_scroll": "1.x-dev",
+        "drupal/views_infinite_scroll": "^2.0",
+        "drush/drush": "^10.3",
         "npm-asset/jquery-ui-touch-punch": "^0.2.3",
         "oomphinc/composer-installers-extender": "^2.0",
-        "platformsh/config-reader": "^2.3",
-        "drush/drush": "^10.3"
+        "platformsh/config-reader": "^2.3"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -122,7 +125,8 @@
                 "Video embed block not working in multi-language environment with shortcode for default language": "https://www.drupal.org/files/issues/2020-09-10/issue-3150008-6.patch",
                 "Incorrect watchdog_exception() usage": "https://www.drupal.org/files/issues/2020-09-10/issue-3170264-2.patch",
                 "Metadata bubbling error": "https://www.drupal.org/files/issues/2020-09-04/gutenberg-fix-metadata-bubbling-3078027-13.patch",
-                "Inserting a link to a paragraph block returns an error": "https://www.drupal.org/files/issues/2020-06-08/gutenberg-add-type-to-content-search-ajax-call-3149823.patch"
+                "Inserting a link to a paragraph block returns an error": "https://www.drupal.org/files/issues/2020-06-08/gutenberg-add-type-to-content-search-ajax-call-3149823.patch",
+                "Stuck loading Gutenberg (JS errors) when using Gutenberg with Drupal 9.2": "https://git.drupalcode.org/project/gutenberg/-/commit/ffe0bfdd2a37d4953c9d2e3a67e7fa4e5ecd79a7.patch"
             },
             "drupal/token": {
               "Book parents translation": "https://www.drupal.org/files/issues/2018-06-28/token_8_1_3_2982284_parents_translation_02.patch"
@@ -143,6 +147,9 @@
             },
             "drupal/content_language_access": {
                 "Book navigation links not available on translations [TODO]": "./patches/content_language_acccess.patch"
+            },
+            "drupal/popular_search_keywords": {
+                "Custom template": "./patches/popular_search_keywords.patch"
             }
         },
         "installer-types": [
@@ -163,5 +170,8 @@
             "type": "composer",
             "url": "https://asset-packagist.org"
         }
-    ]
+    ],
+    "require-dev": {
+        "drupal/stage_file_proxy": "^1.2"
+    }
 }

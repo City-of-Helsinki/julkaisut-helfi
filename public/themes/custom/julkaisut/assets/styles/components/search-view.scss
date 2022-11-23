@@ -2,9 +2,14 @@
 
 .search-view {
   --field-gutter: var(--spacing-s);
+  position: relative;
 
   @include mq($from: medium) {
     --field-gutter: var(--spacing-m);
+  }
+
+  @media (min-width: 767px) {
+    justify-content: center;
   }
 
   // Except on taxonomy search pages, move the header below the filter form
@@ -29,6 +34,16 @@
     }
   }
 
+  header {
+    @include mq($until: medium) {
+      margin-bottom: 60px;
+    }
+
+    p {
+      font-size: 22px;
+    }
+  }
+
   .result-count {
     margin-top: calc(var(--spacing-m) * -1 + var(--spacing-xs));
   }
@@ -39,9 +54,7 @@
     margin-bottom: var(--field-gutter);
 
     @at-root .search-view .views-exposed-form {
-      @include mq($from: medium) {
-        margin-bottom: calc(var(--field-gutter) * -1);
-      }
+      margin-bottom: calc(var(--field-gutter) * -1);
     }
 
   }
@@ -49,18 +62,17 @@
   .hds-text-input__label {
     margin-bottom: var(--spacing-s);
     line-height: var(--lineheight-s);
+    font-weight: 400;
+    font-size: var(--fontsize-heading-xs);
 
     @include mq($from: medium) {
-      font-size: var(--fontsize-heading-m);
       margin-bottom: var(--spacing-xs);
     }
   }
 
   .views-exposed-form {
     position: relative;
-
     @include mq($from: medium) {
-      display: grid;
       grid-template-areas:
         "search none none"
         "facets facets sort"
@@ -74,16 +86,66 @@
 
   .form-item-search {
     grid-area: search;
+    position: relative;
+    max-width: 560px;
+    flex-wrap: wrap;
+    display: flex;
+    gap: var(--spacing-s);
+
+    @at-root .path-frontpage & {
+      --input-height: 52px;
+    }
 
     label {
-      font-size: var(--fontsize-heading-m);
-      margin-bottom: var(--spacing-m);
+      // H1
+      font-size: 40px;
+      font-weight: 400;
       line-height: var(--lineheight-s);
+      color: inherit;
+      flex: 1 0 100%;
 
-      @include mq($from: medium) {
-        font-size: var(--fontsize-heading-l);
+      @include mq($from: large) {
+        font-size: 64px;
+      }
+
+      margin-bottom: 0;
+    }
+
+    .form-text {
+      border: none;
+      flex: 1 0 auto;
+      width: auto;
+
+      @at-root .path-frontpage & {
+        max-width: 350px;
+
+        @media (max-width: 767px) {
+          max-width: 90%;
+        }
       }
     }
+
+    [type="submit"] {
+      background: var(--color-black);
+      color: var(--color-white);
+      height: var(--input-height);
+      border: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      .hds-icon {
+        margin-left: 1ch;
+      }
+    }
+  }
+
+  .form-type-select {
+    color: var(--input-color-default);
   }
 
   .facets {
@@ -93,6 +155,34 @@
 
   .form-item-sort-bef-combine {
     grid-area: sort;
+    position: absolute;
+    bottom: calc(-1 * var(--spacing-layout-m));
+    right: 0;
+    transform: translate(0, 100%);
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+
+    .hds-text-input__label {
+      color: #1B1B1B;
+      font-size: 16px;
+      font-weight: bold;
+      padding-right: 24px;
+      margin: 0;
+    }
+    .form-select {
+      padding: 0 45px 0 15px;
+    }
+    .form-select {
+      border: 1px solid #CCCCCC;
+    }
+
+    @include mq($until: medium) {
+      left: 0;
+      bottom: -78px;
+    }
   }
 
   // Add a gutter between search filters/actions and results
@@ -100,18 +190,8 @@
     margin-top: calc(var(--field-gutter) + var(--spacing-2-xs));
   }
 
-  // Gutter between rows
-  .views-row:not(:last-child) {
-    margin-bottom: var(--spacing-m);
-  }
-
   .form-actions {
-    grid-area: submit;
-    margin-top: calc(var(--field-gutter) + var(--spacing-2-xs));
-
-    @include mq($from: medium) {
-      margin-top: 0;
-    }
+    display: none;
   }
 }
 
@@ -151,7 +231,7 @@
     /* removes the input shadow on iOS */
     -webkit-appearance: none;
     background-color: var(--input-background-default);
-    border: var(--border-width) solid var(--input-border-color-default);
+    border: 0;
     border-radius: var(--border-radius);
     box-sizing: border-box;
     color: var(--input-color-default);
@@ -174,6 +254,106 @@
     &:not([readonly]):focus {
       box-shadow: 0 0 0 var(--outline-width) var(--focus-outline-color);
       transform: translate3d(0, 0, 0);
+    }
+  }
+}
+
+.path-taxonomy--tags,
+.path-search {
+  @media screen and (min-width: 928px) {
+    --content-width: 898px; // ?
+  }
+
+  .block-system-breadcrumb-block {
+    color: var(--color-white);
+    z-index: 1;
+
+    a {
+      color: var(--color-white);
+    }
+  }
+
+  .search-view {
+    padding-top: var(--spacing-layout-l);
+
+    header {
+      z-index: 1;
+      position: relative;
+    }
+  }
+
+  .search-view .views-exposed-form {
+    color: var(--color-white);
+    padding-bottom: calc(var(--spacing-layout-l) + 24px);
+    margin-bottom: var(--spacing-layout-xs);
+    column-gap: var(--spacing-xl);
+
+    @include mq($from: medium) {
+      display: flex;
+      align-items: flex-end;
+      flex-wrap: wrap;
+    }
+
+    @include mq($until: medium) {
+      .form-text {
+        width: 100%;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 1000px;
+      z-index: -100;
+      mask-image: svg-load('./images/koros/rect.svg'), svg-load('./images/koros/basic.svg');
+      transform: rotate(180deg);
+      background-color: var(--color-primary);
+
+      background-size: auto 104%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+    }
+
+    .form-actions {
+      display: block;
+      width: 100%;
+
+      @include mq($until: medium) {
+        margin-top: var(--spacing-l);
+      }
+
+      .button:focus,
+      .button:hover {
+        background-color: var(--button-background);
+      }
+    }
+  }
+
+  .search-view .form-item-search label {
+    // H2
+    font-size: 32px;
+    font-weight: 400;
+    line-height: var(--lineheight-s);
+
+    @include mq($from: medium) {
+      font-size: 48px;
+    }
+  }
+}
+
+.path-taxonomy {
+  .search-view header {
+    color: var(--color-white);
+  }
+
+  .views-exposed-form.views-exposed-form {
+    margin-bottom: 150px;
+
+    @include mq($from: medium) {
+      margin-bottom: 120px;
     }
   }
 }

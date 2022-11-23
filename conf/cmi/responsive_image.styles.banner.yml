@@ -3,12 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - image.style.banner_1024x300
+    - image.style.banner_1024x517
     - image.style.banner_1248x446_
-    - image.style.banner_1600x400
+    - image.style.banner_1600x808
     - image.style.banner_2000x714_
     - image.style.banner_400x267
-    - image.style.banner_800x533
+    - image.style.banner_800x404
   theme:
     - julkaisut
 id: banner
@@ -19,8 +19,8 @@ image_style_mappings:
     image_mapping:
       sizes: 100vw
       sizes_image_styles:
-        - banner_2000x714_
         - banner_1248x446_
+        - banner_2000x714_
     breakpoint_id: julkaisut.xlarge
     multiplier: 1x
   -
@@ -28,8 +28,8 @@ image_style_mappings:
     image_mapping:
       sizes: 100vw
       sizes_image_styles:
-        - banner_1024x300
-        - banner_1600x400
+        - banner_1024x517
+        - banner_1600x808
     breakpoint_id: julkaisut.large
     multiplier: 1x
   -
@@ -38,7 +38,7 @@ image_style_mappings:
       sizes: 100vw
       sizes_image_styles:
         - banner_400x267
-        - banner_800x533
+        - banner_800x404
     breakpoint_id: julkaisut.xsmall
     multiplier: 1x
 breakpoint_group: julkaisut

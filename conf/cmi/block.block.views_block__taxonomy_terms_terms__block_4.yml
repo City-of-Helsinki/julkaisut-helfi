@@ -1,0 +1,29 @@
+uuid: d4a5525a-dc26-4a45-b753-2a13327b5fe8
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.taxonomy_terms_terms_
+  module:
+    - system
+    - views
+  theme:
+    - julkaisut
+id: views_block__taxonomy_terms_terms__block_4
+theme: julkaisut
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:taxonomy_terms_terms_-block_4'
+settings:
+  id: 'views_block:taxonomy_terms_terms_-block_4'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<none>'

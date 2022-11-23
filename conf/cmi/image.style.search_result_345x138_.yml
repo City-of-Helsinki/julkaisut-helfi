@@ -1,0 +1,17 @@
+uuid: 197d9fe3-dfb2-49b1-bcbb-4073d742af4e
+langcode: fi
+status: true
+dependencies:
+  module:
+    - focal_point
+name: search_result_345x138_
+label: 'Search result (345x138)'
+effects:
+  71b3721a-8cae-4758-a51f-1100a93607f5:
+    uuid: 71b3721a-8cae-4758-a51f-1100a93607f5
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 345
+      height: 138
+      crop_type: focal_point

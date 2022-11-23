@@ -1,6 +1,6 @@
 uuid: 9baa5b70-30c2-416b-9c44-035685258729
 langcode: fi
-status: true
+status: false
 dependencies:
   content:
     - 'block_content:reusable_block:1a1483c2-767f-4933-ba3e-63b668f12c6b'
@@ -11,7 +11,7 @@ dependencies:
 id: copyright
 theme: julkaisut
 region: footer_bottom
-weight: 0
+weight: -7
 provider: null
 plugin: 'block_content:1a1483c2-767f-4933-ba3e-63b668f12c6b'
 settings:

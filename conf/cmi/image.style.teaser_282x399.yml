@@ -4,14 +4,14 @@ status: true
 dependencies:
   module:
     - focal_point
-name: teaser_384x299_
-label: 'Teaser (384x299)'
+name: teaser_282x399
+label: 'Teaser (282x399)'
 effects:
   0e4a8635-6cfe-4315-9e2c-f943390ae130:
     uuid: 0e4a8635-6cfe-4315-9e2c-f943390ae130
     id: focal_point_scale_and_crop
     weight: 1
     data:
-      width: 384
-      height: 299
+      width: 282
+      height: 399
       crop_type: focal_point

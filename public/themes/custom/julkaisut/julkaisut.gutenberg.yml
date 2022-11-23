@@ -1,67 +1,28 @@
 libraries-edit:
   - julkaisut/editor
 
+#ccccff (var(—bus-light-50)) with #F5A3C7 (not #B0D3ED) ?
+#f0f0ff (var(—bus-light-20)) with #E8F3FC ?
+#0000BF with #0072C6 → already changed
+
 theme-support:
   align-wide: 'true'
   disable-custom-colors: 'true'
   disable-custom-font-sizes: 'true'
   colors:
-    - slug: "bus"
-      name: "Bus"
-      color: "#0000bf"
-    - slug: "bus-dark-50"
-      name: "Bus dark 50"
-      color: "#000098"
-    - slug: "bus-light-50"
-      name: "Bus light 50"
-      color: "#7f7fdf"
-    - slug: "bus-light-5"
-      name: "Bus light 5"
-      color: "#f2f2f2"
-
-    - slug: "coat-of-arms-blue"
-      name: "Coat of Arms Blue"
+    - slug: "primary"
+      name: "Coat of Arms"
       color: "#0072c6"
-    - slug: "summer"
-      name: "Summer"
-      color: "#ffc61e"
-    - slug: "summer-light-20"
-      name: "Summer Light 20"
-      color: "#fff3d2"
-    - slug: "copper"
-      name: "Copper"
-      color: "#00d7a7"
-    - slug: "copper-light-20"
-      name: "Copper Light 20"
-      color: "#ccf7ed"
-    - slug: "fog-light-20"
-      name: "Fog Light 20"
-      color: "#ebf4fb"
-    - slug: "suomenlinna"
+    - slug: "secondary"
+      name: "Fog Light"
+      color: "#e8f3fc"
+    - slug: "accent"
       name: "Suomenlinna"
       color: "#f5a3c7"
-    - slug: "suomenlinna-light-20"
-      name: "Suomenlinna Light 20"
-      color: "#fdecf3"
-    - slug: "engel-light-20"
-      name: "Engel Light 20"
-      color: "#fffae3"
 
-    - slug: "black-90"
+    - slug: "black"
       name: "Black 90"
       color: "#1a1a1a"
-    - slug: "black-60"
-      name: "Black 60"
-      color: "#666666"
-    - slug: "black-50"
-      name: "Black 50"
-      color: "#808080"
-    - slug: "black-20"
-      name: "Black 20"
-      color: "#b2b2b2"
-    - slug: "black-5"
-      name: "Black 5"
-      color: "#f1f1f1"
     - slug: "white"
       name: "White"
       color: "#fff"

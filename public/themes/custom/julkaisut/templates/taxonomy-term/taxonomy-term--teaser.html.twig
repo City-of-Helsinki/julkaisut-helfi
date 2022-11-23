@@ -1,21 +1,27 @@
 {% extends '@julkaisut/taxonomy-term/taxonomy-term.html.twig' %}
 
 {% block term %}
-  <div{{ attributes.addClass('teaser') }} data-article-link-wrapper>
-    {{ content.field_image }}
+  <div{{ attributes.addClass('teaser teaser-taxonomy') }} data-article-link-wrapper>
+    <a href="{{ url }}" class="teaser__link">
+      <div aria-hidden="true" class="teaser__image">
+        {% if content.field_image[0] is not empty %}
+          {{ content.field_image }}
+        {% else %}
+          <img src="/{{ directory }}/dist/images/placeholder.png" role="presentation">
+        {% endif %}
+      </div>
 
-    <div class="teaser__date">
-      {% block term__date %}
-        {% include '@julkaisut/partials/published-date.html.twig' %}
-      {% endblock %}
-    </div>
+      {{ title_prefix }}
+      <h3 class="teaser__title card_title">
+        {{ name }}
+      </h3>
+      {{ title_suffix }}
 
-    {{ title_prefix }}
-    <h3 class="teaser__title">
-      <a href="{{ url }}" data-article-link>{{ name }}</a>
-    </h3>
-    {{ title_suffix }}
+      {{ content|without('field_image') }}
 
-    {{ content|without('field_image') }}
+      <div class="teaser__arrow">
+        <span class="hds-icon hds-icon--arrow-right hds-icon--size-l" aria-hidden="true"></span>
+      </div>
+    </a>
   </div>
 {% endblock %}

@@ -1,6 +1,6 @@
 @use "common/fonts";
 @use "config" with ($is-editor: false);
-@use "~hds-core/lib/base";
+@use "~hds-core/lib/base" ;
 @use "~hds-core/lib/components/text-input/text-input";
 @use "common/frontend";
 @use "common/utils";
@@ -8,3 +8,7 @@
 @use "components";
 @use "gutenberg";
 @use "partials";
+
+.display-none {
+  display: none;
+}

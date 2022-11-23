@@ -1,0 +1,9 @@
+.block--react-and-share {
+  margin-top: var(--spacing-xl);
+
+  > .rns {
+    max-width: var(--alignwide-width);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

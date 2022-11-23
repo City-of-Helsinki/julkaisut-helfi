@@ -1,0 +1,27 @@
+uuid: 593db3a8-adef-4176-b302-efb64820bde6
+langcode: fi
+status: true
+dependencies:
+  config:
+    - image.style.teaser_152x216
+    - image.style.teaser_282x399
+    - image.style.teaser_564x798
+    - image.style.teaser_76x108
+  theme:
+    - julkaisut
+id: portrait_banner
+label: 'Portrait banner'
+image_style_mappings:
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: '(min-width: 992px) 204px, (min-width: 1248px) 268px, 100vw'
+      sizes_image_styles:
+        - teaser_152x216
+        - teaser_282x399
+        - teaser_564x798
+        - teaser_76x108
+    breakpoint_id: julkaisut.xsmall
+    multiplier: 1x
+breakpoint_group: julkaisut
+fallback_image_style: teaser_76x108

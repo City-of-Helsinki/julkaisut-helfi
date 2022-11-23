@@ -150,7 +150,7 @@ display:
           entity_type: node
           entity_field: status
           plugin_id: field
-          label: Status
+          label: Tila
           exclude: false
           alter:
             alter_text: false
@@ -195,7 +195,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: entity_operations
-          label: Operations
+          label: Toimenpiteet
           exclude: false
           alter:
             alter_text: false
@@ -242,14 +242,14 @@ display:
         options:
           items_per_page: 50
           tags:
-            next: 'Next ›'
-            previous: '‹ Previous'
-            first: '« First'
-            last: 'Last »'
+            next: 'Seuraava ›'
+            previous: '‹ Edellinen'
+            first: '« Ensimmäinen'
+            last: 'Viimeinen »'
       exposed_form:
         type: basic
         options:
-          submit_button: Filter
+          submit_button: Suodatin
           reset_button: true
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
@@ -269,7 +269,7 @@ display:
           field: area_text_custom
           plugin_id: text_custom
           empty: true
-          content: 'No content available.'
+          content: 'Ei sisältöä.'
       sorts: {  }
       arguments: {  }
       filters:
@@ -374,7 +374,7 @@ display:
           exposed: true
           expose:
             operator_id: ''
-            label: Status
+            label: Tila
             description: ''
             use_operator: false
             operator: status_op

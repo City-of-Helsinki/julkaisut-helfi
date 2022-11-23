@@ -59,8 +59,12 @@ Drupal.behaviors.julkaisutTheme = {
     this.scrollToTop(context.querySelectorAll('[href="#top"]'));
     this.markExternalLinks(context.querySelectorAll('a[target="_blank"]'));
 
+    this.stickyBookNav(context);
+    this.searchResultAccordion(context);
+
     if (window.jQuery && settings.views && settings.views.ajaxViews) {
       window.jQuery(context).on('views_infinite_scroll.new_content', this.focusNewContent);
+      window.jQuery(context).on('views_infinite_scroll.new_content', this.announceStatus);
     }
   },
 
@@ -95,6 +99,18 @@ Drupal.behaviors.julkaisutTheme = {
       link.appendChild(icon.cloneNode(true));
       link.appendChild(srLabel.cloneNode(true));
       link.classList.add('is-external-link');
+    }
+  },
+
+  announceStatus(e, newRows) {
+    const viewContainer = e.target.closest('.views-element-container');
+    const status = viewContainer?.querySelector('header [role="status"]');
+
+    if (status) {
+      const parent = status.parentElement;
+      status.removeAttribute('aria-hidden');
+      status.parentElement.removeChild(status);
+      parent.appendChild(status);
     }
   },
 
@@ -169,6 +185,7 @@ Drupal.behaviors.julkaisutTheme = {
 
   mobileMenu(context) {
     const trigger = context.querySelector('.site-hamburger-button');
+    const html = context.getElementsByTagName('html')[0];
 
     if (trigger) {
       toggler(trigger);
@@ -180,11 +197,12 @@ Drupal.behaviors.julkaisutTheme = {
 
         trigger.addEventListener('click', () => {
           const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
-
           if (isExpanded) {
             mobileMenuFocusTrap.deactivate();
+            html.style.overflow = "scroll";
           } else {
             mobileMenuFocusTrap.activate();
+            html.style.overflow = "hidden";
           }
         });
       }
@@ -205,7 +223,34 @@ Drupal.behaviors.julkaisutTheme = {
     if (!elements.length) {
       return;
     }
-    new ClipboardJS(elements);
+    const clipboard = new ClipboardJS(elements);
+    clipboard.on('success', (e) => {
+      const announcement = document.createElement('p');
+      const restoreOriginalLabel = () => {
+        e.trigger.nextSibling.textContent = '';
+        delete e.trigger.dataset.label;
+        e.trigger.parentElement.removeChild(announcement);
+
+        // On desktop we need to blur the button so that it hides the text
+        if (document.activeElement === e.trigger) {
+          e.trigger.blur();
+        }
+      }
+
+      e.trigger.setAttribute('data-label', Drupal.t('Copied link'));
+      // @see https://github.com/zenorocha/clipboard.js/issues/695
+      e.trigger.focus();
+      // Restore the original element once focus moves away
+      e.trigger.parentElement.addEventListener('mouseleave', restoreOriginalLabel, {once: true});
+      e.trigger.parentElement.addEventListener('focusout', restoreOriginalLabel, {once: true});
+
+      // Add an announcement for screen readers when the link has been copied.
+      announcement.classList.add('visually-hidden')
+      announcement.setAttribute('role', 'region');
+      announcement.setAttribute('aria-live', 'polite');
+      announcement.textContent = Drupal.t('Copied link');
+      e.trigger.parentElement.insertBefore(announcement, e.trigger.nextSibling);
+    });
   },
 
   cookieConsent(context) {
@@ -215,6 +260,36 @@ Drupal.behaviors.julkaisutTheme = {
         Drupal.eu_cookie_compliance.setStatus(null);
         location.reload();
       })
+    }
+  },
+
+  stickyBookNav(context) {
+    // Change book navigation from fixed to static when scroll to footer
+    const bookNav = context.querySelector('.book-navigation');
+    const footer = context.querySelector('.site__footer');
+
+    if (!bookNav || !footer) {
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          bookNav.classList.remove('is-sticky');
+        } else {
+          bookNav.classList.add('is-sticky');
+        }
+      }
+    }, {threshold: 0});
+
+    observer.observe(footer);
+  },
+
+  searchResultAccordion(context) {
+    const triggers = context.querySelectorAll('.search-result__accordion-trigger');
+    for (let i = 0; i < triggers.length; i++) {
+      const trigger = triggers[i];
+      toggler(trigger);
     }
   }
 };

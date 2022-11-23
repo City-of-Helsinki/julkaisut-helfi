@@ -3,10 +3,10 @@ langcode: fi
 status: true
 dependencies:
   config:
-    - image.style.teaser_167x130_
-    - image.style.teaser_334x260_
-    - image.style.teaser_384x299_
-    - image.style.teaser_768x598_
+    - image.style.teaser_152x216
+    - image.style.teaser_282x399
+    - image.style.teaser_564x798
+    - image.style.teaser_76x108
   theme:
     - julkaisut
 id: teaser
@@ -17,11 +17,11 @@ image_style_mappings:
     image_mapping:
       sizes: '(min-width: 320px) 50vw, (min-width: 768px) 33vw, (min-width: 1224px) 384px, 100vw'
       sizes_image_styles:
-        - teaser_167x130_
-        - teaser_334x260_
-        - teaser_384x299_
-        - teaser_768x598_
+        - teaser_152x216
+        - teaser_282x399
+        - teaser_564x798
+        - teaser_76x108
     breakpoint_id: julkaisut.xsmall
     multiplier: 1x
 breakpoint_group: julkaisut
-fallback_image_style: teaser_167x130_
+fallback_image_style: teaser_76x108

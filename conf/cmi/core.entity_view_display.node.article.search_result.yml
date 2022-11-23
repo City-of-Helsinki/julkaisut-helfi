@@ -25,9 +25,9 @@ content:
     type: smart_trim
     label: hidden
     settings:
-      trim_length: 150
-      trim_type: chars
-      trim_suffix: ''
+      trim_length: 30
+      trim_type: words
+      trim_suffix: …
       wrap_output: false
       wrap_class: trimmed
       more_link: false

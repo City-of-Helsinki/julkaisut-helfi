@@ -103,7 +103,7 @@ display:
         type: infinite_scroll
         options:
           offset: 0
-          items_per_page: 20
+          items_per_page: 500
           total_pages: null
           id: 0
           tags:
@@ -120,6 +120,7 @@ display:
           views_infinite_scroll:
             button_text: 'Lataa lisää'
             automatically_load_content: false
+            initially_load_all_pages: false
       exposed_form:
         type: bef
         options:
@@ -187,7 +188,7 @@ display:
           expose:
             label: Relevance
             field_identifier: search_api_relevance
-          exposed: false
+          exposed: true
         created:
           id: created
           table: search_api_index_mainindex
@@ -483,7 +484,7 @@ display:
           exposed: true
           expose:
             operator_id: search_api_fulltext_op
-            label: 'Mitä haet?'
+            label: 'Mitä julkaisua etsit?'
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
@@ -888,6 +889,10 @@ display:
     position: 2
     display_options:
       title: Haku
+      pager:
+        type: none
+        options:
+          offset: 0
       exposed_form:
         type: bef
         options:
@@ -999,7 +1004,7 @@ display:
             operator_limit_selection: false
             operator_list: {  }
             identifier: search
-            required: false
+            required: true
             remember: false
             multiple: false
             remember_roles:
@@ -1007,7 +1012,9 @@ display:
               anonymous: '0'
               editor: '0'
               administrator: '0'
+            expose_fields: false
             placeholder: Haku
+            searched_fields_id: ''
           is_grouped: false
           group_info:
             label: ''
@@ -1159,6 +1166,7 @@ display:
           1: AND
       defaults:
         title: false
+        pager: false
         exposed_form: false
         filters: false
         filter_groups: false
@@ -1174,17 +1182,19 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: false
-          content: "<div role=\"status\">\r\n<h1>Hakutulokset ([view:total-rows])</h1>\r\n{% if filters.search_api_fulltext %}\r\n<h3>Sanalle \"{{ filters.search_api_fulltext }}\"</h3>\r\n{% endif %}\r\n</div>"
+          content: "{% if filters.search_api_fulltext or filters.facets %}\r\n<div role=\"status\">\r\n{% if filters.search_api_fulltext %}\r\n<p> <b>[view:total-rows]</b> tulosta sanalle \"{{ filters.search_api_fulltext }}\"</p>\r\n{% endif %}\r\n</div>\r\n{% endif %}"
           tokenize: true
       exposed_block: false
       display_extenders:
         simple_sitemap_display_extender:
+          variants: {  }
           index: false
           variant: null
           priority: '0.5'
           changefreq: ''
           arguments: {  }
           max_links: 100
+        metatag_display_extender: {  }
       path: search
     cache_metadata:
       max-age: -1
@@ -1192,7 +1202,6 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - url.query_args
         - 'url.query_args:sort_by'
         - 'url.query_args:sort_order'
         - 'user.node_grants:view'
@@ -1495,7 +1504,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: true
-          content: '<h3 role="status" class="result-count">[view:total-rows] tuloksia</h3>'
+          content: '<h3 role="status" class="result-count">[view:total-rows] tulosta</h3>'
           tokenize: false
       exposed_block: false
       display_extenders: {  }

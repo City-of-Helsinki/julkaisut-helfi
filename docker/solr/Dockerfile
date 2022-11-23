@@ -2,7 +2,10 @@ FROM solr:8.6
 USER root
 
 RUN mkdir /solr-conf
-COPY /conf /solr-conf/conf/
+COPY docker/solr/conf /solr-conf/conf/
+
+COPY docker/solr/start.sh /solr-conf/
+RUN chmod +x /solr-conf/start.sh
 
 USER solr
-RUN /opt/docker-solr/scripts/precreate-core dev /solr-conf
+CMD ["/solr-conf/start.sh"]

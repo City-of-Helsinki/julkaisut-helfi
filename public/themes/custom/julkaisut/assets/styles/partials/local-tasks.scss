@@ -1,4 +1,10 @@
 .block-local-tasks-block {
   font-size: var(--fontsize-body-m);
   margin-top: calc(var(--spacing-2-xs) * -1);
+
+  .tabs.tabs {
+    justify-content: flex-start;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

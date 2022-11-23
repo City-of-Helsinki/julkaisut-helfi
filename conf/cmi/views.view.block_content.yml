@@ -218,7 +218,7 @@ display:
           admin_label: ''
           entity_type: block_content
           plugin_id: entity_operations
-          label: Operations
+          label: Toimenpiteet
           exclude: false
           alter:
             alter_text: false
@@ -268,8 +268,8 @@ display:
           total_pages: null
           id: 0
           tags:
-            next: 'Next ›'
-            previous: '‹ Previous'
+            next: 'Seuraava ›'
+            previous: '‹ Edellinen'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'

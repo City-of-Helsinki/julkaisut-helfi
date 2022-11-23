@@ -1,13 +1,39 @@
+@use "common/breakpoints" as *;
+
 .site {
   display: grid;
   grid-template-rows: auto 1fr auto;
   grid-template-columns: minmax(0, 1fr);
   height: 100%;
+
+  --site-horizontal-gutter: var(--viewport-gutter);
+
+  @include mq($from: large) {
+    --site-horizontal-gutter: var(--spacing-l);
+  }
 }
 
 .site__header {
   background-color: var(--color-white);
+  max-width: var(--alignfull-width);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
   z-index: 100;
+  position: relative;
+
+  &::before {
+    display: block;
+    content: '';
+    margin-left: -50vw;
+    width: 200vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: var(--color-white);
+    z-index: -1;
+  }
 
   &.is-active {
     height: var(--app-height, 100vh);
@@ -21,7 +47,7 @@
 }
 
 .site__footer {
-  background-color: var(--color-black-5);
+  background-color: var(--color-black-90);
 }
 
 .site__content {

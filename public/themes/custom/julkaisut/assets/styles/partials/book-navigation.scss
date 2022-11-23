@@ -1,25 +1,29 @@
 @use "common/breakpoints" as *;
 
 .book-navigation {
-  font-size: var(--fontsize-body-s);
+  font-size: var(--fontsize-body-m);
   display: grid;
   grid-template-columns: 1fr 1fr;
   list-style-type: none;
   padding-left: 0;
-  background-color: var(--color-bus);
-  position: fixed;
-  bottom: 0;
+  background-color: var(--color-primary);
+  position: absolute;
   left: 0;
   right: 0;
   z-index: 10;
   box-shadow: 0px -3px 6px #00000029;
+
+  &.is-sticky {
+    position: fixed;
+    bottom: 0;
+  }
 
   .hds-icon {
     flex: 0 0 auto;
   }
 
   &__previous {
-    background-color: #3333CB;
+    background-color: #338ED1;
 
     .hds-icon {
       margin-right: var(--spacing-xs);
@@ -79,5 +83,9 @@
       text-decoration: underline;
     }
 
+  }
+
+  .hds-icon.hds-icon--size-xs {
+    --icon-size: var(--spacing-layout-m);
   }
 }

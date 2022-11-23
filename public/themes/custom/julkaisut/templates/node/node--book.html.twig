@@ -1,6 +1,10 @@
 {% extends '@julkaisut/node/node.html.twig' %}
 
 {% block node__content_wrapper %}
+  <div class="node__title is-container">
+    {{ drupal_block('page_title_block', {'label_display': false}) }}
+  </div>
+
   <div class="is-container node__metadata">
     {{ content.field_copyright }}
 
@@ -9,14 +13,14 @@
 
       {{ content.field_pdf }}
 
+      {{ translation_links }}
+
       {% include '@julkaisut/partials/print-button.html.twig' %}
 
       {% include '@julkaisut/partials/share-links.html.twig' with {
         url: url_absolute.toString(),
         title: node.title(),
       } %}
-
-      {{ translation_links }}
     </div>
   </div>
 

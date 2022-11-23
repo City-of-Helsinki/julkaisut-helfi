@@ -374,7 +374,7 @@ display:
         type: infinite_scroll
         options:
           offset: 0
-          items_per_page: 6
+          items_per_page: 8
           total_pages: null
           id: 0
           tags:
@@ -391,6 +391,7 @@ display:
           views_infinite_scroll:
             button_text: 'Lataa lisää'
             automatically_load_content: false
+            initially_load_all_pages: false
       filters:
         status:
           id: status
@@ -541,8 +542,12 @@ display:
         sorts: true
         filters: false
         filter_groups: false
+        header: false
       display_description: ''
-      display_extenders: {  }
+      header: {  }
+      display_extenders:
+        simple_sitemap_display_extender: {  }
+        metatag_display_extender: {  }
       block_description: 'Raportit - aikajärjestyksessä'
     cache_metadata:
       max-age: -1
@@ -964,7 +969,7 @@ display:
         type: infinite_scroll
         options:
           offset: 0
-          items_per_page: 6
+          items_per_page: 8
           total_pages: null
           id: 0
           tags:
@@ -981,6 +986,7 @@ display:
           views_infinite_scroll:
             button_text: 'Lataa lisää'
             automatically_load_content: false
+            initially_load_all_pages: false
       filters:
         status:
           id: status
@@ -1117,7 +1123,9 @@ display:
         filters: false
         filter_groups: false
       display_description: ''
-      display_extenders: {  }
+      display_extenders:
+        simple_sitemap_display_extender: {  }
+        metatag_display_extender: {  }
       block_description: 'Artikkelit - aikajärjestyksessä'
     cache_metadata:
       max-age: -1

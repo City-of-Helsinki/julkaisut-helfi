@@ -1,3 +1,5 @@
+@use "common/breakpoints" as *;
+
 .wp-block-media-text {
   @media (max-width: 600px) {
     .wp-block-media-text__content {
@@ -10,5 +12,84 @@
       padding-top: 0;
       padding-bottom: var(--spacing-s);
     }
+  }
+
+  &.is-style-koros {
+    position: relative;
+    overflow: hidden;
+    min-height: 480px;
+
+    --layer-width: min(100vw, var(--alignfull-width));
+
+    // Editor
+    [data-type="core/media-text"] > & {
+      background-color: inherit;
+    }
+
+    &::after {
+      z-index: 2;
+      position: absolute;
+      width: var(--layer-width);
+      height: var(--layer-width);
+      display: block;
+      content: '';
+      mask-image: svg-load('./images/koros/basic.svg'), svg-load('./images/koros/rect.svg');
+      transform: translate(
+        calc(-1 * var(--layer-width) / 2),
+        -50%
+      ) rotate(130deg);
+      background-color: inherit;
+      left: 0;
+    }
+
+    .wp-block-media-text__media {
+      margin-left: -50%;
+      z-index: 1;
+    }
+
+    > .block-editor-inner-blocks,
+    .wp-block-media-text__content {
+      z-index: 3;
+      width: 130%;
+      padding-top: var(--spacing-layout-l);
+      padding-bottom: var(--spacing-layout-l);
+    }
+
+    // Align it with the page layout
+    &.alignfull .wp-block-media-text__content {
+      padding-left: var(--viewport-gutter);
+
+      @include mq($from: xlarge) {
+        padding-left: calc((
+          min(100vw, var(--alignfull-width)) - var(--alignwide-width)) / 2
+        );
+      }
+    }
+
+    @include mq($until: medium) {
+      grid-template-columns: 100% !important;
+
+      .wp-block-media-text__content {
+        width: 100%;
+        padding-left: var(--viewport-gutter);
+        padding-right: var(--viewport-gutter);
+      }
+
+      .wp-block-media-text__media {
+        mask-image: svg-load('./images/koros/basic.svg'), svg-load('./images/koros/rect.svg');
+        grid-column: 1;
+        grid-row: 2;
+        margin-left: 0;
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  // Button in eg. frontpage block has a smaller gutter
+  p + .wp-block-buttons {
+    margin-top: calc(-1 * var(--block-gutter-s) + var(--spacing-xs));
   }
 }

@@ -1,0 +1,13 @@
+<?php
+/**
+ * @file
+ * Functions to support creating search Accordion.
+ */
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function search_accordion_page_attachments_alter(array &$page) {
+  // Attaches css assets globally.
+  $page['#attached']['library'][] = 'search_accordion/accordion_style';
+}

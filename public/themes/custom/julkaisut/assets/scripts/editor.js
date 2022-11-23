@@ -32,6 +32,15 @@ domReady(() => {
     label: 'Numeric (all cells)',
   });
 
+  registerBlockStyle('core/media-text', {
+    name: 'koros',
+    label: 'Koros',
+  });
+
+  registerBlockStyle('core/button', {
+    name: 'small',
+    label: 'Small',
+  });
 });
 
 drupalSettings.gutenberg._listeners.init.push(() => {

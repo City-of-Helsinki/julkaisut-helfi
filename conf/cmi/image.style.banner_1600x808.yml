@@ -4,7 +4,7 @@ status: true
 dependencies:
   module:
     - focal_point
-name: banner_1600x400
+name: banner_1600x808
 label: 'Banner (1600x808)'
 effects:
   56519299-de41-431f-8f2b-b368eb794ef8:

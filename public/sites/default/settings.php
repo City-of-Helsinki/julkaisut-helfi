@@ -106,7 +106,7 @@ if (file_exists($app_root . '/' . $site_path . '/settings.platformsh.php')) {
 
 if (
   ($redis_host = getenv('REDIS_HOST')) &&
-  file_exists('modules/contrib/redis/example.services.yml') &&
+  file_exists('modules/contrib/redis/redis.services.yml') &&
   extension_loaded('redis')
 ) {
   // Redis namespace is not available until redis module is enabled, so
@@ -114,11 +114,6 @@ if (
   // this configuration when the module is installed, but not yet enabled.
   $class_loader->addPsr4('Drupal\\redis\\', 'modules/contrib/redis/src');
   $redis_port = getenv('REDIS_PORT') ?: 6379;
-
-  // Force SSL on azure.
-  if (getenv('AZURE_SQL_SSL_CA_PATH')) {
-    $redis_host = 'tls://' . $redis_host;
-  }
 
   if ($redis_prefix = getenv('REDIS_PREFIX')) {
     $settings['cache_prefix']['default'] = $redis_prefix;
@@ -128,8 +123,18 @@ if (
     $settings['redis.connection']['password'] = $redis_password;
   }
   $settings['redis.connection']['interface'] = 'PhpRedis';
-  $settings['redis.connection']['host'] = $redis_host;
   $settings['redis.connection']['port'] = $redis_port;
+
+  // REDIS_INSTANCE environment variable is used to support Redis sentinel
+  // and the value should contain both the host and the port, like
+  // 'sentinel-external:5000'.
+  if ($redis_instance = getenv('REDIS_INSTANCE')) {
+    $settings['redis.connection']['instance'] = $redis_instance;
+    // Sentinel expects redis host to be an array.
+    $redis_host = explode(',', $redis_host);
+  }
+  $settings['redis.connection']['host'] = $redis_host;
+
   $settings['cache']['default'] = 'cache.backend.redis';
   $settings['container_yamls'][] = 'modules/contrib/redis/example.services.yml';
   // Register redis services to make sure we don't get a non-existent service
@@ -156,4 +161,8 @@ if ($stage_file_proxy_origin = getenv('STAGE_FILE_PROXY_ORIGIN')) {
   $config['stage_file_proxy.settings']['origin_dir'] = getenv('STAGE_FILE_PROXY_ORIGIN_DIR') ?: 'sites/default/files';
   $config['stage_file_proxy.settings']['hotlink'] = FALSE;
   $config['stage_file_proxy.settings']['use_imagecache_root'] = FALSE;
+}
+
+if (file_exists(__DIR__ . '/local.settings.php')) {
+  include __DIR__ . '/local.settings.php';
 }

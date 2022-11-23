@@ -2,60 +2,25 @@
 @use "common/breakpoints" as *;
 
 .site-search {
-  position: relative;
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
 
-  &__button {
-    position: absolute;
-    margin-top: 2px;
-    right: var(--spacing-s);
-    bottom: calc(var(--spacing-s) / 2 - 2px);
+  &__icon-label {
+    font-size: 14px;
+    line-height: 1;
+    margin-top: var(--spacing-3-xs);
+    display: none;
   }
 
-  &__label {
-    font-size: var(--fontsize-heading-m);
-    font-weight: bold;
-    margin-bottom: var(--spacing-s);
-
-    @include mq($from: large) {
-      display: none;
-    }
-  }
-
-  &__field {
-    &::-webkit-search-decoration,
-    &::-webkit-search-cancel-button,
-    &::-webkit-search-results-button,
-    &::-webkit-search-results-decoration {
-      -webkit-appearance: none;
-    }
+  &:hover &__icon-label {
+    text-decoration: underline;
   }
 
   @include mq($from: large) {
-    &__field {
-      transition: all 200ms ease-out;
-      margin-right: 3px; // make space for outline
-      width: 246px;
-
-      &:not(:focus) {
-        padding-left: 0;
-        padding-right: 0;
-        border: 0;
-        width: 100px;
-      }
-
-      &:focus ~ .site-search__button {
-        left: calc(100% - var(--spacing-l));
-        margin-top: 1px;
-      }
-    }
-
-    &__button {
-      transition: all 100ms ease-out;
-      right: auto;
-      left: calc(var(--spacing-l) * -1);
+    &__icon-label {
+      display: block;
     }
   }
 }
