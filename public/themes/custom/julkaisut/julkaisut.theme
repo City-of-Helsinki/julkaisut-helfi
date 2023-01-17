@@ -506,6 +506,17 @@ function julkaisut_preprocess_page(&$variables) {
   /** @var Drupal\node\Entity\Node|null $node */
   $node = $variables['node'] ?? null;
 
+  if ($node instanceof Node) {
+    $current_language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    if ($current_language == 'en') {
+      $variables['shareandreactAPIKey'] = '7zfblho0j7sm0url';
+    } elseif ($current_language == 'sv') {
+      $variables['shareandreactAPIKey'] = 'mwft0afec1l7d6g1';
+    } else {
+      $variables['shareandreactAPIKey'] = '89n7kvu9063iyp4t';
+    }
+  }
+
   // Allow nodes to change the content width to 12/12
   if ($node instanceof Node && $node->field_wide_contentwidth && $node->field_wide_contentwidth->getString() === '1') {
     $variables['attributes']['style'] = '--content-width: var(--alignwide-width)';
