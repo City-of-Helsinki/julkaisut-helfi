@@ -1747,6 +1747,7 @@ body:not(.path-taxonomy) .search-view > header {
   }
 }
 body:not(.path-taxonomy) .search-view > header :last-child {
+  width: 50%;
   margin-bottom: 0;
 }
 @media (max-width: 47.99em) {
