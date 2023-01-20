@@ -1737,6 +1737,7 @@ body:not(.path-taxonomy) .search-view > form {
   order: -1;
 }
 body:not(.path-taxonomy) .search-view > header {
+  width: 70%;
   margin-top: calc(2rem - 1.5rem);
   margin-top: calc(var(--spacing-l) - var(--spacing-m));
 }
@@ -1747,7 +1748,6 @@ body:not(.path-taxonomy) .search-view > header {
   }
 }
 body:not(.path-taxonomy) .search-view > header :last-child {
-  width: 50%;
   margin-bottom: 0;
 }
 @media (max-width: 47.99em) {
