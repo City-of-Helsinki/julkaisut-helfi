@@ -513,7 +513,7 @@ function julkaisut_preprocess_page(&$variables) {
     } elseif ($current_language == 'sv') {
       $variables['shareandreactAPIKey'] = 'mwft0afec1l7d6g1';
     } else {
-      $variables['shareandreactAPIKey'] = '89n7kvu9063iyp4t';
+      $variables['shareandreactAPIKey'] = 'gjhfvh3m4xcvnred';
     }
   }
 
