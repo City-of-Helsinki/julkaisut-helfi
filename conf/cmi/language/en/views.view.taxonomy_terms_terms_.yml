@@ -18,10 +18,10 @@ display:
       pager:
         options:
           views_infinite_scroll:
-            button_text: 'Show all industries'
+            button_text: 'Show all divisions'
       header:
         area_text_custom:
-          content: "<h3>Industries and businesses</h3>\r\n<div role=\"status\" class=\"visually-hidden\" aria-hidden=\"true\">\r\n<p>[view:total-rows] results</p>\r\n</div>"
+          content: "<h3>Divisions</h3>\r\n<div role=\"status\" class=\"visually-hidden\" aria-hidden=\"true\">\r\n<p>[view:total-rows] results</p>\r\n</div>"
   block_5:
     display_options:
       use_more_text: 'Show all'
