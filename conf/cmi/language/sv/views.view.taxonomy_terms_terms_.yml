@@ -18,10 +18,10 @@ display:
       pager:
         options:
           views_infinite_scroll:
-            button_text: 'Visa alla branscher'
+            button_text: 'Visa alla sektorer'
       header:
         area_text_custom:
-          content: "<h3>Branscher och företag</h3>\r\n<div role=\"status\" class=\"visually-hidden\" aria-hidden=\"true\">\r\n<p>[view:total-rows] resultat.</p>\r\n</div>"
+          content: "<h3>Sektorer</h3>\r\n<div role=\"status\" class=\"visually-hidden\" aria-hidden=\"true\">\r\n<p>[view:total-rows] resultat.</p>\r\n</div>"
   block_5:
     display_options:
       use_more_text: 'Visa alla'
