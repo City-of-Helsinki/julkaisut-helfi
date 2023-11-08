@@ -3,13 +3,13 @@ index ac4462b..a0281e9 100644
 --- a/smtp.module
 +++ b/smtp.module
 @@ -92,6 +92,13 @@ function _smtp_mailer_send(array $variables) {
- 
+
    // Try to send e-mail. If it fails, set watchdog entry.
    try {
 +    $mailer->SMTPOptions = [
 +      'ssl' => [
 +        'verify_peer' => FALSE,
-+        'verify_peer_name' => TRUE,
++        'verify_peer_name' => FALSE,
 +        'allow_self_signed' => TRUE,
 +      ],
 +    ];
@@ -32,5 +32,5 @@ index 92cbe0d..cd06c4d 100644
 +      ],
 +    ];
    }
- 
+
    public function setMailer(PHPMailer $mailer) {
