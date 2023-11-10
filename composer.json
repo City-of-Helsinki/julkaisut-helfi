@@ -150,6 +150,9 @@
             },
             "drupal/popular_search_keywords": {
                 "Custom template": "./patches/popular_search_keywords.patch"
+            },
+            "drupal/smtp": {
+                "Disable ssl cert verification on mail sending": "./patches/smtp_disable_cert_check.patch"
             }
         },
         "installer-types": [

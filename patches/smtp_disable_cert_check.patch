@@ -1,0 +1,36 @@
+diff --git a/smtp.module b/smtp.module
+index ac4462b..a0281e9 100644
+--- a/smtp.module
++++ b/smtp.module
+@@ -92,6 +92,13 @@ function _smtp_mailer_send(array $variables) {
+
+   // Try to send e-mail. If it fails, set watchdog entry.
+   try {
++    $mailer->SMTPOptions = [
++      'ssl' => [
++        'verify_peer' => FALSE,
++        'verify_peer_name' => FALSE,
++        'allow_self_signed' => TRUE,
++      ],
++    ];
+     $mailer->Send();
+   }
+   catch (Exception $e) {
+diff --git a/src/ConnectionTester/ConnectionTester.php b/src/ConnectionTester/ConnectionTester.php
+index 92cbe0d..cd06c4d 100644
+--- a/src/ConnectionTester/ConnectionTester.php
++++ b/src/ConnectionTester/ConnectionTester.php
+@@ -92,6 +92,13 @@ class ConnectionTester {
+       return;
+     }
+     $this->phpMailer = new PHPMailer(TRUE);
++    $this->phpMailer->SMTPOptions = [
++      'ssl' => [
++        'verify_peer' => FALSE,
++        'verify_peer_name' => TRUE,
++        'allow_self_signed' => TRUE,
++      ],
++    ];
+   }
+
+   public function setMailer(PHPMailer $mailer) {
