@@ -34,5 +34,4 @@ editor:
     dist/scripts/vendor.js: {}
     dist/scripts/editor.js: {}
   dependencies:
-    - julkaisut/polyfill
     - gutenberg/edit-node
