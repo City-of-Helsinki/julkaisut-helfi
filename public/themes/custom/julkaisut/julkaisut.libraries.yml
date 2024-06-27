@@ -14,7 +14,6 @@ global-scripts:
     dist/scripts/vendor.js: {}
     dist/scripts/app.js: {}
   dependencies:
-    - julkaisut/polyfill
     - core/drupal
 
 custom-load-more:
@@ -24,11 +23,6 @@ custom-load-more:
   dependencies:
     - core/drupal
     - core/drupalSettings
-
-polyfill:
-  header: true
-  js:
-    https://polyfill.io/v3/polyfill.min.js?features=default: { type: external }
 
 editor:
   version: VERSION
