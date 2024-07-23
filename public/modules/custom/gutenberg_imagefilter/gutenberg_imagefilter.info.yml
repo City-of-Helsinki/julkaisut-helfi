@@ -2,8 +2,7 @@ name: Gutenberg Image Filter (Julkaisut)
 type: module
 description: "Automatically set image srcset, sizes, width, height and loading attributes"
 package: Gutenberg
-core: 8.x
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^9 || ^10
 dependencies:
   - gutenberg:gutenberg
   - drupal:filter
