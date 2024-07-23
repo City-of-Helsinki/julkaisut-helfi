@@ -26,6 +26,7 @@
         "drupal/gtm": "^1.5",
         "drupal/gutenberg": "^2.0@beta",
         "drupal/helfi_azure_fs": "^1.0",
+        "drupal/helfi_drupal_tools": "dev-drush-10",
         "drupal/jquery_ui_touch_punch": "^1.0",
         "drupal/language_switcher_extended": "^1.0@beta",
         "drupal/masquerade": "^2.0@beta",

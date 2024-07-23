@@ -1,23 +1,26 @@
 # Ignore project files that should not be in version control
 drush/sites/
+drush/Commands/*
 node_modules
 drush/Commands/*
 public/core
 public/libraries
 public/modules/contrib
-!public/modules/contrib/helfi_*
 public/themes/contrib
-!public/themes/contrib/hdbt
-!public/themes/contrib/hdbt_admin
 public/sites/default/files
 vendor
 public/sites/simpletest/
-.phpunit.result.cache
-public/sites/default/local.settings.php
-public/sites/default/local.services.yml
-*.sql
+public/sites/backstop/
+
 # Ignore the folder created by PhpStorm
 .idea/*
+
+# Ignore local settings
+public/sites/default/local.settings.php
+public/sites/default/local.services.yml
+
+*.sql
+*.env.local
 
 # Ignore OSX generated files
 ._*
@@ -25,6 +28,7 @@ public/sites/default/local.services.yml
 
 !*.gitkeep
 !*.keepme
+.phpunit.*
 
 #Ignore Doksal files
 .docksal/
