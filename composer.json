@@ -24,7 +24,7 @@
         "drupal/focal_point": "^2.1",
         "drupal/gtm": "^1.8",
         "drupal/gutenberg": "^2.9",
-        "drupal/helfi_azure_fs": "^1.0",
+        "drupal/helfi_azure_fs": "^2.0",
         "drupal/helfi_drupal_tools": "dev-drush-10",
         "drupal/jquery_ui_touch_punch": "^1.1",
         "drupal/language_switcher_extended": "^1.2",
@@ -122,9 +122,6 @@
             },
             "drupal/content_language_access": {
                 "Book navigation links not available on translations [TODO]": "./patches/content_language_acccess.patch"
-            },
-            "drupal/popular_search_keywords": {
-                "Custom template": "./patches/popular_search_keywords.patch"
             },
             "drupal/smtp": {
                 "Disable ssl cert verification on mail sending": "./patches/smtp_disable_cert_check.patch"
