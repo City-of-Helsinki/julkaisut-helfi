@@ -120,27 +120,8 @@
                 "Untranslated menu items are displayed in menus": "https://www.drupal.org/files/issues/2020-05-14/2466553-75-d91x.patch",
                 "Return translated term name on views Content: Has taxonomy term ID (with depth)": "https://www.drupal.org/files/issues/2021-03-19/taxonomy_translation_2765297_63.patch"
             },
-            "drupal/gutenberg": {
-                "Insert Image or Media shows blank modal Media Library window": "https://www.drupal.org/files/issues/2020-06-09/gutenberg-d9_media_library_support-3150127-4.patch",
-                "Video embed block not working in multi-language environment with shortcode for default language": "https://www.drupal.org/files/issues/2020-09-10/issue-3150008-6.patch",
-                "Incorrect watchdog_exception() usage": "https://www.drupal.org/files/issues/2020-09-10/issue-3170264-2.patch",
-                "Metadata bubbling error": "https://www.drupal.org/files/issues/2020-09-04/gutenberg-fix-metadata-bubbling-3078027-13.patch",
-                "Inserting a link to a paragraph block returns an error": "https://www.drupal.org/files/issues/2020-06-08/gutenberg-add-type-to-content-search-ajax-call-3149823.patch",
-                "Stuck loading Gutenberg (JS errors) when using Gutenberg with Drupal 9.2": "https://git.drupalcode.org/project/gutenberg/-/commit/ffe0bfdd2a37d4953c9d2e3a67e7fa4e5ecd79a7.patch"
-            },
             "drupal/token": {
               "Book parents translation": "https://www.drupal.org/files/issues/2018-06-28/token_8_1_3_2982284_parents_translation_02.patch"
-            },
-            "drupal/facets": {
-                "Create views plugins to render facets and summaries in filters and areas": "https://www.drupal.org/files/issues/2020-09-22/facet-3073444-104-Allow-facets-filter-in-views.patch"
-            },
-            "drupal/custom_book_block": {
-                "Missing core book dependency on custom_book_block.info.yml file": "https://www.drupal.org/files/issues/2021-07-01/book-dependency-3221650-2.patch",
-                "Error: Call to a member function getCurrentRequest() on null (Drupal 9.2.x)": "https://www.drupal.org/files/issues/2021-07-01/call-to-a-member-function-3221656-2.patch",
-                "Place custom book block from block layout is not working in Drupal 9.2.x": "https://www.drupal.org/files/issues/2021-07-01/place-custom-book-block-3221654-2.patch"
-            },
-            "drupal/language_switcher_extended": {
-                "Does not link to translated content": "./patches/language_switcher_extended-issue-3128516.patch"
             },
             "drupal/views_infinite_scroll": {
                 "Allow new_content JS event listeners access to the actual new content": "https://www.drupal.org/files/issues/2020-09-29/views_infinite_scroll-3173923-2.patch"
