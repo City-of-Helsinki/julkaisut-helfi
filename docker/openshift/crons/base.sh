@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source /init.sh
+
 echo "Starting cron: $(date)"
 
 # You can add any additional cron "daemons" here:
@@ -16,9 +18,20 @@ echo "Starting cron: $(date)"
 # done
 # @endcode
 
+# Uncomment this to enable TPR migration cron
+#exec "/crons/migrate-tpr.sh" &
+# Uncomment this to enable linked events migrations cron
+#exec "/crons/linked-events.sh" &
+# Uncomment this to enable Varnish purge cron
+#exec "/crons/purge-queue.sh" &
+# Uncomment this to enable automatic translation updates.
+# exec "/crons/update-translations.sh" &
+# Uncomment this to enable content scheduler
+# exec "/crons/content-scheduler.sh" &
+
 while true
 do
-  echo "Running cron: $(date)\n"
+  echo "Running cron: $(date +'%Y-%m-%dT%H:%M:%S%:z')\n"
   drush cron
   # Sleep for 10 minutes.
   sleep 600
