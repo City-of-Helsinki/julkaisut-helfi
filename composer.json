@@ -12,9 +12,10 @@
         "drupal/admin_toolbar": "^2.3",
         "drupal/better_exposed_filters": "^5.0@beta",
         "drupal/content_language_access": "^1.0",
-        "drupal/core-composer-scaffold": "~9.3.0",
+        "drupal/core": "^9.5",
+        "drupal/core-composer-scaffold": "^9.5",
         "drupal/core-project-message": "~9.3.0",
-        "drupal/core-recommended": "~9.3.0",
+        "drupal/core-recommended": "^9.5",
         "drupal/custom_book_block": "^1.0@alpha",
         "drupal/devel": "^4.0",
         "drupal/easy_breadcrumb": "^1.13",
@@ -113,13 +114,6 @@
             ]
         },
         "patches": {
-            "drupal/core": {
-                "Make exposed filter values available as tokens for text areas": "https://www.drupal.org/files/issues/2020-03-02/exposed_filter_tokens-2761273-21.patch",
-                "Notice: Undefined offset: 1 en Drupal\\Core\\StringTranslation\\PluralTranslatableMarkup->render()": "https://www.drupal.org/files/issues/2018-06-29/notice_undefined-2863629-11.patch",
-                "Cannot save unpublished versions of published content for users without manage book privileges": "https://www.drupal.org/files/issues/2020-07-14/2918537-61.patch",
-                "Untranslated menu items are displayed in menus": "https://www.drupal.org/files/issues/2020-05-14/2466553-75-d91x.patch",
-                "Return translated term name on views Content: Has taxonomy term ID (with depth)": "https://www.drupal.org/files/issues/2021-03-19/taxonomy_translation_2765297_63.patch"
-            },
             "drupal/token": {
               "Book parents translation": "https://www.drupal.org/files/issues/2018-06-28/token_8_1_3_2982284_parents_translation_02.patch"
             },
@@ -128,9 +122,6 @@
             },
             "drupal/content_language_access": {
                 "Book navigation links not available on translations [TODO]": "./patches/content_language_acccess.patch"
-            },
-            "drupal/popular_search_keywords": {
-                "Custom template": "./patches/popular_search_keywords.patch"
             },
             "drupal/smtp": {
                 "Disable ssl cert verification on mail sending": "./patches/smtp_disable_cert_check.patch"
