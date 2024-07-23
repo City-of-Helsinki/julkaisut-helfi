@@ -55,6 +55,9 @@ third_party_settings:
     multilingual:
       limit_to_content_language: true
       include_language_independent: true
+      specific_languages: {  }
+      use_language_undefined_as_fallback_language: false
+      use_universal_collation: false
 id: mainindex
 name: mainindex
 description: ''

@@ -17,7 +17,7 @@ base_field: nid
 display:
   default:
     id: default
-    display_title: Master
+    display_title: Isäntä
     display_plugin: default
     position: 0
     display_options:
@@ -46,7 +46,7 @@ display:
           entity_type: node
           entity_field: title
           plugin_id: field
-          label: Title
+          label: Otsikko
           exclude: false
           alter:
             alter_text: false
@@ -164,7 +164,7 @@ display:
           settings:
             format: custom
             format_custom_false: Unpublished
-            format_custom_true: Published
+            format_custom_true: Julkaistu
         changed:
           id: changed
           table: node_field_data
@@ -251,8 +251,8 @@ display:
         options:
           submit_button: Suodatin
           reset_button: true
-          reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          reset_button_label: Palauta
+          exposed_sorts_label: Lajittele
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
@@ -289,7 +289,7 @@ display:
           exposed: true
           expose:
             operator_id: title_op
-            label: Title
+            label: Otsikko
             description: ''
             use_operator: false
             operator: title_op
@@ -399,7 +399,7 @@ display:
             default_group_multiple: {  }
             group_items:
               1:
-                title: Published
+                title: Julkaistu
                 operator: '='
                 value: '1'
               2:
@@ -585,7 +585,7 @@ display:
       tags: {  }
   page_1:
     id: page_1
-    display_title: Page
+    display_title: Sivu
     display_plugin: page
     position: 1
     display_options:

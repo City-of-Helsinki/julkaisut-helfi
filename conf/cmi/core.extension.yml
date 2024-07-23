@@ -24,7 +24,6 @@ module:
   easy_breadcrumb: 0
   editor: 0
   facets: 0
-  facets_range_dropdowns: 0
   field: 0
   field_ui: 0
   file: 0
@@ -79,6 +78,7 @@ module:
   search_api_autocomplete: 0
   search_api_solr: 0
   search_api_solr_admin: 0
+  search_api_solr_autocomplete: 0
   shortcut: 0
   simple_sitemap: 0
   simple_sitemap_engines: 0
