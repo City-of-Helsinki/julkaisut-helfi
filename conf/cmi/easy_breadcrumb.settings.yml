@@ -19,17 +19,17 @@ language_path_prefix_as_segment: false
 absolute_paths: false
 hide_single_home_item: false
 term_hierarchy: false
-add_structured_data_jsonld: false
 use_site_title: false
+add_structured_data_json_ld: true
 capitalizator_mode: none
-capitalizator_ignored_words: ''
-capitalizator_forced_words_first_letter: 0
-capitalizator_forced_words_case_sensitivity: 1
+capitalizator_ignored_words: {  }
+capitalizator_forced_words: ''
+capitalizator_forced_words_case_sensitivity: true
+capitalizator_forced_words_first_letter: false
+add_structured_data_jsonld: false
 dependencies:
   module:
     - easy_breadcrumb
   enforced:
     module:
       - easy_breadcrumb
-add_structured_data_json_ld: 1
-capitalizator_forced_words: ''

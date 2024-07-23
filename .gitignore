@@ -1,6 +1,7 @@
 # Ignore project files that should not be in version control
 drush/sites/
 node_modules
+drush/Commands/*
 public/core
 public/libraries
 public/modules/contrib
@@ -14,7 +15,7 @@ public/sites/simpletest/
 .phpunit.result.cache
 public/sites/default/local.settings.php
 public/sites/default/local.services.yml
-
+*.sql
 # Ignore the folder created by PhpStorm
 .idea/*
 
