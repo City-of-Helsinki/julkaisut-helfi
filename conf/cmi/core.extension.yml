@@ -46,7 +46,6 @@ module:
   language_switcher_extended: 0
   link: 0
   locale: 0
-  masquerade: 0
   media: 0
   media_library: 0
   media_library_edit: 0
