@@ -18,6 +18,7 @@ dependencies:
     - content_translation
     - contextual
     - eu_cookie_compliance
+    - file
     - filter
     - locale
     - media
@@ -71,6 +72,7 @@ permissions:
   - 'delete own article content'
   - 'delete own book content'
   - 'delete own document media'
+  - 'delete own files'
   - 'delete own image media'
   - 'delete own page content'
   - 'delete page revisions'
@@ -107,7 +109,6 @@ permissions:
   - 'update any media'
   - 'update content translations'
   - 'update media'
-  - 'use gutenberg'
   - 'use text format editor'
   - 'use text format gutenberg'
   - 'view all media revisions'

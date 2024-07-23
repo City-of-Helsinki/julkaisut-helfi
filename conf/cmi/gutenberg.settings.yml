@@ -111,7 +111,6 @@ page_allowed_drupal_blocks:
   system_powered_by_block: 0
   system_branding_block: 0
   node_syndicate_block: 0
-  drupalmedia/drupal-media-entity: drupalmedia/drupal-media-entity
 article_enable_full: 1
 article_template: ''
 article_template_lock: none
@@ -197,7 +196,6 @@ article_allowed_drupal_blocks:
   system_powered_by_block: 0
   system_branding_block: 0
   node_syndicate_block: 0
-  drupalmedia/drupal-media-entity: drupalmedia/drupal-media-entity
 book_enable_full: 1
 book_template: ''
 book_template_lock: none
@@ -288,4 +286,3 @@ book_allowed_drupal_blocks:
   system_powered_by_block: 0
   system_branding_block: 0
   node_syndicate_block: 0
-  drupalmedia/drupal-media-entity: drupalmedia/drupal-media-entity

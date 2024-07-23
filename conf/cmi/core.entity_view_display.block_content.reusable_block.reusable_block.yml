@@ -19,11 +19,9 @@ bundle: reusable_block
 mode: reusable_block
 content:
   body:
-    type: gutenberg_text
+    type: text_default
     label: hidden
-    settings:
-      format: gutenberg
-      content_only: true
+    settings: {  }
     third_party_settings: {  }
     weight: 1
     region: content

@@ -14,7 +14,6 @@ field_type:
   name: text_fi
   class: solr.TextField
   positionIncrementGap: 100
-  storeOffsetsWithPositions: true
   analyzers:
     -
       type: index
@@ -23,7 +22,7 @@ field_type:
           class: solr.MappingCharFilterFactory
           mapping: accents_fi.txt
       tokenizer:
-        class: solr.StandardTokenizerFactory
+        class: solr.WhitespaceTokenizerFactory
       filters:
         -
           class: solr.WordDelimiterFilterFactory
@@ -69,7 +68,7 @@ field_type:
           class: solr.MappingCharFilterFactory
           mapping: accents_fi.txt
       tokenizer:
-        class: solr.StandardTokenizerFactory
+        class: solr.WhitespaceTokenizerFactory
       filters:
         -
           class: solr.WordDelimiterFilterFactory
@@ -106,7 +105,6 @@ unstemmed_field_type:
   name: text_unstemmed_fi
   class: solr.TextField
   positionIncrementGap: 100
-  storeOffsetsWithPositions: true
   analyzers:
     -
       type: index
@@ -115,7 +113,7 @@ unstemmed_field_type:
           class: solr.MappingCharFilterFactory
           mapping: accents_fi.txt
       tokenizer:
-        class: solr.StandardTokenizerFactory
+        class: solr.WhitespaceTokenizerFactory
       filters:
         -
           class: solr.WordDelimiterFilterFactory
@@ -157,7 +155,7 @@ unstemmed_field_type:
           class: solr.MappingCharFilterFactory
           mapping: accents_fi.txt
       tokenizer:
-        class: solr.StandardTokenizerFactory
+        class: solr.WhitespaceTokenizerFactory
       filters:
         -
           class: solr.WordDelimiterFilterFactory
@@ -265,13 +263,10 @@ solr_configs:
               VALUE: sm_context_tags
             -
               name: buildOnCommit
-              VALUE: 'false'
+              VALUE: 'true'
             -
               name: buildOnStartup
               VALUE: 'false'
-            -
-              name: indexPath
-              VALUE: ./fi
 text_files:
   stopwords: |
     olla
