@@ -467,7 +467,7 @@ function julkaisut_preprocess_media__document__download(&$variables) {
   if ($media) {
     /** @var Drupal\file\Entity\File $entity */
     $file = $media->field_media_file->entity;
-    $variables['file_url'] = file_create_url($file->uri->value);
+    $variables['file_url'] = \Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
   }
 }
 
@@ -494,7 +494,7 @@ function julkaisut_preprocess_page(&$variables) {
   // Attach the logo
   $variables['logo'] = [
     '#theme' => 'image',
-    '#uri' => file_create_url($variables['directory'] . "/dist/images/logo/$logo_filename"),
+    '#uri' => "/" . $variables['directory'] . "/dist/images/logo/$logo_filename",
     '#attributes' => [
       'alt' => strip_tags($variables['site_name']),
       'title' => strip_tags($variables['site_name']),
@@ -581,7 +581,7 @@ function julkaisut_preprocess_block(&$variables) {
     case 'system_branding_block':
       $langcode = Drupal::service('language_manager')->getCurrentLanguage()->getId();
       $logo_filename = ($langcode === 'sv') ? 'helsinki-sv.svg' : 'helsinki-fi.svg';
-      $variables['site_logo'] = file_create_url($variables['directory'] . "/dist/images/logo/$logo_filename");
+      $variables['site_logo'] = "/" . $variables['directory'] . "/dist/images/logo/$logo_filename";
       break;
     case 'block_content':
       /** @var BlockContent $block_content */
