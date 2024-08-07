@@ -1,5 +1,5 @@
 uuid: 71b1d9b7-d37c-4b64-a456-ea243162d5a7
-langcode: fi
+langcode: en
 status: true
 dependencies:
   config:
@@ -9,7 +9,7 @@ field_name: title
 entity_type: shortcut
 bundle: default
 label: Name
-description: 'Oikopolun nimi.'
+description: 'Shortcut name.'
 required: true
 translatable: false
 default_value: {  }

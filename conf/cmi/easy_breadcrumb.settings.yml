@@ -1,6 +1,6 @@
 _core:
   default_config_hash: ey8bRwK17YbAVEX7GEm09YR5UneOQ_Nqzh6a3V-rIP0
-langcode: fi
+langcode: en
 applies_admin_routes: true
 include_invalid_paths: false
 excluded_paths: ''

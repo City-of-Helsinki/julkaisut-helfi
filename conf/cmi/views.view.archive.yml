@@ -1,5 +1,5 @@
 uuid: 8ee02430-6343-49ad-a9f9-b898a7aea32c
-langcode: fi
+langcode: en
 status: false
 dependencies:
   config:
@@ -10,9 +10,9 @@ dependencies:
 _core:
   default_config_hash: gA3tLETtsrObWW1Uvb6Mh-fg0Qu_6uCEzgL9jKQgPgo
 id: archive
-label: Arkisto
+label: Archive
 module: node
-description: 'Kaikki sisältö, kuukausittain lajiteltuna.'
+description: 'All content, by month.'
 tag: default
 base_table: node_field_data
 base_field: nid
@@ -23,7 +23,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: Arkisto
+      title: 'Monthly archive'
       fields: {  }
       pager:
         type: mini
@@ -188,7 +188,7 @@ display:
       tags: {  }
   block_1:
     id: block_1
-    display_title: Lohko
+    display_title: Block
     display_plugin: block
     position: 1
     display_options:

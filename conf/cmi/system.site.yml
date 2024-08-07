@@ -1,6 +1,6 @@
 _core:
   default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
-langcode: fi
+langcode: en
 uuid: b5ab163a-d2ae-4d52-aa76-31ce13360c67
 name: julkaisut.hel.fi
 mail: dev@genero.fi

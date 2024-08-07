@@ -1,5 +1,5 @@
 uuid: 13a1583c-4cf4-4462-a646-12bb3f6eb170
-langcode: fi
+langcode: en
 status: true
 dependencies:
   config:
@@ -9,7 +9,7 @@ field_name: changed
 entity_type: block_content
 bundle: reusable_block
 label: Muuttunut
-description: 'Ajankohta jolloin kustomoitua lohkoa viimeksi muokattiin.'
+description: 'The time when the custom block was last edited.'
 required: false
 translatable: true
 default_value: {  }
