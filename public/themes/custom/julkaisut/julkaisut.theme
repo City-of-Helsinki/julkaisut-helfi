@@ -426,12 +426,14 @@ function julkaisut_preprocess_book_tree(&$variables) {
   // Retrieve all nids that do not have body field conntent.
   $current_language = \Drupal::languageManager()->getCurrentLanguage()->getId();
   $empty_nids = \Drupal::entityQuery('node')
+    ->accessCheck(TRUE)
     ->condition('nid', $nids, 'IN')
     ->condition('langcode', $current_language)
     ->notExists('body', $current_language)
     ->execute();
 
   $translated_nids = \Drupal::entityQuery('node')
+    ->accessCheck(TRUE)
     ->condition('nid', $nids, 'IN')
     ->condition('langcode', $current_language)
     ->execute();
