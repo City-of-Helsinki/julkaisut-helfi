@@ -9,6 +9,13 @@ name: Editor
 format: editor
 weight: -9
 filters:
+  filter_gutenberg_image_filter:
+    id: filter_gutenberg_image_filter
+    provider: gutenberg_imagefilter
+    status: false
+    weight: 0
+    settings:
+      responsive_image_style: content_width
   filter_html:
     id: filter_html
     provider: filter
@@ -24,13 +31,6 @@ filters:
     status: true
     weight: 10
     settings: {  }
-  filter_gutenberg_image_filter:
-    id: filter_gutenberg_image_filter
-    provider: gutenberg_imagefilter
-    status: false
-    weight: 0
-    settings:
-      responsive_image_style: content_width
   gutenberg:
     id: gutenberg
     provider: gutenberg

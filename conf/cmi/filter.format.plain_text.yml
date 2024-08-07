@@ -1,13 +1,21 @@
 uuid: b6dd2b8d-016c-4ca4-9a2e-430fbfb715e6
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - gutenberg
 _core:
   default_config_hash: NIKBt6kw_uPhNI0qtR2DnRf7mSOgAQdx7Q94SKMjXbQ
 name: 'Plain text'
 format: plain_text
 weight: -7
 filters:
+  filter_autop:
+    id: filter_autop
+    provider: filter
+    status: true
+    weight: 0
+    settings: {  }
   filter_html_escape:
     id: filter_html_escape
     provider: filter
@@ -21,12 +29,6 @@ filters:
     weight: 0
     settings:
       filter_url_length: 72
-  filter_autop:
-    id: filter_autop
-    provider: filter
-    status: true
-    weight: 0
-    settings: {  }
   gutenberg:
     id: gutenberg
     provider: gutenberg

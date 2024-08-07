@@ -117,7 +117,6 @@ display:
           default_argument_type: fixed
           default_argument_options:
             argument: ''
-          default_argument_skip_url: false
           summary_options:
             base_path: ''
             count: true
@@ -414,6 +413,15 @@ display:
             date_format: custom
             custom_date_format: 'D, d M Y H:i:s O'
             timezone: ''
+            tooltip:
+              date_format: ''
+              custom_date_format: ''
+            time_diff:
+              enabled: false
+              future_format: '@interval hence'
+              past_format: '@interval ago'
+              granularity: 2
+              refresh: 60
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -481,13 +489,13 @@ display:
             trim_suffix: ''
             wrap_output: false
             wrap_class: trimmed
-            more_link: false
-            more_class: more-link
-            more_text: More
             summary_handler: full
             trim_options:
               text: true
               trim_zero: false
+            more_link: false
+            more_class: more-link
+            more_text: More
           group_column: value
           group_columns: {  }
           group_rows: true
