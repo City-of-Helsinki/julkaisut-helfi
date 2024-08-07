@@ -2,7 +2,6 @@
 drush/sites/
 drush/Commands/*
 node_modules
-drush/Commands/*
 public/core
 public/libraries
 public/modules/contrib

@@ -23,7 +23,7 @@ base_field: id
 display:
   default:
     id: default
-    display_title: Isäntä
+    display_title: Master
     display_plugin: default
     position: 0
     display_options:
@@ -79,7 +79,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          action_title: Toiminto
+          action_title: Action
           include_exclude: exclude
           selected_actions: {  }
         info:
@@ -277,7 +277,7 @@ display:
           exposed: true
           expose:
             operator_id: ''
-            label: Julkaistu
+            label: Published
             description: ''
             use_operator: false
             operator: status_op
@@ -342,7 +342,7 @@ display:
           exposed: true
           expose:
             operator_id: info_op
-            label: Otsikko
+            label: Title
             description: ''
             use_operator: false
             operator: info_op

@@ -8,6 +8,8 @@ display:
       fields:
         nothing:
           admin_label: Ikon
+        wid:
+          label: WID
         severity:
           label: Grad
         type:
@@ -17,7 +19,8 @@ display:
         message:
           label: Meddelande
           alter:
-            alt: '{{ meddelande }}'
+            path: 'admin/reports/dblog/event/{{ wid }}'
+            alt: '{{ message }}'
         name:
           label: Användare
           separator: ', '

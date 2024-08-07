@@ -17,7 +17,7 @@ base_field: ''
 display:
   default:
     id: default
-    display_title: Isäntä
+    display_title: Master
     display_plugin: default
     position: 0
     display_options:

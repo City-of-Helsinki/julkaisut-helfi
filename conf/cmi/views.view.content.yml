@@ -46,7 +46,7 @@ display:
           entity_type: node
           entity_field: title
           plugin_id: field
-          label: Otsikko
+          label: Title
           exclude: false
           alter:
             alter_text: false
@@ -164,7 +164,7 @@ display:
           settings:
             format: custom
             format_custom_false: Unpublished
-            format_custom_true: Julkaistu
+            format_custom_true: Published
         changed:
           id: changed
           table: node_field_data
@@ -299,7 +299,7 @@ display:
           exposed: true
           expose:
             operator_id: title_op
-            label: Otsikko
+            label: Title
             description: ''
             use_operator: false
             operator: title_op
@@ -409,7 +409,7 @@ display:
             default_group_multiple: {  }
             group_items:
               1:
-                title: Julkaistu
+                title: Published
                 operator: '='
                 value: '1'
               2:
