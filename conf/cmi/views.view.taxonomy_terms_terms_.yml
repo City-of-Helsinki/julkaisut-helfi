@@ -1,5 +1,5 @@
 uuid: ab4fc84c-4624-4ba6-94d3-fe93e0eee010
-langcode: fi
+langcode: en
 status: true
 dependencies:
   config:
@@ -1013,7 +1013,7 @@ display:
       tags: {  }
   block_4:
     id: block_4
-    display_title: 'Divisions'
+    display_title: Divisions
     display_plugin: block
     position: 2
     display_options:
@@ -1353,7 +1353,7 @@ display:
       display_extenders:
         simple_sitemap_display_extender: {  }
         metatag_display_extender: {  }
-      block_description: 'Divisions'
+      block_description: Divisions
     cache_metadata:
       max-age: -1
       contexts:

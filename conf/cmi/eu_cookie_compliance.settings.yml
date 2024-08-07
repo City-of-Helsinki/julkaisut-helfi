@@ -1,6 +1,6 @@
 _core:
   default_config_hash: EspchZru2hYTTeNNAnTw2uWwT-mjJ46KrM5XEVHJzS0
-langcode: fi
+langcode: en
 uuid: 395a9e78-7525-4195-9fe7-43b510b47193
 popup_enabled: true
 popup_clicking_confirmation: false
