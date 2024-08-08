@@ -1,0 +1,50 @@
+services:
+  app:
+    environment:
+      - SOLR_HOST=solr
+      - SOLR_PORT=8983
+      - SOLR_PATH=/
+      - SOLR_CORE=dev
+
+  solr:
+    image: solr:8
+    container_name: "${COMPOSE_PROJECT_NAME}-solr"
+    environment:
+      # This defines the host name the service should be accessible from.
+      - VIRTUAL_HOST=solr-${DRUPAL_HOSTNAME}
+      # HTTP_EXPOSE exposes http traffic from the container port 8983
+      # to the host port 8983.
+      - HTTP_EXPOSE=8983:8983
+    expose:
+      - 8983
+    volumes:
+      # solr core *data* is stored on the 'solr' docker volume
+      # This mount is optional; without it your search index disappears
+      # each time the ddev project is stopped and started.
+      - solr:/var/solr
+
+      # This mounts the conf in conf/solr into the container where
+      # the solr-precreate command in the entrypoint uses it as a one-time
+      # configuration to copy config into the newly-created core. It is not
+      # used if the core has previously been created.
+      - ./conf/solr:/solr-conf
+
+      # solr-configupdate.sh copies fresh configuration files into the
+      # solr container on each startup. The file must be executable
+      # (`chmod +x .ddev/solr/solr-init.sh`)
+      - "./conf/solr/solr-configupdate.sh:/docker-entrypoint-initdb.d/solr-configupdate.sh"
+    entrypoint:  'bash -c "VERBOSE=yes docker-entrypoint.sh solr-precreate $${SOLR_CORENAME:-dev} /solr-conf"'
+    networks:
+      - internal
+      - stonehenge-network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME}-solr.entrypoints=https"
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME}-solr.rule=Host(`solr-${DRUPAL_HOSTNAME}`)"
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME}-solr.tls=true"
+      - "traefik.http.services.${COMPOSE_PROJECT_NAME}-solr.loadbalancer.server.port=8983"
+      - "traefik.docker.network=stonehenge-network"
+      - "traefik.port=8983"
+
+volumes:
+  solr:
