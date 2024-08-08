@@ -22,6 +22,7 @@ module:
   dynamic_page_cache: 0
   easy_breadcrumb: 0
   editor: 0
+  entity: 0
   facets: 0
   facets_range_dropdowns: 0
   field: 0
@@ -33,6 +34,8 @@ module:
   gtm: 0
   gutenberg: 0
   gutenberg_imagefilter: 0
+  health_check: 0
+  helfi_api_base: 0
   helfi_azure_fs: 0
   image: 0
   inline_form_errors: 0
@@ -58,6 +61,8 @@ module:
   metatag_twitter_cards: 0
   metatag_verification: 0
   metatag_views: 0
+  migrate: 0
+  monolog: 0
   mysql: 0
   node: 0
   options: 0
@@ -65,6 +70,7 @@ module:
   path: 0
   path_alias: 0
   phpass: 0
+  raven: 0
   recreate_block_content: 0
   redirect: 0
   redirect_404: 0

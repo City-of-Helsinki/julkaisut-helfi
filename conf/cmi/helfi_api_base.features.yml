@@ -1,0 +1,5 @@
+_core:
+  default_config_hash: Ie9pN7Wzd5VQC9Emiamg4prx1Xy5tAnk2Yt-UJ5eDQM
+disable_user_password: false
+user_expire: false
+disable_email_sending: false
