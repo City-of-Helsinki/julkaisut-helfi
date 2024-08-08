@@ -24,6 +24,7 @@
         "drupal/focal_point": "^2.1",
         "drupal/gtm": "^1.8",
         "drupal/gutenberg": "^2.9",
+        "drupal/helfi_api_base": "^2.7.6",
         "drupal/helfi_azure_fs": "^2.0",
         "drupal/helfi_drupal_tools": "dev-drush-10",
         "drupal/jquery_ui_touch_punch": "^1.1",
