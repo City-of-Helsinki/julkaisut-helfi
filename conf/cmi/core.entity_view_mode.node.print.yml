@@ -1,5 +1,5 @@
 uuid: db04cdf7-3015-422d-a17c-62a94ad161da
-langcode: fi
+langcode: en
 status: false
 dependencies:
   module:
@@ -10,6 +10,6 @@ dependencies:
 _core:
   default_config_hash: ERjobPGdPFAM9p5cmQIcJzk-0cY-1mE1OV_pKmMlJaE
 id: node.print
-label: Tulosta
+label: Print
 targetEntityType: node
 cache: true

@@ -1,5 +1,5 @@
 uuid: 67059365-ca01-4073-a9ae-ccccef5282ef
-langcode: fi
+langcode: en
 status: true
 dependencies:
   module:
@@ -10,7 +10,7 @@ dependencies:
 _core:
   default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
 id: anonymous
-label: 'Anonyymi käyttäjä'
+label: 'Anonymous user'
 weight: 0
 is_admin: false
 permissions:

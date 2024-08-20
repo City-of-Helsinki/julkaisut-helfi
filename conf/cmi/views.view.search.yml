@@ -1,5 +1,5 @@
 uuid: 2d8487d1-7e81-48ad-948a-bc75a6bc3f22
-langcode: fi
+langcode: en
 status: true
 dependencies:
   config:
@@ -346,7 +346,7 @@ display:
               article: search_result
               book: search_result
       query:
-        type: views_query
+        type: search_api_query
         options:
           bypass_access: false
           skip_access: false
