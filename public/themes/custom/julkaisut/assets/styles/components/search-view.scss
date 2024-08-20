@@ -22,6 +22,7 @@
     }
 
     > header {
+      width: 70%;
       margin-top: calc(var(--spacing-l) - var(--spacing-m));
 
       @include mq($from: medium) {
