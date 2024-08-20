@@ -1,8 +1,0 @@
-version: '3.6'
-services:
-  web:
-    volumes:
-      - node_modules:/var/www/html/web/themes/custom/julkaisut/node_modules
-
-volumes:
-  node_modules:

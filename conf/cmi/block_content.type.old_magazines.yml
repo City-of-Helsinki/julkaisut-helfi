@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: old_magazines
 label: 'old magazines'
-revision: 0
+revision: false
 description: ''

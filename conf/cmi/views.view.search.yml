@@ -6,7 +6,6 @@ dependencies:
     - search_api.index.mainindex
   module:
     - better_exposed_filters
-    - facets
     - search_api
     - views_infinite_scroll
 id: search
@@ -78,7 +77,19 @@ display:
           hide_alter_empty: true
           click_sort_column: value
           type: timestamp
-          settings: {  }
+          settings:
+            date_format: medium
+            custom_date_format: ''
+            timezone: ''
+            tooltip:
+              date_format: ''
+              custom_date_format: ''
+            time_diff:
+              enabled: false
+              future_format: '@interval hence'
+              past_format: '@interval ago'
+              granularity: 2
+              refresh: 60
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -159,14 +170,18 @@ display:
                 advanced:
                   rewrite:
                     filter_rewrite_values: ''
+                    filter_rewrite_values_key: false
                   collapsible: false
+                  collapsible_disable_automatic_open: false
                   is_secondary: false
               facets:
                 plugin_id: default
                 advanced:
                   rewrite:
                     filter_rewrite_values: ''
+                    filter_rewrite_values_key: false
                   collapsible: false
+                  collapsible_disable_automatic_open: false
                   is_secondary: false
       access:
         type: none
@@ -379,6 +394,7 @@ display:
         - 'user.node_grants:view'
       tags:
         - 'config:search_api.index.mainindex'
+        - 'search_api_list:mainindex'
   block_1:
     id: block_1
     display_title: 'Search Block'
@@ -538,14 +554,17 @@ display:
         metatag_display_extender: {  }
       block_description: Search
     cache_metadata:
-      max-age: -1
+      max-age: 0
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
+        - url.query_args
         - 'user.node_grants:view'
       tags:
+        - 'config:facets.facet.year'
         - 'config:search_api.index.mainindex'
+        - 'search_api_list:mainindex'
   block_2:
     id: block_2
     display_title: 'Raportit Search Block'
@@ -590,14 +609,18 @@ display:
                 advanced:
                   rewrite:
                     filter_rewrite_values: ''
+                    filter_rewrite_values_key: false
                   collapsible: false
+                  collapsible_disable_automatic_open: false
                   is_secondary: false
               facets:
                 plugin_id: default
                 advanced:
                   rewrite:
                     filter_rewrite_values: ''
+                    filter_rewrite_values_key: false
                   collapsible: false
+                  collapsible_disable_automatic_open: false
                   is_secondary: false
       filters:
         search_api_language:
@@ -882,6 +905,7 @@ display:
         - 'user.node_grants:view'
       tags:
         - 'config:search_api.index.mainindex'
+        - 'search_api_list:mainindex'
   page_1:
     id: page_1
     display_title: 'Search Page'
@@ -931,7 +955,9 @@ display:
                 advanced:
                   rewrite:
                     filter_rewrite_values: ''
+                    filter_rewrite_values_key: false
                   collapsible: false
+                  collapsible_disable_automatic_open: false
                   is_secondary: false
               field_year:
                 plugin_id: default
@@ -945,7 +971,9 @@ display:
                 advanced:
                   rewrite:
                     filter_rewrite_values: ''
+                    filter_rewrite_values_key: false
                   collapsible: false
+                  collapsible_disable_automatic_open: false
                   is_secondary: false
       filters:
         search_api_language:
@@ -1204,16 +1232,19 @@ display:
         metatag_display_extender: {  }
       path: search
     cache_metadata:
-      max-age: -1
+      max-age: 0
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
+        - url.query_args
         - 'url.query_args:sort_by'
         - 'url.query_args:sort_order'
         - 'user.node_grants:view'
       tags:
+        - 'config:facets.facet.year_page'
         - 'config:search_api.index.mainindex'
+        - 'search_api_list:mainindex'
   page_2:
     id: page_2
     display_title: 'Tags Search Page'
@@ -1259,7 +1290,9 @@ display:
                 advanced:
                   rewrite:
                     filter_rewrite_values: ''
+                    filter_rewrite_values_key: false
                   collapsible: false
+                  collapsible_disable_automatic_open: false
                   is_secondary: false
       arguments:
         field_tags:
@@ -1284,7 +1317,6 @@ display:
             limit: false
             vids: {  }
             anyall: ','
-          default_argument_skip_url: false
           summary_options: {  }
           summary:
             sort_order: asc
@@ -1517,7 +1549,7 @@ display:
       display_extenders: {  }
       path: taxonomy/tags/%
     cache_metadata:
-      max-age: -1
+      max-age: 0
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
@@ -1527,4 +1559,6 @@ display:
         - 'url.query_args:sort_order'
         - 'user.node_grants:view'
       tags:
+        - 'config:facets.facet.year_tags'
         - 'config:search_api.index.mainindex'
+        - 'search_api_list:mainindex'

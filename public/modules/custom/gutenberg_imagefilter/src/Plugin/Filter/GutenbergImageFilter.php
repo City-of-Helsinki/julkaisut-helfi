@@ -165,6 +165,7 @@ class GutenbergImageFilter extends FilterBase implements ContainerFactoryPluginI
 
     $media_ids = \Drupal::entityQuery('media')
       ->condition('field_media_image.target_id', $fid)
+      ->accessCheck(TRUE)
       ->execute();
 
     if (empty($media_ids)) {

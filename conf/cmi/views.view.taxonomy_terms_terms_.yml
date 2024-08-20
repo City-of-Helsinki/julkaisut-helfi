@@ -141,7 +141,6 @@ display:
             limit: false
             vids: {  }
             anyall: ','
-          default_argument_skip_url: false
           summary_options:
             base_path: ''
             count: true
@@ -447,7 +446,6 @@ display:
           default_argument_options:
             index: 0
             use_alias: true
-          default_argument_skip_url: false
           summary_options:
             base_path: ''
             count: true
