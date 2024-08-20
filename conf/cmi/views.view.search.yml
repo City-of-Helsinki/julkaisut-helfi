@@ -931,8 +931,8 @@ display:
           text_input_required_format: editor
           bef:
             general:
-              autosubmit: false
-              autosubmit_exclude_textfield: false
+              autosubmit: true
+              autosubmit_exclude_textfield: true
               autosubmit_textfield_delay: 5000
               autosubmit_hide: false
               input_required: false
@@ -959,7 +959,14 @@ display:
                   collapsible: false
                   collapsible_disable_automatic_open: false
                   is_secondary: false
-              facets:
+              field_year:
+                plugin_id: default
+                advanced:
+                  rewrite:
+                    filter_rewrite_values: ''
+                  collapsible: false
+                  is_secondary: false
+              field_year_1:
                 plugin_id: default
                 advanced:
                   rewrite:

@@ -1737,6 +1737,7 @@ body:not(.path-taxonomy) .search-view > form {
   order: -1;
 }
 body:not(.path-taxonomy) .search-view > header {
+  width: 70%;
   margin-top: calc(2rem - 1.5rem);
   margin-top: calc(var(--spacing-l) - var(--spacing-m));
 }
