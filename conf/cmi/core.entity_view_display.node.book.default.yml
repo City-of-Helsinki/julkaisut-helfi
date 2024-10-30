@@ -34,7 +34,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 3
     region: content
   field_image:
     type: entity_reference_entity_view
@@ -52,18 +52,11 @@ content:
       view_mode: download
       link: false
     third_party_settings: {  }
-    weight: 3
-    region: content
-  field_tags:
-    type: entity_reference_label
-    label: visually_hidden
-    settings:
-      link: true
-    third_party_settings: {  }
     weight: 2
     region: content
 hidden:
   field_featured_image_caption: true
+  field_tags: true
   field_wide_contentwidth: true
   field_year: true
   langcode: true
