@@ -21,6 +21,7 @@ settings:
   provider: custom_book_block
   block_mode: 'book pages'
   target_book: ''
+  start_level: 1
   max_levels: '0'
   always_expand: 1
 visibility:
