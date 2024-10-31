@@ -3,6 +3,18 @@
 {% block term__title '' %}
 
 {% block term__content_wrapper %}
-  <h1 id="main-content">{% trans %}Tag:{% endtrans %} {{ name.0|render }}</h1>
+  <div class="is-container">
+    <div class="region region-content">
+      <div class="block block-system block-system-main-block">
+        <div class="views-element-container">
+          <div class="search-view">
+            <div class="views-exposed-form bef-exposed-form">
+              <h1 id="main-content">{% trans %}Tag:{% endtrans %} {{ name.0|render }}</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   {{ parent() }}
 {% endblock %}
