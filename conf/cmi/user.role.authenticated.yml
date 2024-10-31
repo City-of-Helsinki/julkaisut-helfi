@@ -4,14 +4,12 @@ status: true
 dependencies:
   config:
     - filter.format.simple
-    - search_api_autocomplete.search.search
   module:
     - eu_cookie_compliance
     - file
     - filter
     - media
     - node
-    - search_api_autocomplete
     - system
 _core:
   default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
@@ -23,7 +21,6 @@ permissions:
   - 'access content'
   - 'delete own files'
   - 'display eu cookie compliance popup'
-  - 'use search_api_autocomplete for search'
   - 'use text format simple'
   - 'view media'
   - 'view own unpublished content'
