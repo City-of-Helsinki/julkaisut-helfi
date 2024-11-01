@@ -1969,6 +1969,7 @@ body:not(.path-taxonomy) .search-view > header :last-child {
 .path-search .block-system-breadcrumb-block {
   color: #ffffff;
   color: var(--color-white);
+  position: relative;
   z-index: 1;
 }
 .path-taxonomy--tags .block-system-breadcrumb-block a,
